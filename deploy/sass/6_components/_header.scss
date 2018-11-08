@@ -1,6 +1,7 @@
 .header {
     @include e("top") {
         @include flexbox(row, wrap, center, center, center);
+
         height: auto;
         padding: 5px 0px;
         border: 1px solid #CCC;
@@ -12,7 +13,7 @@
         .wrapper {
             @include flexbox(row, wrap, space-between, center, center);
 
-            .grid{
+            .grid {
                 padding: 0px;
             }
 
@@ -33,7 +34,6 @@
 
     @include e("middle") {
         @include transition;
-
         padding: 10px 0px;
 
         @media #{$res-break} {
@@ -52,14 +52,13 @@
         @include box-sizing;
         @include transition;
         @include border-radius(5px);
-        
+        cursor: pointer;
         display: none;
         border: 0px solid #FFF;
         padding: 5px;
         width: 35px;
         height: 35px;
         left: 0;
-        cursor: pointer;
 
         @media #{$res-break} {
             display: flex;
@@ -90,6 +89,7 @@
 
             > span {
                 @include opacity(0);
+
                 height: 2px;
                 width: 20px;
             }
@@ -111,9 +111,12 @@
                 @include rotate(-45);
             }
 
-            & + .header__logo{
-                @include transition(null, 0s);
-                margin-left: 35px;
+            @media #{$res-break} {
+                & + .header__logo {
+                    @include transition(null, 0s);
+
+                    margin-left: 35px;
+                }
             }
         }
 
@@ -126,7 +129,7 @@
                 z-index: 11;
                 position: fixed;
                 left: 85%;
-                top: 10px;
+                top: 0px;
 
                 & + .user {
                     background-color: $color-gray-light;
@@ -144,8 +147,13 @@
         max-width: 180px;
         display: block;
 
+        @media #{$res-break} {
+            width: auto;
+        }
+
         @include e("img") {
             @include transition;
+
             width: 100%;
             height: auto;
 
@@ -156,6 +164,7 @@
             @media #{$res-break} {
                 width: 90px;
                 margin-left: 10px;
+
                 .st0 {
                     fill: #FFF;
                 }
@@ -196,6 +205,7 @@
             @include box-sizing;
             @include radiustl;
             @include radiusbl;
+
             width: calc(100% - 36px);
             background-color: #f3f3f3;
             border: 0px;
@@ -205,7 +215,6 @@
             -webkit-box-shadow: inset 1px 1px 2px 0px rgba(227, 227, 227, 1);
             -moz-box-shadow: inset 1px 1px 2px 0px rgba(227, 227, 227, 1);
             box-shadow: inset 1px 1px 2px 0px rgba(227, 227, 227, 1);
-
         }
 
 
@@ -214,12 +223,14 @@
             @include box-sizing;
             @include radiustr;
             @include radiusbr;
+
             width: 36px;
             height: 36px;
             background-color: #f3f3f3;
             -webkit-box-shadow: inset -2px 1px 2px 0px rgba(227, 227, 227, 1);
             -moz-box-shadow: inset -2px 1px 2px 0px rgba(227, 227, 227, 1);
             box-shadow: inset -2px 1px 2px 0px rgba(227, 227, 227, 1);
+
             &:before {
                 @include set-icon($fa-var-search, 18px, 900, $color-gray);
             }
@@ -292,13 +303,8 @@
             }
         }
 
-
         @include e("txt") {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
-
-            &:hover {
-                color: $color-red;
-            }
         }
     }
 
@@ -313,7 +319,6 @@
         @include e("bt") {
             @include flexbox(row, nowrap, center, center, center);
             @include border-radius(50px);
-
             background-color: $color-red;
             width: 40px;
             height: 40px;
@@ -364,7 +369,6 @@
             @include flexbox(row, nowrap, flex-start, center, center);
         }
 
-
         @include m("right") {
             @include flexbox(row, nowrap, flex-end, center, center);
         }
@@ -379,7 +383,7 @@
     padding: 0px;
 
     @include e("item") {
-        @include flexbox(row, nowrap, flex-start, center, center);
+        @include flexbox(row, nowrap, flex-end, center, center);
         @include m("sep") {
             width: 1px;
             height: 25px;
@@ -447,11 +451,93 @@
 
     @include e("flags") {
         @include flexbox(row, nowrap, center, center, center);
+        position: relative;
 
         > img {
+            @include transition;
             margin-left: 5px;
         }
+
+        .subflags {
+            display: none;
+        }
+
+        &:hover {
+            > img {
+                @include rotate(180);
+            }
+            .subflags {
+                @include animate(fadeIn, 0s);
+                display: block;
+            }
+        }
     }
+}
+
+.subflags {
+    @include box-sizing;
+    position: absolute;
+    top: 15px;
+    width: 207px;
+    right: 0;
+    z-index: 9;
+    margin: 0px;
+    padding-top: 11px;
+
+    > .fas {
+        position: absolute;
+        top: -5px;
+        font-size: 25px;
+        right: 18px;
+        color: $color-gray-light;
+    }
+
+    @include e("cont") {
+        background-color: $color-gray-light;
+        padding: 20px;
+    }
+
+
+    @include e("block") {
+        @include box-sizing;
+        width: 100%;
+        margin-bottom: 15px;
+        @include m('last'){
+            margin: 0px;
+        }
+    }
+
+    @include e("title"){
+        @include fonte($second-font, 400, 14px, $color-red);
+        padding-bottom: 5px;
+        display: block;
+    }
+
+    @include e('flag'){
+        @include flexbox(row, nowrap, flex-start, center, center);
+        @include fonte($second-font, 400, 13px, $color-gray-dark);
+        padding: 5px 0px;
+        .flag{
+            margin-right: 5px;
+        }
+
+        &:hover{
+            color: $color-red;
+        }
+    }
+
+    @include e('footer'){
+        @include flexbox(row, nowrap, center, center, center);
+        background-color: $color-gray-light;
+        padding: 10px 20px;
+        border-top: 1px solid $color-gray;
+        @include e('link'){
+            @include fonte($second-font, 400, 13px, $color-red);
+        }
+
+    }
+
+
 }
 
 .menu {
@@ -461,40 +547,126 @@
     @media #{$res-break} {
         display: none;
     }
-    
-    .wrapper{
+
+    .wrapper {
         @include flexbox(row, nowrap, space-between, center, center);
+
         list-style: none;
         margin: 0px;
         margin: 0px auto;
     }
 
-    @include e('item'){
-        position: relative;
+    @include e("item") {
+        .submenu {
+            display: none;
+        }
+
+        &:hover {
+            > a {
+                background-color: #FFF;
+                color: $color-red;
+
+                &:after {
+                    color: $color-red;
+                }
+            }
+
+            .submenu {
+                @include animate(fadeIn, 0s);
+
+                display: block;
+            }
+        }
+
+
+        @include m('all'){
+            .allcats{
+                display: none;
+            }
+            &:hover{
+                .allcats {
+                    @include animate(fadeIn, 0s);
+
+                    display: block;
+                }
+            }
+        }
+
     }
 
-    @include e('link'){
+
+    @include e("link") {
         @include flexbox(row, nowrap, center, center, center);
         @include fonte($second-font, 400, 14px, #FFF);
         @include box-sizing;
         @include transition;
         padding: 15px 10px;
-        &:hover{
-            background-color: #FFF;
-            color: $color-red;
-            &:after{
-                color: $color-red;
-            }
-        }
 
-        @include m('all'){
-            &:after{
+        @include m("all") {
+            cursor: pointer;
+            &:after {
                 @include set-icon($fa-var-chevron-circle-down, 14px, 900, #FFF);
                 padding-left: 10px;
-            }
+            }            
         }
+    }
+}
 
+.submenu {
+    width: 100%;
+    position: absolute;
+    left: 0px;
 
+    .wrapper {
+        @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+        @include box-sizing;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #FFF;
+        -webkit-box-shadow: 2px 2px 2px 0px rgba(145, 145, 145, 1);
+        -moz-box-shadow: 2px 2px 2px 0px rgba(145, 145, 145, 1);
+        box-shadow: 2px 2px 2px 0px rgba(145, 145, 145, 1);
     }
 
+    @include e("col") {
+        @include box-sizing;
+
+        padding: 20px;
+
+        @include m("img") {
+            margin-left: auto;
+        }
+    }
+
+
+    @include e("itens") {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+
+    @include e("title") {
+        @include fonte($second-font, 400, 12px, $color-red);
+
+        margin-bottom: 10px;
+        display: block;
+    }
+
+
+    @include e("item") {
+        margin-bottom: 5px;
+    }
+
+
+    @include e("link") {
+        @include fonte($second-font, 400, 12px, $color-gray);
+
+        &:hover {
+            color: $color-red;
+        }
+    }
 }
+
+.shopmenu {}
