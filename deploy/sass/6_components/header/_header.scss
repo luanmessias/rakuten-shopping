@@ -285,11 +285,13 @@
     @include e("user") {
         @include order(4);
         @include transition;
+        position: relative;
+        padding: 15px 0px;
+
         @include e("icon") {
             font-size: 20px;
             color: $color-gray-dark;
         }
-
 
         @media #{$res-break} {
             display: none;
@@ -298,7 +300,6 @@
         @include e("link") {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
             @include transition;
-
             &:hover {
                 color: $color-red;
             }
@@ -307,6 +308,21 @@
         @include e("txt") {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
         }
+
+
+        &:hover{
+            .header__user__icon,
+            .header__user__link,
+            .header__user__txt {
+                color: $color-red;
+            }
+
+            .subuser{
+                display: flex;
+                @include animate(fadeIn, 0s);
+            }
+        }
+
     }
 
 

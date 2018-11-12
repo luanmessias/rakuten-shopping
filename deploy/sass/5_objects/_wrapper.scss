@@ -1,13 +1,13 @@
 .wrapper {
     @include box-sizing;
     @include transition;
-    padding: 0px 50px;
+    padding: 0px 20px;
     margin: 0 auto;
     width: 100%;
     max-width: 1024px;
 
     @media #{$res-break} {
-      padding: 0px 15px;  
+      padding: 0px 10px;  
     }
 }
 
