@@ -1,19 +1,127 @@
 .minicar {
     @include box-sizing;
+
     position: absolute;
     //display: none;
-    top: 45px;
+    top: 55px;
     right: 0;
     z-index: 9;
     margin: 0px;
-    padding-top: 11px;
+    background-color: #F2F2F2;
+    width: 320px;
 
     > .fas {
         position: absolute;
-        top: -5px;
+        top: -16px;
         font-size: 25px;
-        right: 82px;
-        color: $color-gray-extra-light;
+        right: 69px;
+        color: #F2F2F2;
     }
 
+    @include e("header") {
+        @include box-sizing;
+
+        padding: 20px 15px 0px 15px;
+
+        @include e("txt") {
+            @include fonte($second-font, 600, 14px, $color-red);
+            @include box-sizing;
+
+            display: block;
+            border-bottom: 1px solid $color-gray-light;
+            width: 100%;
+            text-align: left;
+            padding-bottom: 5px;
+        }
+    }
+
+
+    @include e("cont") {
+        @include box-sizing;
+
+        padding: 10px;
+    }
+
+
+    @include e("prods") {
+        overflow-y: auto;
+        height: 310px;
+    }
+}
+
+.miniprod {
+    @include flexbox(row, nowrap, space-between, flex-start, flex-start);
+    @include transition;
+    width: 100%;
+    border-bottom: 1px solid $color-gray-light;
+    padding: 10px 0px;
+
+    &:hover{
+        background-color: $color-gray-light;
+    }
+
+    @include e("img") {
+        width: 85px;
+        height: auto;
+        margin-right: 15px;
+    }
+
+
+    @include e("name") {
+        @include fonte($second-font, 600, 13px, $color-gray);
+    }
+
+
+    @include e("price") {
+        @include fonte($second-font, 400, 14px, $color-red);
+
+        margin-top: 10px;
+        display: block;
+    }
+
+
+    @include e("info") {
+        @include fonte($second-font, 400, 12px, $color-gray);
+
+        display: block;
+    }
+}
+
+
+.minifooter{
+    @include flexbox(row, nowrap, space-between, flex-start, flex-start);
+    @include box-sizing;
+    padding: 10px;
+
+    @include e("total") {
+        @include box-sizing;
+
+        @include e("value") {
+            @include fonte($second-font, 600, 16px, $color-red);
+            @include box-sizing;
+            display: block;
+            width: 100%;
+        }
+
+
+        @include e("points") {
+            @include fonte($second-font, 400, 14px, $color-gray-dark);
+            @include box-sizing;
+            display: block;
+            width: 100%;
+            &:before{
+                content: "";
+                background-image: url(../../../../dist/img/ico_header_points.png);
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+
+    @include e("buy") {
+        @include box-sizing;
+        @include fonte($second-font, 600, 14px, #FFF);
+        padding: 10px 15px;
+        background-color: $color-red;
+    }
 }
