@@ -330,8 +330,15 @@
         @include order(5);
         @include transition;
         @include flexbox(row, nowrap, center, center, center);
-
+        padding: 7px 0px;
         position: relative;
+
+        &:hover{
+            .minicar{
+                @include animate(fadeIn, 0s);
+                display: block;
+            }
+        }
 
         @include e("bt") {
             @include flexbox(row, nowrap, center, center, center);

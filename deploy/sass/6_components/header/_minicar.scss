@@ -2,7 +2,7 @@
     @include box-sizing;
 
     position: absolute;
-    //display: none;
+    display: none;
     top: 55px;
     right: 0;
     z-index: 9;
@@ -52,11 +52,12 @@
 .miniprod {
     @include flexbox(row, nowrap, space-between, flex-start, flex-start);
     @include transition;
+
     width: 100%;
     border-bottom: 1px solid $color-gray-light;
     padding: 10px 0px;
 
-    &:hover{
+    &:hover {
         background-color: $color-gray-light;
     }
 
@@ -87,10 +88,10 @@
     }
 }
 
-
-.minifooter{
+.minifooter {
     @include flexbox(row, nowrap, space-between, flex-start, flex-start);
     @include box-sizing;
+
     padding: 10px;
 
     @include e("total") {
@@ -99,6 +100,7 @@
         @include e("value") {
             @include fonte($second-font, 600, 16px, $color-red);
             @include box-sizing;
+
             display: block;
             width: 100%;
         }
@@ -107,13 +109,14 @@
         @include e("points") {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
             @include box-sizing;
+
+            background-image: url(../../dist/img/ico_header_points.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 22px;
             display: block;
             width: 100%;
-            &:before{
-                content: "";
-                background-image: url(../../../../dist/img/ico_header_points.png);
-                background-repeat: no-repeat;
-            }
         }
     }
 
@@ -121,7 +124,13 @@
     @include e("buy") {
         @include box-sizing;
         @include fonte($second-font, 600, 14px, #FFF);
+        @include transition;
         padding: 10px 15px;
         background-color: $color-red;
+
+        &:hover{
+            background-color: $color-red-dark;
+        }
+
     }
 }
