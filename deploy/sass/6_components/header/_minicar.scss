@@ -38,8 +38,29 @@
 
     @include e("cont") {
         @include box-sizing;
-
+        display: none;
         padding: 10px;
+
+        &.active{
+            display: block;
+        }
+
+        @include m('empty'){
+            .emptycar{
+                @include e('title'){
+                    @include fonte($second-font, 600, 28px, $color-gray);
+                    display: block;
+                }
+                @include e('txt'){
+                    @include fonte($second-font, 400, 14px, $color-gray);
+                    display: block;
+                }
+            }
+        }
+
+
+
+
     }
 
 
@@ -63,7 +84,7 @@
 
     @include e("img") {
         width: 85px;
-        height: auto;
+        height: 85px;
         margin-right: 15px;
     }
 

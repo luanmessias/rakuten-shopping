@@ -377,3 +377,12 @@ $y) {
   justify-content: center;
   flex-direction: column;
 }
+
+
+@mixin reset-positions(){
+  position: inherit;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

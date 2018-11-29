@@ -40,6 +40,7 @@
         @media #{$res-break} {
             background-color: $color-red;
             overflow: hidden;
+            padding: 0px;
         }
 
         .wrapper {
@@ -126,7 +127,6 @@
                 @include radiustl(0);
                 @include radiusbl(0);
                 @include transition;
-
                 z-index: 11;
                 position: fixed;
                 left: 85%;
@@ -318,7 +318,7 @@
             }
 
             .subuser{
-                display: flex;
+                display: block;
                 @include animate(fadeIn, 0s);
             }
         }

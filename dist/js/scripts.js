@@ -10,6 +10,10 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         $('.navmob').toggleClass('active');
     });
+
+    $('.mobmenu__item').click(function(){
+        $(this).toggleClass('active');
+    });
 });
 
 
