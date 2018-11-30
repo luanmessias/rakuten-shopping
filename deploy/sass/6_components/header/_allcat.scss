@@ -61,7 +61,7 @@
 
 
         &:after {
-            @include set-icon($fa-var-caret-right, 20px, 900, $color-gray-dark);
+            @include set-icon($fa-var-chevron-right, 14px, 900, $color-gray-dark);
             @include transition;
             @include order(3);
             margin-left: auto;
