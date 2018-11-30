@@ -1,6 +1,9 @@
 var windowWidth = window.innerWidth;
 
 $(document).ready(function () {
+
+    $( ".allcat" ).clone().prependTo( ".navmob__cont" );
+
     $('.header__mobsearch').click(function(){
         $('.header__mobsearch__bt').toggleClass('active');
         $('.header__search').toggleClass('active');
@@ -11,7 +14,7 @@ $(document).ready(function () {
         $('.navmob').toggleClass('active');
     });
 
-    $('.mobmenu__item').click(function(){
+    $('.allcat__item').click(function(){
         $(this).toggleClass('active');
     });
 });

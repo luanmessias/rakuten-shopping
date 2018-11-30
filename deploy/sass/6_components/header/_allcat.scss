@@ -11,31 +11,55 @@
     min-width: 200px;
 
     @include e("item") {
-        @include flexbox(row, nowrap, flex-start, center, center);
+        @include flexbox(row, wrap, flex-start, center, center);
+        @include transition;
         @include box-sizing;
         @include transition;
 
         padding: 5px;
         border-bottom: 1px solid $color-gray-light;
 
-        &:hover {
-            background-color: $color-red;
+        @media #{$res-desk} {
+            &:hover {
+                background-color: $color-red;
 
-            .allcat__link {
-                color: #FFF;
+                .allcat__link {
+                    color: #FFF;
+                }
+
+                &:after {
+                    color: #FFF;
+                }
+
+                > .subcat {
+                    display: flex;
+                }
             }
+        }
 
-            &:after {
-                color: #FFF;
-            }
+        @media #{$res-break} {
+            &.active {
+                background-color: $color-red;
 
-            > .subcat {
-                display: flex;
+                .allcat__link {
+                    color: #FFF;
+                }
+
+                &:after {
+                    @include rotate(90);
+                    color: #FFF;
+                }
+
+                > .subcat {
+                    display: flex;
+                }
             }
         }
 
         &:before {
             content: "";
+            @include order(1);
+
             background-image: url("../../dist/img/sprite-icons-menu-2.png");
             width: 28px;
             height: 28px;
@@ -43,8 +67,10 @@
 
         &:after {
             @include set-icon($fa-var-caret-right, 20px, 900, $color-gray-dark);
-
+            @include transition;
+            @include order(3);
             margin-left: auto;
+            margin-right: 5px;
         }
 
         @include m("calcados") {
@@ -52,8 +78,14 @@
                 background-position: 0px 4px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px 4px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px 4px;
+                }
             }
         }
 
@@ -63,8 +95,14 @@
                 background-position: 0px -33px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -33px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -33px;
+                }
             }
         }
 
@@ -74,8 +112,14 @@
                 background-position: 0px -70px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -70px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -70px;
+                }
             }
         }
 
@@ -85,8 +129,14 @@
                 background-position: 0px -105px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -105px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -105px;
+                }
             }
         }
 
@@ -96,8 +146,14 @@
                 background-position: 0px -142px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -142px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -142px;
+                }
             }
         }
 
@@ -107,8 +163,14 @@
                 background-position: 0px -177px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -177px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -177px;
+                }
             }
         }
 
@@ -118,8 +180,14 @@
                 background-position: 0px -212px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -212px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -212px;
+                }
             }
         }
 
@@ -129,8 +197,14 @@
                 background-position: 0px -249px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -249px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -249px;
+                }
             }
         }
 
@@ -140,8 +214,14 @@
                 background-position: 0px -286px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -286px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -286px;
+                }
             }
         }
 
@@ -151,8 +231,14 @@
                 background-position: 0px -351px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -351px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -351px;
+                }
             }
         }
 
@@ -162,8 +248,14 @@
                 background-position: 0px -388px;
             }
 
-            &:hover:before {
+            &.active:before {
                 background-position: -30px -388px;
+            }
+
+            @media #{$res-desk} {
+                &:hover:before {
+                    background-position: -30px -388px;
+                }
             }
         }
     }
@@ -172,8 +264,13 @@
     @include e("link") {
         @include fonte($second-font, 400, 12px, $color-gray-dark);
         @include transition;
+        @include order(2);
 
         margin: 0px 15px;
+
+        @media #{$res-break} {
+            font-size: 14px;
+        }
     }
 }
 
@@ -181,6 +278,8 @@
     @include flexbox(row, wrap, space-between, flex-start, flex-start);
     @include animate(fadeIn, 0s);
     @include box-sizing;
+    @include order(4);
+
     display: none;
     width: 800px;
     border: 5px solid $color-red;
@@ -238,14 +337,42 @@
         @include fonte($second-font, normal, 14px, $color-gray);
         @include transition;
 
-        &:hover{
+        &:hover {
             color: $color-red;
         }
-
 
         @include m("first") {
             color: $color-red;
             font-weight: bold;
+        }
+    }
+
+
+    @media #{$res-break} {
+        @include reset-positions;
+
+        width: 100%;
+        border-width: 2px;
+
+        @include e("menu") {
+            width: 100%;
+        }
+
+
+        @include e("itens") {
+            padding: 0px;
+            margin: 0px 0px 20px 0px;
+            -moz-column-count: 1;
+            -webkit-column-count: 1;
+            column-count: 1;
+            -moz-column-gap: 0px;
+            -webkit-column-gap: 0px;
+            column-gap: 0px;
+        }
+
+
+        @include e("item") {
+            width: 100%;
         }
     }
 }
