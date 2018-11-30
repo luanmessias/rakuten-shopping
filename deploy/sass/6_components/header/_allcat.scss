@@ -15,9 +15,12 @@
         @include transition;
         @include box-sizing;
         @include transition;
-
         padding: 5px;
         border-bottom: 1px solid $color-gray-light;
+
+        @include e("item") {
+            margin-bottom: 5px;            
+        }
 
         @media #{$res-desk} {
             &:hover {
@@ -56,14 +59,6 @@
             }
         }
 
-        &:before {
-            content: "";
-            @include order(1);
-
-            background-image: url("../../dist/img/sprite-icons-menu-2.png");
-            width: 28px;
-            height: 28px;
-        }
 
         &:after {
             @include set-icon($fa-var-caret-right, 20px, 900, $color-gray-dark);
@@ -73,203 +68,33 @@
             margin-right: 5px;
         }
 
-        @include m("calcados") {
-            &:before {
-                background-position: 0px 4px;
-            }
-
-            &.active:before {
-                background-position: -30px 4px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px 4px;
-                }
-            }
-        }
-
-
-        @include m("moda") {
-            &:before {
-                background-position: 0px -33px;
-            }
-
-            &.active:before {
-                background-position: -30px -33px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -33px;
-                }
+        &:before{
+            content: "";
+            @include order(1);
+            @include transition;
+            width: 28px;
+            height: 28px;
+            color: $color-gray-dark;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            @media #{$res-break} {
+                width: 35px;
+                height: 35px;
             }
         }
 
-
-        @include m("smarth") {
-            &:before {
-                background-position: 0px -70px;
-            }
-
-            &.active:before {
-                background-position: -30px -70px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -70px;
-                }
-            }
-        }
-
-
-        @include m("eletrod") {
-            &:before {
-                background-position: 0px -105px;
-            }
-
-            &.active:before {
-                background-position: -30px -105px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -105px;
-                }
-            }
-        }
-
-
-        @include m("eletroe") {
-            &:before {
-                background-position: 0px -142px;
-            }
-
-            &.active:before {
-                background-position: -30px -142px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -142px;
-                }
-            }
-        }
-
-
-        @include m("info") {
-            &:before {
-                background-position: 0px -177px;
-            }
-
-            &.active:before {
-                background-position: -30px -177px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -177px;
-                }
-            }
-        }
-
-
-        @include m("home") {
-            &:before {
-                background-position: 0px -212px;
-            }
-
-            &.active:before {
-                background-position: -30px -212px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -212px;
-                }
-            }
-        }
-
-
-        @include m("fashion") {
-            &:before {
-                background-position: 0px -249px;
-            }
-
-            &.active:before {
-                background-position: -30px -249px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -249px;
-                }
-            }
-        }
-
-
-        @include m("pet") {
-            &:before {
-                background-position: 0px -286px;
-            }
-
-            &.active:before {
-                background-position: -30px -286px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -286px;
-                }
-            }
-        }
-
-
-        @include m("sport") {
-            &:before {
-                background-position: 0px -351px;
-            }
-
-            &.active:before {
-                background-position: -30px -351px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -351px;
-                }
-            }
-        }
-
-
-        @include m("catg") {
-            &:before {
-                background-position: 0px -388px;
-            }
-
-            &.active:before {
-                background-position: -30px -388px;
-            }
-
-            @media #{$res-desk} {
-                &:hover:before {
-                    background-position: -30px -388px;
-                }
-            }
-        }
     }
+
+  
 
 
     @include e("link") {
         @include fonte($second-font, 400, 12px, $color-gray-dark);
         @include transition;
         @include order(2);
-
-        margin: 0px 15px;
-
         @media #{$res-break} {
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 }
@@ -373,6 +198,25 @@
 
         @include e("item") {
             width: 100%;
+        }
+    }
+}
+
+
+@for $i from 1 through 11 {
+    .allcat__item:nth-of-type(#{$i}){
+        &:before{
+            background-image: url('../../dist/img/menu_icons/#{$i}.png');
+        }
+
+        &.active:before{
+            background-image: url('../../dist/img/menu_icons/#{$i}-alt.png');
+        }
+
+        @media #{$res-desk} {
+            &:hover:before{
+                background-image: url('../../dist/img/menu_icons/#{$i}-alt.png');
+            }
         }
     }
 }
