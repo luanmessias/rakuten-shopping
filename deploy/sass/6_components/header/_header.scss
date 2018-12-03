@@ -115,9 +115,11 @@
         width: 100%;
         max-width: 180px;
         display: block;
+        height: 55px;
 
         @media #{$res-break} {
             width: auto;
+            height: 25px;
         }
 
         @include e("img") {

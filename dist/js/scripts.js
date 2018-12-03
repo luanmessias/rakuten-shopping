@@ -18,6 +18,7 @@ $(document).ready(function () {
     $('.allcat__item').click(function(){
         $(this).toggleClass('active');
     });
+    
 });
 
 
