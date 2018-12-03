@@ -3,6 +3,7 @@ var windowWidth = window.innerWidth;
 $(document).ready(function () {
 
     $( ".allcat" ).clone().prependTo( ".navmob__cont" );
+    $( ".header__top" ).clone().appendTo( ".navmob__cont" );
 
     $('.header__mobsearch').click(function(){
         $('.header__mobsearch__bt').toggleClass('active');

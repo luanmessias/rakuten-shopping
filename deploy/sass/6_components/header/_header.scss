@@ -1,38 +1,4 @@
 .header {
-    @include e("top") {
-        @include flexbox(row, wrap, center, center, center);
-
-        height: auto;
-        padding: 5px 0px;
-        border: 1px solid #CCC;
-
-        @media #{$res-break} {
-            display: none;
-        }
-
-        .wrapper {
-            @include flexbox(row, wrap, space-between, center, center);
-
-            .grid {
-                padding: 0px;
-            }
-
-            .rk-col {
-                @include box-sizing;
-                @include transition;
-
-                @media #{$res-xs}, #{$res-sm}, #{$res-md} {
-                    @include flexbox(row, wrap, center, center, center);
-
-                    width: 100%;
-                    padding: 5px 0px;
-                }
-            }
-            
-        }
-    }
-
-
     @include e("middle") {
         @include transition;
         padding: 10px 0px;
@@ -46,6 +12,8 @@
         .wrapper {
             @include flexbox(row, wrap, space-between, center, center);
         }
+
+      
     }
 
 
@@ -183,11 +151,11 @@
         width: 100%;
         max-width: 390px;
 
-        @media #{$res-xs}, #{$res-sm}, #{$res-md} {
+        @media #{$res-break} {
             @include order(5);
 
             max-width: inherit;
-            margin: 10px 0px;
+            margin-bottom: 10px;
         }
 
         @media #{$res-break} {

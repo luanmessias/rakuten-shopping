@@ -1,0 +1,43 @@
+
+@media #{$res-break} {
+    .header > .header__top{
+        display: none;
+    }
+}
+.header__top {
+    @include flexbox(row, wrap, center, center, center);
+
+    height: auto;
+    padding: 5px 0px;
+    border: 1px solid #CCC;
+
+    .wrapper {
+        @include flexbox(row, wrap, space-between, center, center);
+
+        .grid {
+            padding: 0px;
+        }
+
+        .rk-col {
+            @include box-sizing;
+            @include transition;
+
+            @media #{$res-xs}, #{$res-sm}, #{$res-md} {
+                @include flexbox(row, wrap, center, center, center);
+
+                width: 100%;
+                padding: 5px 0px;
+            }
+        }
+        
+    }
+
+    @media #{$res-break} {
+        border: 0px;
+        .rk-col{
+            width: 100%;
+        }
+    }
+
+
+}

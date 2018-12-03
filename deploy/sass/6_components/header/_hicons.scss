@@ -1,16 +1,16 @@
 .hicons {
     @media #{$res-lg}, #{$res-xl} {
         @include m("left") {
-            @include flexbox(row, nowrap, flex-start, center, center);
+            @include flexbox(row, wrap, flex-start, center, center);
         }
 
         @include m("right") {
-            @include flexbox(row, nowrap, flex-end, center, center);
+            @include flexbox(row, wrap, flex-end, center, center);
         }
     }
 
     @media #{$res-xs}, #{$res-sm}, #{$res-md} {
-        @include flexbox(row, nowrap, center, center, center);
+        @include flexbox(row, wrap, center, center, center);
     }
 
     list-style: none;
@@ -18,7 +18,7 @@
     padding: 0px;
 
     @include e("item") {
-        @include flexbox(row, nowrap, flex-end, center, center);
+        @include flexbox(row, wrap, flex-end, center, center);
         @include m("sep") {
             width: 1px;
             height: 25px;
@@ -95,8 +95,15 @@
 
         .subflags {
             display: none;
+            margin-bottom: 10px;
+            padding-top: 0px;
+            > .fas{
+                display: none;
+            }
         }
 
+
+        
         &:hover {
             > img {
                 @include rotate(180);
@@ -107,4 +114,37 @@
             }
         }
     }
+
+    @media #{$res-break} {
+
+        @include e('flags'){
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .subflags {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        @include e("item") {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+            margin: 10px 0px;
+            @include m('sep'){
+                display: none;
+            }
+            
+        }
+        @include e('link'){
+            @include m('viber'){
+                padding-left: 0px;
+            }
+        }
+
+
+
+    }
+
 }

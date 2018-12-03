@@ -9,6 +9,7 @@
     list-style: none;
     padding: 0px;
     min-width: 200px;
+    margin: 0px;
 
     @include e("item") {
         @include flexbox(row, wrap, flex-start, center, center);
