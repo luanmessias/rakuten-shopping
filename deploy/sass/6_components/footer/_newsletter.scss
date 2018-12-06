@@ -1,0 +1,4 @@
+.ftnews{
+    @include flexbox(row, nowrap, space-between, center, center);
+    padding: 25px 0px;
+}

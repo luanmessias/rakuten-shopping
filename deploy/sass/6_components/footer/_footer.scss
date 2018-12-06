@@ -1,0 +1,16 @@
+.footer{
+    width: 100%;
+    
+    .ftln{
+        width: 100%;
+
+        @include m('news'){
+            background-color: $color-red;
+        }
+
+        @include m('mid'){
+            background-image: url('../../dist/img/bgft.jpg');
+        }
+
+    }
+}
