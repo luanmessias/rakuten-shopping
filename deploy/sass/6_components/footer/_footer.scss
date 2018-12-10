@@ -5,11 +5,11 @@
         width: 100%;
 
         @include m('news'){
-            background-color: $color-red;
+            background-color: $color-gray-extra-light;
         }
 
         @include m('mid'){
-            background-image: url('../../dist/img/bgft.jpg');
+            background-color: #222;
         }
 
     }

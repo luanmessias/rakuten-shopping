@@ -1,4 +1,77 @@
 .ftnews{
     @include flexbox(row, nowrap, space-between, center, center);
     padding: 25px 0px;
+
+    form{
+        @include flexbox(row, nowrap, space-between, center, center);
+    }
+    
+    @include e('icon'){
+        font-size: 28px;
+        color: $color-red;
+    }
+
+    @include e('info'){
+        @include fonte($second-font, 400, 16px, $color-red);
+    }
+
+    @include e('field'){
+        @include fonte($second-font, 400, 14px, $color-gray-dark);
+        @include box-sizing;
+        @include transition;
+        padding: 10px 15px;
+        border: 0px;
+        margin-right: 10px;
+        width: 225px;
+    }
+
+    @include e('bt'){
+        @include flexbox(row, nowrap, center, center, center);
+        @include fonte($second-font, 400, 14px, #FFF);
+        @include box-sizing;
+        @include transition;
+        cursor: pointer;
+        padding: 0px 15px;
+        height: 36px;
+        background-color: $color-red;
+        border: 0px;
+        text-align: center;
+        &:hover{
+            background-color: $color-red-dark;
+        }
+    }
+
+    @media #{$res-break} {
+        @include flexbox(row, wrap, space-between, center, center);
+        form{
+            @include flexbox(row, wrap, space-between, center, center);
+            @include box-sizing;
+            padding: 10px;
+            width: 100%;
+        }
+
+        @include e('icon'){
+            display: none;
+        }
+    
+        @include e('info'){
+           text-align: center;
+           width: 100%;
+           margin-bottom: 10px;
+        }
+    
+        @include e('field'){
+            width: 100%;
+            margin-right: 0px;
+            margin-bottom: 10px;
+        }
+    
+        @include e('bt'){
+            width: 100%;
+        }
+
+    }
+
+    
+    
 }

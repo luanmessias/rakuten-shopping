@@ -1,7 +1,7 @@
 .subflags {
     @include box-sizing;
     position: absolute;
-    top: 15px;
+    top: 19px;
     width: 207px;
     right: 0;
     z-index: 9;
@@ -10,7 +10,7 @@
 
     > .fas {
         position: absolute;
-        top: -5px;
+        top: -16px;
         font-size: 25px;
         right: 18px;
         color: $color-gray-light;

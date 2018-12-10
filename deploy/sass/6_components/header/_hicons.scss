@@ -87,7 +87,7 @@
     @include e("flags") {
         @include flexbox(row, nowrap, center, center, center);
         position: relative;
-
+        height: 22px;
         > img {
             @include transition;
             margin-left: 5px;
@@ -97,9 +97,6 @@
             display: none;
             margin: 10px 0px;
             padding-top: 0px;
-            > .fas{
-                display: none;
-            }
         }
 
         &:hover {
