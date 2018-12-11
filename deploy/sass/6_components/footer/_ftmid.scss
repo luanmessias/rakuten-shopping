@@ -1,0 +1,175 @@
+.ftmid {
+    @include flexbox(row, wrap, space-between, flex-start, center);
+    padding: 15px 0px;
+
+    
+
+    @include e("col") {
+        @include m("full") {
+            width: 100%;
+        }
+
+
+        @include e("title") {
+            @include flexbox(row, nowrap, flex-start, center, center);
+            @include fonte($second-font, 400, 16px, #FFF);
+
+            &:before {
+                content: "";
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            @include m("cats") {
+                &:before {
+                    background-image: url("../img/footer_icons/categorias.png");
+                }
+            }
+
+
+            @include m("inst") {
+                &:before {
+                    background-image: url("../img/footer_icons/institucional.png");
+                }
+            }
+
+
+            @include m("global") {
+                &:before {
+                    background-image: url("../img/footer_icons/global.png");
+                }
+            }
+
+
+            @include m("destaque") {
+                &:before {
+                    background-image: url("../img/footer_icons/destaque.png");
+                }
+            }
+
+
+            @include m("central") {
+                &:before {
+                    background-image: url("../img/footer_icons/central.png");
+                }
+            }
+
+
+            @include m("social") {
+                &:before {
+                    background-image: url("../img/footer_icons/social.png");
+                }
+            }
+        }
+    }
+
+
+    @include e("social") {
+        @include e("link") {
+            margin-right: 20px;
+            &:before {
+                @include transition;
+                width: 25px;
+                height: 25px;
+            }
+
+            @include m("facebook") {
+                &:before {
+                    @include set-icon($fa-var-facebook-f, 20px, 900, $color-gray, true);
+                }
+                &:hover:before {
+                    color: $facebook_color;
+                }
+            }
+
+            @include m("twitter") {
+                &:before {
+                    @include set-icon($fa-var-twitter, 20px, 900, $color-gray, true);
+                }
+                &:hover:before {
+                    color: $twitter_color;
+                }
+            }
+
+            @include m("pinterest") {
+                &:before {
+                    @include set-icon($fa-var-pinterest-p, 20px, 900, $color-gray, true);
+                }
+                &:hover:before {
+                    color: $pinterest_color;
+                }
+            }
+
+            @include m("instagram") {
+                &:before {
+                    @include set-icon($fa-var-instagram, 20px, 900, $color-gray, true);
+                }
+                &:hover:before {
+                    color: $instagram_color;
+                }
+            }
+
+            @include m("blog") {
+                &:before {
+                    @include set-icon($fa-var-instagram, 20px, 900, $color-gray, true);
+                }
+                &:hover:before {
+                    color: $instagram_color;
+                }
+            }
+
+            @include m("blog") {
+                &:before {
+                    @include set-icon($fa-var-viber, 20px, 900, $color-gray, true);
+                }
+                &:hover:before {
+                }
+            }
+
+            
+        }
+    }
+
+
+    @include e("menu") {
+        @include m("full") {
+            > a {
+                display: inline-block;
+
+                &:not(:last-of-type):after {
+                    content: "|";
+                    margin: 0px 5px;
+                }
+            }
+        }
+
+
+        @include e("link") {
+            @include fonte($second-font, 400, 12px, $color-gray);
+            @include transition;
+
+            display: block;
+            margin: 7px 0px;
+
+            &:hover {
+                color: #FFF;
+            }
+        }
+    }
+
+
+    @include e("txt") {
+        @include fonte($second-font, 400, 12px, $color-gray);
+
+        a {
+            @include fonte($second-font, 400, 12px, $color-gray);
+
+            &:hover {
+                color: #FFF;
+            }
+        }
+    }
+}

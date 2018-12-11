@@ -6,13 +6,14 @@
         @include flexbox(row, nowrap, space-between, center, center);
     }
     
-    @include e('icon'){
-        font-size: 28px;
-        color: $color-red;
-    }
 
     @include e('info'){
+        @include flexbox(row, nowrap, flex-start, center, center);
         @include fonte($second-font, 400, 16px, $color-red);
+        &:before{
+           @include set-icon($fa-var-envelope, 28px, 900, $color-red);
+           margin-right: 20px;
+        }
     }
 
     @include e('field'){
