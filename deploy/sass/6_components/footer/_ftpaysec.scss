@@ -1,0 +1,90 @@
+.ftpaysec {
+    @include flexbox(row, wrap, space-between, center, center);
+}
+
+.ftpay {
+    @include flexbox(row, wrap, flex-start, center, center);
+
+    margin: 0px;
+    list-style: none;
+    padding: 0px;
+    width: 50%;
+
+    @media #{$res-break} {
+        width: 100%;
+    }
+
+    @include e("title") {
+        width: 100%;
+
+        @include e("txt") {
+            @include fonte($second-font, 400, 16px, #6d6d6d);
+        }
+    }
+
+
+    @include e("item") {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 63px;
+        height: 35px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include m("master") {
+            background-image: url("../../dist/img/footer_icons/payment/master.png");
+        }
+
+
+        @include m("visa") {
+            background-image: url("../../dist/img/footer_icons/payment/visa.png");
+        }
+
+
+        @include m("amex") {
+            background-image: url("../../dist/img/footer_icons/payment/amex.png");
+        }
+
+
+        @include m("dinners") {
+            background-image: url("../../dist/img/footer_icons/payment/dinners.png");
+        }
+
+
+        @include m("elo") {
+            background-image: url("../../dist/img/footer_icons/payment/elo.png");
+        }
+
+
+        @include m("hipercard") {
+            background-image: url("../../dist/img/footer_icons/payment/hipercard.png");
+        }
+
+
+        @include m("boleto") {
+            background-image: url("../../dist/img/footer_icons/payment/boleto.png");
+        }
+    }
+}
+
+.ftsec {
+    @include flexbox(row, wrap, flex-start, center, center);
+
+    margin: 0px;
+    list-style: none;
+    padding: 0px;
+    width: 50%;
+
+    @include e("title") {
+        width: 100%;
+
+        @include e("txt") {
+            @include fonte($second-font, 400, 16px, #6d6d6d);
+        }
+    }
+
+
+    @include e("item") {
+        margin-right: 10px;
+    }
+}

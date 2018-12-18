@@ -1,0 +1,19 @@
+.rklogo{
+    width: 100%;
+    text-align: center;
+    @include e('img'){
+        max-width: 100px;
+        height: auto;
+    }
+}
+
+.ftlegal,
+.ftinfo,
+.ftcopy{
+    @include fonte($second-font, 400, 13px, #6d6d6d);
+    padding: 15px 0px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0px auto;
+}

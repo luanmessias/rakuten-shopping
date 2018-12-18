@@ -12,5 +12,28 @@
             background-color: #222;
         }
 
+        @include m('paysec'){
+            background-color: #f1f2f2;
+            padding: 25px 0px;
+            border-bottom: 1px solid #dedede;
+        }
+
+        @include m('bottom'){
+            background-color: #f1f2f2;
+            padding: 25px 0px;
+            border-bottom: 1px solid #dedede;
+        }
+
+        @include m('copy'){
+            background-color: #f1f2f2;
+            padding: 10px 0px;
+        }
+
     }
+
+    .ftmid{
+        width: 100%;
+    }
+
+
 }

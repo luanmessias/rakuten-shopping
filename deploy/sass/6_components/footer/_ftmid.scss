@@ -1,8 +1,6 @@
 .ftmid {
     @include flexbox(row, wrap, space-between, flex-start, center);
-    padding: 15px 0px;
-
-    
+    padding-bottom: 25px;    
 
     @include e("col") {
         @include m("full") {
