@@ -1,23 +1,30 @@
 .allcats {
-    display: none;
+    display: block !important;
     position: absolute;
     z-index: 10;
 }
 
 .allcat {
-    background-color: $color-gray-extra-light;
+    @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
+    background-color: #FFF;
     list-style: none;
     padding: 0px;
-    min-width: 200px;
+    min-width: 220px;
     margin: 0px;
+    padding: 10px;
+
 
     @include e("item") {
         @include flexbox(row, wrap, flex-start, center, center);
         @include transition;
         @include box-sizing;
         @include transition;
-        padding: 5px;
+        padding: 5px 15px;
         border-bottom: 1px solid $color-gray-light;
+
+        &:last-of-type{
+            border: 0px;
+        }
 
         @include e("item") {
             margin-bottom: 5px;            
@@ -62,7 +69,7 @@
 
 
         &:after {
-            @include set-icon($fa-var-chevron-right, 14px, 900, $color-gray-dark);
+            @include set-icon($fa-var-chevron-right, 14px, 900, #cfcfcf);
             @include transition;
             @include order(3);
             margin-left: auto;
@@ -79,6 +86,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            margin-right: 15px;
             @media #{$res-break} {
                 width: 35px;
                 height: 35px;
@@ -87,13 +95,11 @@
 
     }
 
-  
-
-
     @include e("link") {
         @include fonte($second-font, 400, 12px, $color-gray-dark);
         @include transition;
         @include order(2);
+        margin-right: 5px;
         @media #{$res-break} {
             font-size: 16px;
         }
@@ -107,10 +113,10 @@
     @include order(4);
 
     display: none;
-    width: 800px;
+    width: 940px;
     border: 5px solid $color-red;
     position: absolute;
-    left: 200px;
+    left: 220px;
     top: 0px;
     background-color: #FFF;
     height: auto;
