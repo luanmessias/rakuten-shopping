@@ -1,5 +1,5 @@
 .allcats {
-    display: none;
+    display: block !important;
     position: absolute;
     z-index: 10;
 }
@@ -83,8 +83,8 @@
             content: "";
             @include order(1);
             @include transition;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             color: $color-gray-dark;
             background-position: center;
             background-repeat: no-repeat;
