@@ -1,45 +1,19 @@
 .minicar {
+    @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
     @include box-sizing;
 
     position: absolute;
-    display: none;
+    display: block !important;
     top: 55px;
     right: 0;
     z-index: 9;
     margin: 0px;
-    background-color: #F2F2F2;
-    width: 320px;
-
-    > .fas {
-        position: absolute;
-        top: -16px;
-        font-size: 25px;
-        right: 69px;
-        color: #F2F2F2;
-    }
-
-    @include e("header") {
-        @include box-sizing;
-
-        padding: 20px 15px 0px 15px;
-
-        @include e("txt") {
-            @include fonte($second-font, 600, 14px, $color-red);
-            @include box-sizing;
-
-            display: block;
-            border-bottom: 1px solid $color-gray-light;
-            width: 100%;
-            text-align: left;
-            padding-bottom: 5px;
-        }
-    }
-
+    background-color: #FFF;
+    width: 365px;
 
     @include e("cont") {
         @include box-sizing;
         display: none;
-        padding: 10px;
 
         &.active{
             display: block;
@@ -57,17 +31,21 @@
                 }
             }
         }
-
-
-
-
     }
-
 
     @include e("prods") {
         overflow-y: auto;
         height: 310px;
+        padding: 10px;
     }
+
+    @include e('values'){
+        @include flexbox(row, nowrap, space-between, center, center);
+        padding: 10px;
+        border-top: 1px solid $color-gray-light;
+        border-bottom: 1px solid $color-gray-light;
+    }
+
 }
 
 .miniprod {
@@ -78,8 +56,9 @@
     border-bottom: 1px solid $color-gray-light;
     padding: 10px 0px;
 
+
     &:hover {
-        background-color: $color-gray-light;
+        background-color: #FFF;
     }
 
     @include e("img") {
@@ -88,11 +67,9 @@
         margin-right: 15px;
     }
 
-
     @include e("name") {
         @include fonte($second-font, 600, 13px, $color-gray);
     }
-
 
     @include e("price") {
         @include fonte($second-font, 400, 14px, $color-red);
@@ -100,7 +77,6 @@
         margin-top: 10px;
         display: block;
     }
-
 
     @include e("info") {
         @include fonte($second-font, 400, 12px, $color-gray);
@@ -112,7 +88,6 @@
 .minifooter {
     @include flexbox(row, nowrap, space-between, flex-start, flex-start);
     @include box-sizing;
-
     padding: 10px;
 
     @include e("total") {
@@ -125,20 +100,7 @@
             display: block;
             width: 100%;
         }
-
-
-        @include e("points") {
-            @include fonte($second-font, 400, 14px, $color-gray-dark);
-            @include box-sizing;
-
-            background-image: url(../../dist/img/ico_header_points.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: left center;
-            padding-left: 22px;
-            display: block;
-            width: 100%;
-        }
+       
     }
 
 
@@ -153,5 +115,23 @@
             background-color: $color-red-dark;
         }
 
+    }
+}
+
+
+.minipoints{
+    @include box-sizing;
+    width: 100%;
+    @include e("points") {
+        @include fonte($second-font, 400, 14px, $color-gray-dark);
+        @include box-sizing;
+
+        background-image: url(../../dist/img/ico_header_points.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding-left: 22px;
+        display: block;
+        width: 100%;
     }
 }
