@@ -2,7 +2,7 @@ var windowWidth = window.innerWidth;
 
 $(document).ready(function () {
 
-    $('.btop').owlCarousel({
+    $('.banners').owlCarousel({
         loop:true,
         nav:true,
         items:1

@@ -1,0 +1,162 @@
+.banners {
+    @include box-sizing;
+    position: relative;
+    margin-bottom: 10px;
+
+    .owl-stage {
+        height: 100%;
+    }
+    .item,
+    .owl-item {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: block;
+    }
+    .owl-nav {
+        @include flexbox(row, nowrap, space-between, center, center);
+        width: 100%;
+        max-width: $page-w;
+        position: absolute;
+        top: calc(50% - 25px);
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        .owl-prev {
+            &:before {
+                @include set-icon($fa-var-chevron-left, 0px, 900, #FFF);
+            }
+        }
+        .owl-next {
+            &:before {
+                @include set-icon($fa-var-chevron-right, 0px, 900, #FFF);
+            }
+        }
+        .owl-prev,
+        .owl-next {
+            @include transition;
+            >span {
+                display: none;
+            }
+            &:before {
+                @include transition;
+                font-size: 35px;
+                color: #FFF;
+            }
+            &:hover {
+                background: transparent;
+                &:before {
+                    color: #c5c5c5;
+                }
+            }
+        }
+    }
+    .owl-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        .owl-dot {
+            >span {
+                width: 12px;
+                height: 12px;
+            }
+            &.active {
+                >span {
+                    background-color: $color-red;
+                }
+            }
+        }
+    }
+    .owl-stage-outer {
+        @include transition;
+        width: 100%;
+        height: 320px;
+        @media #{$res-xs} {
+            height: 200px;
+        }
+        @media #{$res-sm} {
+            height: 250px;
+        }
+        @media #{$res-md} {
+            height: 300px;
+        }
+
+    }
+}
+
+
+
+.bwrapper {
+    @include flexbox(row, wrap, space-between, flex-start, flex-start);
+    @include box-sizing;
+    @include transition;
+
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+
+    @include m("two") {
+        .banners{
+            width: calc(100% / 2 - 5px);
+            @media #{$res-xs}, #{$res-sm} {
+                width: 100%;
+            }
+            .owl-stage-outer {
+                height: 300px;
+                @media #{$res-xs} {
+                    height: 200px;
+                }
+                @media #{$res-sm} {
+                    height: 250px;
+                }
+                @media #{$res-md} {
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+    @include m("tree") {
+        .banners{
+            width: calc(100% / 3 - 5px);
+            
+            @media #{$res-xs} {
+                width: 100%;
+            }
+
+            @media #{$res-sm} {
+                width: calc(100% / 2 - 5px);
+            }
+
+            .owl-stage-outer {
+                height: 200px;
+            }
+        }
+    }
+
+    @include m("four") {
+        .banners{
+            width: calc(100% / 4 - 7px);
+            
+            @media #{$res-xs} {
+                width: 100%;
+            }
+
+            @media #{$res-sm} {
+                width: calc(100% / 2 - 5px);
+            }
+
+            .owl-stage-outer {
+                height: 150px;
+            }
+        }
+    }
+}
