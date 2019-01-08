@@ -1,4 +1,5 @@
 .subuser {
+    @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
     @include box-sizing;
     position: absolute;
     display: none;
@@ -8,16 +9,9 @@
     margin: 0px;
     padding-top: 11px;
 
-    > .fas {
-        position: absolute;
-        top: -5px;
-        font-size: 25px;
-        right: 82px;
-        color: $color-gray-extra-light;
-    }
 
     @include e("cont") {
-        background-color: $color-gray-extra-light;
+        background-color: #FFF;
         
         @include m('off'){
             @include flexbox(row, nowrap, space-between, flex-start, flex-start);
@@ -49,7 +43,7 @@
         
 
         @include e('txt'){
-            background-color: $color-gray-extra-light;
+            background-color: #FFF;
             padding: 10px 0px; 
         }
 

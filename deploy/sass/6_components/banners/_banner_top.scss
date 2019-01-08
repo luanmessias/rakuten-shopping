@@ -1,0 +1,36 @@
+.banner{
+    position: relative;
+    .owl-stage{
+        height: 100%;
+    }
+    .item,
+    .owl-item{
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: block;
+    }
+
+    .owl-nav{
+        @include flexbox(row, nowrap, space-between, center, center);
+        width: 100%;
+        max-width: $page-w;
+        position: absolute; 
+        top: calc(50% - 14px);
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+
+        
+
+    }
+
+}
+
+.btop .owl-stage-outer{
+    width: 100%;
+    height: 320px;
+}

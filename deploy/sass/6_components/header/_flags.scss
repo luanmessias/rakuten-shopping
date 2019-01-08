@@ -1,23 +1,15 @@
 .subflags {
+    @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
     @include box-sizing;
     position: absolute;
-    top: 19px;
+    top: 15px;
     width: 207px;
     right: 0;
     z-index: 9;
     margin: 0px;
-    padding-top: 11px;
-
-    > .fas {
-        position: absolute;
-        top: -16px;
-        font-size: 25px;
-        right: 18px;
-        color: $color-gray-light;
-    }
 
     @include e("cont") {
-        background-color: $color-gray-light;
+        background-color: #FFF;
         padding: 20px;
     }
 
@@ -52,9 +44,9 @@
 
     @include e('footer'){
         @include flexbox(row, nowrap, center, center, center);
-        background-color: $color-gray-light;
+        background-color: #FFF;
         padding: 10px 20px;
-        border-top: 1px solid $color-gray;
+        border-top: 1px solid $color-gray-light;
         @include e('link'){
             @include fonte($second-font, 400, 13px, $color-red);
         }

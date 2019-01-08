@@ -2,6 +2,12 @@ var windowWidth = window.innerWidth;
 
 $(document).ready(function () {
 
+    $('.btop').owlCarousel({
+        loop:true,
+        nav:true,
+        items:1
+    })
+
     $( ".allcat" ).clone().prependTo( ".navmob__cont" );
     $( ".header__top" ).clone().appendTo( ".navmob__cont" );
 

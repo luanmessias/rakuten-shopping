@@ -1,16 +1,20 @@
 .header {
     @include e("middle") {
         @include transition;
-        padding: 10px 0px;
+        padding-bottom: 10px;
+
+        > .wrapper {
+            @include flexbox(row, wrap, space-between, center, center);
+            padding: 10px 0px;
+        }
 
         @media #{$res-break} {
             background-color: $color-red;
             overflow: hidden;
             padding: 0px;
-        }
-
-        .wrapper {
-            @include flexbox(row, wrap, space-between, center, center);
+            > .wrapper {
+                padding: 0px;
+            }
         }
 
       
@@ -113,7 +117,7 @@
     @include e("logo") {
         @include order(1);
         width: 100%;
-        max-width: 180px;
+        max-width: 150px;
         display: block;
         height: 55px;
 
@@ -151,20 +155,19 @@
         @include transition;
 
         width: 100%;
-        max-width: 390px;
+        max-width: 650px;
 
         @media #{$res-break} {
             @include order(5);
 
             max-width: inherit;
             margin-bottom: 10px;
-        }
-
-        @media #{$res-break} {
+            padding: 0px 10px;
             display: none;
 
             @include order(7);
         }
+
 
         &.active {
             display: flex;
@@ -253,14 +256,20 @@
 
 
     @include e("user") {
+        @include flexbox(row, nowrap, center, center, center);
         @include order(4);
         @include transition;
         position: relative;
         padding: 15px 0px;
 
         @include e("icon") {
-            font-size: 20px;
-            color: $color-gray-dark;
+            background-image: url('../../dist/img/header_icons/user.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin-right: 10px;
         }
 
         @media #{$res-break} {
@@ -291,6 +300,10 @@
                 display: block;
                 @include animate(fadeIn, 0s);
             }
+
+            .header__user__icon{
+                background-image: url('../../dist/img/header_icons/user-alt.png');
+            }
         }
 
     }
@@ -308,33 +321,46 @@
                 @include animate(fadeIn, 0s);
                 display: block;
             }
+            .header__cart__icon{
+                background-image: url('../../dist/img/header_icons/cart-alt.png');
+                @media #{$res-break} {
+                    background-image: url('../../dist/img/header_icons/cart-mob.png');
+                }
+            }
+        }
+
+        @include e("icon") {
+            background-image: url('../../dist/img/header_icons/cart.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left center;
+            width: 45px;
+            height: 45px;
+            display: block;
+            margin-right: 10px;
+
+            @media #{$res-break} {
+                width: 45px;
+                height: 45px;
+                background-image: url('../../dist/img/header_icons/cart-mob.png');
+            }
+
         }
 
         @include e("bt") {
             @include flexbox(row, nowrap, center, center, center);
-            @include border-radius(50px);
-            background-color: $color-red;
             width: 40px;
             height: 40px;
 
-            .fas {
-                @include transition;
-
-                color: #FFF;
-            }
-
             @media #{$res-break} {
-                .fas {
-                    font-size: 25px;
-                }
+                margin-right: 15px;
             }
+
         }
 
 
         @include e("txt") {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
-
-            margin-left: 10px;
 
             @media #{$res-break} {
                 @include flexbox(row, nowrap, center, center, center);
@@ -346,7 +372,7 @@
                 width: 25px;
                 height: 25px;
                 position: absolute;
-                left: 15px;
+                right: 5px;
                 top: 16px;
 
                 @include e("desc") {

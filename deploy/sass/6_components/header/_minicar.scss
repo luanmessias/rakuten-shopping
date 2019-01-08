@@ -3,7 +3,7 @@
     @include box-sizing;
 
     position: absolute;
-    display: block !important;
+    display: none;
     top: 55px;
     right: 0;
     z-index: 9;
@@ -11,41 +11,64 @@
     background-color: #FFF;
     width: 365px;
 
+    @media #{$res-break} {
+        display: none !important;
+    }
+
     @include e("cont") {
         @include box-sizing;
+
         display: none;
 
-        &.active{
+        &.active {
             display: block;
         }
 
-        @include m('empty'){
-            .emptycar{
-                @include e('title'){
+        @include m("empty") {
+            .emptycar {
+                @include e("title") {
                     @include fonte($second-font, 600, 28px, $color-gray);
+
                     display: block;
                 }
-                @include e('txt'){
+
+
+                @include e("txt") {
                     @include fonte($second-font, 400, 14px, $color-gray);
+
                     display: block;
                 }
             }
         }
     }
 
+
     @include e("prods") {
         overflow-y: auto;
-        height: 310px;
+        height: 320px;
         padding: 10px;
     }
 
-    @include e('values'){
+
+    @include e("values") {
         @include flexbox(row, nowrap, space-between, center, center);
+
         padding: 10px;
         border-top: 1px solid $color-gray-light;
         border-bottom: 1px solid $color-gray-light;
-    }
 
+        @include e("qtd"){
+            @include fonte($second-font, 400, 14px, #626262);
+        }
+
+        @include e('val'){
+            @include fonte($second-font, 900, 16px, $color-red);
+            strong{
+                @include fonte($second-font, 900, 16px, #626262);
+            }
+        }
+
+    }
 }
 
 .miniprod {
@@ -56,9 +79,12 @@
     border-bottom: 1px solid $color-gray-light;
     padding: 10px 0px;
 
-
     &:hover {
         background-color: #FFF;
+    }
+
+    &:last-of-type {
+        border: 0px;
     }
 
     @include e("img") {
@@ -67,9 +93,11 @@
         margin-right: 15px;
     }
 
+
     @include e("name") {
         @include fonte($second-font, 600, 13px, $color-gray);
     }
+
 
     @include e("price") {
         @include fonte($second-font, 400, 14px, $color-red);
@@ -77,6 +105,7 @@
         margin-top: 10px;
         display: block;
     }
+
 
     @include e("info") {
         @include fonte($second-font, 400, 12px, $color-gray);
@@ -86,8 +115,9 @@
 }
 
 .minifooter {
-    @include flexbox(row, nowrap, space-between, flex-start, flex-start);
+    @include flexbox(row, nowrap, space-between, center, flex-start);
     @include box-sizing;
+
     padding: 10px;
 
     @include e("total") {
@@ -100,7 +130,15 @@
             display: block;
             width: 100%;
         }
-       
+    }
+
+
+    @include e("more") {
+        @include fonte($second-font, 600, 14px, #5e5e5e);
+
+        &:after {
+            @include set-icon($fa-var-chevron-right, 14px, 900, #cfcfcf);
+        }
     }
 
 
@@ -108,30 +146,42 @@
         @include box-sizing;
         @include fonte($second-font, 600, 14px, #FFF);
         @include transition;
+
         padding: 10px 15px;
         background-color: $color-red;
 
-        &:hover{
+        &:hover {
             background-color: $color-red-dark;
         }
-
     }
 }
 
-
-.minipoints{
+.minipoints {
+    @include flexbox(row, nowrap, center, center, flex-start);
     @include box-sizing;
+
     width: 100%;
+
     @include e("points") {
+        @include flexbox(row, nowrap, center, center, flex-start);
         @include fonte($second-font, 400, 14px, $color-gray-dark);
         @include box-sizing;
 
-        background-image: url(../../dist/img/ico_header_points.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left center;
-        padding-left: 22px;
-        display: block;
-        width: 100%;
+        background-color: $color-gray-light;
+        width: calc(100% - 20px);
+        padding: 5px 10px;
+        margin-bottom: 10px;
+
+        &:before {
+            content: "";
+            background-image: url(../../dist/img/ico_header_points.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin-right: 5px;
+        }
     }
 }
