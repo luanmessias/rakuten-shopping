@@ -12,7 +12,7 @@
         width: 100%;
         margin-bottom: 35px;
         a{
-            @include fonte($second-font, 400, 14px, #6d6d6d);
+            @include fonte($second-font, 400, 12px, #6d6d6d);
             @include flexbox(row, nowrap, flex-start, center, flex-start);
             @include transition;
             &:hover{
