@@ -126,8 +126,9 @@
 
     @include m("tree") {
         .banners{
+            @include border-radius();
             width: calc(100% / 3 - 5px);
-            
+            overflow: hidden;
             @media #{$res-xs} {
                 width: 100%;
             }
@@ -137,7 +138,7 @@
             }
 
             .owl-stage-outer {
-                height: 200px;
+                height: 180px;
             }
         }
     }

@@ -1,0 +1,173 @@
+.secprod{
+    width: 100%;
+    
+    @include e('title'){
+        @include fonte($second-font, 400, 24px, #000000);
+        text-transform: uppercase;
+        margin-bottom: 0px;
+    }
+
+    @include e('cat'){
+        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+        width: 100%;
+        margin-bottom: 35px;
+        a{
+            @include fonte($second-font, 400, 14px, #6d6d6d);
+            @include flexbox(row, nowrap, flex-start, center, flex-start);
+            @include transition;
+            &:hover{
+                color: #5e5e5e;
+            }
+            &:after{
+                content: "|";
+                display: block;
+                margin: 0px 5px;
+            } 
+            &:last-of-type:after{
+                display: none;
+            }
+        }
+    }
+
+}
+
+.listprod{
+    @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+    @include e('item'){
+        text-align: center;
+        width: calc(100% / 4);
+    }
+    &.owl-carousel{
+        .listprod__item{
+            width: 100%;
+        }
+    }
+
+    .owl-nav {
+        @include flexbox(row, nowrap, space-between, center, center);
+        width: 100%;
+        max-width: $page-w;
+        position: absolute;
+        top: calc(50% - 25px);
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        .owl-prev {
+            &:before {
+                @include set-icon($fa-var-chevron-left, 0px, 900, #FFF);
+            }
+        }
+        .owl-next {
+            &:before {
+                @include set-icon($fa-var-chevron-right, 0px, 900, #FFF);
+            }
+        }
+        .owl-prev,
+        .owl-next {
+            @include transition;
+            >span {
+                display: none;
+            }
+            &:before {
+                @include transition;
+                font-size: 30px;
+                color: #8a8a8a;
+            }
+            &:hover {
+                background: transparent;
+                &:before {
+                    color: #5f5f5f;
+                }
+            }
+        }
+    }
+
+}
+
+.hprod{
+    display: block;
+    width: 200px;
+    margin: 0px auto;
+    text-align: left;
+    @include e('img'){
+        @include box-sizing;
+        width: 100%;
+    }
+
+    @include e('name'){
+        @include fonte($second-font, 400, 14px, #6d6d6d);
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    @include e('store'){
+        @include flexbox(row, nowrap, flex-start, center, flex-start);
+        @include fonte($second-font, 400, 12px, #6d6d6d);
+        margin: 10px 0px;
+
+        @include e('name'){
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        &:before{
+            @include bgimage("ico_store.png");
+            content: "";
+            display: block;
+            width: 17px;
+            height: 17px;
+            background-repeat: no-repeat;    
+            margin-right: 10px;      
+        }
+
+    }
+
+    @include e('price'){
+        display: block;
+        width: 100%;
+
+        @include m('regular'){
+            @include fonte($second-font, 400, 14px, #9d9d9d);
+        }
+        @include m('sale'){
+            @include fonte($second-font, 900, 24px, $color-red);
+        }
+    }
+
+    @include e('parcel'){
+        @include fonte($second-font, 400, 14px, #6d6d6d);
+        display: block;
+        width: 100%;
+        @include m('alt'){
+            font-weight: bold;
+        }
+    }
+
+    @include e('points'){
+        @include flexbox(row, nowrap, flex-start, center, flex-start);
+        @include fonte($second-font, 400, 14px, #5e5e5e);
+        width: 100%;
+        margin-top: 10px;
+        @include m('alt'){
+            color: $color-red;
+            margin-left: 5px;
+        }
+
+        &:before {
+            content: "";
+            @include bgimage('ico_header_points.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin-right: 5px;
+        }
+
+    }
+
+}
