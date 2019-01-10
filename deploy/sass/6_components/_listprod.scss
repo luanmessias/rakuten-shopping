@@ -1,5 +1,6 @@
 .secprod{
     width: 100%;
+    margin: 30px 0px;
     
     @include e('title'){
         @include fonte($second-font, 400, 24px, #000000);
@@ -28,6 +29,32 @@
             }
         }
     }
+
+    @include e("banner") {
+        @include flexbox(row, wrap, space-between, flex-start, flex-start);
+        margin-bottom: 30px;
+        width: 100%;
+
+        a {
+            @include border-radius;
+            display: block;
+            width: calc(100% / 3 - 6px);
+            overflow: hidden;
+            height: 180px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            @media #{$res-xs} {
+                width: 100%;
+            }
+
+            @media #{$res-sm} {
+                width: calc(100% / 2 - 5px);
+            }
+            
+        }
+    }
+   
 
 }
 

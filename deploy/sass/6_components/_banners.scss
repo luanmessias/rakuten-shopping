@@ -94,6 +94,8 @@
 
 
 
+
+
 .bwrapper {
     @include flexbox(row, wrap, space-between, flex-start, flex-start);
     @include box-sizing;
@@ -127,7 +129,7 @@
     @include m("tree") {
         .banners{
             @include border-radius();
-            width: calc(100% / 3 - 5px);
+            width: calc(100% / 3 - 6px);
             overflow: hidden;
             @media #{$res-xs} {
                 width: 100%;
@@ -161,3 +163,4 @@
         }
     }
 }
+
