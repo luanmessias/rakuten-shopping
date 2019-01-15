@@ -75,6 +75,10 @@
     padding: 0px;
     width: 50%;
 
+    @media #{$res-xs}, #{$res-sm} {
+        width: 100%;
+    }
+
     @include e("title") {
         width: 100%;
 

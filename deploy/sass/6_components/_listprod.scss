@@ -115,7 +115,8 @@
 
 .hprod{
     display: block;
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     margin: 0px auto;
     text-align: left;
     @include e('img'){
@@ -141,13 +142,14 @@
         }
 
         &:before{
-            @include bgimage("ico_store.png");
+            @include bgimage("ico_header_pedidos.png");
             content: "";
             display: block;
             width: 17px;
             height: 17px;
             background-repeat: no-repeat;    
-            margin-right: 10px;      
+            background-size: cover;
+            margin-right: 5px;      
         }
 
     }

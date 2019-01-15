@@ -74,7 +74,7 @@
     width: 100%;
     position: absolute;
     left: 0px;
-
+    z-index: 2;
     .wrapper {
         @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
         @include box-sizing;
