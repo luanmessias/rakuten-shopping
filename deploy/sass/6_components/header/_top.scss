@@ -1,10 +1,10 @@
 
 @media #{$res-break} {
-    .header > .header__top{
+    .header > .nrk_header__top{
         display: none;
     }
 }
-.header__top {
+.nrk_header__top {
     @include flexbox(row, wrap, center, center, center);
 
     height: auto;

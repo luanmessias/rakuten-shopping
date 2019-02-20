@@ -44,34 +44,34 @@
         }
 
         @include m("orders") {
-            background-image: url("../../dist/img/ico_header_pedidos.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_pedidos.png");
 
             &:hover {
-                background-image: url("../../dist/img/ico_header_pedidos_hover.png");
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_pedidos_hover.png");
             }
         }
 
 
         @include m("call") {
-            background-image: url("../../dist/img/ico_header_sac.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_sac.png");
 
             &:hover {
-                background-image: url("../../dist/img/ico_header_sac_hover.png");
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_sac_hover.png");
             }
         }
 
 
         @include m("open") {
-            background-image: url("../../dist/img/ico_header_loja.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_loja.png");
 
             &:hover {
-                background-image: url("../../dist/img/ico_header_loja_hover.png");
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_loja_hover.png");
             }
         }
 
 
         @include m("points") {
-            background-image: url("../../dist/img/ico_header_points.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
         }
 
 

@@ -1,7 +1,7 @@
-.menu {
+.nrk_menu {
     width: 100%;
     background-color: $color-red;
-
+    position: inherit;
     @media #{$res-break} {
         display: none;
     }
@@ -15,7 +15,7 @@
     }
 
     @include e("item") {
-        .submenu {
+        .nrk_submenu {
             display: none;
         }
 
@@ -29,7 +29,7 @@
                 }
             }
 
-            .submenu {
+            .nrk_submenu {
                 @include animate(fadeIn, 0s);
 
                 display: block;
@@ -70,7 +70,7 @@
     }
 }
 
-.submenu {
+.nrk_submenu {
     width: 100%;
     position: absolute;
     left: 0px;

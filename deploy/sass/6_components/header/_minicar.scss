@@ -1,10 +1,8 @@
 .minicar {
     @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
     @include box-sizing;
-
     position: absolute;
-    display: none;
-    top: 55px;
+    top: 50px;
     right: 0;
     z-index: 9;
     margin: 0px;
@@ -16,19 +14,26 @@
     }
 
     @include e("cont") {
+        @include transition();
         @include box-sizing;
-
-        display: none;
-
         &.active {
             display: block;
         }
 
-        @include m("empty") {
-            .emptycar {
+        @include m("loading") {
+            @include flexbox(row, nowrap, flex-start, center, center);
+            padding: 20px;
+            
+            .loadcar {
+                @include e("ico") {
+                    width: auto;
+                    height: auto;
+                    max-width: 60px;
+                    margin-right: 15px;
+                }
+
                 @include e("title") {
                     @include fonte($second-font, 600, 28px, $color-gray);
-
                     display: block;
                 }
 
@@ -40,20 +45,47 @@
                 }
             }
         }
+
+        @include m("empty") {
+            @include flexbox(row, nowrap, flex-start, center, center);
+            padding: 20px;
+            .emptycar {
+
+                @include e("ico") {
+                    width: auto;
+                    height: auto;
+                    max-width: 60px;
+                    margin-right: 15px;
+                }
+
+                @include e("title") {
+                    @include fonte($second-font, 600, 28px, $color-gray);
+                    display: block;
+                }
+
+
+                @include e("txt") {
+                    @include fonte($second-font, 400, 14px, $color-gray);
+                    display: block;
+                }
+            }
+        }
     }
 
 
     @include e("prods") {
         overflow-y: auto;
-        height: 320px;
-        padding: 10px;
+        max-height: 320px;
+        height: auto;
+        padding: 20px;
+        padding-bottom: 10px;
     }
 
 
     @include e("values") {
         @include flexbox(row, nowrap, space-between, center, center);
 
-        padding: 10px;
+        padding: 10px 20px;
         border-top: 1px solid $color-gray-light;
         border-bottom: 1px solid $color-gray-light;
 
@@ -72,12 +104,13 @@
 }
 
 .miniprod {
-    @include flexbox(row, nowrap, space-between, flex-start, flex-start);
+    @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
     @include transition;
 
     width: 100%;
     border-bottom: 1px solid $color-gray-light;
-    padding: 10px 0px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 
     &:hover {
         background-color: #FFF;
@@ -87,9 +120,16 @@
         border: 0px;
     }
 
+    @include e('inline'){
+        @include flexbox(row, nowrap, space-between, center, center);
+    }
+
     @include e("img") {
-        width: 85px;
-        height: 85px;
+        @include box-sizing;
+        border: 1px solid $color-gray-light;
+        width: 100px;
+        min-width: 100px;
+        height: auto;
         margin-right: 15px;
     }
 
@@ -98,18 +138,21 @@
         @include fonte($second-font, 600, 13px, $color-gray);
     }
 
+    @include e("qtd") {
+        @include fonte($second-font, 400, 14px, $color-gray);
+        margin-top: 10px;
+        display: block;
+    }
+
 
     @include e("price") {
         @include fonte($second-font, 400, 14px, $color-red);
-
-        margin-top: 10px;
         display: block;
     }
 
 
     @include e("info") {
         @include fonte($second-font, 400, 12px, $color-gray);
-
         display: block;
     }
 }
@@ -118,7 +161,7 @@
     @include flexbox(row, nowrap, space-between, center, flex-start);
     @include box-sizing;
 
-    padding: 10px;
+    padding: 20px;
 
     @include e("total") {
         @include box-sizing;
@@ -167,14 +210,14 @@
         @include fonte($second-font, 400, 14px, $color-gray-dark);
         @include box-sizing;
 
-        background-color: $color-gray-light;
-        width: calc(100% - 20px);
+        background-color: $color-gray-extra-light;
+        width: calc(100% - 40px);
         padding: 5px 10px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
 
         &:before {
             content: "";
-            background-image: url(../../dist/img/ico_header_points.png);
+            background-image: url(//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png);
             background-size: contain;
             background-repeat: no-repeat;
             background-position: left center;
@@ -183,5 +226,10 @@
             display: block;
             margin-right: 5px;
         }
+    }
+
+    @include e('number'){
+        font-weight: bold;
+        margin: 0px 5px;
     }
 }

@@ -1,23 +1,23 @@
-.header {
+.nrk_header {
     @include e("middle") {
         @include transition;
+
         padding-bottom: 10px;
 
         > .wrapper {
             @include flexbox(row, wrap, space-between, center, center);
+
             padding: 10px 0px;
         }
 
         @media #{$res-break} {
             background-color: $color-red;
-            overflow: hidden;
             padding: 0px;
+
             > .wrapper {
                 padding: 0px;
             }
         }
-
-      
     }
 
 
@@ -26,6 +26,7 @@
         @include box-sizing;
         @include transition;
         @include border-radius(5px);
+
         cursor: pointer;
         display: none;
         border: 0px solid #FFF;
@@ -59,6 +60,7 @@
 
         &.active {
             background-color: $color-red;
+
             @include animate(bounceInRight, 0s);
 
             > span {
@@ -86,7 +88,7 @@
             }
 
             @media #{$res-break} {
-                & + .header__logo {
+                & + .nrk_header__logo {
                     @include transition(null, 0s);
 
                     margin-left: 35px;
@@ -99,6 +101,7 @@
                 @include radiustl(0);
                 @include radiusbl(0);
                 @include transition;
+
                 z-index: 11;
                 position: fixed;
                 left: 85%;
@@ -116,6 +119,7 @@
 
     @include e("logo") {
         @include order(1);
+
         width: 100%;
         max-width: 150px;
         display: block;
@@ -154,8 +158,9 @@
         @include box-sizing;
         @include transition;
 
+        position: relative;
         width: 100%;
-        max-width: 650px;
+        max-width: 550px;
 
         @media #{$res-break} {
             @include order(5);
@@ -168,7 +173,6 @@
             @include order(7);
         }
 
-
         &.active {
             display: flex;
 
@@ -180,6 +184,7 @@
             @include radiustl;
             @include radiusbl;
 
+            z-index: 1;
             width: calc(100% - 36px);
             background-color: #f3f3f3;
             border: 0px;
@@ -198,6 +203,7 @@
             @include radiustr;
             @include radiusbr;
 
+            z-index: 1;
             width: 36px;
             height: 36px;
             background-color: #f3f3f3;
@@ -216,6 +222,45 @@
             @media #{$res-break} {
                 &:before {
                     @include set-icon($fa-var-arrow-right, 20px, 900, $color-gray);
+                }
+            }
+        }
+
+
+        .rk-autocomplete {
+            @include box-sizing;
+            @include radiusbl;
+            @include radiusbr;
+
+            position: absolute;
+            width: 100%;
+            top: 18px;
+            background-color: $color-gray-extra-light;
+            padding: 0px;
+            -webkit-box-shadow: inset 1px 1px 2px 0px #e3e3e3;
+            -moz-box-shadow: inset 1px 1px 2px 0px #e3e3e3;
+            box-shadow: inset 1px 1px 2px 0px #d6d6d6;
+            overflow: hidden;
+
+            @media #{$res-break} {
+                width: calc(100% - 20px);
+            }
+
+            > li {
+                @include transition;
+
+                list-style: none;
+                padding: 10px 20px;
+
+                &:hover {
+                    background-color: $color-gray-light;
+                }
+
+                a {
+                    @include fonte($second-font, 400, 14px, $color-gray-dark);
+
+                    width: 100%;
+                    display: block;
                 }
             }
         }
@@ -259,11 +304,12 @@
         @include flexbox(row, nowrap, center, center, center);
         @include order(4);
         @include transition;
+
         position: relative;
         padding: 15px 0px;
 
         @include e("icon") {
-            background-image: url('../../dist/img/header_icons/user.png');
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/user.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: 24px;
@@ -272,40 +318,70 @@
             margin-right: 10px;
         }
 
-        @media #{$res-break} {
-            display: none;
-        }
 
         @include e("link") {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
             @include transition;
+
             &:hover {
                 color: $color-red;
             }
         }
 
+
         @include e("txt") {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
+
+            margin: 0px 5px;
         }
 
 
-        &:hover{
-            .header__user__icon,
-            .header__user__link,
-            .header__user__txt {
-                color: $color-red;
+        &.islogged {
+            .uluser {
+                display: none;
             }
 
-            .subuser{
-                display: block;
-                @include animate(fadeIn, 0s);
+            .user-name {
+                @include flexbox(row, nowrap, center, center, center);
+                > a {
+
+                    em {
+                        @include fonte($second-font, 400, 14px, $color-gray-dark);
+                    }
+
+                    strong {
+                        @include fonte($second-font, 600, 14px, $color-gray-dark);
+                    }
+                }
+
+                &:after{
+                    @include fonte($second-font, 400, 16px, $color-gray-dark);
+                    content: "|";
+                    display: block;
+                    margin: 0px 10px;
+                }
             }
 
-            .header__user__icon{
-                background-image: url('../../dist/img/header_icons/user-alt.png');
+            .superpoints-total {
+                @include flexbox(row, nowrap, center, center, center);
+                padding-left: 23px;
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left center;
+                
+                > b {
+                    @include fonte($second-font, 600, 14px, $color-gray-dark);
+                    margin-right: 5px;
+                }
+
+                > i {
+                    @include fonte($second-font, 400, 14px, $color-gray-dark);
+                }
+
             }
         }
-
     }
 
 
@@ -313,24 +389,26 @@
         @include order(5);
         @include transition;
         @include flexbox(row, nowrap, center, center, center);
+
         padding: 7px 0px;
         position: relative;
 
-        &:hover{
-            .minicar{
-                @include animate(fadeIn, 0s);
-                display: block;
-            }
-            .header__cart__icon{
-                background-image: url('../../dist/img/header_icons/cart-alt.png');
+        &:hover {
+            // .minicar{
+            //     @include animate(fadeIn, 0s);
+            //     display: block;
+            // }
+            .nrk_header__cart__icon {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart-alt.png");
+
                 @media #{$res-break} {
-                    background-image: url('../../dist/img/header_icons/cart-mob.png');
+                    background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart-mob.png");
                 }
             }
         }
 
         @include e("icon") {
-            background-image: url('../../dist/img/header_icons/cart.png');
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: left center;
@@ -342,20 +420,20 @@
             @media #{$res-break} {
                 width: 45px;
                 height: 45px;
-                background-image: url('../../dist/img/header_icons/cart-mob.png');
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart-mob.png");
             }
-
         }
+
 
         @include e("bt") {
             @include flexbox(row, nowrap, center, center, center);
+
             width: 40px;
             height: 40px;
 
             @media #{$res-break} {
                 margin-right: 15px;
             }
-
         }
 
 
@@ -379,9 +457,14 @@
                     display: none;
                 }
             }
+
+            @include e("num") {
+                margin-right: 5px;
+
+                @media #{$res-break} {
+                    margin: 0px;
+                }
+            }
         }
     }
 }
-
-
-

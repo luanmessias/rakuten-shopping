@@ -1,0 +1,92 @@
+#simple-user-basket {
+    @include order(5);
+    @include transition;
+    @include flexbox(row, nowrap, center, center, center);
+    padding: 7px 0px;
+    position: relative;
+
+    > .btn{
+
+    }
+
+    #box-itens{
+        visibility: hidden;
+        position: absolute;
+    }
+
+}
+
+
+
+#asasad {
+    @include order(5);
+    @include transition;
+    @include flexbox(row, nowrap, center, center, center);
+    padding: 7px 0px;
+    position: relative;
+
+    &:hover{
+        .minicar{
+            @include animate(fadeIn, 0s);
+            display: block;
+        }
+        .nrk_header__cart__icon{
+            background-image: url('//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart-alt.png');
+            @media #{$res-break} {
+                background-image: url('//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart-mob.png');
+            }
+        }
+    }
+
+    @include e("icon") {
+        background-image: url('//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left center;
+        width: 45px;
+        height: 45px;
+        display: block;
+        margin-right: 10px;
+
+        @media #{$res-break} {
+            width: 45px;
+            height: 45px;
+            background-image: url('//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart-mob.png');
+        }
+
+    }
+
+    @include e("bt") {
+        @include flexbox(row, nowrap, center, center, center);
+        width: 40px;
+        height: 40px;
+
+        @media #{$res-break} {
+            margin-right: 15px;
+        }
+
+    }
+
+
+    @include e("txt") {
+        @include fonte($second-font, 400, 14px, $color-gray-dark);
+
+        @media #{$res-break} {
+            @include flexbox(row, nowrap, center, center, center);
+            @include border-radius(50px);
+
+            background-color: $color-red-dark;
+            color: #FFF;
+            font-weight: bold;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            right: 5px;
+            top: 16px;
+
+            @include e("desc") {
+                display: none;
+            }
+        }
+    }
+}

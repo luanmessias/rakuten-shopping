@@ -216,16 +216,16 @@
 @for $i from 1 through 11 {
     .allcat__item:nth-of-type(#{$i}){
         &:before{
-            background-image: url('../../dist/img/menu_icons/#{$i}.png');
+            background-image: url('//resources.rakuten.com.br/SD/sd/rk2019/img/menu_icons/#{$i}.png');
         }
 
         &.active:before{
-            background-image: url('../../dist/img/menu_icons/#{$i}-alt.png');
+            background-image: url('//resources.rakuten.com.br/SD/sd/rk2019/img/menu_icons/#{$i}-alt.png');
         }
 
         @media #{$res-desk} {
             &:hover:before{
-                background-image: url('../../dist/img/menu_icons/#{$i}-alt.png');
+                background-image: url('//resources.rakuten.com.br/SD/sd/rk2019/img/menu_icons/#{$i}-alt.png');
             }
         }
     }
