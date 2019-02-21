@@ -44,3 +44,13 @@ $( window ).resize(function() {
 });
 
 
+//Scroll functions
+jQuery(window).scroll(function (event) {
+    var scroll = jQuery(window).scrollTop();
+    //console.log(scroll);
+    if (scroll >= 118) {
+        jQuery('.nrk_header').addClass('active');
+    } else if (scroll <= 117) {
+        jQuery('.nrk_header').removeClass('active');
+    }
+});

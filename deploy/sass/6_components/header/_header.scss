@@ -1,13 +1,11 @@
 .nrk_header {
     @include e("middle") {
         @include transition;
-
         padding-bottom: 10px;
-
+        
         > .wrapper {
             @include flexbox(row, wrap, space-between, center, center);
-
-            padding: 10px 0px;
+            height: 80px;
         }
 
         @media #{$res-break} {
@@ -160,7 +158,7 @@
 
         position: relative;
         width: 100%;
-        max-width: 550px;
+        max-width: 580px;
 
         @media #{$res-break} {
             @include order(5);
@@ -467,4 +465,23 @@
             }
         }
     }
+
+    &.active{
+        .nrk_header__top,
+        .nrk_header__middle > .wrapper{
+            display: none;
+        }
+        .nrk_menu {
+            position: fixed;
+            top: 0;
+            z-index: 99999999;
+        }
+        .nrk_menu .wrapper{
+            .nrk_menu__logo{
+                @include animate(fadeInLeft, 0s);
+                display: block !important;
+            }
+        }
+    }
+
 }
