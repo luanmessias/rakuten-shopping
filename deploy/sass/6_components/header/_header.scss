@@ -1,11 +1,14 @@
 .nrk_header {
     @include e("middle") {
         @include transition;
+
         padding-bottom: 10px;
-        
+
         > .wrapper {
             @include flexbox(row, wrap, space-between, center, center);
-            height: 80px;
+            @media #{$res-desk} {
+                height: 80px;
+            }
         }
 
         @media #{$res-break} {
@@ -337,12 +340,80 @@
         &.islogged {
             .uluser {
                 display: none;
+                position: absolute;
+                top: 30px;
+                margin: 0px;
+                z-index: 9999;
+                left: 0;
+                padding-top: 15px;
+
+                > ul {
+                    @include box-sizing;
+
+                    @extend %boxshadow;
+
+                    background-color: #FFF;
+                    margin: 0px;
+                    padding: 10px;
+                    list-style: none;
+                    width: auto;
+
+                    > li {
+                        @include flexbox(row, nowrap, flex-start, center, center);
+                        @include transition;
+                        padding: 5px 20px 5px 5px;
+                        margin-bottom: 5px;
+
+                        &:hover{
+                            background-color: $color-gray-extra-light;
+                        }
+
+                        a {
+                            @include fonte($second-font, 400, 14px, $color-gray-dark);
+                        }
+
+                        &:before{
+                            content: "";
+                            width: auto;
+                            height: auto;
+                            margin-right: 10px;
+                        }
+
+                        &.my-orders{
+                            &:before{
+                                @include set-icon($fa-var-file-alt, 14px, 900, $color-gray);
+                            }
+                        }
+
+                        &.my-account{
+                            &:before{
+                                @include set-icon($fa-var-user-circle, 14px, 900, $color-gray);
+                            }
+                        }
+                        &.my-superpoints{
+                            &:before{
+                                @include set-icon($fa-var-coins, 14px, 900, $color-gray);
+                            }
+                        }
+
+                        &.logout{
+                            &:before{
+                                @include set-icon($fa-var-sign-out-alt, 14px, 900, $color-gray);
+                            }
+                        }
+
+                    }
+                }
+
+                .my-points {
+                    display: none;
+                }
             }
 
             .user-name {
                 @include flexbox(row, nowrap, center, center, center);
-                > a {
 
+                > a {
                     em {
                         @include fonte($second-font, 400, 14px, $color-gray-dark);
                     }
@@ -352,32 +423,41 @@
                     }
                 }
 
-                &:after{
+                &:after {
                     @include fonte($second-font, 400, 16px, $color-gray-dark);
+
                     content: "|";
                     display: block;
                     margin: 0px 10px;
+                }
+
+                &:hover {
+                    .uluser {
+                        display: block;
+                        @include animate(fadeIn, 0s);
+                    }
                 }
             }
 
             .superpoints-total {
                 @include flexbox(row, nowrap, center, center, center);
+
                 padding-left: 23px;
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
                 height: 20px;
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: left center;
-                
+
                 > b {
                     @include fonte($second-font, 600, 14px, $color-gray-dark);
+
                     margin-right: 5px;
                 }
 
                 > i {
                     @include fonte($second-font, 400, 14px, $color-gray-dark);
                 }
-
             }
         }
     }
@@ -466,22 +546,25 @@
         }
     }
 
-    &.active{
+
+    &.active {
         .nrk_header__top,
-        .nrk_header__middle > .wrapper{
+        .nrk_header__middle > .wrapper {
             display: none;
         }
+
         .nrk_menu {
             position: fixed;
             top: 0;
             z-index: 99999999;
         }
-        .nrk_menu .wrapper{
-            .nrk_menu__logo{
+
+        .nrk_menu .wrapper {
+            .nrk_menu__logo {
                 @include animate(fadeInLeft, 0s);
+
                 display: block !important;
             }
         }
     }
-
 }

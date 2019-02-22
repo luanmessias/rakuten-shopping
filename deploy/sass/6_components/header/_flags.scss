@@ -1,15 +1,21 @@
 .subflags {
-    @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
     @include box-sizing;
     position: absolute;
     top: 15px;
+    padding-top: 14px;
     width: 207px;
     right: 0;
     z-index: 9;
     margin: 0px;
+    z-index: 9999;
+
+    @include e('wrap'){
+        @extend %boxshadow;
+        background-color: #FFF;
+    }
 
     @include e("cont") {
-        background-color: #FFF;
+       
         padding: 20px;
     }
 

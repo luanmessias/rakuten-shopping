@@ -26,6 +26,8 @@
         @include transition;
         @include box-sizing;
         @include transition;
+        width: calc(100% / 11);
+        height: 80px;
 
         @include e("item") {
             margin-bottom: 5px;            
@@ -75,12 +77,13 @@
     }
 
     @include e("link") {
-        @include flexbox(column, wrap, space-between, center, center);
+        @include flexbox(column, wrap, flex-start, center, center);
         @include fonte($second-font, 400, 12px, $color-gray-dark);
         @include transition;
         text-align: center;
         padding: 10px;
-        height: 65px;
+        padding-bottom: 15px;
+        height: auto;
 
         &:before{
             content: "";
@@ -108,13 +111,15 @@
     @include box-sizing;
     position: absolute;
     background-color: #FFF;
-    left: 0px;
+    left: 50%;
     top: 80px;
+    transform: translatex(-50%);
     display: none;
     height: auto;
     width: 100%;
     background-color: $color-gray-extra-light;
     padding: 10px;
+    width: calc(1200px - 40px);
 
     @include e('cont'){
         @include flexbox(row, wrap, space-between, flex-start, flex-start);
@@ -157,9 +162,9 @@
         list-style: none;
         padding: 0px;
         margin: 0px 0px 20px 0px;
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
+        -moz-column-count: 5;
+        -webkit-column-count: 5;
+        column-count: 5;
         -moz-column-gap: 10px;
         -webkit-column-gap: 10px;
         column-gap: 10px;

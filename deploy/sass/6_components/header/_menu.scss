@@ -85,20 +85,17 @@
 }
 
 .nrk_submenu {
+    @extend %boxshadow;
     width: 100%;
     position: absolute;
     left: 0px;
     z-index: 2;
+    background-color: #FFF;
     .wrapper {
         @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
         @include box-sizing;
-
         padding-top: 20px;
         padding-bottom: 20px;
-        background-color: #FFF;
-        -webkit-box-shadow: 2px 2px 2px 0px rgba(145, 145, 145, 1);
-        -moz-box-shadow: 2px 2px 2px 0px rgba(145, 145, 145, 1);
-        box-shadow: 2px 2px 2px 0px rgba(145, 145, 145, 1);
     }
 
     @include e("col") {

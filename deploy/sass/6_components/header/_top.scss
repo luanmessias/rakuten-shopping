@@ -1,7 +1,7 @@
 
 @media #{$res-break} {
-    .header > .nrk_header__top{
-        display: none;
+    .navmob + .nrk_header__top{
+        display: none !important;
     }
 }
 .nrk_header__top {
