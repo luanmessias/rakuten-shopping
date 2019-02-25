@@ -24,22 +24,23 @@ $(document).ready(function () {
     
 });
 
+
 //On Load responsive functions
 $( window ).load(function() {
-    if(windowWidth <= breakPoint){
-        $( ".nrk_header__user" ).appendTo( $(".navmob__welcome") );
+    if($(window).innerWidth() <= breakPoint){
+        $( ".wrapper > .nrk_header__user" ).appendTo( $(".navmob__welcome") );
     }
 });
 
 //On resize functions
 $( window ).resize(function() {
 
-    if(windowWidth <= breakPoint && $('.nrk_header .wrapper .nrk_header__user').length){ 
-        $( ".nrk_header__user" ).appendTo( $(".navmob__welcome") );
+    if($(window).innerWidth() <= breakPoint && $('.nrk_header .wrapper > .nrk_header__user').length == 1){ 
+        $('.nrk_header .wrapper > .nrk_header__user').appendTo( $(".navmob__welcome") );
     }
     
-    if(windowWidth > breakPoint && $('.navmob__welcome .nrk_header__user').length){ 
-        $( ".nrk_header__user" ).appendTo( $(".nrk_header .wrapper") );
+    if($(window).innerWidth() > breakPoint && $('.navmob__welcome > .nrk_header__user').length == 1){ 
+        $('.navmob__welcome > .nrk_header__user').appendTo( $(".nrk_header__middle > .wrapper") );
     }
 });
 
@@ -48,9 +49,9 @@ $( window ).resize(function() {
 jQuery(window).scroll(function (event) {
     var scroll = jQuery(window).scrollTop();
     //console.log(scroll);
-    if (scroll >= 118) {
+    if (scroll >= 118 & $(window).innerWidth() >= breakPoint) {
         jQuery('.nrk_header').addClass('active');
-    } else if (scroll <= 117) {
+    } else if (scroll <= 117 ) {
         jQuery('.nrk_header').removeClass('active');
     }
 });

@@ -44,19 +44,7 @@
 
     @include e("welcome") {
         @include box-sizing;
-
         width: 100%;
-        padding-left: 20px;
-        padding-bottom: 25px;
-
-        @include e("link") {
-            @include fonte($second-font, 400, 16px, #FFF);
-        }
-
-
-        @include e("txt") {
-            @include fonte($second-font, 400, 16px, #FFF);
-        }
     }
 
     .allcat{
