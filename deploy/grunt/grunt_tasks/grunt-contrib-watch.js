@@ -10,10 +10,35 @@ module.exports = function(grunt) {
             }
         },
 
-        sass: {
-            files: ['../sass/**/*.scss'],
-            tasks: ['sass:sass']
+        base: {
+            files: [ 
+                "../sass/1_settings/*.scss",
+                "../sass/2_tools/*.scss",
+                "../sass/3_generics/*.scss",
+                "../sass/4_elements/*.scss",
+                "../sass/5_objects/*.scss",
+                "../sass/7_css/base.scss"
+            ],
+            tasks: ['sass:base']
         },
+
+        header: {
+            files: [ 
+                "../sass/6_components/header/*.scss",
+                "../sass/7_css/header.scss",
+            ],
+            tasks: ['sass:header']
+        },
+
+        footer: {
+            files: [ 
+                "../sass/6_components/footer/*.scss",
+                "../sass/7_css/footer.scss",
+            ],
+            tasks: ['sass:footer']
+        },
+
+
 
     });
   

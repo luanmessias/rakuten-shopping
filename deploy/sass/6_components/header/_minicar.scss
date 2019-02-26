@@ -33,7 +33,7 @@
                 }
 
                 @include e("title") {
-                    @include fonte($second-font, 600, 28px, $color-gray);
+                    @include fonte($second-font, 600, 20px, $color-gray);
                     display: block;
                 }
 
@@ -59,7 +59,7 @@
                 }
 
                 @include e("title") {
-                    @include fonte($second-font, 600, 28px, $color-gray);
+                    @include fonte($second-font, 600, 20px, $color-gray);
                     display: block;
                 }
 

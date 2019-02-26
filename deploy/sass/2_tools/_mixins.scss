@@ -257,14 +257,14 @@ $end:null) {
   }
 }
 
-@mixin content-columns($columnCount,
-$columnGap: $gridGutterWidth) {
+
+@mixin content-columns($columnCount, $columnGap: $gridGutterWidth) {
   -webkit-column-count: $columnCount;
-  -moz-column-count: $columnCount;
-  column-count: $columnCount;
+     -moz-column-count: $columnCount;
+          column-count: $columnCount;
   -webkit-column-gap: $columnGap;
-  -moz-column-gap: $columnGap;
-  column-gap: $columnGap;
+     -moz-column-gap: $columnGap;
+          column-gap: $columnGap;
 }
 
 @mixin font-size($sizeValue: 1.6) {

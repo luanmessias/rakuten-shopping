@@ -34,7 +34,8 @@
         }
 
         &:hover {
-            > a {
+            > a,
+            > span {
                 background-color: #FFF;
                 color: $color-red;
 
@@ -100,13 +101,29 @@
 
     @include e("col") {
         @include box-sizing;
-
         padding: 20px;
 
         @include m("img") {
             margin-left: auto;
+            width: 100%;
+            max-width: 350px;
+            img{
+                width: 100%;
+                height: auto;
+            }
         }
+
+        @include m("all") {
+            @include content-columns(4, 10px);
+            width: calc(100% - 360px);
+            @include m("img") {
+                @include content-columns(1, 0px);
+            }
+        }
+
     }
+
+    
 
 
     @include e("itens") {

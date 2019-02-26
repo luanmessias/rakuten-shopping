@@ -1,0 +1,23 @@
+
+@import 'include';
+
+//GENERIC - Only * selector, Resets and normalizes
+//======================================
+@import '../3_generics/normalize';
+
+//ELEMENTS - Only HTML tags without class (headings, lists, Links etc..)
+//======================================
+@import '../4_elements/elements';
+
+//OBJECTS - Only objects that aplly a generic style on the page or little components like a searcharea, mailbox.
+//======================================
+@import '../5_objects/flags';
+@import '../5_objects/keyframes';
+@import '../5_objects/wrapper';
+@import '../5_objects/grid';
+
+//-> Banners
+//@import '../6_components/banners';
+
+//-> Lista de produtos
+//@import '../6_components/listprod';
