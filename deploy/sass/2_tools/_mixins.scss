@@ -155,6 +155,14 @@ $color) {
   align-content: $fb-align-content;
 }
 
+@mixin flex-justify($value){
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  -ms-justify-content: $value;
+  -o-justify-content: $value;
+  justify-content: $value;
+}
+
 @mixin order($order) {
   -webkit-order: $order;
   -moz-order: $order;

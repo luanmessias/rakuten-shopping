@@ -32,7 +32,7 @@
         display: none;
         border: 0px solid #FFF;
         padding: 5px;
-        width: 35px;
+        width: 30px;
         height: 35px;
         left: 0;
 
@@ -42,10 +42,10 @@
 
         > span {
             width: 100%;
-            height: 3px;
+            height: 2px;
             background-color: #FFF;
             display: block;
-            margin: 5px 0px;
+            margin: 4px 0px;
         }
 
         &:before,
@@ -54,7 +54,7 @@
 
             content: "";
             width: 100%;
-            height: 3px;
+            height: 2px;
             display: block;
             background-color: #FFF;
         }
@@ -77,7 +77,6 @@
                 position: absolute;
                 height: 2px;
                 width: 20px;
-                margin-left: 3px;
             }
 
             &:before {
@@ -241,7 +240,10 @@
             -webkit-box-shadow: inset 1px 1px 2px 0px #e3e3e3;
             -moz-box-shadow: inset 1px 1px 2px 0px #e3e3e3;
             box-shadow: inset 1px 1px 2px 0px #d6d6d6;
+            display: block;
+            max-height: 300px;
             overflow: hidden;
+            overflow-y: auto;
 
             @media #{$res-break} {
                 width: calc(100% - 20px);
@@ -283,7 +285,12 @@
             cursor: pointer;
 
             &:before {
-                @include set-icon($fa-var-search-plus, 25px, 900, #FFF);
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/searchmob_plus.png");
+                background-size: cover;
+                content: "";
+                width: 20px;
+                height: 20px;
+                display: block;
             }
 
             &:hover {
@@ -294,7 +301,7 @@
 
             &.active {
                 &:before {
-                    @include set-icon($fa-var-search-minus, 25px, 900, #FFF);
+                    background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/searchmob_minus.png");
                 }
             }
         }
@@ -338,8 +345,8 @@
             margin-right: 10px;
 
             @media #{$res-break} {
-                width: 45px;
-                height: 45px;
+                width: 25px;
+                height: 25px;
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/cart-mob.png");
             }
         }
@@ -358,7 +365,7 @@
 
 
         @include e("txt") {
-            @include fonte($second-font, 400, 14px, $color-gray-dark);
+            @include fonte($second-font, 400, 12px, $color-gray-dark);
 
             @media #{$res-break} {
                 @include flexbox(row, nowrap, center, center, center);
@@ -367,16 +374,17 @@
                 background-color: $color-red-dark;
                 color: #FFF;
                 font-weight: bold;
-                width: 25px;
-                height: 25px;
+                width: 22px;
+                height: 22px;
                 position: absolute;
-                right: 5px;
-                top: 16px;
+                right: 9px;
+                top: 12px;
 
                 @include e("desc") {
                     display: none;
                 }
             }
+
 
             @include e("num") {
                 margin-right: 5px;
@@ -388,17 +396,20 @@
         }
     }
 
-
+    
     &.active {
-        .nrk_header__top,
-        .nrk_header__middle > .wrapper {
-            display: none;
-        }
+        @media #{$res-desk} {
+            .nrk_header__top,
+            .nrk_header__middle > .wrapper {
+                display: none;
+            }
+        
 
-        .nrk_menu {
-            position: fixed;
-            top: 0;
-            z-index: 99999999;
+            .nrk_menu {
+                position: fixed;
+                top: 0;
+                z-index: 99999999;
+            }
         }
 
         .nrk_menu .wrapper {
@@ -408,5 +419,16 @@
                 display: block !important;
             }
         }
+
+        @media #{$res-break} {
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            .wrapper{
+                display: flex;
+            }
+        }
     }
+
+ 
 }

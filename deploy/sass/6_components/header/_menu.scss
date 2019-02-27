@@ -2,9 +2,6 @@
     width: 100%;
     background-color: $color-red;
     position: inherit;
-    @media #{$res-break} {
-        display: none;
-    }
 
     .wrapper {
         @include flexbox(row, nowrap, space-between, center, center);
@@ -44,27 +41,22 @@
                 }
             }
 
-            .nrk_submenu {
-                @include animate(fadeIn, 0s);
-
-                display: block;
-            }
-        }
-
-
-        @include m('all'){
-            .allcats{
-                display: none;
-            }
-            &:hover{
-                .allcats {
-                    @include animate(fadeIn, 0s);
-
-                    display: block;
+            @media #{$res-desk} {
+                &:hover {
+                    .nrk_submenu {
+                        -webkit-animation-duration: 1s;
+                        animation-duration: 1s;
+                        -webkit-animation-fill-mode: both;
+                        animation-fill-mode: both;
+                        -webkit-animation-name: fadeIn;
+                        animation-name: fadeIn;
+                        -webkit-animation-delay: 0s;
+                        animation-delay: 0s;
+                        display: block;
+                    }
                 }
             }
         }
-
     }
 
 
@@ -155,3 +147,123 @@
     }
 }
 
+
+@media #{$res-break} {
+    .nrk_header__middle .nrk_menu{
+        display: none;
+    }
+
+    .nrk_menu{
+        width: 100%;
+        background-color: $color-gray-light;
+
+        .wrapper{
+            @include flexbox(column, nowrap, flex-start, center, center);
+            padding: 0px;
+        }
+
+        @include e('logo'){
+            visibility: hidden;
+            height: 0;
+            overflow: hidden;
+        }
+
+        @include e("item") {
+            @include flexbox(row, wrap, space-between, center, center);
+            width: 100%;
+            text-align: left;
+            > a,
+            > span{
+                &:after{
+                    display: none;
+                }
+            }
+
+            &:after{
+                @include set-icon($fa-var-chevron-circle-down, 14px, 900, $color-gray);
+                padding: 15px 10px;
+            }
+
+            &:hover{
+                background-color: $color-gray;
+                .nrk_menu__link{
+                    background-color: transparent;
+                    color: $color-gray-light;
+                }
+
+                &:after{
+                    color: $color-gray-light;
+                }
+            }
+
+            &.active{
+                .nrk_submenu{
+                    display: block;
+                    position: inherit;
+                    @include order(3);
+                }
+            }
+
+        }
+
+        @include e('link'){
+            @include flex-justify(flex-start);
+            color: $color-gray-dark;
+        }
+
+    }
+
+
+    .nrk_submenu {
+
+        .wrapper {
+            @include flexbox(column, nowrap, flex-start, flex-start, flex-start);
+            @include box-sizing;
+            padding: 0px;
+        }
+    
+        @include e("col") {
+    
+            @include m("all") {
+                @include content-columns(1, 0px);
+                width: 100%;
+                @include m("img") {
+                    @include content-columns(1, 0px);
+                }
+            }
+    
+        }
+    
+        
+    
+    
+        @include e("itens") {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+    
+    
+        @include e("title") {
+            @include fonte($second-font, 400, 12px, $color-red);
+    
+            margin-bottom: 10px;
+            display: block;
+        }
+    
+    
+        @include e("item") {
+            margin-bottom: 5px;
+        }
+    
+    
+        @include e("link") {
+            @include fonte($second-font, 400, 12px, $color-gray);
+    
+            &:hover {
+                color: $color-red;
+            }
+        }
+    }
+
+}

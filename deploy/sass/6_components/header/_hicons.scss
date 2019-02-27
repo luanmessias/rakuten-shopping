@@ -97,15 +97,27 @@
             display: none;
         }
 
-        &:hover {
-            > img {
-                @include rotate(180);
+        @media #{$res-desk} {
+
+            &:hover {
+                > img {
+                    @include rotate(180);
+                }
+                .subflags {
+                    -webkit-animation-duration: 1s;
+                    animation-duration: 1s;
+                    -webkit-animation-fill-mode: both;
+                    animation-fill-mode: both;
+                    -webkit-animation-name: fadeIn;
+                    animation-name: fadeIn;
+                    -webkit-animation-delay: 0s;
+                    animation-delay: 0s;
+                    display: block;
+                }
             }
-            .subflags {
-                @include animate(fadeIn, 0s);
-                display: block;
-            }
+
         }
+
     }
 
     @media #{$res-break} {
@@ -115,8 +127,22 @@
             width: 100%;
 
             .subflags {
+                padding: 0px;
+                margin-top: 7px;
                 width: 100%;
                 margin-bottom: 10px;
+                background-color: $color-gray-extra-light;
+                @include e('wrap'){
+                    background: transparent;
+                    box-shadow: none;
+                }
+            }
+
+            &.active{
+                background-color: $color-gray-extra-light;
+                .subflags {
+                    display: block;
+                }
             }
 
         }
