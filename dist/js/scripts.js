@@ -26,6 +26,10 @@ $(document).ready(function () {
     $('.hicons__flags').click(function(){
         $(this).toggleClass('active');
     });
+
+    $('.nrk_header__user__menu').click(function(){
+        $(this).toggleClass('active');
+    });
     
 });
 
