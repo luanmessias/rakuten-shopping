@@ -1,6 +1,9 @@
 var breakPoint = 1000;
 var windowWidth = $(window).innerWidth();
 
+function setActive(e) {
+    $(e).toggleClass('active');
+}
 
 //On ready functions
 $(document).ready(function () {
@@ -8,7 +11,6 @@ $(document).ready(function () {
     $( ".nrk_menu" ).clone().prependTo( ".navmob__cont" );
     $( ".nrk_header__top" ).clone().appendTo( ".navmob__cont" );
     
-
     $('.nrk_header__mobsearch').click(function(){
         $('.nrk_header__mobsearch__bt').toggleClass('active');
         $('.nrk_header__search').toggleClass('active');
@@ -38,7 +40,6 @@ $(document).ready(function () {
 $( window ).load(function() {
     if($(window).innerWidth() <= breakPoint){
         $( ".wrapper > .nrk_header__user" ).appendTo( $(".navmob__welcome") );
-
     }
 });
 

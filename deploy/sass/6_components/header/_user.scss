@@ -285,6 +285,11 @@
                     display: none;
                 }
     
+                &.active{
+                    .uluser{
+                        display: block;
+                    }
+                }
     
             }
 
