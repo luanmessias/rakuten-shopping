@@ -37,7 +37,8 @@ $(document).ready(function () {
 
 
 //On Load responsive functions
-$( window ).load(function() {
+
+$(window).on('load', function() {
     if($(window).innerWidth() <= breakPoint){
         $( ".wrapper > .nrk_header__user" ).appendTo( $(".navmob__welcome") );
     }

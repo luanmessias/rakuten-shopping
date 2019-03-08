@@ -4,6 +4,10 @@
 
         padding-bottom: 10px;
 
+        @media #{$res-desk} {
+            min-height: 126px;
+        }
+
         > .wrapper {
             @include flexbox(row, wrap, space-between, center, center);
             @media #{$res-desk} {
@@ -157,6 +161,7 @@
         @include flexbox(row, nowrap, center, center, center);
         @include box-sizing;
         @include transition;
+        z-index: 2;
 
         position: relative;
         width: 100%;
@@ -398,12 +403,7 @@
 
     
     &.active {
-        @media #{$res-desk} {
-            .nrk_header__top,
-            .nrk_header__middle > .wrapper {
-                display: none;
-            }
-        
+        @media #{$res-desk} {      
 
             .nrk_menu {
                 position: fixed;

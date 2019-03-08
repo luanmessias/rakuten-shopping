@@ -16,7 +16,7 @@
 }
 
 
-.rk-row {
+.nrk-row {
   @include box-sizing;
   width: 100%;
   
@@ -33,7 +33,7 @@
 }
 
 
-.rk-col{
+.nrk-col{
   @include m('left'){
       @include flexbox(row, wrap, flex-start, center, center);
   }
@@ -44,11 +44,11 @@
 }
 
 
-.rk-container{
+.nrk-container{
   min-height: calc(100vh - 189px);
 }
 
-.main{
+.nrk_main{
     @include transition;
     @include flexbox(row, wrap, space-between, flex-start, flex-start);
 

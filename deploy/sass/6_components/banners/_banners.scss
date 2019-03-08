@@ -1,4 +1,4 @@
-.banners {
+.nrk_banners {
     @include box-sizing;
     position: relative;
     margin-bottom: 10px;
@@ -14,6 +14,9 @@
         background-size: cover;
         background-position: center;
         display: block;
+        img{
+            display: none;
+        }
     }
     .owl-nav {
         @include flexbox(row, nowrap, space-between, center, center);
@@ -90,6 +93,52 @@
         }
 
     }
+
+
+    &.banner-horizontal {
+        @include flexbox(row, wrap, center, flex-start, flex-start);
+        margin-bottom: 30px;
+        width: 100%;
+
+        a {
+            @include border-radius;
+            display: block;
+            width: calc(100% / 3 - 12px);
+            overflow: hidden;
+            height: 180px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0px 5px 10px 5px;
+            @media #{$res-xs} {
+                width: 100%;
+            }
+
+            @media #{$res-sm} {
+                width: calc(100% / 2 - 5px);
+            }
+            
+        }
+    }
+
+    &.banner-vertical {
+        @include flexbox(column, nowrap, flex-start, flex-start, flex-start);
+        margin-bottom: 30px;
+        width: 100%;
+
+        a {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            height: 180px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0px 0px 10px 0px;
+            
+        }
+    }
+
 }
 
 

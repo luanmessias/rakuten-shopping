@@ -44,6 +44,35 @@
             }]
         },
 
+
+        banners: {
+            options: {
+                style: 'compressed',
+                sourcemap: 'auto'
+            },
+            files: [{
+                expand: true,
+                cwd: '../sass/7_css/',
+                src: ["banners.scss"],
+                dest: '../../dist/css/',
+                ext: '.css'
+            }]
+        },
+
+        listprod: {
+            options: {
+                style: 'compressed',
+                sourcemap: 'auto'
+            },
+            files: [{
+                expand: true,
+                cwd: '../sass/7_css/',
+                src: ["listprod.scss"],
+                dest: '../../dist/css/',
+                ext: '.css'
+            }]
+        },
+
      });
 
      grunt.loadNpmTasks('grunt-contrib-sass');

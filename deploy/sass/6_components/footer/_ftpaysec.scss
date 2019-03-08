@@ -32,37 +32,37 @@
         background-position: center;
 
         @include m("master") {
-            background-image: url("../../dist/img/footer_icons/payment/master.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/footer_icons/payment/master.png");
         }
 
 
         @include m("visa") {
-            background-image: url("../../dist/img/footer_icons/payment/visa.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/footer_icons/payment/visa.png");
         }
 
 
         @include m("amex") {
-            background-image: url("../../dist/img/footer_icons/payment/amex.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/footer_icons/payment/amex.png");
         }
 
 
         @include m("dinners") {
-            background-image: url("../../dist/img/footer_icons/payment/dinners.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/footer_icons/payment/dinners.png");
         }
 
 
         @include m("elo") {
-            background-image: url("../../dist/img/footer_icons/payment/elo.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/footer_icons/payment/elo.png");
         }
 
 
         @include m("hipercard") {
-            background-image: url("../../dist/img/footer_icons/payment/hipercard.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/footer_icons/payment/hipercard.png");
         }
 
 
         @include m("boleto") {
-            background-image: url("../../dist/img/footer_icons/payment/boleto.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/footer_icons/payment/boleto.png");
         }
     }
 }

@@ -38,6 +38,21 @@ module.exports = function(grunt) {
             tasks: ['sass:footer']
         },
 
+        banners: {
+            files: [ 
+                "../sass/6_components/banners/*.scss",
+                "../sass/7_css/banners.scss",
+            ],
+            tasks: ['sass:banners']
+        },
+
+        listprod: {
+            files: [ 
+                "../sass/6_components/listprod/*.scss",
+                "../sass/7_css/listprod.scss",
+            ],
+            tasks: ['sass:listprod']
+        },
 
 
     });

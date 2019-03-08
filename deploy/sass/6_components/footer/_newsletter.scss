@@ -2,6 +2,10 @@
     @include flexbox(row, nowrap, space-between, center, center);
     padding: 25px 0px;
 
+    @media #{$res-break} {
+        padding: 25px 15px;
+    }
+
     form{
         @include flexbox(row, nowrap, space-between, center, center);
     }

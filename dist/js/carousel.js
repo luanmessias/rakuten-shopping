@@ -1,16 +1,18 @@
 $(document).ready(function () {
     
+    /*
     if (windowWidth < 1000) {
-        $('.secprod__banner').addClass('banners owl-carousel owl-theme');
+        $('.banner-horizontal').addClass('banners owl-carousel owl-theme');
 
-        $('.secprod__banner').owlCarousel({
+        $('.banner-horizontal').owlCarousel({
             loop: true,
             nav: true,
             items: 1
         });
     }
+    */
 
-    $('.banners').owlCarousel({
+    $('.banner-slider').owlCarousel({
         loop: true,
         nav: true,
         items: 1
