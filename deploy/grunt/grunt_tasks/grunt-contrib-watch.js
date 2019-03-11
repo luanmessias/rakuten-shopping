@@ -54,6 +54,14 @@ module.exports = function(grunt) {
             tasks: ['sass:listprod']
         },
 
+        myacc: {
+            files: [ 
+                "../sass/6_components/myacc/*.scss",
+                "../sass/7_css/myacc.scss",
+            ],
+            tasks: ['sass:myacc']
+        },
+
 
     });
   
