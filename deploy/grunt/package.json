@@ -18,5 +18,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "",
-  "license": "BSD"
+  "license": "BSD",
+  "dependencies": {
+    "npm": "^6.9.0"
+  }
 }
