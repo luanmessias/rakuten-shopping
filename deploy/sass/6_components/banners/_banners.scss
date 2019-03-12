@@ -96,20 +96,19 @@
 
 
     &.banner-horizontal {
-        @include flexbox(row, wrap, center, flex-start, flex-start);
+        @include flexbox(row, nowrap, center, flex-start, flex-start);
         margin-bottom: 30px;
         width: 100%;
 
         a {
-            @include border-radius;
             display: block;
-            width: calc(100% / 3 - 12px);
+            width: 100%;
             overflow: hidden;
             height: 180px;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            margin: 0px 5px 10px 5px;
+            margin: 0px 6px;
             @media #{$res-xs} {
                 width: 100%;
             }

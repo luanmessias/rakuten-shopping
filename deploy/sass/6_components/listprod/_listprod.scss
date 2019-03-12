@@ -1,235 +1,190 @@
-.secprod{
-    width: 100%;
-    margin: 30px 0px;
-    
-    @include e('title'){
-        @include fonte($second-font, 400, 24px, #000000);
-        text-transform: uppercase;
-        margin-bottom: 0px;
-    }
-
-    @include e('cat'){
-        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
-        width: 100%;
-        margin-bottom: 35px;
-        a{
-            @include fonte($second-font, 400, 12px, #6d6d6d);
-            @include flexbox(row, nowrap, flex-start, center, flex-start);
-            @include transition;
-            &:hover{
-                color: #5e5e5e;
-            }
-            &:after{
-                content: "|";
-                display: block;
-                margin: 0px 5px;
-            } 
-            &:last-of-type:after{
-                display: none;
-            }
-        }
-    }
-
-}
-
-.listprod{
-    @include flexbox(row, wrap, flex-start, flex-start, flex-start);
-    @include e('item'){
-        text-align: center;
-        width: calc(100% / 4);
-    }
-    &.owl-carousel{
-        .listprod__item{
-            width: 100%;
-        }
-    }
-
-    .owl-nav {
-        @include flexbox(row, nowrap, space-between, center, center);
-        width: 100%;
-        max-width: $page-w;
-        position: absolute;
-        top: calc(50% - 25px);
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        .owl-prev {
-            &:before {
-                @include set-icon($fa-var-chevron-left, 0px, 900, #FFF);
-            }
-        }
-        .owl-next {
-            &:before {
-                @include set-icon($fa-var-chevron-right, 0px, 900, #FFF);
-            }
-        }
-        .owl-prev,
-        .owl-next {
-            @include transition;
-            >span {
-                display: none;
-            }
-            &:before {
-                @include transition;
-                font-size: 30px;
-                color: #8a8a8a;
-            }
-            &:hover {
-                background: transparent;
-                &:before {
-                    color: #5f5f5f;
-                }
-            }
-        }
-    }
-
-}
-
-.hprod{
-    display: block;
-    width: 100%;
-    max-width: 200px;
-    margin: 0px auto;
-    text-align: left;
-    @include e('img'){
-        @include box-sizing;
-        width: 100%;
-    }
-
-    @include e('name'){
-        @include fonte($second-font, 400, 14px, #6d6d6d);
-        display: block;
-        width: 100%;
-        text-align: left;
-    }
-
-    @include e('store'){
-        @include flexbox(row, nowrap, flex-start, center, flex-start);
-        @include fonte($second-font, 400, 12px, #6d6d6d);
-        margin: 10px 0px;
-
-        @include e('name'){
-            font-weight: bold;
-            margin-left: 5px;
-        }
-
-        &:before{
-            @include bgimage("ico_header_pedidos.png");
-            content: "";
-            display: block;
-            width: 17px;
-            height: 17px;
-            background-repeat: no-repeat;    
-            background-size: cover;
-            margin-right: 5px;      
-        }
-
-    }
-
-    @include e('price'){
-        display: block;
-        width: 100%;
-
-        @include m('regular'){
-            @include fonte($second-font, 400, 14px, #9d9d9d);
-        }
-        @include m('sale'){
-            @include fonte($second-font, 900, 24px, $color-red);
-        }
-    }
-
-    @include e('parcel'){
-        @include fonte($second-font, 400, 14px, #6d6d6d);
-        display: block;
-        width: 100%;
-        @include m('alt'){
-            font-weight: bold;
-        }
-    }
-
-    @include e('points'){
-        @include flexbox(row, nowrap, flex-start, center, flex-start);
-        @include fonte($second-font, 400, 14px, #5e5e5e);
-        width: 100%;
-        margin-top: 10px;
-        @include m('alt'){
-            color: $color-red;
-            margin-left: 5px;
-        }
-
-        &:before {
-            content: "";
-            @include bgimage('ico_header_points.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: left center;
-            width: 20px;
-            height: 20px;
-            display: block;
-            margin-right: 5px;
-        }
-
-    }
-
-}
-
 .rk-area-product {
     width: 100%;
     margin: 30px 0px;
 
-    .title{
-        @include fonte($second-font, 400, 24px, #000000);
-        text-transform: uppercase;
-        margin-bottom: 20px;
-    }
-
-    &.product-grid-4{
-        .list-products{
+    &.product-grid-4 {
+        .list-products {
             > li {
                 text-align: center;
-                width: calc(100% / 4 - 20px);
+
+                @media #{$res-xs} {
+                    width: calc(100% / 1);
+                }
+               
+                @media #{$res-sm} {
+                    width: calc(100% / 2);
+                }
+
+                @media #{$res-md} {
+                    width: calc(100% / 3);
+                }
+
+                @media #{$res-desk} {
+                    width: calc(100% / 4);
+                } 
+
+                .hproductseo {
+                    max-width: 200px;
+                }
+                
             }
         }
     }
 
-    &.product-grid-3{
-        .list-products{
-        
+    &.product-grid-3 {
+        .list-products {
+            > li {
+                text-align: center;
+
+                @media #{$res-xs} {
+                    width: calc(100% / 1);
+                }
+               
+                @media #{$res-sm} {
+                    width: calc(100% / 2);
+                }
+
+                @media #{$res-md} {
+                    width: calc(100% / 2);
+                }
+
+                @media #{$res-desk} {
+                    width: calc(100% / 3);
+                } 
+
+                .hproductseo {
+                    max-width: 290px;
+                }
+                
+            }
         }
     }
 
-    &.product-grid-2{
-        .list-products{
-        
+    &.product-grid-2 {
+        .list-products {
+            > li {
+                text-align: center;
+                width: calc(100% / 2);
+
+                @media #{$res-xs} {
+                    width: calc(100% / 1);
+                }
+               
+                .hproductseo {
+                    max-width: 450px;
+                }
+                
+            }
         }
     }
 
+    &.product-grid-1 {
+        .list-products {
+            > li {
+                text-align: center;
+                width: 100%;
+                border-bottom: 1px solid $color-gray-extra-light;
+               
+                .hproductseo {
+                    @include flexbox(row, nowrap, flex-start, inherit, flex-start);
+                    .figure{
+                        @media #{$res-xs} {
+                            width: 50%;
+                        }
+                       
+                        @media #{$res-sm} {
+                            width: 40%;
+                        }
+        
+                        @media #{$res-md} {
+                            width: 20%;
+                        }
+        
+                        @media #{$res-desk} {
+                            width: 15%;
+                        } 
+                    }
+                }
+                
+            }
+        }
+    }
 }
 
-.list-products{
-    @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+.title {
+    .nrk_banners{
+        margin-bottom: 5px;
+
+        .item{
+            height: 150px;
+        }
+
+    }
+
+    @include e("txt") {
+        @include fonte($second-font, 400, 24px, #000000);
+
+        text-transform: uppercase;
+        margin: 5px 0px;
+        width: 100%;
+        display: block;
+    }
+
+
+    @include e("cat") {
+        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+
+        width: 100%;
+        margin-bottom: 10px;
+
+        a {
+            @include fonte($second-font, 400, 12px, #6d6d6d);
+            @include flexbox(row, nowrap, flex-start, center, flex-start);
+            @include transition;
+
+            &:hover {
+                color: #5e5e5e;
+            }
+
+            &:after {
+                content: "|";
+                display: block;
+                margin: 0px 5px;
+            }
+
+            &:last-of-type:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.list-products {
+    @include flexbox(row, wrap, flex-start, inherit, flex-start);
+    text-align: center;
     padding: 0px;
     margin: 0px;
 
-    > li{
+    > li {
+        @include transition;
+        @include box-sizing;
         list-style: none;
-        padding: 0px;
+        padding: 0px 10px;
     }
 
-    &.owl-carousel{
-        .listprod__item{
+    &.owl-carousel {
+        .listprod__item {
             width: 100%;
         }
     }
 
-    .rk-position{
+    .rk-position {
         display: none;
     }
 
     .owl-nav {
         @include flexbox(row, nowrap, space-between, center, center);
+
         width: 100%;
         max-width: $page-w;
         position: absolute;
@@ -239,29 +194,37 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 0px;
+
         .owl-prev {
             &:before {
                 @include set-icon($fa-var-chevron-left, 0px, 900, #FFF);
             }
         }
+
         .owl-next {
             &:before {
                 @include set-icon($fa-var-chevron-right, 0px, 900, #FFF);
             }
         }
+
         .owl-prev,
         .owl-next {
             @include transition;
-            >span {
+
+            > span {
                 display: none;
             }
+
             &:before {
                 @include transition;
+
                 font-size: 30px;
                 color: #8a8a8a;
             }
+
             &:hover {
                 background: transparent;
+
                 &:before {
                     color: #5f5f5f;
                 }
@@ -270,98 +233,130 @@
     }
 }
 
-
-.hproductseo{
+.hproductseo {
+    @include transition;
+    @include box-sizing;
     display: block;
     width: 100%;
-    max-width: 200px;
-    margin: 0px auto;
+    margin: 10px auto;
     text-align: left;
 
-    h3{
+    h3 {
         margin: 10px 0px 0px 0px;
     }
 
-    .figure{
+    .figure {
         @include box-sizing;
         @include transition;
+
         padding: 5px;
         border: 1px solid $color-gray-extra-light;
-        
-        &:hover{
+
+        &:hover {
             border-color: $color-gray-light;
         }
     }
-    .photo{
+
+    .photo {
         @include box-sizing;
         @include transition;
+
         width: 100%;
     }
 
-    .name{
+    .details {
+        @include box-sizing;
+
+        padding-left: 10px;
+    }
+
+    .name {
         @include fonte($second-font, 400, 14px, #6d6d6d);
+
         display: block;
         width: 100%;
         text-align: left;
     }
 
-    .store{
+    .store {
         @include flexbox(row, nowrap, flex-start, center, flex-start);
         @include fonte($second-font, 400, 12px, #6d6d6d);
+
         margin: 10px 0px;
 
-        .store-name{
+        .store-name {
             font-weight: bold;
-            margin-left: 5px;
+            margin-left: 3px;
         }
 
-        &:before{
+        &:before {
             background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_pedidos.png");
             content: "";
             display: block;
             width: 17px;
             height: 17px;
-            background-repeat: no-repeat;    
+            background-repeat: no-repeat;
             background-size: cover;
-            margin-right: 5px;      
+            margin-right: 5px;
         }
-
     }
 
-    @include e('price'){
+    .box-price,
+    .offers,
+    .regular,
+    .price.sale,
+    .price.sale > .from,
+    .parcel,
+    .rk-superpoints {
         display: block;
         width: 100%;
+    }
 
-        @include m('regular'){
+    .regular,
+    .regular > del {
+        @include fonte($second-font, 400, 14px, #9d9d9d);
+    }
+
+    .price.sale {
+        .per {
+            display: none;
+        }
+
+        .from {
             @include fonte($second-font, 400, 14px, #9d9d9d);
         }
-        @include m('sale'){
-            @include fonte($second-font, 900, 24px, $color-red);
-        }
+
+        @include fonte($second-font, 900, 24px, $color-red);
     }
 
-    @include e('parcel'){
+    .parcel {
         @include fonte($second-font, 400, 14px, #6d6d6d);
-        display: block;
-        width: 100%;
-        @include m('alt'){
+
+        margin-top: 5px;
+
+        strong {
             font-weight: bold;
         }
+
+        .cJuros {
+            font-size: 12px;
+        }
     }
 
-    @include e('points'){
+    .rk-superpoints {
         @include flexbox(row, nowrap, flex-start, center, flex-start);
         @include fonte($second-font, 400, 14px, #5e5e5e);
-        width: 100%;
+
         margin-top: 10px;
-        @include m('alt'){
+
+        strong {
             color: $color-red;
             margin-left: 5px;
         }
 
         &:before {
             content: "";
-            @include bgimage('ico_header_points.png');
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: left center;
@@ -370,7 +365,9 @@
             display: block;
             margin-right: 5px;
         }
-
     }
 
+    .look-quick-view {
+        display: none;
+    }
 }
