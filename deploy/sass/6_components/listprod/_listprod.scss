@@ -182,7 +182,7 @@
     .title{
         @include fonte($second-font, 400, 24px, #000000);
         text-transform: uppercase;
-        margin-bottom: 0px;
+        margin-bottom: 20px;
     }
 
     &.product-grid-4{
@@ -278,30 +278,45 @@
     margin: 0px auto;
     text-align: left;
 
+    h3{
+        margin: 10px 0px 0px 0px;
+    }
+
+    .figure{
+        @include box-sizing;
+        @include transition;
+        padding: 5px;
+        border: 1px solid $color-gray-extra-light;
+        
+        &:hover{
+            border-color: $color-gray-light;
+        }
+    }
     .photo{
         @include box-sizing;
+        @include transition;
         width: 100%;
     }
 
-    @include e('name'){
+    .name{
         @include fonte($second-font, 400, 14px, #6d6d6d);
         display: block;
         width: 100%;
         text-align: left;
     }
 
-    @include e('store'){
+    .store{
         @include flexbox(row, nowrap, flex-start, center, flex-start);
         @include fonte($second-font, 400, 12px, #6d6d6d);
         margin: 10px 0px;
 
-        @include e('name'){
+        .store-name{
             font-weight: bold;
             margin-left: 5px;
         }
 
         &:before{
-            @include bgimage("ico_header_pedidos.png");
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_pedidos.png");
             content: "";
             display: block;
             width: 17px;
