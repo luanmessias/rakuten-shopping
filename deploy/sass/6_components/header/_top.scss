@@ -9,7 +9,7 @@
 
     height: auto;
     padding: 5px 0px;
-    border: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
 
     .wrapper {
         @include flexbox(row, wrap, space-between, center, center);

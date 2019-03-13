@@ -18,7 +18,7 @@ $(document).ready(function () {
         items: 1
     });
 
-    $('.listprod').owlCarousel({
+    $('.rk-carousel .list-products').owlCarousel({
         loop: true,
         nav: true,
         dots: false,
