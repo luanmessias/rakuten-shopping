@@ -74,6 +74,14 @@
                 padding-left: 10px;
             }            
         }
+
+        @include m("more") {
+            cursor: pointer;
+            &:after {
+                @include set-icon($fa-var-plus-circle, 14px, 900, #FFF);
+                padding-left: 10px;
+            }            
+        }
     }
 }
 
