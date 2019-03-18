@@ -63,6 +63,14 @@ module.exports = function(grunt) {
             tasks: ['sass:myacc']
         },
 
+        login: {
+            files: [ 
+                "../sass/6_components/login/*.scss",
+                "../sass/7_css/login.scss",
+            ],
+            tasks: ['sass:login']
+        },
+
 
     });
   

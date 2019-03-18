@@ -73,6 +73,20 @@
             }]
         },
 
+        login: {
+            options: {
+                style: 'compressed',
+                sourcemap: 'auto'
+            },
+            files: [{
+                expand: true,
+                cwd: '../sass/7_css/',
+                src: ["login.scss"],
+                dest: '../../dist/css/',
+                ext: '.css'
+            }]
+        },
+
         myacc: {
             options: {
                 style: 'compressed',
