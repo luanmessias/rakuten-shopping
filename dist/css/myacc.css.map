@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAQ,6GAAqG,CACrG,sEAA8D,CCAtE,GAAG,CACC,OAAO,CAAE,eAAe,CAG5B,QAAS,CACL,OAAO,CAAE,eAAe,CAG5B,aAAc,CACV,UAAU,CAAE,iBAAiB,CCojBjC,+BAAgC,CAC9B,SAAU,CACR,iBAAiB,CAAE,gBAAgB,CACnC,SAAS,CAAE,gBAAgB,CAC3B,kBAAkB,CAAE,eAAe,CACnC,UAAU,CAAE,eAAe",
-"sources": ["../../deploy/sass/1_settings/_fonts.scss","../../deploy/sass/2_tools/_placeholders.scss","../../deploy/sass/2_tools/_animate.scss"],
+"mappings": "AACA,GAAG,CACC,OAAO,CAAE,eAAe,CAG5B,QAAS,CACL,OAAO,CAAE,eAAe,CAG5B,aAAc,CACV,UAAU,CAAE,iBAAiB,CCojBjC,+BAAgC,CAC9B,SAAU,CACR,iBAAiB,CAAE,gBAAgB,CACnC,SAAS,CAAE,gBAAgB,CAC3B,kBAAkB,CAAE,eAAe,CACnC,UAAU,CAAE,eAAe,ECvb3B,kBAQC,CAPG,EAAG,CACC,OAAO,CAAE,CAAC,CAGd,IAAK,CACD,OAAO,CAAE,CAAC",
+"sources": ["../../deploy/sass/2_tools/_placeholders.scss","../../deploy/sass/2_tools/_animate.scss","../../deploy/sass/2_tools/_owlCarousel.scss"],
 "names": [],
 "file": "myacc.css"
 }

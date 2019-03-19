@@ -2,8 +2,6 @@
     @include e("middle") {
         @include transition;
 
-        padding-bottom: 10px;
-
         @media #{$res-desk} {
             min-height: 126px;
         }

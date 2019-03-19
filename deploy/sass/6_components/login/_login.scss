@@ -1,3 +1,72 @@
 .section-login{
-    background-color: #f2f2f2;
+    background-color: $body_gray_bg;
+    padding-top: 10px;
+}
+
+.login{
+    > .wrapper{
+        @include flexbox(row, wrap, space-around, inherit, flex-start);
+    }
+
+    @include e('box'){
+        @include box-sizing;
+        @include border-radius;
+        padding: 20px;
+        margin: 30px 0px;
+        background-color: #FFF;
+        border: 1px solid $color-gray-light;
+
+        @media #{$res-desk} {
+            width: calc(50% - 40px);
+        }
+
+        @media #{$res-break} {
+            width: 100%;
+        }
+
+
+        @include e('header'){
+            padding-bottom: 15px;
+        }
+
+        @include e('title'){
+            @include fonte($second-font, 800, 18px, $color-gray-dark);
+        }
+
+    }
+
+
+    @include e('fieldcont'){
+        @include box-sizing;
+        @include border-radius(3px);
+        overflow: hidden;
+        width: 100%;
+        max-width: 350px;
+        background-color: $body_gray_bg;
+        margin-bottom: 15px;
+        padding: 10px;
+        -webkit-box-shadow: inset 1px 1px 2px 0px #e3e3e3;
+        -moz-box-shadow: inset 1px 1px 2px 0px #e3e3e3;
+        box-shadow: inset 1px 1px 2px 0px #e3e3e3;
+
+        &:before{
+            font-family: "Font Awesome 5 Free";
+            background: none;
+            content: "/f1f2";
+            font-size: 20px;
+            font-weight: 900;
+            color: #666;
+            text-indent: 0;
+        }
+    }
+
+    @include e('field'){
+        @include fonte($second-font, 400, 14px, $color-gray-dark);
+        @include box-sizing;
+        width: 100%;
+        background: transparent;
+        border: 0px;
+    }
+
+
 }

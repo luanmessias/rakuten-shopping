@@ -3,6 +3,7 @@
 
 //GENERIC - Only * selector, Resets and normalizes
 //======================================
+@import '../1_settings/fonts'; 
 @import '../3_generics/normalize';
 
 //ELEMENTS - Only HTML tags without class (headings, lists, Links etc..)
@@ -16,8 +17,3 @@
 @import '../5_objects/wrapper';
 @import '../5_objects/grid';
 
-//-> Banners
-//@import '../6_components/banners';
-
-//-> Lista de produtos
-//@import '../6_components/listprod';
