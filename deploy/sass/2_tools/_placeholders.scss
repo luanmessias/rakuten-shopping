@@ -14,3 +14,20 @@
 %boxshadow {
     @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
 }
+
+%bt-default{
+    @include fonte($second-font, 800, 14px, #FFF);
+    @include box-sizing;
+    @include border-radius(3px);
+    @include center-cont;
+    @include transition;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin: 10px 0px;
+    background-color: $color-gray-dark;
+    width: max-content;
+    &:hover{
+        background-color: $color-gray-extra-dark;
+    }
+}

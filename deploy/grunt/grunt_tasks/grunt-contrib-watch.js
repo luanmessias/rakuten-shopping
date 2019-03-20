@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                 "../sass/6_components/myacc/*.scss",
                 "../sass/7_css/myacc.scss",
             ],
-            tasks: ['sass:myacc']
+            tasks: ['sass:myacc', 'copy:css_to_project_account']
         },
 
         login: {
@@ -68,7 +68,15 @@ module.exports = function(grunt) {
                 "../sass/6_components/login/*.scss",
                 "../sass/7_css/login.scss",
             ],
-            tasks: ['sass:login', 'copy:css_login_to_project']
+            tasks: ['sass:login', 'copy:css_to_project_checkout']
+        },
+
+        elements: {
+            files: [ 
+                "../sass/6_components/elements/*.scss",
+                "../sass/7_css/elements.scss",
+            ],
+            tasks: ['sass:elements']
         },
 
 

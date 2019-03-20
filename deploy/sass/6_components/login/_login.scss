@@ -9,19 +9,21 @@
     }
 
     @include e('box'){
+        @include transition;
         @include box-sizing;
         @include border-radius;
         padding: 20px;
-        margin: 30px 0px;
         background-color: #FFF;
         border: 1px solid $color-gray-light;
 
         @media #{$res-desk} {
             width: calc(50% - 40px);
+            margin: 30px 0px;
         }
 
         @media #{$res-break} {
             width: 100%;
+            margin: 10px 0px;
         }
 
 
@@ -37,7 +39,9 @@
 
 
     @include e('fieldcont'){
+        @include flexbox(row, nowrap, space-between, center, center);
         @include box-sizing;
+        @include transition; 
         @include border-radius(3px);
         overflow: hidden;
         width: 100%;
@@ -49,15 +53,18 @@
         -moz-box-shadow: inset 1px 1px 2px 0px #e3e3e3;
         box-shadow: inset 1px 1px 2px 0px #e3e3e3;
 
-        &:before{
-            font-family: "Font Awesome 5 Free";
-            background: none;
-            content: "/f1f2";
-            font-size: 20px;
-            font-weight: 900;
-            color: #666;
-            text-indent: 0;
+        &:hover{
+            .login__fieldcont__icon{
+                color: #000;
+            } 
         }
+
+        @include e('icon'){
+          @include transition; 
+          margin-right: 10px;
+          color: $color-gray;
+        }
+
     }
 
     @include e('field'){
@@ -68,5 +75,38 @@
         border: 0px;
     }
 
+
+    @include e('link'){
+        @include fonte($second-font, 400, 12px, $color-gray-dark);
+        text-decoration: underline;
+        margin: 5px 0px;
+    }
+
+    @include e('terms'){
+        @include fonte($second-font, 400, 12px, $color-gray);
+        margin: 5px 0px;
+        a{
+            color: $color-gray-extra-dark;
+            text-decoration: underline;
+        }
+    }
+
+    @include e('atention'){
+        @include fonte($second-font, 400, 12px, $color-gray);
+        margin: 5px 0px;
+        a{
+            color: $color-gray-extra-dark;
+            text-decoration: underline;
+        }
+    }
+
+    @include e('btn'){
+        @extend %bt-default;
+    }
+
+    .waiting{
+        @extend %bt-default;
+        margin: 10px 0px;
+    }
 
 }

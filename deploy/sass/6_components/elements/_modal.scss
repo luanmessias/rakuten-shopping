@@ -1,0 +1,23 @@
+
+#popup_container{
+    @include border-radius;
+    @include box-sizing;
+    background: #FFF;
+    padding: 30px;
+
+    .emphasis{
+        @include fonte($second-font, 800, 16px, $color-gray-extra-dark);
+        width: 100%;
+        display: block;
+    }
+
+    .rk-body{
+        @include fonte($second-font, 400, 14px, $color-gray-extra-dark);
+        padding: 10px 0px;
+    }
+
+    .rk-btn{
+        @extend %bt-default;
+        margin-bottom: 0px;
+    }
+}

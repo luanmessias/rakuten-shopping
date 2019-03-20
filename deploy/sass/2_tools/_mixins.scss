@@ -204,24 +204,22 @@ $arrow-percent) {
 
 }
 
-@mixin set-icon($content: $fa-var-smile,
-$size: 20px,
-$weigth: 900,
-$color: #000,
-$brand: "") {
-  @if($brand !="") {
-    font-family: "Font Awesome 5 Brands";
-  }
-  @else {
-    font-family: "Font Awesome 5 Free";
-  }
-  background: none;
-  content: $content;
-  font-size: $size;
-  font-weight: $weigth;
-  color: $color;
-  text-indent: 0;
+@mixin set-icon($content: $fa-var-smile, $size: 20px, $weigth: 900, $color: #000, $brand: "") {
+    @if $brand != "" {
+        font-family: "Font Awesome 5 Brands";
+    }
+    @else {
+        font-family: "Font Awesome 5 Free";
+    }
+
+    background: none;
+    content: $content;
+    font-size: $size;
+    font-weight: $weigth;
+    color: $color;
+    text-indent: 0;
 }
+
 
 @mixin transition($property: all, $duration: 0.3s, $ease: linear) {
     -webkit-transition: $property $duration $ease;
