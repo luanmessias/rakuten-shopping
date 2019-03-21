@@ -1,13 +1,23 @@
 .myacc{
     background-color: $body_gray_bg;
-    padding-top: 10px;
+    padding-top: 20px;
 
     > .wrapper{
-        @include flexbox(row, wrap, flex-start, inherit, flex-start);
+        @include flexbox(row, wrap, space-around, inherit, flex-start);
     }
 
     @include e('title'){
         width: 100%;
+        margin-bottom: 15px;
+
+        @include e('txt'){
+            @include fonte($second-font, 400, 24px, $color-gray-extra-dark);
+            margin: 0px;
+        }
+
+        @include e('desc'){
+            @include fonte($second-font, 400, 12px, $color-gray-extra-dark);
+        }
     }
 
     @include e('box') {
@@ -16,6 +26,8 @@
         @include box-sizing;
 
         border: 1px solid transparent;
+        text-align: center;
+        padding: 10px;
 
         @media #{$res-xs} {
             width: calc(100% / 2);
@@ -35,23 +47,37 @@
         @media #{$res-desk} {
             width: calc(100% / 6);
             height: 193px;
+            margin: 15px;
+        }
+
+        @include e('title'){
+            @include fonte($second-font, 800, 14px, $color-gray);
+            margin: 5px 0px;
+        }
+
+        @include e('text'){
+            @include fonte($second-font, 400, 12px, $color-gray);
+            margin: 5px 0px;
+            display: block;
         }
 
         &:hover{
             background-color: $color-red;
             border-color: $color-red;
-            .cat__icon:before{
+            &:before{
                 background-position: right;
             }
 
-            .cat__desc{
-                color: #FFF;
+            a{
+                color: $color-gray-dark;
+            }
+            span {
+                color: $color-gray;
             }
         }
 
         &:before{
             content: "";
-            width: 54px;
             height: 56px;
             display: block;
             background-repeat: no-repeat;
@@ -61,24 +87,86 @@
         }
         
         &:hover{
-            background-color: $color-red;
-            border-color: $color-red;
-            .cat__icon:before{
-                background-position: right;
-            }
+            background-color: $color-gray-light;
+            border-color: $color-gray-light;
 
-            .cat__desc{
-                color: #FFF;
+            .myacc__box:before{
+                background-position: right;
             }
         }
 
         @include m('info'){
             &:before {
-                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meu_cadastro.png");
-                
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meu_cadastro.png?3");
+                width: 54px;
             }
         }
 
+        @include m('pass'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/alterar_senha.png?1");
+                width: 47px;
+            }
+        }
+
+        @include m('adress'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_enderecos.png?3");
+                width: 45px;
+            }
+        }
+
+        @include m('orders'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_pedidos.png?1");
+                width: 56px;
+            }
+        }
+
+        @include m('points'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/super_points.png?1");
+                width: 55px;
+            }
+        }
+
+        @include m('settings'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/minhas_preferencias.png?1");
+                width: 70px;
+            }
+        }
+
+        @include m('cards'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_cartoes.png?1");
+                width: 80px;
+            }
+        }
+
+    }
+    
+    @include e('aside'){
+        @include box-sizing;
+    }
+
+    @include e('wrap'){
+        @include box-sizing;
+    }    
+
+}
+
+.fgroup{
+
+    .title{
+        display: block;
+        width: 100%;
+    }
+
+    .field{
+        &.radio{
+            @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+        }
     }
 
 }

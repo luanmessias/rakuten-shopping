@@ -1,0 +1,7 @@
+.nrk_title{
+    @include fonte($second-font, 400, 24px, $color-gray-dark);
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
