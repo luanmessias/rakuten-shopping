@@ -3,7 +3,7 @@
     padding-top: 20px;
 
     > .wrapper{
-        @include flexbox(row, wrap, space-around, inherit, flex-start);
+        @include flexbox(row, wrap, flex-start, inherit, flex-start);
     }
 
     @include e('title'){
@@ -156,17 +156,3 @@
 
 }
 
-.fgroup{
-
-    .title{
-        display: block;
-        width: 100%;
-    }
-
-    .field{
-        &.radio{
-            @include flexbox(row, wrap, flex-start, flex-start, flex-start);
-        }
-    }
-
-}
