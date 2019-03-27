@@ -1,0 +1,159 @@
+.fgroup{
+    @include flexbox(row, wrap, flex-start, inherit, flex-start);
+    display: flex !important;
+
+    .title{
+        @include fonte($second-font, 400, 14px, $color-gray-extra-dark);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .field{
+        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+        @include box-sizing;
+        @include transition;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        @media #{$res-xs} {
+            width: 100%;
+        }
+
+        @media #{$res-sm} {
+            width: 100%;
+        }
+
+        @media #{$res-md} {
+            width: calc(100% / 2);
+        }
+
+        @media #{$res-desk} {
+            width: calc(100% / 2);
+        }
+
+        &.field-company{
+            display: none;
+        }
+
+        &.field-full,
+        &.field-info{
+            @include flexbox(row, nowrap, flex-start, flex-start, flex-start);
+            @include fonte($second-font, 600, 16px, $color-gray-dark);
+            width: 100%;
+            margin: 0px;
+            input[type="checkbox"]{
+                @include transform(scale(1.5));
+                margin-right: 10px;
+                position: relative;
+                top: 3px;
+            }
+            a{
+              @include fonte($second-font, 400, 14px, $color-gray-extra-dark);  
+              text-decoration: underline;
+            }
+           
+        }
+
+        &.field-info{
+            @include fonte($second-font, 400, 14px, $color-gray-dark);
+            padding-left: 40px;
+            padding-top: 0px;
+            p{
+                margin: 0px;
+            }
+        }
+
+        &.radio{
+            @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+            background-color: $color-gray-light;
+            width: 100%;
+            .title{
+                display: block;
+                width: 100%;
+            }
+            > label{
+                @include flexbox(row, nowrap, flex-start, center, center);
+                @include box-sizing;
+                margin-right: 10px;
+                span{
+                    @include fonte($second-font, 400, 12px, $color-gray-extra-dark);
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .dk_open,
+        .dk_focus .dk_toggle{
+            @include border-radius(0);
+            box-shadow: none;
+        }
+
+        .dk_container{
+            padding: 0;
+            border: 0px;
+            width: 100%;
+
+            .dk_label{
+                line-height: inherit;
+            }
+
+            .dk_toggle{
+                width: 100% !important;
+                background-position: 96% center;
+            }
+        }
+
+        input[type="text"],
+        input[type="password"],
+        .dk_toggle{
+            @include fonte($second-font, 400, 12px, $color-gray-dark);
+            @include box-shadow(1px, 1px, 2px, $color-gray, true);
+            @include border-radius(3px);
+            @include box-sizing;
+            overflow: hidden;
+            padding: 12px;
+            width: 100%;
+            background-color: #FFF;
+            border: 0px solid $color-gray;
+        }
+
+        .dk_options_inner{
+            @include border-radius(0);
+            margin: 0;
+            list-style: none;
+            padding: 0;
+            >li{
+                a{
+                    @include fonte($second-font, 400, 14px, $color-gray-dark);
+                    padding: 10px;
+                }
+                a:hover,
+                &.dk_option_current a{
+                    @include fonte($second-font, 400, 14px, $color-gray-dark); 
+                    background-color: $color-gray-light;
+                }
+            }
+        }
+
+        .validation{
+            @include fonte($second-font, 400, 12px, $color-red);
+            @include box-sizing;
+            width: 100%;
+            padding: 5px;
+            &.alert,
+            &.correct{
+                display: block !important;
+            }
+        }
+
+        .exempting {
+            @include fonte($second-font, 400, 12px, $color-gray-extra-dark);
+            @include flexbox(row, nowrap, flex-start, center, center);
+            @include box-sizing;
+            margin-left: 10px;
+        }
+
+
+    }
+
+}

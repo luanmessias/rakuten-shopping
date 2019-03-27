@@ -1,0 +1,88 @@
+.mymenu {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+    @include e('link'){
+        @include fonte($second-font, 400, 14px, $color-gray-extra-dark);
+        @include transition;
+    }
+
+    @include e("item") {
+        @include flexbox(row, nowrap, flex-start, center, center);
+        @include transition;
+        @include box-sizing;
+        padding: 10px 5px;
+        border-bottom: 1px solid $color-gray;
+
+        &:before{
+            content: "";
+            height: 25px;
+            display: block;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left;
+            margin-right: 10px;
+        }
+        
+        &:hover{
+
+            &:before{
+                background-position: right;
+            }
+            .mymenu__link{
+                color: $color-red;
+            }
+        }
+
+        @include m('cad'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meu_cadastro.png?3");
+                width: 24px;
+            }
+        }
+
+        @include m('pass'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/alterar_senha.png?1");
+                width: 21px;
+            }
+        }
+
+        @include m('loc'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_enderecos.png?3");
+                width: 20px;
+            }
+        }
+
+        @include m('orders'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_pedidos.png?1");
+                width: 25px;
+            }
+        }
+
+        @include m('points'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/super_points.png?1");
+                width: 25px;
+            }
+        }
+
+        @include m('settings'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/minhas_preferencias.png?1");
+                width: 31px;
+            }
+        }
+
+        @include m('cards'){
+            &:before {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_cartoes.png?1");
+                width: 36px;
+            }
+        }
+
+    }
+}

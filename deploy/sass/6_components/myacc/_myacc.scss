@@ -18,6 +18,10 @@
         @include e('desc'){
             @include fonte($second-font, 400, 12px, $color-gray-extra-dark);
         }
+
+        @include m('inner'){
+            margin: 70px 0px 20px 0px;
+        }
     }
 
     @include e('box') {
