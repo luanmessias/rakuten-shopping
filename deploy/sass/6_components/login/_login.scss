@@ -8,24 +8,20 @@
         @include flexbox(row, wrap, space-around, inherit, flex-start);
     }
 
+    .nrk_tabs{
+        width: 100%;
+        max-width: 400px;
+        margin: 40px 0px;
+    }
+
     @include e('box'){
         @include transition;
         @include box-sizing;
-        @include border-radius;
+        @include radiusbl();
+        @include radiusbr();
         padding: 20px;
         background-color: #FFF;
-        border: 1px solid $color-gray-light;
-
-        @media #{$res-desk} {
-            width: calc(50% - 40px);
-            margin: 30px 0px;
-        }
-
-        @media #{$res-break} {
-            width: 100%;
-            margin: 10px 0px;
-        }
-
+        width: 100%;
 
         @include e('header'){
             padding-bottom: 15px;

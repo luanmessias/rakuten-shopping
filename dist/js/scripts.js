@@ -32,7 +32,6 @@ $(document).ready(function () {
     $('.nrk_header__user__menu').click(function(){
         $(this).toggleClass('active');
     });
-    
 });
 
 

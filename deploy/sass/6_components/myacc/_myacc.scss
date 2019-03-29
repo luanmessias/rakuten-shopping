@@ -28,8 +28,10 @@
         @include flexbox(column, nowrap, center, center, center);
         @include transition;
         @include box-sizing;
+        @include border-radius;
+        background-color: #FFF;
 
-        border: 1px solid transparent;
+        border: 1px solid $color-gray-light;
         text-align: center;
         padding: 10px;
 
@@ -137,14 +139,16 @@
         @include m('settings'){
             &:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/minhas_preferencias.png?1");
-                width: 70px;
+                width: 45px;
+                height: 36px;            
             }
         }
 
         @include m('cards'){
             &:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_cartoes.png?1");
-                width: 80px;
+                width: 50px;
+                height: 35px; 
             }
         }
 
