@@ -1,0 +1,42 @@
+html, body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.recoverPass{
+    background-color: #f2f2f2;
+}
+
+
+
+.myacc__recover{
+    height: 100%;
+
+    .field{
+        margin: 0px;
+    }
+
+    .actions{
+        padding: 0px 10px;
+    }
+
+    .not-access-email{
+        padding: 10px;
+        a{
+            @include fonte($second-font, 400, 14px, $color-gray-extra-dark);
+            text-decoration: underline;
+            @include transition;
+        }
+    }
+
+    .ui{
+        padding: 10px;
+    }
+
+    .btn{
+        @extend %bt-default;
+        text-decoration: none;
+    }
+
+}

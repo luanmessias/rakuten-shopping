@@ -1,0 +1,131 @@
+
+.myacc_address{
+    
+    .wrapper{
+        @include flexbox(row, wrap, space-around, inherit, flex-start);
+        padding-bottom: 40px;
+    }
+    
+    .actions{
+        @include flexbox(row, wrap, flex-end, flex-start, flex-start);
+        @include box-sizing;
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .btn {
+        @extend %bt-default;
+
+        &.cancel {
+            background-color: $color-gray-light;
+            color: $color-gray-extra-dark;
+            margin-left: 20px;
+            &:hover {
+                background-color: $color-gray;
+                color: $color-gray-extra-light;
+            }
+        }
+    }
+
+
+    .address {
+        @include flexbox(row, wrap, flex-start, inherit, flex-start);
+        @include box-sizing;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .address_block{
+        @include box-sizing;
+        @include border-radius(3px);
+        width: calc(100% / 2 - 20px);
+        border: 1px solid $color-gray-light;
+        background: #FFF;
+        margin: 10px;
+    }
+
+    .address-header{
+        @include flexbox(row, nowrap, space-between, inherit, flex-start);
+        @include box-sizing;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid $color-gray-light;
+    }
+
+    .address-act{
+        @include flexbox(row, nowrap, flex-start, center, center);
+    }
+
+    .adress-single{
+        @include box-sizing;
+        padding: 20px;
+        width: 100%;
+        > span{
+            @include fonte($second-font, 400, 14px, $color-gray-extra-dark);
+            display: block;
+            width: 100%;
+            strong{
+                @include fonte($second-font, 600, 14px, $color-gray-extra-dark);
+            }
+        }
+    }
+
+    #addressList{
+        list-style: none;
+    }
+    .address_ico {
+        font-size: 0px;
+        width: 17px;
+        height: 17px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+
+        @include m('edit'){
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/icon-edit.png");
+        }
+
+        @include m('del'){
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/icon-x.png");
+            margin-left: 10px;
+        }
+
+    }
+
+    .my_address{
+        width: 100%;
+        border: 1px dashed $color-gray-dark;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .address-new{
+        @include fonte($second-font, 600, 18px, $color-gray-extra-dark);
+        margin: 0px auto;
+        .fas {
+            font-size: 22px;
+        }
+    }
+
+    .adress-register{
+        .header {
+            @include box-sizing;
+            @include transition;
+
+            text-align: center;
+            cursor: pointer;
+        }
+
+
+        .active{
+            .header{
+                margin-bottom: 10px;
+                padding: 10px 0px;
+                background-color: $color-gray-light;
+            }
+        }
+    }
+
+}
+
+

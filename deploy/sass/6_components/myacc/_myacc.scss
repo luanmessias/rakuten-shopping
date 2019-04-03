@@ -3,7 +3,13 @@
     padding-top: 20px;
 
     > .wrapper{
-        @include flexbox(row, wrap, flex-start, inherit, flex-start);
+        @include flexbox(row, wrap, space-between, inherit, flex-start);
+        padding-bottom: 30px;
+
+        @media #{$res-break} {
+            @include flexbox(row, wrap, center, inherit, flex-start);
+        }
+
     }
 
     @include e('title'){
@@ -19,9 +25,26 @@
             @include fonte($second-font, 400, 12px, $color-gray-extra-dark);
         }
 
-        @include m('inner'){
-            margin: 70px 0px 20px 0px;
+        @include m('two'){
+           
+            @include flexbox(row, nowrap, flex-start, center, center);
+
+            @include e('desc'){
+                @include fonte($second-font, 600, 20px, $color-gray-extra-dark);
+            }
+
+            &:after{
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: $color-gray;
+                display: block;
+                margin-left: 10px;
+            }
+
         }
+
+
     }
 
     @include e('box') {
@@ -30,30 +53,35 @@
         @include box-sizing;
         @include border-radius;
         background-color: #FFF;
-
         border: 1px solid $color-gray-light;
         text-align: center;
         padding: 10px;
+        height: auto;
+
+        &:after{
+            content: "";
+            display: block;
+            width: 20px;
+            height: 4px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+            background-color: $color-gray-dark;
+        }
 
         @media #{$res-xs} {
             width: calc(100% / 2);
-            height: 220px;
         }
 
         @media #{$res-sm} {
             width: calc(100% / 3);
-            height: 220px;
         }
 
         @media #{$res-md} {
-            width: calc(100% / 4);
-            height: 220px;
+            width: calc(100% / 6);
         }
 
         @media #{$res-desk} {
-            width: calc(100% / 6);
-            height: 193px;
-            margin: 15px;
+            width: calc(100% / 7.5);
         }
 
         @include e('title'){
@@ -68,12 +96,6 @@
         }
 
         &:hover{
-            background-color: $color-red;
-            border-color: $color-red;
-            &:before{
-                background-position: right;
-            }
-
             a{
                 color: $color-gray-dark;
             }
@@ -82,73 +104,82 @@
             }
         }
 
-        &:before{
-            content: "";
-            height: 56px;
-            display: block;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: left;
-            margin-bottom: 10px;
-        }
-        
-        &:hover{
-            background-color: $color-gray-light;
-            border-color: $color-gray-light;
+        @include e('icon'){
+            @include flexbox(column, nowrap, center, center, center);
+            @include border-radius(100%);
+            @include box-sizing;
+            background-color: $color-gray-extra-light;
+            text-align: center;
+            width: 85px;
+            height: 85px;
+            margin-top: 30px;
+            margin-bottom: 20px;
 
-            .myacc__box:before{
-                background-position: right;
+
+            &:before{
+                content: "";
+                height: 40px;
+                display: block;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: left;
             }
         }
 
+        &:hover{
+            @include box-shadow(0px, 0px, 5px, $color-gray-dark);
+        }
+
+       
+
         @include m('info'){
-            &:before {
+            .myacc__box__icon:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meu_cadastro.png?3");
-                width: 54px;
+                width: 39px;
             }
         }
 
         @include m('pass'){
-            &:before {
+            .myacc__box__icon:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/alterar_senha.png?1");
-                width: 47px;
+                width: 34px;
             }
         }
 
         @include m('adress'){
-            &:before {
+            .myacc__box__icon:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_enderecos.png?3");
-                width: 45px;
+                width: 32px;
             }
         }
 
         @include m('orders'){
-            &:before {
+            .myacc__box__icon:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_pedidos.png?1");
-                width: 56px;
+                width: 40px;
             }
         }
 
         @include m('points'){
-            &:before {
+            .myacc__box__icon:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/super_points.png?1");
-                width: 55px;
+                width: 39px;
             }
         }
 
         @include m('settings'){
-            &:before {
+            .myacc__box__icon:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/minhas_preferencias.png?1");
-                width: 45px;
-                height: 36px;            
+                width: 38px;
+                height: 30px;           
             }
         }
 
         @include m('cards'){
-            &:before {
+            .myacc__box__icon:before {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc/meus_cartoes.png?1");
-                width: 50px;
-                height: 35px; 
+                width: 44px;
+                height: 30px;
             }
         }
 
@@ -161,6 +192,10 @@
     @include e('wrap'){
         @include box-sizing;
     }    
+
+    @include e('recover'){
+        padding: 10px;
+    }
 
 }
 

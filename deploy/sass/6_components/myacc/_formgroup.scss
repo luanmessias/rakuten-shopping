@@ -156,4 +156,9 @@
 
     }
 
+    .btn{
+        @extend %bt-default;
+        text-decoration: none;
+    }
+
 }
