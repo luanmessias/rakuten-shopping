@@ -14,6 +14,7 @@
         @include transition;
         padding: 10px;
         margin-bottom: 10px;
+        position: relative;
 
         @media #{$res-xs} {
             width: 100%;
@@ -152,6 +153,27 @@
             @include box-sizing;
             margin-left: 10px;
         }
+
+
+        .loading{
+            font-size: 0px;
+            position: absolute;
+            right: 18px;
+            top: 38px;
+            &:before{
+                font-family: "Font Awesome 5 Free";
+                content: "\f110";
+                font-size: 20px;
+                font-weight: 900;
+                color: rgb(48, 48, 48);
+                animation-name: rotate_wheel;
+                animation-iteration-count: infinite;
+                animation-play-state: running;
+                animation-timing-function: linear;
+                animation-duration: speedometer(7);
+            }
+        }
+
 
 
     }

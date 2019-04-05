@@ -1,5 +1,9 @@
 
 .myacc_address{
+
+    #addressList{
+        @include transition;
+    }
     
     .wrapper{
         @include flexbox(row, wrap, space-around, inherit, flex-start);
@@ -119,11 +123,29 @@
 
         .active{
             .header{
-                margin-bottom: 10px;
-                padding: 10px 0px;
-                background-color: $color-gray-light;
+                background-color: transparent;
+                text-align: left;
+                .title {
+                    @include fonte($second-font, 400, 24px, $color-gray-extra-dark);
+                    margin-bottom: 5px;
+                    display: block;
+                    width: 100%;
+                }
+                i{
+                    display: none;
+                }
             }
+            .atention {
+                margin-bottom: 20px;
+                display: block;
+                width: 100%;
+            }
+
         }
+    }
+
+    .address-hide{
+        display: none;
     }
 
 }

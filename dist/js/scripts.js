@@ -73,3 +73,33 @@ jQuery(window).scroll(function (event) {
     }
 
 });
+
+
+
+//FIXED ASIDE - MY ACCOUNT
+$stick = $('.mymenu');
+$foot = $('#footer');
+margin = 60;
+offtop = $stick.offset().top - margin;
+offbtm = $foot.offset().top - (margin * 2 + $stick.height());
+
+$(window).scroll(function () {
+    scrtop = $(window).scrollTop();
+    offbtm = $foot.offset().top - (margin * 2 + $stick.height());
+
+    if ($(window).innerWidth() >= 1000) {
+        if (scrtop > offtop && $stick.hasClass('mymenu')) {
+            $stick.addClass('fixed').css('top', margin);
+        }
+        if (offtop > scrtop && $stick.hasClass('fixed')) {
+            $stick.removeClass('fixed').css('top', 'auto');
+        }
+        if (scrtop > offbtm && $stick.hasClass('fixed')) {
+            $stick.removeClass('fixed').addClass('bottom').css('top', offbtm + margin);
+        }
+        if (offbtm > scrtop && $stick.hasClass('bottom')) {
+            $stick.removeClass('bottom').addClass('fixed').css('top', margin);
+        }
+    }
+    
+});
