@@ -95,4 +95,124 @@
         }
 
     }
+
+
+    @include e('mob'){
+        @include flexbox(column, nowrap, space-around, center, center);
+        @include box-sizing;
+        @include transition;
+        background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/header_icons/user-mob.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 20px;
+        position: fixed;
+        right: 0px;
+        top: 45px;
+        padding: 6px 5px;
+        width: 30px;
+        height: 30px;
+        background-color: $color-gray;
+        z-index: 9;
+        cursor: pointer;
+
+        > span {
+            @include opacity(0);
+            @include transition;
+            display: block;
+            width: 80%;
+            height: 2px;
+            background-color: $color-gray-light;
+            
+            
+
+        }
+
+        &:hover{
+            
+        }
+
+        &.active{
+            
+            background-image: none;
+
+            .top,
+            .bot{
+                @include opacity(1);
+                position: absolute;
+                top: calc(50% - 1px);
+            }
+
+            .top{
+                @include rotate(135);
+            }
+
+            .bot{
+                @include rotate(-135);
+            }
+
+            .mid{
+                @include opacity(0);
+            }
+
+            &:before{
+                @include flexbox(row, nowrap, flex-start, center, center);
+                @include fonte($second-font, 400, 14px, $color-gray-extra-light);
+                @include box-sizing;
+                @include animate(fadeInRight, 0s);
+                content: "MINHA CONTA";
+                padding: 0px 10px;
+                height: 30px;
+                background-color: $color-gray;
+                position: absolute;
+                right: 30px;
+                width: 200px;
+            }
+
+            & + .mymenu{
+                @include animate(fadeInRight, 0s);
+                @include box-shadow(6px, 2px, 5px, $color-gray-dark);
+                right: 0;
+                top: 75px;
+                background-color: $color-gray-light;
+                z-index: 9;
+                overflow-x: auto;
+                width: 230px;
+                @include e('item'){
+                    border-bottom: 1px solid $color-gray;
+                }
+            }
+
+        }
+        
+    }
+
+
+}
+
+
+@include res-max(767px){
+    .mymenu{
+        position: fixed;
+        right: -100%;
+        @include e('item'){
+            border: 0px;
+        }
+    }
+
+    #header.active + #main-store {
+        .mymenu__mob{
+            top: 90px;
+        }
+        .mymenu{
+            top: 120px;
+        }
+    }
+}
+
+@include res-min(768px){
+    .mymenu{
+        @include e('mob'){
+            display: none;
+        }
+    }
 }

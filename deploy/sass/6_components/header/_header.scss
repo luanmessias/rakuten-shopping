@@ -430,3 +430,10 @@
 
  
 }
+
+
+@include res-max(1000px){
+    #header{
+        z-index: 999;
+    }
+}

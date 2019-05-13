@@ -132,6 +132,15 @@
                 margin: 0px 10px;
             }
 
+            @media #{$res-break}{
+                &.active{
+                    margin-top: 5px;
+                    .nrk_header__user__menu{
+                        @include rotate(90);
+                    }
+                }
+            }
+
                 
             @media #{$res-desk} {
                 &:hover {

@@ -12,8 +12,7 @@ $(document).ready(function () {
     $( ".nrk_header__top" ).clone().appendTo( ".navmob__cont" );
     
     $('.nrk_header__mobsearch').click(function(){
-        $('.nrk_header__mobsearch__bt').toggleClass('active');
-        $('.nrk_header__search').toggleClass('active');
+        $('.nrk_header__mobsearch__bt, .nrk_header__search, #header').toggleClass('active');
     });
 
     $('.nrk_header__mobmenu').click(function(){
@@ -32,11 +31,15 @@ $(document).ready(function () {
     $('.nrk_header__user__menu').click(function(){
         $(this).toggleClass('active');
     });
+    
+    $('.mymenu__mob').click(function(){
+        $(this).toggleClass('active');
+    });
+
 });
 
 
 //On Load responsive functions
-
 $(window).on('load', function() {
     if($(window).innerWidth() <= breakPoint){
         $( ".wrapper > .nrk_header__user" ).appendTo( $(".navmob__welcome") );
@@ -55,7 +58,6 @@ $( window ).resize(function() {
     }
 });
 
-
 //Scroll functions
 jQuery(window).scroll(function (event) {
     var scroll = jQuery(window).scrollTop();
@@ -73,7 +75,6 @@ jQuery(window).scroll(function (event) {
     }
 
 });
-
 
 
 //FIXED ASIDE - MY ACCOUNT

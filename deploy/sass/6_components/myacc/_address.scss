@@ -46,6 +46,7 @@
         border: 1px solid $color-gray-light;
         background: #FFF;
         margin: 10px;
+        height: auto !important;
     }
 
     .address-header{
@@ -97,6 +98,7 @@
     }
 
     .my_address{
+        @include box-sizing;
         width: 100%;
         border: 1px dashed $color-gray-dark;
         width: 100%;
@@ -146,6 +148,41 @@
 
     .address-hide{
         display: none;
+        & + .my_address{
+            border-color: transparent;
+        }
+    }
+
+    @include res-max(450px){
+        .address_block{
+            width: 100%;
+        }
+        #action a{
+            margin: 10px 0px;
+            width: 100%;
+        }
+    }
+
+    @include res-between(451px, 550px){
+        .address_block{
+            width: calc(100% / 2 - 20px);
+        }
+        #action a{
+            margin: 10px 0px;
+            width: 100%;
+        }
+    }
+
+    @include res-between(551px, 650px){
+        .address_block{
+            width: calc(100% / 2 - 20px);
+        }
+
+        #action a{
+            margin: 10px 0px;
+            width: 100%;
+        }
+
     }
 
 }
