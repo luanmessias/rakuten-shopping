@@ -201,10 +201,10 @@
 
     #header.active + #main-store {
         .mymenu__mob{
-            top: 90px;
+            top: 90px !important;
         }
         .mymenu{
-            top: 120px;
+            top: 120px !important;
         }
     }
 }

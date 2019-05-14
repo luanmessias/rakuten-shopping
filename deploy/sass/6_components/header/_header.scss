@@ -428,6 +428,23 @@
         }
     }
 
+    @include res-between(1001px, 1100px){
+        @include e('search'){
+            max-width: 330px;
+        }
+    }
+
+    @include res-between(1101px, 1200px){
+        @include e('search'){
+            max-width: 430px;
+        }
+    }
+
+    @include res-between(1201px, 1300px){
+        @include e('search'){
+            max-width: 530px;
+        }
+    }
  
 }
 
@@ -437,3 +454,4 @@
         z-index: 999;
     }
 }
+

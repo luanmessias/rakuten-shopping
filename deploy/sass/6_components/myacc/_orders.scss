@@ -1,0 +1,33 @@
+.myacc_orders{
+
+    .orders_content{
+        @include box-sizing;
+        width: 100%;
+        background-color: #FFF;
+
+        &.empty{
+            @include flexbox(row, wrap, center, center, center);
+            height: auto;
+            min-height: 400px;
+        }
+
+    }
+
+    .no_order_icon {
+        @include bgimage('no_orders.png', false);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        display: block;
+        width: 55px;
+        height: 60px;
+    }
+
+    .no_order_txt{
+        @include fonte($second-font, 400, 24px, $color-gray);
+        display: block;
+        width: 100%;
+    }
+
+
+}

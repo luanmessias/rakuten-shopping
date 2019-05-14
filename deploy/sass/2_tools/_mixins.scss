@@ -71,8 +71,13 @@
   background: url("#{$img-url}/"+$img);
 }
 
-@mixin bgimage($img) {
-  background-image: url("#{$img-url}/"+$img);
+@mixin bgimage($img, $local: false) {
+  @if $local {
+    background-image: url("#{$img-url-local}/"+$img);
+  }
+  @else {
+    background-image: url("#{$img-url-server}/"+$img);
+  }
 }
 
 @mixin bgimgpay($img) {

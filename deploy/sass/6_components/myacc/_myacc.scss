@@ -66,21 +66,6 @@
             background-color: $color-gray-dark;
         }
 
-        @media #{$res-xs} {
-            width: calc(100% / 2);
-        }
-
-        @media #{$res-sm} {
-            width: calc(100% / 3);
-        }
-
-        @media #{$res-md} {
-            width: calc(100% / 6);
-        }
-
-        @media #{$res-desk} {
-            width: calc(100% / 7.5);
-        }
 
         @include e('title'){
             @include fonte($second-font, 800, 14px, $color-gray);
@@ -193,6 +178,64 @@
 
     @include e('recover'){
         padding: 10px;
+    }
+
+
+    @include res-max(350px){
+        @include e('box'){
+            width: 100%;
+            margin: 5px 0px;
+        }
+    }
+
+    @include res-between(351px, 450px){
+        @include e('box'){
+            width: calc(100% / 2 - 10px);
+            margin: 5px;
+        }
+    }
+
+    @include res-between(451px, 550px){
+        @include e('box'){
+            width: calc(100% / 2 - 10px);
+            margin: 5px;
+        }
+    }
+
+    @include res-between(551px, 650px){
+        @include e('box'){
+            width: calc(100% / 3 - 10px);
+            margin: 5px;
+        }
+    }
+
+    @include res-between(651px, 750px){
+        @include e('box'){
+            width: calc(100% / 3 - 10px);
+            margin: 5px;
+        }
+    }
+
+    @include res-between(751px, 850px){
+        @include e('box'){
+            width: calc(100% / 4 - 10px);
+            margin: 5px;
+        }
+    }
+
+    @include res-between(851px, 1000px){
+        @include e('box'){
+            width: calc(100% / 5 - 10px);
+            margin: 5px;
+        }
+    }
+
+    @include res-min(1001px){
+        @include e('box'){
+            width: calc(100% / 7 - 10px);
+            max-width: 250px;
+            margin: 5px;
+        }
     }
 
 }
