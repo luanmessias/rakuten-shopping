@@ -54,6 +54,32 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 
+    $('#body_rdbAllOrders').click(function(){
+        if ($(this).is(':checked')) {
+            $('.orderSearch, .dateSearch').hide();
+        }
+    });
+
+    $('#body_rdbOrderCode').click(function(){
+        if ($(this).is(':checked')) {
+            $('.orderSearch, .dateSearch').hide();
+            $('.orderSearch').show();
+        }
+    });
+
+    $('#body_rdbPeriodOrders').click(function(){
+        if ($(this).is(':checked')) {
+            $('.orderSearch, .dateSearch').hide();
+            $('.dateSearch').show();
+        }
+    });
+
+
+
+    $('.body_rdbAllOrders').click(function(){
+        $('.orderSearch, .dateSearch').hide();
+    });
+
     //FIXED ASIDE - MY ACCOUNT
     if ($('.mymenu').length == 1) {
         $stick = $('.mymenu');

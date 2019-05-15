@@ -68,7 +68,7 @@
 }
 
 @mixin bgimg($img) {
-  background: url("#{$img-url}/"+$img);
+  background: url("#{$img-url-server}/"+$img);
 }
 
 @mixin bgimage($img, $local: false) {
