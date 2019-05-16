@@ -66,14 +66,109 @@
             }
         }
 
+        .dateSearch{
+            @include flexbox(row, nowrap, flex-start, center, center);
+
+            span{
+                @include fonte($second-font, 400, 14px, $color-gray-dark);
+            }
+
+            .field{
+                @include box-sizing;
+                width: 50%;
+                max-width: 110px;
+            }
+        }
+
     }
 
     .result.box{
         @include box-sizing;
-        padding: 10px;
+        padding: 20px 30px;
         background-color: #FFF;
     }
 
-    
+    .myorders{
+        width: 100%;
+        border-collapse: collapse;
+
+        thead{
+            border-bottom: 1px solid $color-gray-light;
+        }
+        
+        th,
+        td{
+            text-align: left;
+            padding: 15px;
+        }
+        tr{
+            &:nth-child(even){
+                background-color: $color-gray-extra-light;
+            }
+        }
+        th{
+            @include fonte($second-font, 800, 14px, $color-gray-dark);
+        }
+
+        td{
+            @include fonte($second-font, 400, 13px, $color-gray-dark);
+            a{
+                @include fonte($second-font, 800, 13px, $color-gray-dark);
+            }
+        }
+        /*
+        td:nth-of-type(1):before { content: "First Name"; }
+		td:nth-of-type(2):before { content: "Last Name"; }
+		td:nth-of-type(3):before { content: "Job Title"; }
+		td:nth-of-type(4):before { content: "Favorite Color"; }
+		td:nth-of-type(5):before { content: "Wars of Trek?"; }
+		td:nth-of-type(6):before { content: "Secret Alias"; }
+		td:nth-of-type(7):before { content: "Date of Birth"; }
+		td:nth-of-type(8):before { content: "Dream Vacation City"; }
+		td:nth-of-type(9):before { content: "GPA"; }
+        td:nth-of-type(10):before { content: "Arbitrary Data"; }
+        */
+    }
+
+
+    .pagination{
+        @include flexbox(row, wrap, center, center, center);
+        @include box-sizing;
+        background-color: #FFF;
+        width: 100%;
+        padding: 15px;
+
+        ul{
+            @include flexbox(row, wrap, center, center, center);
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li{
+                padding: 5px;
+                a{
+                    @include fonte($second-font, 400, 13px, $color-gray);
+                    @include transition;
+                    &:hover{
+                        color: $color-gray-dark;
+                    }
+                    &.selected{
+                        color: $color-gray-dark;
+                    }
+                }
+                
+                &:not(.prev):not(.next):not(.last):not(.first){
+                    a{
+                        &.selected{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
 
 }
