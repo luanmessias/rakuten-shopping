@@ -1,0 +1,388 @@
+.myacc_orders {
+
+    .orders_content {
+        @include box-sizing;
+        width: 100%;
+        background-color: #FFF;
+
+        &.empty {
+            @include flexbox(row, wrap, center, center, center);
+            height: auto;
+            min-height: 400px;
+        }
+
+        .no_order_icon {
+            @include bgimage('no_orders.png', false);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            display: block;
+            width: 55px;
+            height: 60px;
+        }
+    
+        .no_order_txt {
+            @include fonte($second-font, 400, 24px, $color-gray);
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    }
+
+    .form.fgroup {
+        @include flexbox(row, wrap, flex-start, center, center);
+        padding: 15px 0px;
+
+        .field {
+            width: auto;
+            margin: 0px;
+
+            span {
+                @include fonte($second-font, 400, 14px, $color-gray-dark);
+            }
+        }
+
+        .fields {
+
+            .dateSearch,
+            .orderSearch {
+                display: none;
+            }
+
+            &.dateSearch {
+                .dateSearch {
+                    display: block;
+                }
+
+            }
+
+            &.orderSearch {
+                .orderSearch {
+                    display: block;
+                }
+            }
+        }
+
+        .action {
+            padding: 10px;
+            a {
+                @extend %bt-default;
+                margin: 0;
+            }
+        }
+
+        .dateSearch {
+            @include flexbox(row, nowrap, flex-start, center, center);
+
+            span {
+                @include fonte($second-font, 400, 14px, $color-gray-dark);
+            }
+
+            .field {
+                @include box-sizing;
+                width: 50%;
+                max-width: 110px;
+            }
+        }
+
+    }
+
+    .result.box {
+        @include box-sizing;
+        padding: 20px 30px;
+        background-color: #FFF;
+    }
+
+    .myorders {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            border-bottom: 1px solid $color-gray-light;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 15px;
+        }
+
+        tr {
+            @include transition;
+            border-bottom: 1px solid $color-gray-light;
+        }
+
+        tbody{
+            tr:hover{
+                background-color: $color-gray-extra-light;
+            }
+        }
+
+        th {
+            @include fonte($second-font, 800, 14px, $color-gray-dark);
+        }
+
+        td {
+            @include fonte($second-font, 400, 13px, $color-gray-dark);
+
+            a {
+                @include fonte($second-font, 800, 13px, $color-gray-dark);
+            }
+
+
+        }
+
+
+        // Lista de status
+        /*
+            .efetuado
+            .pagamento_confirmado
+            .troca
+            .entrega_parcial
+            .aguardando_analise_de_superpoint
+            .problema_na_pre_autorizacao
+            .cancelamento_automatico
+            .em_separacao
+            .fraude
+            .em_processo_de_debito
+            .aguardando_coleta
+            .problema_na_entrega
+            .solicitar_coleta
+            .problemas
+            .despachado
+            .entregue
+            .erro_ao_gerar_boleto
+        */
+
+
+        .problema_na_pre_autorizacao,
+        .cancelamento_automatico,
+        .fraude,
+        .problema_na_entrega,
+        .problemas,
+        .erro_ao_gerar_boleto,
+        .cancelado {
+            color: #be0000;
+        }
+
+
+        .entregue {
+            color: #007f1e;
+        }
+    }
+
+    .pagination {
+        @include flexbox(row, wrap, center, center, center);
+        @include box-sizing;
+        background-color: #FFF;
+        width: 100%;
+        padding: 15px;
+
+        ul {
+            @include flexbox(row, wrap, center, center, center);
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+
+            .first,
+            .last,
+            .prev,
+            .next{
+
+               a{
+                    font-size: 0px;
+                    &:before{
+                        font-family: $icon-font;
+                        font-size: 16px;
+                        font-weight: 900;
+                        color: #000;
+                    }
+
+                    &.selected{
+                        display: none;
+                    }
+    
+               }
+            }
+
+            li{
+                padding: 5px;
+                a{
+                    @include fonte($second-font, 400, 13px, $color-gray);
+                    @include flexbox(row, wrap, center, center, center);
+                    @include border-radius(2px);
+                    @include transition;
+                    background-color: $color-gray-light;
+                    width: 25px;
+                    height: 25px;
+
+                    &:hover {
+                        background-color: $color-gray;
+                        color: $color-gray-extra-light;
+                    }
+
+                }
+
+                &:not(.prev):not(.next):not(.last):not(.first) {
+                    a {
+                        &:hover,
+                        &.selected {
+                            background-color: $color-gray;
+                            color: $color-gray-extra-light;
+                        }
+                    }
+                }
+            }
+            
+            .first a:before{
+                content: "\f100";
+            }
+
+            .last a:before{
+                content: "\f101";
+            }
+
+            .prev a:before{
+                content: "\f104";
+            }
+
+            .next a:before{
+                content: "\f105";
+            }
+
+        }
+    }
+
+
+    @include res-max(876px) {
+        .result.box{
+            padding: 0px;
+            background: transparent;
+        }
+
+        .myorders {
+
+            &,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                @include transition;
+                @include box-sizing;
+                display: block;
+            }
+
+            tbody {
+                @include flexbox(row, wrap, space-between, flex-start, flex-start);
+            }
+
+            thead{
+                border: 0px;
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+                border: 0px;
+            }
+
+            tr{
+                background-color: #FFF;
+                border: 1px solid $color-gray-light;
+                margin: 10px;
+                width: calc(100% / 2 - 20px);
+                &:hover{
+                    background-color: #FFF;
+                }
+            }
+
+            td{
+                @include flexbox(row, wrap, space-between, center, center);
+                padding: 10px;
+                font-size: 12px;
+                a{
+                    @include box-sizing;
+                    padding: 10px;
+                    width: 100%;
+                    background-color: $color-gray-light;
+                }
+            }
+
+
+            td:before {
+                @include fonte($second-font, 800, 12px, $color-gray-dark);
+                content: attr(data-column);
+                padding-right: 15px;
+                white-space: nowrap;
+                text-align: left;
+            }
+        }
+
+        .pagination {
+            @include box-sizing;
+            border: 1px solid $color-gray-light;
+        }
+    }
+
+    @include res-max(300px) {
+        .form.fgroup{
+            .fields{
+                width: 100%;
+            }
+            .action{
+                width: 100%;
+            }
+        }
+        .myorders {
+            tr{
+                width: 100%;
+                margin: 10px 0px;
+            }
+        }
+       
+    }
+    
+    @include res-between(301px, 400px) {
+        .form.fgroup{
+            .fields{
+                width: 100%;
+            }
+            .action{
+                width: 100%;
+            }
+        }
+        .myorders {
+            tr{
+                width: 100%;
+                margin: 10px 0px;
+            }
+        }
+    }
+
+    @include res-between(401px, 500px) {
+        .myorders {
+            tr{
+                width: 100%;
+                margin: 10px 0px;
+            }
+        }
+    }
+
+    @include res-between(501px, 600px) {
+       
+    }
+
+    @include res-between(601px, 700px) {}
+
+    @include res-between(701px, 800px) {}
+
+    @include res-between(801px, 900px) {}
+
+    @include res-between(901px, 1000px) {}
+
+    @include res-min(1001px) {}
+
+}

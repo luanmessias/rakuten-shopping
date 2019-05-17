@@ -172,7 +172,7 @@
                 @include animate(fadeInRight, 0s);
                 @include box-shadow(6px, 2px, 5px, $color-gray-dark);
                 right: 0;
-                top: 75px;
+                top: 75px !important;
                 background-color: $color-gray-light;
                 z-index: 9;
                 overflow-x: auto;

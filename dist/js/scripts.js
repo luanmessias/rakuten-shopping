@@ -7,8 +7,12 @@ function setActive(e) {
 function myMenu() {
     scrtop = $(window).scrollTop();
     offbtm = $foot.offset().top - (margin * 2 + $stick.height());
-
+    
+    if ($(window).outerWidth() >= 768) {
+        $('.mymenu__mob').removeClass('active');
+    }
     if ($(window).outerWidth() >= breakPoint) {
+       
         if (scrtop > offtop && $stick.hasClass('mymenu')) {
             $stick.addClass('fixed').css('top', margin);
         }
