@@ -11,7 +11,7 @@ function myMenu() {
     if ($(window).outerWidth() >= 768) {
         $('.mymenu__mob').removeClass('active');
     }
-    if ($(window).outerWidth() >= breakPoint) {
+    if ($(window).outerWidth() >= 768) {
        
         if (scrtop > offtop && $stick.hasClass('mymenu')) {
             $stick.addClass('fixed').css('top', margin);

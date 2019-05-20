@@ -5,6 +5,7 @@
     > .wrapper{
         @include flexbox(row, wrap, space-between, inherit, flex-start);
         padding-bottom: 30px;
+        overflow: hidden;
 
         @media #{$res-break} {
             @include flexbox(row, wrap, center, inherit, flex-start);

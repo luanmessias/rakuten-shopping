@@ -1,5 +1,9 @@
 .myacc_orders {
 
+    .wrapper{
+        overflow: hidden;
+    }
+
     .orders_content {
         @include box-sizing;
         width: 100%;

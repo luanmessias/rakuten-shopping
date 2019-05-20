@@ -1,0 +1,346 @@
+.myacc_order{
+
+    .box{
+        @include border-radius();
+        padding: 10px 20px;
+        margin: 8px 0px;
+        background-color: #FFF;
+        border: 1px solid $color-gray-light;
+
+        > div{
+            @include flexbox(row, wrap, space-between, center, center);
+            @include transition;
+            padding: 10px 0px;
+        }
+
+        @include e('mid'){
+            border-top: 1px solid $color-gray-light;
+            border-bottom: 1px solid $color-gray-light;
+        }
+
+        @include e('soldby'){
+            strong{
+                @include fonte($second-font, 600, 14px, $color-gray);
+            }
+
+            @include e('name'){
+                @include fonte($second-font, 400, 12px, $color-gray);
+            }
+
+        }
+
+        @include e('points'){
+            span{
+                @include flexbox(row, wrap, center, center, center);
+                @include fonte($second-font, 400, 13px, $color-green);
+                padding-left: 23px;
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
+                height: 20px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left center;
+            }
+        }
+
+        @include e('order'){
+            @include transition;
+            @include box-sizing;
+            border-right: 1px solid $color-gray-light;
+            padding: 15px 35px 15px 0px;
+            width: 40%;
+            @include e('desc'){
+                @include fonte($second-font, 400, 14px, $color-gray);
+                display: block;
+                width: 100%;
+            }
+            @include e('number'){
+                @include fonte($second-font, 800, 24px, $color-green);
+                text-transform: uppercase;
+                display: block;
+                margin-bottom: 10px;
+            }
+            strong{
+                @include fonte($second-font, 600, 14px, $color-gray);
+            }
+            @include e('date'){
+                @include fonte($second-font, 400, 14px, $color-gray);
+                display: block;
+                width: 100%;
+            }
+        }        
+
+        @include e('status'){
+            @include transition;
+            @include box-sizing;
+            padding: 15px 35px 15px 35px;
+            width: 60%;
+
+            > div {
+                @include flexbox(row, wrap, space-between, center, center);
+                width: 100%;
+            }
+
+            @include e('desc'){
+                @include fonte($second-font, 400, 14px, $color-gray);
+                display: block;
+                width: 100%;
+            }
+            @include e('txt'){
+                @include fonte($second-font, 800, 24px, $color-gray);
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            strong{
+                @include fonte($second-font, 600, 14px, $color-gray);
+                display: block;
+                width: 100%;
+            }
+            @include e('type'){
+                @include fonte($second-font, 400, 14px, $color-gray);
+                display: block;
+                width: 100%;
+            }
+           @include e('button'){
+               @extend %bt-default;
+           }
+
+        }
+
+        @include e('mail'){
+            span{
+                @include fonte($second-font, 400, 14px, $color-gray);
+            }
+            strong{
+                @include fonte($second-font, 600, 14px, $color-gray);
+            }
+        }
+
+    }
+
+    @include res-max(300px) {
+        .box{
+            @include e('soldby'){
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            @include e('points'){
+                text-align: center;
+                span{
+                    background: none;
+                    padding: 0;
+                }
+            }
+
+            @include e('order'){
+                border-bottom: 1px solid $color-gray-light;
+                border-right: 0px;
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+            }
+
+            @include e('status'){
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+                div{
+                    width: 100%;
+                }
+            }
+
+            @include e('mail'){
+                text-align: center;
+                display: block;
+                width: 100%;
+                strong{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @include res-between(301px, 600px) {
+        .box{
+            @include e('soldby'){
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            @include e('points'){
+                text-align: center;
+                span{
+                    background: none;
+                    padding: 0;
+                }
+            }
+
+            @include e('order'){
+                border-bottom: 1px solid $color-gray-light;
+                border-right: 0px;
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+            }
+
+            @include e('status'){
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+                div{
+                    width: 100%;
+                }
+            }
+
+            @include e('mail'){
+                text-align: center;
+                display: block;
+                width: 100%;
+                strong{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @include res-between(401px, 500px) {
+        .box{
+            @include e('soldby'){
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            @include e('points'){
+                text-align: center;
+                display: block;
+                width: 100%;
+                span{
+                    background: none;
+                    padding: 0;
+                }
+            }
+
+            @include e('order'){
+                border-bottom: 1px solid $color-gray-light;
+                border-right: 0px;
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+            }
+
+            @include e('status'){
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+                div{
+                    width: 100%;
+                }
+            }
+
+            @include e('mail'){
+                text-align: center;
+                display: block;
+                width: 100%;
+                strong{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @include res-between(501px, 600px) {
+        .box{
+            @include e('soldby'){
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            @include e('points'){
+                text-align: center;
+                display: block;
+                width: 100%;
+                span{
+                    background: none;
+                    padding: 0;
+                }
+            }
+
+            @include e('order'){
+                border-bottom: 1px solid $color-gray-light;
+                border-right: 0px;
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+            }
+
+            @include e('status'){
+                width: 100%;
+                padding: 10px 0px;
+                text-align: center;
+                div{
+                    width: 100%;
+                }
+
+                @include e('button'){
+                    margin: 10px auto;
+                }
+
+            }
+
+            @include e('mail'){
+                text-align: center;
+                display: block;
+                width: 100%;
+                strong{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    @include res-between(601px, 700px) {
+        .box{
+            
+            @include e('order'){
+                width: 50%;
+                padding: 15px;
+            }
+
+            @include e('status'){
+                width: 50%;
+                padding: 15px;
+            }
+
+        }
+    }
+
+    @include res-between(701px, 800px) {
+        .box{
+            
+            @include e('order'){
+                width: 50%;
+                padding: 15px;
+            }
+
+            @include e('status'){
+                width: 50%;
+                padding: 15px;
+            }
+
+        }
+    }
+    
+    @include res-between(801px, 900px) {}
+    @include res-between(901px, 1000px) {}
+    @include res-min(1001px) {}
+
+}

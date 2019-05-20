@@ -8,6 +8,7 @@
     .wrapper{
         @include flexbox(row, wrap, space-around, inherit, flex-start);
         padding-bottom: 40px;
+        overflow: hidden;
     }
     
     .actions{
