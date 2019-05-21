@@ -15,7 +15,8 @@
     @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.479));
 }
 
-%bt-default{
+%bt-default,
+.bt-default{
     @include fonte($second-font, 800, 14px, #FFF);
     @include box-sizing;
     @include border-radius(3px);

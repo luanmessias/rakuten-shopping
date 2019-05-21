@@ -1,36 +1,36 @@
-.myacc_order{
+.myacc_order {
 
-    .box{
+    .box {
         @include border-radius();
         padding: 10px 20px;
         margin: 8px 0px;
         background-color: #FFF;
         border: 1px solid $color-gray-light;
 
-        > div{
+        >div {
             @include flexbox(row, wrap, space-between, center, center);
             @include transition;
             padding: 10px 0px;
         }
 
-        @include e('mid'){
+        @include e('mid') {
             border-top: 1px solid $color-gray-light;
             border-bottom: 1px solid $color-gray-light;
         }
 
-        @include e('soldby'){
-            strong{
+        @include e('soldby') {
+            strong {
                 @include fonte($second-font, 600, 14px, $color-gray);
             }
 
-            @include e('name'){
+            @include e('name') {
                 @include fonte($second-font, 400, 12px, $color-gray);
             }
 
         }
 
-        @include e('points'){
-            span{
+        @include e('points') {
+            span {
                 @include flexbox(row, wrap, center, center, center);
                 @include fonte($second-font, 400, 13px, $color-green);
                 padding-left: 23px;
@@ -42,98 +42,246 @@
             }
         }
 
-        @include e('order'){
+        @include e('order') {
             @include transition;
             @include box-sizing;
             border-right: 1px solid $color-gray-light;
             padding: 15px 35px 15px 0px;
             width: 40%;
-            @include e('desc'){
+
+            @include e('desc') {
                 @include fonte($second-font, 400, 14px, $color-gray);
                 display: block;
                 width: 100%;
             }
-            @include e('number'){
+
+            @include e('number') {
                 @include fonte($second-font, 800, 24px, $color-green);
                 text-transform: uppercase;
                 display: block;
                 margin-bottom: 10px;
             }
-            strong{
+
+            strong {
                 @include fonte($second-font, 600, 14px, $color-gray);
             }
-            @include e('date'){
+
+            @include e('date') {
                 @include fonte($second-font, 400, 14px, $color-gray);
                 display: block;
                 width: 100%;
             }
-        }        
+        }
 
-        @include e('status'){
+        @include e('status') {
             @include transition;
             @include box-sizing;
             padding: 15px 35px 15px 35px;
             width: 60%;
 
-            > div {
+            >div {
                 @include flexbox(row, wrap, space-between, center, center);
                 width: 100%;
             }
 
-            @include e('desc'){
+            @include e('desc') {
                 @include fonte($second-font, 400, 14px, $color-gray);
                 display: block;
                 width: 100%;
             }
-            @include e('txt'){
+
+            @include e('txt') {
                 @include fonte($second-font, 800, 24px, $color-gray);
                 display: block;
                 width: 100%;
                 margin-bottom: 10px;
             }
-            strong{
+
+            strong {
                 @include fonte($second-font, 600, 14px, $color-gray);
                 display: block;
                 width: 100%;
+                margin-top: 5px;
             }
-            @include e('type'){
+
+            @include e('type') {
+                @include flexbox(row, wrap, flex-start, center, center);
                 @include fonte($second-font, 400, 14px, $color-gray);
-                display: block;
+                @include box-sizing;
                 width: 100%;
+
+                #body_pnlParcels {
+                    margin-left: 5px;
+                }
             }
-           @include e('button'){
-               @extend %bt-default;
-           }
+
+            @include e('button') {
+                @extend %bt-default;
+            }
 
         }
 
-        @include e('mail'){
-            span{
+        @include e('payment') {
+            >.box__status__type {
+                width: 100%;
+                padding-left: 35px;
+                background-repeat: no-repeat;
+                background-position: center left;
+                background-size: 28px;
+                height: 30px;
+            }
+
+            @include m('card') {
+                width: 100%;
+
+                >.box__status__type {
+                    @include bgimage('myacc_card.png');
+                }
+            }
+
+            @include m('boleto') {
+                >.box__status__type {
+                    @include bgimage('myacc_boleto.png');
+                }
+            }
+        }
+
+        @include e('mail') {
+            span {
                 @include fonte($second-font, 400, 14px, $color-gray);
             }
-            strong{
+
+            strong {
                 @include fonte($second-font, 600, 14px, $color-gray);
+            }
+        }
+
+        @include m('adship') {
+            @include flexbox(row, wrap, flex-start, inherit, center);
+            padding: 0px;
+
+            >div {
+                @include flexbox(row, nowrap, flex-start, inherit, center);
+                @include box-sizing;
+                width: 50%;
+                padding: 15px;
+
+                strong {
+                    @include fonte($second-font, 600, 14px, $color-gray);
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+
+                span {
+                    @include fonte($second-font, 400, 14px, $color-gray);
+                }
+            }
+
+            #body_hypTracking {}
+        }
+
+
+        @include e('address') {
+            border-right: 1px solid $color-gray-light;
+
+            .box__icon {
+                @include bgimage('myacc_address.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                width: 60px;
+                height: 55px;
+                margin-right: 20px;
+            }
+        }
+
+        @include e('ship') {
+            .box__icon {
+                @include bgimage('myacc_ship.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                width: 65px;
+                height: 60px;
+                margin-right: 20px;
+            }
+        }
+
+    }
+
+    .footer {
+        @include flexbox(row, wrap, space-between, center, center);
+        @include fonte($second-font, 400, 14px, $color-gray);
+        @include box-sizing;
+        padding: 10px;
+        width: 100%;
+
+        >div:first-of-type {
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include box-sizing;
+        }
+
+        @include e('sep') {
+            margin: 0px 10px;
+        }
+
+        #body_pnlStoreContact {
+            @include flexbox(row, nowrap, flex-start, center, center);
+        }
+
+        .footer__mail,
+        .footer__phone {
+            display: block;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+            padding-left: 25px;
+            background-position: center left;
+            background-size: 20px;
+            height: 20px;
+            line-height: 18px;
+        }
+
+        @include e('store') {
+            font-weight: bold;
+        }
+
+        @include e('mail') {
+            @include bgimage('myacc_mail.png');
+        }
+
+        @include e('phone') {
+            @include bgimage('myacc_phone.png');
+        }
+
+        @include e('link') {
+            @include fonte($second-font, 400, 14px, $color-gray);
+
+            &:hover {
+                color: $color-gray-dark;
             }
         }
 
     }
 
     @include res-max(300px) {
-        .box{
-            @include e('soldby'){
+        .box {
+            @include e('soldby') {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 10px;
             }
-            @include e('points'){
+
+            @include e('points') {
                 text-align: center;
-                span{
+
+                span {
                     background: none;
                     padding: 0;
                 }
             }
 
-            @include e('order'){
+            @include e('order') {
                 border-bottom: 1px solid $color-gray-light;
                 border-right: 0px;
                 width: 100%;
@@ -141,44 +289,134 @@
                 text-align: center;
             }
 
-            @include e('status'){
+            @include e('status') {
                 width: 100%;
                 padding: 10px 0px;
                 text-align: center;
-                div{
+
+                div {
                     width: 100%;
+                }
+
+                @include e('type') {
+                    text-align: center;
+                    margin-top: 10px;
+                    padding: 0px;
+
+                }
+
+            }
+
+            @include e('payment') {
+                padding: 10px 0px;
+
+                >.box__status__type {
+                    @include flex-justify(center);
+                    padding: 0px;
+                    text-align: center;
+                }
+
+                #body_pnlParcels {
+                    text-align: center;
+                }
+
+                @include m('card') {
+                    >.box__status__type {
+                        background: none;
+                    }
+                }
+
+                @include m('boleto') {
+                    >.box__status__type {
+                        background: none;
+                    }
                 }
             }
 
-            @include e('mail'){
+            @include e('mail') {
                 text-align: center;
                 display: block;
                 width: 100%;
-                strong{
+
+                strong {
                     display: block;
                     width: 100%;
                     text-align: center;
                 }
+            }
+
+            @include m('adship') {
+                @include flex-direction(column);
+
+                .box__address {
+                    border-right: 0px;
+                    border-bottom: 1px solid $color-gray-light;
+                }
+
+                .box__address,
+                .box__ship {
+                    width: 100%;
+                }
+
+
+
+            }
+        }
+
+        .footer{
+            text-align: center;
+            > div {
+                @include box-sizing;
+                width: 100%;
+            }
+            @include e('sep'){
+                display: none;
+            }
+            @include e('store'){
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            @include e('mail'){
+                margin: 5px 0px;
+            }
+
+            @include e('phone'){
+                margin: 5px 0px;
+            }
+
+            @include e('link'){
+                display: block;
+                margin: 0px auto;
+            }
+
+            #body_pnlStoreContact{
+                @include flex-wrap(wrap);
+                @include flex-justify(center);
+                margin: 0px auto;
             }
         }
     }
 
-    @include res-between(301px, 600px) {
-        .box{
-            @include e('soldby'){
+    @include res-between(301px, 400px) {
+        .box {
+            @include e('soldby') {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 10px;
             }
-            @include e('points'){
+
+            @include e('points') {
                 text-align: center;
-                span{
+
+                span {
                     background: none;
                     padding: 0;
                 }
             }
 
-            @include e('order'){
+            @include e('order') {
                 border-bottom: 1px solid $color-gray-light;
                 border-right: 0px;
                 width: 100%;
@@ -186,46 +424,135 @@
                 text-align: center;
             }
 
-            @include e('status'){
+            @include e('status') {
                 width: 100%;
                 padding: 10px 0px;
                 text-align: center;
-                div{
+
+                div {
                     width: 100%;
+                }
+
+                @include e('type') {
+                    text-align: left;
+                }
+
+                #body_pnlParcels {
+                    text-align: left;
+                    margin-left: 0px;
                 }
             }
 
-            @include e('mail'){
+            @include e('payment') {
+                padding: 10px 0px;
+
+                >.box__status__type {
+                    @include flex-justify(center);
+                    padding: 0px;
+                    text-align: center;
+                }
+
+                #body_pnlParcels {
+                    text-align: center;
+                }
+
+                @include m('card') {
+                    >.box__status__type {
+                        background: none;
+                    }
+                }
+
+                @include m('boleto') {
+                    >.box__status__type {
+                        background: none;
+                    }
+                }
+            }
+
+            @include e('mail') {
                 text-align: center;
                 display: block;
                 width: 100%;
-                strong{
+
+                strong {
                     display: block;
                     width: 100%;
                     text-align: center;
                 }
+            }
+
+            @include m('adship') {
+                @include flex-direction(column);
+
+                .box__address {
+                    border-right: 0px;
+                    border-bottom: 1px solid $color-gray-light;
+                }
+
+                .box__address,
+                .box__ship {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .footer{
+            text-align: center;
+            > div {
+                @include box-sizing;
+                width: 100%;
+            }
+            @include e('sep'){
+                display: none;
+            }
+            @include e('store'){
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            @include e('mail'){
+                margin: 5px 0px;
+            }
+
+            @include e('phone'){
+                margin: 5px 0px;
+            }
+
+            @include e('link'){
+                display: block;
+                margin: 0px auto;
+            }
+
+            #body_pnlStoreContact{
+                @include flex-wrap(wrap);
+                @include flex-justify(center);
+                margin: 0px auto;
             }
         }
     }
 
     @include res-between(401px, 500px) {
-        .box{
-            @include e('soldby'){
+        .box {
+            @include e('soldby') {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 10px;
             }
-            @include e('points'){
+
+            @include e('points') {
                 text-align: center;
                 display: block;
                 width: 100%;
-                span{
+
+                span {
                     background: none;
                     padding: 0;
                 }
             }
 
-            @include e('order'){
+            @include e('order') {
                 border-bottom: 1px solid $color-gray-light;
                 border-right: 0px;
                 width: 100%;
@@ -233,46 +560,125 @@
                 text-align: center;
             }
 
-            @include e('status'){
+            @include e('status') {
                 width: 100%;
                 padding: 10px 0px;
                 text-align: center;
-                div{
+
+                div {
                     width: 100%;
                 }
             }
 
-            @include e('mail'){
+            @include e('payment') {
+                padding: 10px 0px;
+
+                >.box__status__type {
+                    @include flex-justify(center);
+                    padding: 0px;
+                    text-align: center;
+                }
+
+                #body_pnlParcels {
+                    text-align: center;
+                }
+
+                @include m('card') {
+                    >.box__status__type {
+                        background: none;
+                    }
+                }
+
+                @include m('boleto') {
+                    >.box__status__type {
+                        background: none;
+                    }
+                }
+            }
+
+            @include e('mail') {
                 text-align: center;
                 display: block;
                 width: 100%;
-                strong{
+
+                strong {
                     display: block;
                     width: 100%;
                     text-align: center;
                 }
             }
+
+            @include m('adship') {
+                @include flex-direction(column);
+
+                .box__address {
+                    border-right: 0px;
+                    border-bottom: 1px solid $color-gray-light;
+                }
+
+                .box__address,
+                .box__ship {
+                    width: 100%;
+                }
+            }
+        }
+
+        .footer{
+            text-align: center;
+            > div {
+                @include box-sizing;
+                width: 100%;
+            }
+            @include e('sep'){
+                display: none;
+            }
+            @include e('store'){
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            @include e('mail'){
+                margin: 5px 0px;
+            }
+
+            @include e('phone'){
+                margin: 5px 0px;
+            }
+
+            @include e('link'){
+                display: block;
+                margin: 0px auto;
+            }
+
+            #body_pnlStoreContact{
+                @include flex-wrap(wrap);
+                @include flex-justify(center);
+                margin: 0px auto;
+            }
         }
     }
 
     @include res-between(501px, 600px) {
-        .box{
-            @include e('soldby'){
+        .box {
+            @include e('soldby') {
                 width: 100%;
                 text-align: center;
                 margin-bottom: 10px;
             }
-            @include e('points'){
+
+            @include e('points') {
                 text-align: center;
                 display: block;
                 width: 100%;
-                span{
+
+                span {
                     background: none;
                     padding: 0;
                 }
             }
 
-            @include e('order'){
+            @include e('order') {
                 border-bottom: 1px solid $color-gray-light;
                 border-right: 0px;
                 width: 100%;
@@ -280,25 +686,53 @@
                 text-align: center;
             }
 
-            @include e('status'){
+            @include e('status') {
                 width: 100%;
                 padding: 10px 0px;
                 text-align: center;
-                div{
+
+                div {
                     width: 100%;
                 }
 
-                @include e('button'){
+                @include e('button') {
                     margin: 10px auto;
                 }
 
             }
 
-            @include e('mail'){
+            @include e('payment') {
+                padding: 10px 0px;
+
+                >.box__status__type {
+                    @include flex-justify(center);
+                    padding: 0px;
+                    text-align: center;
+                }
+
+                #body_pnlParcels {
+                    text-align: center;
+                }
+
+                @include m('card') {
+                    >.box__status__type {
+                        background: none;
+                    }
+                }
+
+                @include m('boleto') {
+                    >.box__status__type {
+                        background: none;
+                    }
+                }
+            }
+
+            @include e('mail') {
                 text-align: center;
                 display: block;
                 width: 100%;
-                strong{
+
+                strong {
                     display: block;
                     width: 100%;
                     text-align: center;
@@ -308,39 +742,49 @@
     }
 
     @include res-between(601px, 700px) {
-        .box{
-            
-            @include e('order'){
+        .box {
+
+            @include e('order') {
                 width: 50%;
                 padding: 15px;
             }
 
-            @include e('status'){
+            @include e('status') {
                 width: 50%;
                 padding: 15px;
+            }
+
+            @include e('payment') {
+
+                #body_pnlParcels {
+                    margin-left: 0px;
+                }
+
             }
 
         }
     }
 
     @include res-between(701px, 800px) {
-        .box{
-            
-            @include e('order'){
+        .box {
+
+            @include e('order') {
                 width: 50%;
                 padding: 15px;
             }
 
-            @include e('status'){
+            @include e('status') {
                 width: 50%;
                 padding: 15px;
             }
 
         }
     }
-    
+
     @include res-between(801px, 900px) {}
+
     @include res-between(901px, 1000px) {}
+
     @include res-min(1001px) {}
 
 }

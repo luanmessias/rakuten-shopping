@@ -160,6 +160,21 @@ $color) {
   align-content: $fb-align-content;
 }
 
+@mixin flex-direction($value){
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  -o-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($value){
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  -o-flex-wrap: $value;
+}
+
 @mixin flex-justify($value){
   -webkit-justify-content: $value;
   -moz-justify-content: $value;
