@@ -363,35 +363,38 @@
             }
         }
 
-        .footer{
+        .footer {
             text-align: center;
-            > div {
+
+            >div {
                 @include box-sizing;
                 width: 100%;
             }
-            @include e('sep'){
+
+            @include e('sep') {
                 display: none;
             }
-            @include e('store'){
+
+            @include e('store') {
                 display: block;
                 width: 100%;
                 text-align: center;
             }
 
-            @include e('mail'){
+            @include e('mail') {
                 margin: 5px 0px;
             }
 
-            @include e('phone'){
+            @include e('phone') {
                 margin: 5px 0px;
             }
 
-            @include e('link'){
+            @include e('link') {
                 display: block;
                 margin: 0px auto;
             }
 
-            #body_pnlStoreContact{
+            #body_pnlStoreContact {
                 @include flex-wrap(wrap);
                 @include flex-justify(center);
                 margin: 0px auto;
@@ -497,35 +500,38 @@
 
         }
 
-        .footer{
+        .footer {
             text-align: center;
-            > div {
+
+            >div {
                 @include box-sizing;
                 width: 100%;
             }
-            @include e('sep'){
+
+            @include e('sep') {
                 display: none;
             }
-            @include e('store'){
+
+            @include e('store') {
                 display: block;
                 width: 100%;
                 text-align: center;
             }
 
-            @include e('mail'){
+            @include e('mail') {
                 margin: 5px 0px;
             }
 
-            @include e('phone'){
+            @include e('phone') {
                 margin: 5px 0px;
             }
 
-            @include e('link'){
+            @include e('link') {
                 display: block;
                 margin: 0px auto;
             }
 
-            #body_pnlStoreContact{
+            #body_pnlStoreContact {
                 @include flex-wrap(wrap);
                 @include flex-justify(center);
                 margin: 0px auto;
@@ -623,35 +629,38 @@
             }
         }
 
-        .footer{
+        .footer {
             text-align: center;
-            > div {
+
+            >div {
                 @include box-sizing;
                 width: 100%;
             }
-            @include e('sep'){
+
+            @include e('sep') {
                 display: none;
             }
-            @include e('store'){
+
+            @include e('store') {
                 display: block;
                 width: 100%;
                 text-align: center;
             }
 
-            @include e('mail'){
+            @include e('mail') {
                 margin: 5px 0px;
             }
 
-            @include e('phone'){
+            @include e('phone') {
                 margin: 5px 0px;
             }
 
-            @include e('link'){
+            @include e('link') {
                 display: block;
                 margin: 0px auto;
             }
 
-            #body_pnlStoreContact{
+            #body_pnlStoreContact {
                 @include flex-wrap(wrap);
                 @include flex-justify(center);
                 margin: 0px auto;
