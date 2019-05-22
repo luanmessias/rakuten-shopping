@@ -38,4 +38,11 @@
         margin-right: 0px;
     }
 
+    @include m('red'){
+        background-color: $color-red;
+        &:hover{
+            background-color: $color-red-dark;
+        }
+    }
+
 }
