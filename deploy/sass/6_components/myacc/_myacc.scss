@@ -77,6 +77,7 @@
             @include fonte($second-font, 400, 12px, $color-gray);
             margin: 5px 0px;
             display: block;
+            width: 100%;
         }
 
         &:hover{
@@ -175,6 +176,7 @@
 
     @include e('wrap'){
         @include box-sizing;
+        @include transition;
     }    
 
     @include e('recover'){

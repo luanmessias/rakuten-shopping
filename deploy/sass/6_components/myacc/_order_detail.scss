@@ -303,8 +303,29 @@
             td {
                 @include fonte($second-font, 400, 13px, $color-gray-dark);
 
-                a {
+                a, strong {
                     @include fonte($second-font, 800, 13px, $color-gray-dark);
+                }
+            }
+
+            tfoot{
+                margin-top: 10px;
+                tr{
+                    border: 0px;
+                    &:first-of-type{
+                        td{
+                            padding-top: 20px;
+                        }
+                    }
+                }
+                td{
+                    padding: 5px 15px;
+                }
+                td{
+                    text-align: right;
+                }
+                td + td{
+                    text-align: left;
                 }
             }
 
@@ -346,7 +367,8 @@
                 border: 0px;
             }
 
-            tr{
+            tbody tr,
+            tfoot{
                 @include border-radius();
                 background-color: #FFF;
                 border: 1px solid $color-gray-light;
@@ -354,6 +376,24 @@
                 width: calc(100% / 2 - 10px);
                 &:hover{
                     background-color: #FFF;
+                }
+            }
+
+            tfoot{
+                display: block;
+                width: 100%;
+                tr{
+                    @include flexbox(row, wrap, space-between, center, center);
+                    td{
+                        text-align: left;
+                        &:before{
+                            display: none;
+                        }
+                    }
+
+                    td + td{
+                        text-align: right;
+                    }
                 }
             }
 
@@ -482,7 +522,7 @@
         }
 
         .box .basket table {
-            tr{
+            tbody tr{
                 width: 100%;
                 margin: 10px 0px;
             }
@@ -626,7 +666,7 @@
         }
 
         .box .basket table {
-            tr{
+            tbody tr{
                 width: 100%;
                 margin: 10px 0px;
             }
@@ -762,7 +802,7 @@
         }
 
         .box .basket table {
-            tr{
+            tbody tr{
                 width: 100%;
                 margin: 10px 0px;
             }
