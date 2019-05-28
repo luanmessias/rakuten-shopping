@@ -1,50 +1,56 @@
-.myacc_points{
+.myacc_points {
     min-height: 780px;
-    .sp{
-        @include e('num'){
+
+    .wrapper {
+        overflow: visible;
+    }
+
+    .sp {
+        @include e('num') {
             @include flexbox(row, wrap, flex-start, center, center);
             width: 100%;
             margin: 20px 0px 30px 0px;
 
-            @include e('block'){
+            @include e('block') {
                 @include box-sizing;
                 @include transition;
                 width: auto;
 
-                > span{
+                >span {
                     width: 100%;
                     display: block;
                 }
 
-                @include e('title'){
+                @include e('title') {
                     @include fonte($second-font, 400, 14px, $color-gray-dark);
                 }
 
-                @include e('money'){
+                @include e('money') {
                     @include fonte($second-font, 600, 28px, $color-gray-dark);
                 }
 
-                @include e('points'){
+                @include e('points') {
                     @include fonte($second-font, 400, 14px, $color-gray-dark);
                 }
 
-                @include m('available'){
+                @include m('available') {
                     @include bgimage('ico_header_points.png');
                     background-repeat: no-repeat;
                     background-size: contain;
                     padding-left: 70px;
-                    span{
+
+                    span {
                         color: $color-green;
                     }
                 }
 
-                @include m('understand'){
+                @include m('understand') {
                     margin-left: 30px;
                 }
 
             }
 
-            @include e('sep'){
+            @include e('sep') {
                 background-color: $color-gray-light;
                 width: 1px;
                 height: 60px;
@@ -52,84 +58,658 @@
             }
 
         }
+
+        @include e('tabs')
     }
 
+    .col-data {
+        margin-top: 50px;
+
+        .tab {
+            display: none;
+            position: relative;
+        }
+
+        #extrato,
+        #pendente {
+            display: none;
+        }
+
+        #extrato:checked~.tab.available,
+        #pendente:checked~.tab.bloked {
+            display: block;
+        }
+
+        .lab.available,
+        .lab.bloked {
+            @include flexbox(row, wrap, center, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            width: auto;
+            text-align: center;
+            padding: 14px 20px;
+            display: inline-flex;
+            cursor: pointer;
+            background-color: $color-gray-light;
+            border: 1px solid transparent;
+            position: relative;
+            top: 1px;
+            z-index: 1;
+
+        }
+
+        #extrato:checked~.lab.available,
+        #pendente:checked~.lab.bloked {
+            background-color: #FFF;
+            border: 1px solid $color-gray-light;
+            border-bottom-color: #FFF;
+        }
+
+        .tab {
+            @include box-sizing;
+            @include border-radius(3px);
+            padding: 20px;
+            background-color: #FFF;
+            border: 1px solid $color-gray-light;
+        }
+
+        .abas {
+            @include flexbox(row, wrap, flex-end, center, center);
+            width: 100%;
+            position: absolute;
+            top: -55px;
+            right: 0;
+
+            select,
+            .moment-picker {
+                @include flexbox(row, wrap, flex-start, center, center);
+                @include border-radius(3px);
+                background-color: #FFF;
+                border: 1px solid $color-gray-light;
+                height: 38px;
+                padding: 0px 10px;
+                position: relative;
+                margin-right: 10px;
+            }
+
+            .field {
+                position: relative;
+            }
+
+            .field>label>span {
+                @include fonte($second-font, 400, 12px, $color-gray);
+                position: absolute;
+                top: -16px;
+                padding: 3px 5px;
+            }
+
+        }
 
 
+    }
+
+    .tb-sp {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            border-bottom: 1px solid $color-gray-light;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 15px;
+        }
+
+        tr {
+            @include transition;
+            border-bottom: 1px solid $color-gray-light;
+        }
+
+        tbody {
+            tr:hover {
+                background-color: $color-gray-extra-light;
+            }
+        }
+
+        th {
+            @include fonte($second-font, 800, 14px, $color-gray-dark);
+        }
+
+        td {
+            @include fonte($second-font, 400, 13px, $color-gray-dark);
+
+            a {
+                @include fonte($second-font, 800, 13px, $color-gray-dark);
+            }
+
+
+        }
+
+
+        // Lista de status
+        /*
+            .efetuado
+            .pagamento_confirmado
+            .troca
+            .entrega_parcial
+            .aguardando_analise_de_superpoint
+            .problema_na_pre_autorizacao
+            .cancelamento_automatico
+            .em_separacao
+            .fraude
+            .em_processo_de_debito
+            .aguardando_coleta
+            .problema_na_entrega
+            .solicitar_coleta
+            .problemas
+            .despachado
+            .entregue
+            .erro_ao_gerar_boleto
+        */
+
+
+        .problema_na_pre_autorizacao,
+        .cancelamento_automatico,
+        .fraude,
+        .problema_na_entrega,
+        .problemas,
+        .erro_ao_gerar_boleto,
+        .cancelado {
+            color: #be0000;
+        }
+
+
+        .entregue {
+            color: #007f1e;
+        }
+    }
+
+    .pagination {
+        width: 100%;
+
+        ng-include {
+            @include flexbox(row, wrap, center, center, center);
+            @include box-sizing;
+            background-color: #FFF;
+            width: 100%;
+            padding: 15px;
+
+
+        }
+
+        span,
+        a {
+            @include fonte($second-font, 400, 13px, $color-gray);
+            @include flexbox(row, wrap, center, center, center);
+            @include border-radius(2px);
+            @include transition;
+            background-color: $color-gray-light;
+            width: auto;
+            height: 25px;
+            padding: 0px 10px;
+
+            &:hover {
+                background-color: $color-gray;
+                color: $color-gray-extra-light;
+            }
+        }
+
+        span{
+            margin: 0px 10px;
+        }
+
+        a {
+            font-size: 0px;
+
+            &:before {
+                content: "\f104";
+                font-family: $icon-font;
+                font-size: 16px;
+                font-weight: 900;
+                color: #000;
+            }
+
+            &.selected {
+                display: none;
+            }
+        }
+
+
+        span + a:before {
+            content: "\f105";
+        }
+
+
+    }
+
+    .no_points{
+        @include flexbox(row, wrap, center, center, center);
+        @include box-sizing;
+        padding: 20px;
+        text-align: center;
+        background-color: #FFF;
+        span{
+            @include fonte($second-font, 400, 24px, $color-gray);
+            text-align: center;
+            display: block;
+            width: 100%;
+            &:before{
+                @include bgimage("icon-no-points.png", false);
+                content: "";
+                width: 65px;
+                height: 65px;
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 0px auto;
+            }
+        }
+    }
+    
+    @include res-max(876px) {
+        .col-data .tab{
+            padding: 0px;
+        }
+
+        .tb-sp {
+            &,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                @include transition;
+                @include box-sizing;
+                display: block;
+            }
+
+            tbody {
+                @include flexbox(row, wrap, space-between, inherit, flex-start);
+            }
+
+            thead{
+                border: 0px;
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+                border: 0px;
+            }
+
+            tr{
+                background-color: #FFF;
+                border: 1px solid $color-gray-light;
+                margin: 10px;
+                width: calc(100% / 2 - 20px);
+                &:hover{
+                    background-color: #FFF;
+                }
+            }
+
+            td{
+                @include flexbox(row, wrap, space-between, center, center);
+                padding: 10px;
+                font-size: 12px;
+                a{
+                    @include box-sizing;
+                    padding: 10px;
+                    width: 100%;
+                    background-color: $color-gray-light;
+                }
+            }
+
+
+            td:before {
+                @include fonte($second-font, 800, 12px, $color-gray-dark);
+                content: attr(data-column);
+                padding-right: 15px;
+                white-space: nowrap;
+                text-align: left;
+            }
+        }
+
+        .pagination {
+            @include box-sizing;
+            border: 1px solid $color-gray-light;
+        }
+    }
 
     @include res-max(300px) {
-        .sp{
-            @include e('num'){
+        .sp {
+            @include e('num') {
 
-                @include e('block'){
-                    @include m('blocked'){
+                @include e('block') {
+                    @include m('blocked') {
                         padding-left: 70px;
                     }
 
-                    @include m('understand'){
+                    @include m('understand') {
                         margin: 0px;
                         width: 100%;
                     }
                 }
 
-                @include e('sep'){
+                @include e('sep') {
                     width: 100%;
                     height: 1px;
                     margin: 15px 0px;
                 }
 
-                
+
+            }
+        }
+        .tab .abas{
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: 100%;
+                padding-top: 20px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+            }
+
+        }
+        .tb-sp{
+            tr{
+                width: 100%;
             }
         }
     }
+
     @include res-between(301px, 400px) {
-        .sp{
-            @include e('num'){
+        .sp {
+            @include e('num') {
 
-                @include e('block'){
-                    @include m('blocked'){
+                @include e('block') {
+                    @include m('blocked') {
                         padding-left: 70px;
                     }
 
-                    @include m('understand'){
+                    @include m('understand') {
                         margin: 0px;
                         width: 100%;
                     }
                 }
 
-                @include e('sep'){
+                @include e('sep') {
                     width: 100%;
                     height: 1px;
                     margin: 15px 0px;
                 }
 
-                
+
+            }
+        }
+        .tab .abas{
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: 100%;
+                padding-top: 20px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+            }
+
+        }
+        .tb-sp{
+            tr{
+                width: 100%;
             }
         }
     }
-    @include res-between(401px, 500px) {
-        .sp{
-            @include e('num'){
 
-                @include e('block'){
+    @include res-between(401px, 500px) {
+        .sp {
+            @include e('num') {
+
+                @include e('block') {
                     margin: 10px 0px;
-                    @include m('blocked'){
+
+                    @include m('blocked') {
                         padding-left: 70px;
                     }
 
-                    @include m('understand'){
+                    @include m('understand') {
                         margin: 0px;
                     }
                 }
-                
+
+            }
+        }
+        .tab .abas{
+            @include flexbox(row, wrap, space-between, center, center);
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: calc(50% - 20px);
+                padding-top: 20px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+                margin-top: 25px;
+                width: calc(50% - 20px);
+            }
+
+        }
+        .tb-sp{
+            tr{
+                width: 100%;
             }
         }
     }
-    @include res-between(501px, 600px) {}
-    @include res-between(601px, 700px) {}
-    @include res-between(701px, 800px) {}
-    @include res-between(801px, 900px) {}
-    @include res-between(901px, 1000px) {}
-    @include res-min(1001px) {}
+
+    @include res-between(501px, 600px) {
+        .tab .abas{
+            @include flexbox(row, wrap, space-between, center, center);
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: calc(50% - 20px);
+                padding-top: 20px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+                margin-top: 25px;
+                width: calc(50% - 20px);
+            }
+
+        }
+    }
+
+    @include res-between(601px, 700px) {
+        .tab .abas{
+            @include flexbox(row, wrap, space-between, center, center);
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: calc(50% - 20px);
+                padding-top: 20px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+                margin-top: 25px;
+                width: calc(50% - 20px);
+            }
+
+        }
+    }
+
+    @include res-between(701px, 800px) {
+        .tab .abas{
+            @include flexbox(row, wrap, space-between, center, center);
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: calc(50% - 20px);
+                padding-top: 20px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+                margin-top: 25px;
+                width: calc(50% - 20px);
+            }
+
+        }
+    }
+
+    @include res-between(801px, 900px) {
+        .tab .abas{
+            @include flexbox(row, wrap, space-between, center, center);
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: calc(25% - 20px);
+                padding-top: 20px;
+                font-size: 11px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+                margin-top: 25px;
+                width: calc(25% - 20px);
+            }
+
+        }
+    }
+
+    @include res-between(901px, 1000px) {
+        .tab .abas{
+            @include flexbox(row, wrap, space-between, center, center);
+            position: inherit;
+            width: 100%;
+
+            .field{
+                @include box-sizing;
+                margin: 5px 10px;
+                width: calc(25% - 20px);
+                padding-top: 20px;
+                font-size: 11px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    margin: 0px;
+                    font-size: 11px;
+                }
+                label > span{
+                    top: 0px;
+                }
+            }
+
+            .bt-default{
+                margin: 5px 10px;
+                margin-top: 25px;
+                width: calc(25% - 20px);
+            }
+
+        }
+    }
+
+    @include res-min(1001px) {
+        .tab .abas{
+            .field{
+                padding: 0px 5px;
+                select,
+                .moment-picker{
+                    @include box-sizing;
+                    width: 100%;
+                    font-size: 12px;
+                }
+            }
+
+        }
+    }
 
 }
