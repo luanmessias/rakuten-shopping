@@ -16,8 +16,23 @@
         padding: 10px 0px;
     }
 
-    .rk-btn{
+    #popup_panel{
+        @include flexbox(row, wrap, flex-start, center, center);
+    }
+
+    .rk-btn,
+    .rk-buttons{
         @extend %bt-default;
         margin-bottom: 0px;
     }
+
+    #popup_cancel{
+        margin-left: 10px;
+        background-color: $color-red;
+        &:hover{
+            background-color: $color-red-dark;
+        }
+    }
+
+
 }

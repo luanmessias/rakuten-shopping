@@ -1,6 +1,7 @@
 .myacc{
     background-color: $body_gray_bg;
     padding-top: 20px;
+    min-height: 400px;
 
     > .wrapper{
         @include flexbox(row, wrap, space-between, inherit, flex-start);

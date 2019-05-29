@@ -22,7 +22,11 @@
         @include transition;
         @include box-sizing;
         padding: 10px 5px;
-        border-bottom: 1px solid $color-gray;
+        border-bottom: 1px solid $color-gray-light;
+
+        &:last-of-type{
+            border: 0px;
+        }
 
         &:before{
             content: "";
