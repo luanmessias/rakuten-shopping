@@ -64,4 +64,152 @@
         }      
 
     }
+    
+    .data {
+        @include flexbox(row, wrap, space-between, flex-start, center);
+        
+        .fieldbox{
+            width: 100%;
+            max-width: 320px;
+            .field{
+                width: 100%;
+            }
+        }
+
+        .infobox{
+            @include fonte($second-font, 400, 14px, $color-gray);
+            width: calc(100% - 320px);
+            li{
+                padding: 10px 0px;
+            }
+        }
+    }
+
+    .field{
+        margin: 0px;
+        @include m('card'){
+            @include flexbox(row, nowrap, flex-start, flex-start, center);
+            width: 100%;
+            border-bottom: 1px solid $color-gray-light;
+            > div{
+                width: 100%;
+                max-width: 300px;
+            }
+
+        }
+        
+
+        @include m('validate'){
+            > label{
+                @include flexbox(row, nowrap, flex-start, center, center);
+            }
+
+            .desc{
+                @include fonte($second-font, 400, 12px, $color-gray);
+            }
+
+            .month{
+                margin: 0px 10px;
+            }
+            
+        }
+
+        @include m('cod_doc'){
+            @include flexbox(row, nowrap, space-between, center, center);
+            > div{
+                width: calc(70% - 5px);
+                position: relative;
+            }
+
+            > div + div{
+                width: calc(30% - 5px);
+                position: relative;
+            }
+
+            .help{
+                position: absolute;
+                right: 10px;
+                top: calc(50% - 7.5px);
+            }
+
+        }
+
+        .rk-error{
+            @include fonte($second-font, 400, 12px, $color-red);
+            @include box-sizing;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .shell,
+        input[type="text"]{
+            width: 100%;
+            max-width: 300px;
+        }
+
+        #cardBrand{
+            @include flexbox(row, nowrap, space-between, center, center);
+            list-style: none;
+            margin: 0;
+
+            .card__item{
+                @include bgimage('card-icons.png');
+                @include grayscale(1);
+                @include opacity(.4);
+                @include transition;
+                width: 68px;
+                height: 39px;
+                background-repeat: no-repeat;
+                margin-right: 10px;
+
+                &.active{
+                    @include grayscale(1);
+                    @include opacity(1);
+                    @include box-shadow(0px, 0px, 5px, $color-gray);
+                }
+
+                @include m('mastercard'){
+                    @include order(1);
+                    background-position: left 0px;
+                }
+
+                @include m('visa'){
+                    @include order(2);
+                    background-position: -81px 0px;
+                }
+
+                @include m('amex'){
+                    @include order(3);
+                    background-position: -161px 0px;
+                }
+
+                @include m('diners'){
+                    @include order(4);
+                    background-position: -243px 0px;
+                }
+
+                @include m('elo'){
+                    @include order(5);
+                    background-position: -327px 0px;
+                }
+
+                @include m('hipercard'){
+                    @include order(6);
+                    background-position: right 0px;
+                }
+            }
+
+            &.mastercard .card__item--mastercard,
+            &.visa .card__item--visa,
+            &.amex .card__item--amex,
+            &.diners .card__item--diners,
+            &.elo .card__item--elo,
+            &.hipercard .card__item--hipercard{
+                @include grayscale(0);
+                @include opacity(1);
+            }
+
+        }
+
+    }
 }
