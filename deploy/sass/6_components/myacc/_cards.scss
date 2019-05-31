@@ -4,6 +4,7 @@
     }
 
     .nocards{
+        @include animate(fadeIn, 0s);
         display: none;
         &.db{
             @include flexbox(row, wrap, center, center, center);
@@ -67,7 +68,7 @@
     
     .data {
         @include flexbox(row, wrap, space-between, flex-start, center);
-        
+        @include animate(fadeIn, 0s);
         .fieldbox{
             width: 100%;
             max-width: 320px;
@@ -116,6 +117,7 @@
 
         @include m('cod_doc'){
             @include flexbox(row, nowrap, space-between, center, center);
+            position: relative;
             > div{
                 width: calc(70% - 5px);
                 position: relative;
@@ -130,8 +132,22 @@
                 position: absolute;
                 right: 10px;
                 top: calc(50% - 7.5px);
+                &:hover + .ccv{
+                    @include animate(fadeInRight, 0s);
+                    visibility: visible;
+                }
             }
 
+           
+
+        }
+
+        @include m('buttons'){
+            @include flexbox(row, wrap, space-between, center, center);
+            .btn{
+                width: calc(50% - 5px);
+                margin: 0px;
+            }
         }
 
         .rk-error{
@@ -212,4 +228,200 @@
         }
 
     }
+
+    
+
 }
+
+.ccv{
+    
+    @include m('hover'){
+        @include box-shadow(2px, 2px, 4px, $color-gray-light);
+        @include animate(fadeOutRight, 0s);
+        @include box-sizing;
+        visibility: hidden;
+        position: absolute;
+        width: 520px;
+        height: auto;
+        background: #FFF;
+        z-index: 1;
+        padding: 20px;
+        margin-bottom: 10px;
+        top: -66px;
+        left: 107px;
+    }
+
+    @include m('fancybox'){
+        display: none;
+        position: inherit;
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        visibility: visible;
+        &.fancybox-content{
+            @include animate(fadeIn, 0s);
+        }
+    }
+
+    &:before{
+        @include set-icon($fa-var-caret-left, 40px, 900, #FFF);
+        content: "\f0d9";
+        position: absolute;
+        left: -14px;
+        top: calc(50% - 23px);
+    }
+
+    @include e('title'){
+        @include fonte($second-font, 600, 14px, $color-gray-dark);
+        @include box-sizing;
+        border-bottom: 1px solid $color-gray-light;
+        display: block;
+        width: 100%;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+
+    @include e('content'){
+        @include flexbox(row, wrap, space-between, center, center);
+        margin-top: 20px;
+    }
+
+    @include e('txt'){
+        @include fonte($second-font, 400, 13px, $color-gray);
+        display: block;
+        width: calc(100% - 160px);
+    }
+
+    
+
+}
+
+.fancybox-slide--html{
+    @include flexbox(row, wrap, center, center, center);
+}
+
+@include res-max(300px) {
+    .myacc_cards {
+
+        .nocards {
+            .btn-new {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        .field {
+            @include m('card') {
+                @include flex-wrap(wrap);
+            }
+
+            #cardBrand {
+                padding: 10px 0px;
+            }
+
+            @include m('buttons') {
+                .btn {
+                    width: 100%;
+                    margin: 5px 0px;
+                }
+            }
+        }
+
+        .data {
+            .fieldbox,
+            .infobox {
+                max-width: inherit;
+                width: 100%;
+            }
+        }
+    }
+    .ccv{
+        img{
+            width: 100%;
+        }
+        @include e('txt'){
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}
+@include res-between(301px, 400px) {
+    .myacc_cards {
+        .nocards {
+            .btn-new {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        .field {
+            @include m('card') {
+                @include flex-wrap(wrap);
+            }
+
+            #cardBrand {
+                padding: 10px 0px;
+            }
+
+            @include m('buttons') {
+                .btn {
+                    width: 100%;
+                    margin: 5px 0px;
+                }
+            }
+        }
+
+        .data {
+
+            .fieldbox,
+            .infobox {
+                max-width: inherit;
+                width: 100%;
+            }
+        }
+    }
+    .ccv{
+        text-align: center;
+        @include e('txt'){
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}
+@include res-between(401px, 500px) {
+   .myacc_cards {
+       .field {
+           @include m('card') {
+               @include flex-wrap(wrap);
+           }
+
+           #cardBrand {
+               padding: 10px 0px;
+           }
+
+           @include m('buttons') {
+               .btn {
+                   width: 100%;
+                   margin: 5px 0px;
+               }
+           }
+       }
+
+       .data {
+
+           .fieldbox,
+           .infobox {
+               max-width: inherit;
+               width: 100%;
+           }
+       }
+   }
+}
+@include res-between(501px, 600px) {}
+@include res-between(601px, 700px) {}
+@include res-between(701px, 800px) {}
+@include res-between(801px, 900px) {}
+@include res-between(901px, 1000px) {}
+@include res-min(1001px) {}
