@@ -1,0 +1,101 @@
+.myacc_preferences{
+    .wrapper{
+
+    }
+
+    .box{
+        @include flexbox(row, wrap, space-between, flex-start, flex-start);
+        @include box-sizing;
+        @include border-radius;
+        padding: 20px;
+        text-align: center;
+        background-color: #FFF;
+        min-height: 450px;
+        border: 1px solid $color-gray-light;
+
+        @include e('title'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            padding-bottom: 5px;
+            border-bottom: 1px solid $color-gray-light;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        @include e('col'){
+            .field{
+                @include flexbox(row, nowrap, flex-start, center, center);
+                @include fonte($second-font, 400, 14px, $color-gray);
+                @include box-sizing;
+                padding: 5px;
+                text-align: left;
+                user-select: none;
+                -ms-user-select: none;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                > input{
+                    @include order(1);
+                }
+                > span{
+                    @include order(2);
+                }
+                > label{
+                    @include order(3);
+                }
+
+                label{
+                    cursor: pointer;
+                    margin-left: 10px;
+                }
+
+                .icon{
+                    text-align: center;
+                    display: inline-block;
+                    display: none\9;
+                    background: $color-gray;
+                    border: 1px solid;
+                    border-color: $color-gray;
+                    border-radius: .3em;
+                    text-align: center;
+                    font-size: .8em;
+                    color: $color-gray-light;
+                    margin: 0 .1em;
+                    height: 1em;
+                    width: 1em;
+                    padding: 0.15em;
+                    line-height: 1.1em;
+                    .fa{
+                        visibility: hidden;
+                    }
+                }
+
+                input{
+                    margin-right: 5px;
+                    display: none;
+                    display: inline\9;
+                    margin: 0 .1em;
+
+                    &:checked ~ .icon .fa {
+                        visibility: visible;
+                    }
+                }
+
+
+
+            }
+
+            @include m('pref'){
+                .field{
+                    width: 100%;
+                }
+            }
+
+            @include m('mkt'){
+                
+            }
+        }
+
+    }
+
+
+
+}

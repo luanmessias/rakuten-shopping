@@ -2,7 +2,7 @@
     .wrapper{
         
     }
-
+    
     .nocards{
         @include animate(fadeIn, 0s);
         display: none;
@@ -32,37 +32,6 @@
                 margin: 0px auto;
             }
         }
-
-        .btn-new {
-            @include flexbox(row, nowrap, center, center, center);
-            @include fonte($second-font, 600, 18px, $color-gray-extra-dark);
-            @include box-sizing;
-            @include transition;
-            width: 100%;
-            border: 1px dashed $color-gray-dark;
-            width: 100%;
-            padding: 20px;
-            margin: 0px auto;
-            cursor: pointer;
-            margin-top: 60px;
-
-            &:hover{
-                background-color: $color-gray-extra-light;
-            }
-
-            &:after{
-                @include flexbox(row, wrap, center, center, center);
-                @include border-radius(100%);
-                content: "+";
-                background-color: $color-gray-dark;
-                width: 30px;
-                height: 30px;
-                color: #FFF;
-                font-size: 20px;
-                margin-left: 10px;
-            }
-
-        }      
 
     }
     
@@ -229,7 +198,137 @@
 
     }
 
-    
+    .btn-new {
+        @include flexbox(row, nowrap, center, center, center);
+        @include fonte($second-font, 600, 18px, $color-gray-extra-dark);
+        @include box-sizing;
+        @include transition;
+        width: 100%;
+        border: 1px dashed $color-gray-dark;
+        width: 100%;
+        padding: 20px;
+        margin: 0px auto;
+        cursor: pointer;
+        margin-top: 60px;
+
+        &:hover{
+            background-color: $color-gray-extra-light;
+        }
+
+        &:after{
+            @include flexbox(row, wrap, center, center, center);
+            @include border-radius(100%);
+            content: "+";
+            background-color: $color-gray-dark;
+            width: 30px;
+            height: 30px;
+            color: #FFF;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+    }
+      
+    .cards {
+        @include flexbox(row, wrap, space-between, center, center);
+        .card {
+            @include box-sizing;
+            @include border-radius(3px);
+            width: calc(100% / 2 - 20px);
+            border: 1px solid $color-gray-light;
+            background: #FFF;
+            margin: 10px;
+            height: auto;
+
+            @include e('header') {
+                @include flexbox(row, nowrap, flex-start, center, center);
+                @include box-sizing;
+                width: 100%;
+                padding: 10px;
+                border-bottom: 1px solid $color-gray-light;
+
+                @include e('info'){
+                    @include fonte($second-font, 400, 14px, $color-gray);
+                }
+
+                @include e('icon'){
+
+                    @include bgimage('card-icons.png');
+                        @include transition;
+                        width: 68px;
+                        height: 39px;
+                        background-repeat: no-repeat;
+                        margin-right: 10px;
+
+                        @include m('mastercard'){
+                            background-position: left 0px;
+                        }
+        
+                        @include m('visa'){
+                            background-position: -81px 0px;
+                        }
+        
+                        @include m('amex'){
+                            background-position: -161px 0px;
+                        }
+        
+                        @include m('diners'){
+                            background-position: -243px 0px;
+                        }
+        
+                        @include m('elo'){
+                            background-position: -327px 0px;
+                        }
+        
+                        @include m('hipercard'){
+                            background-position: right 0px;
+                        }        
+                    
+                }
+            }
+
+            @include e('icon') {
+                font-size: 0px;
+                width: 14px;
+                height: 14px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin-left: auto;
+                display: block;
+                margin-right: 10px;
+                cursor: pointer;
+                @include m('del') {
+                    background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/icon-x.png");
+                }
+            }
+
+            @include e('block'){
+                @include box-sizing;
+                padding: 23px;
+            }
+
+
+            @include e('name'){
+                @include fonte($second-font, 600, 16px, $color-gray);
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            @include e('validate'){
+                @include fonte($second-font, 400, 14px, $color-gray);
+                width: 100%;
+                display: block;
+            }
+
+            @include e('doc'){
+                @include fonte($second-font, 400, 14px, $color-gray);
+                width: 100%;
+                display: block;
+            }
+
+        }
+    }
 
 }
 
@@ -335,6 +434,13 @@
                 width: 100%;
             }
         }
+
+        .cards{
+            .card{
+                width: 100%;
+                margin: 5px 0px;
+            }
+        }
     }
     .ccv{
         img{
@@ -381,6 +487,12 @@
                 width: 100%;
             }
         }
+
+        .cards{
+            .card{
+                width: 100%;
+            }
+        }
     }
     .ccv{
         text-align: center;
@@ -417,6 +529,12 @@
                width: 100%;
            }
        }
+
+       .cards{
+            .card{
+                width: 100%;
+            }
+        }
    }
 }
 @include res-between(501px, 600px) {}
