@@ -1,59 +1,114 @@
-.myacc_preferences{
-    .wrapper{
+.myacc_preferences {
+    .wrapper {}
 
-    }
-
-    .box{
+    .box {
         @include flexbox(row, wrap, space-between, flex-start, flex-start);
+        @include animate(fadeIn, 0s);
         @include box-sizing;
         @include border-radius;
         padding: 20px;
         text-align: center;
         background-color: #FFF;
-        min-height: 450px;
         border: 1px solid $color-gray-light;
+        margin-bottom: 10px;
 
-        @include e('title'){
+        &.inactive{
+            visibility: hidden;
+            position: absolute;
+            z-index: 0;
+        }
+
+        &.active{
+            @include animate(fadeIn, 0s);
+        }
+
+        @include m('nodata') {
+            @include flexbox(row, wrap, center, center, center);
+            > span {
+                @include fonte($second-font, 400, 24px, $color-gray);
+                text-align: center;
+                display: block;
+                width: 100%;
+
+                &:before {
+                    @include bgimage("icon-no-data.png", false);
+                    content: "";
+                    width: 65px;
+                    height: 65px;
+                    display: block;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    margin: 0px auto;
+                }
+            }
+
+        }
+
+        @include e('title') {
             @include fonte($second-font, 400, 14px, $color-gray);
             padding-bottom: 5px;
             border-bottom: 1px solid $color-gray-light;
             text-align: left;
             margin-bottom: 10px;
+            display: block;
+            width: 100%;
         }
-        
-        @include e('col'){
-            .field{
+
+        @include e('col') {
+            .field {
                 @include flexbox(row, nowrap, flex-start, center, center);
                 @include fonte($second-font, 400, 14px, $color-gray);
                 @include box-sizing;
+                @include transition;
+                text-transform: lowercase;
                 padding: 5px;
                 text-align: left;
                 user-select: none;
                 -ms-user-select: none;
                 -moz-user-select: none;
                 -webkit-user-select: none;
-                > input{
+
+                &:hover {
+                    background-color: $color-gray-light;
+                }
+
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+
+                >input {
                     @include order(1);
                 }
-                > span{
+
+                >span {
                     @include order(2);
                 }
-                > label{
+
+                >label {
                     @include order(3);
                 }
 
-                label{
-                    cursor: pointer;
-                    margin-left: 10px;
+                img {
+                    display: none;
                 }
 
-                .icon{
+                label {
+                    cursor: pointer;
+                    margin-left: 10px;
+
+                    &::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+
+                .icon {
+                    @include transition;
                     text-align: center;
                     display: inline-block;
                     display: none\9;
-                    background: $color-gray;
+                    background: $color-gray-light;
                     border: 1px solid;
-                    border-color: $color-gray;
+                    border-color: $color-gray $color-gray-light $color-gray-light $color-gray;
                     border-radius: .3em;
                     text-align: center;
                     font-size: .8em;
@@ -63,18 +118,24 @@
                     width: 1em;
                     padding: 0.15em;
                     line-height: 1.1em;
-                    .fa{
+
+                    .fa {
                         visibility: hidden;
                     }
                 }
 
-                input{
+                input {
                     margin-right: 5px;
                     display: none;
                     display: inline\9;
                     margin: 0 .1em;
 
-                    &:checked ~ .icon .fa {
+                    &:checked~.icon {
+                        background: $color-gray;
+                        border-color: $color-gray;
+                    }
+
+                    &:checked~.icon .fa {
                         visibility: visible;
                     }
                 }
@@ -83,19 +144,62 @@
 
             }
 
-            @include m('pref'){
-                .field{
+            @include m('filter') {
+                ul {
+                    @include flexbox(row, wrap, flex-start, center, center);
+                    list-style: none;
+                    padding: 0px;
+                    margin: 0px;
+
+                    li {
+                        @include flexbox(row, wrap, center, center, center);
+                        @include fonte($second-font, 400, 14px, $color-gray);
+                        @include box-sizing;
+                        @include border-radius;
+                        @include transition;
+                        padding: 3px 5px;
+                        margin: 3px;
+                        cursor: pointer;
+                        width: auto;
+                        min-width: 35px;
+                        height: 35px;
+                        background-color: $color-gray-extra-light;
+
+                        &:hover,
+                        &.active {
+                            background-color: $color-gray;
+                            color: $color-gray-extra-light;
+                        }
+                    }
+                }
+            }
+
+            @include m('pref') {
+                .field {
                     width: 100%;
                 }
             }
 
-            @include m('mkt'){
-                
+            @include m('mkt') {
+                @include flexbox(row, wrap, space-between, inherit, center);
+
+                .field {
+                    @include border-radius;
+                    border: 1px solid $color-gray-light;
+                    width: calc(50% - 20px);
+                    padding: 10px;
+                    margin: 10px 0px;
+                }
             }
         }
 
-    }
+        .actions {
+            @include flexbox(row, wrap, flex-end, center, center);
+            padding: 10px 0px;
+            width: 100%;
+        }
 
+    }
 
 
 }
