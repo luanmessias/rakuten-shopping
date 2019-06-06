@@ -22,8 +22,14 @@
             @include animate(fadeIn, 0s);
         }
 
+        @include e('content'){
+            @include flexbox(row, wrap, space-between, flex-start, flex-start);
+            width: 100%;
+        }
+
         @include m('nodata') {
             @include flexbox(row, wrap, center, center, center);
+            min-height: 200px;
             > span {
                 @include fonte($second-font, 400, 24px, $color-gray);
                 text-align: center;
@@ -45,13 +51,42 @@
         }
 
         @include e('title') {
+            @include flexbox(row, nowrap, space-between, center, center);
             @include fonte($second-font, 400, 14px, $color-gray);
             padding-bottom: 5px;
             border-bottom: 1px solid $color-gray-light;
             text-align: left;
             margin-bottom: 10px;
-            display: block;
             width: 100%;
+
+            
+            &.inactive{
+                .box__title__mobile {
+                    &:after {
+                        content: "\f0fe";
+                    }
+                }
+
+                & ~ .box__content,
+                & ~ .filter {
+                    display: none;
+                }
+
+            }
+
+            @include e('mobile'){
+                //display: none;
+                &:after{
+                    @include set-icon($fa-var-plus-square, 18px, 900, $color-gray);
+                    content: "\f146";
+                    cursor: pointer;
+                }
+                &.inactive{
+                    &:after{
+                        content: "\f0fe";
+                    }
+                }
+            }
         }
 
         @include e('col') {
@@ -60,6 +95,7 @@
                 @include fonte($second-font, 400, 14px, $color-gray);
                 @include box-sizing;
                 @include transition;
+                cursor: pointer;
                 text-transform: lowercase;
                 padding: 5px;
                 text-align: left;
@@ -193,13 +229,55 @@
             }
         }
 
-        .actions {
-            @include flexbox(row, wrap, flex-end, center, center);
-            padding: 10px 0px;
-            width: 100%;
-        }
 
     }
 
+    .actions {
+        @include flexbox(row, wrap, flex-end, center, center);
+        width: 100%;
+    }
+    
+    @include res-max(300px) {
+        .box{
+            @include e('col'){
+               .field{
+                    width: 100%;
+               }
+            }
+        }
+    }
+
+    @include res-between(301px, 400px) {
+        .box{
+            @include e('col'){
+               .field{
+                    width: 100%;
+               }
+            }
+        }
+    }
+    @include res-between(401px, 500px) {
+        .box{
+            @include e('col'){
+               .field{
+                    width: 100%;
+               }
+            }
+        }
+    }
+    @include res-between(501px, 600px) {
+        .box{
+            @include e('col'){
+               .field{
+                    width: 100%;
+               }
+            }
+        }
+    }
+    @include res-between(601px, 700px) {}
+    @include res-between(701px, 800px) {}
+    @include res-between(801px, 900px) {}
+    @include res-between(901px, 1000px) {}
+    @include res-min(1001px) {}
 
 }
