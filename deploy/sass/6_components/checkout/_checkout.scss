@@ -1,0 +1,7 @@
+.nrk_checkout{
+    @include e('h1'){
+        @include fonte($second-font, 400, 24px, $color-gray);
+        width: 100%;
+        display: block;
+    }
+}

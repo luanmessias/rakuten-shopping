@@ -1,0 +1,28 @@
+.nrk_basket{
+    background-color: $color-gray-extra-light;
+
+    .wrapper{
+        @include flexbox(row, wrap, space-between, flex-start, center);
+        overflow: hidden;
+    }
+
+    .bkt_store{
+        @include box-sizing;
+        width: 100%;
+        padding: 20px;
+        border: 1px solid $color-gray-light;
+        background-color: #FFF;
+        margin-bottom: 15px;
+
+        @include e('name'){
+            strong {
+                @include fonte($second-font, 600, 14px, $color-gray-dark);
+            }
+            span{
+                @include fonte($second-font, 400, 14px, $color-gray-dark);
+            }
+        }
+
+    }
+
+}

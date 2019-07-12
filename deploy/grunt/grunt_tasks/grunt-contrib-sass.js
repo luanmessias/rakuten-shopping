@@ -115,6 +115,20 @@
             }]
         },
 
+        checkout: {
+            options: {
+                style: 'compressed',
+                sourcemap: 'auto'
+            },
+            files: [{
+                expand: true,
+                cwd: '../sass/7_css/',
+                src: ["nrk_checkout.scss"],
+                dest: '../../dist/css/',
+                ext: '.css'
+            }]
+        },
+
      });
 
      grunt.loadNpmTasks('grunt-contrib-sass');

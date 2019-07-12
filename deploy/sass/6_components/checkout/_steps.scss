@@ -1,0 +1,60 @@
+#breadcrumbs {
+    background-color: #FFF;
+
+    .wrapper{
+        @include flexbox(row, nowrap, space-between, center, center);
+    }
+
+    ul {
+        @include flexbox(row, wrap, space-between, center, center);
+        width: 100% ;
+        margin: 10px 0px;
+        padding: 0;
+
+        li {
+            list-style: none;
+            padding: 0;
+            span{
+                @include flexbox(column, nowrap, flex-start, center, center);
+                @include fonte($second-font, 400, 14px, $color-gray);
+            }
+            em {
+                @include flexbox(row, wrap, center, center, center);
+                @include fonte($second-font, 600, 18px, #059924);
+                @include border-radius(150px);
+                border: 1px solid #059924;
+                width: 45px;
+                height: 45px;
+                font-style: inherit;
+                background-color: #FFF;
+            }
+
+            &.step-dots{
+                @include flexbox(row, nowrap, center, center, center);
+                @include opacity(.2);
+                .circle{
+                    @include border-radius(10px);
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: #059924;
+                    & + .circle:not(:last-of-type){
+                        margin: 0px 5px;
+                    }
+               }
+
+            }
+
+            &.selected{
+                em{
+                    background-color: #059924;
+                    color: #FFF;
+                }
+                & + .step-dots{
+                    @include opacity(1);
+                }
+            }
+
+        }
+    }
+}

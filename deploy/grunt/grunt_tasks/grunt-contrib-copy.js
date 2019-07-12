@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         css_to_project_checkout: {
             expand: true,
             cwd: '../../dist/css/',
-            src: ['login.css'],
+            src: ['login.css', 'login.css.map', 'nrk_checkout.css', 'nrk_checkout.css.map'],
             dest: '<%=paths.checkout%>'
         },
         css_to_project_account: {
