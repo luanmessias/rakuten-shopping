@@ -6,13 +6,12 @@
     width: 100%;
     height: 100%;
     z-index: 999999999999;
-    background-color: transparent;
-
+    background-color: rgba(0,0,0,.2);
 
     #link {
+        font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: $color-red;
         display: block;
-        font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-align: center;
         text-decoration: none;
     }
@@ -259,9 +258,13 @@
         border-radius: 100%;
     }
 
-
     .loading-container {
-        margin: 40px auto
+        margin: 40px auto;
+        background-color: #FFF;
+        padding: 7px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 7px;
     }
 
     .loading {
@@ -299,7 +302,7 @@
         font-family: "Helvetica Neue, "Helvetica", ""arial";
         font-size: 10px;
         font-weight: bold;
-        margin-top: 45px;
+        margin-top: 54px;
         opacity: 0;
         position: absolute;
         text-align: center;
