@@ -43,7 +43,8 @@
 
         @include e('header'){
             @include flexbox(row, wrap, space-between, flex-start,  center);
-            margin-bottom: 15px;
+            border-bottom: 1px solid $color-gray-light;
+            padding-bottom: 15px;
         }
 
         @include e('name'){
@@ -77,17 +78,16 @@
 
     .bkt_prod{
 
-
         td{
             @include box-sizing;
-            border-top: 1px solid $color-gray-light;
+            border-bottom: 1px dashed $color-gray-light;
             padding: 15px;
             border-collapse: collapse;
         }
 
         &:last-of-type{
             td{
-                border-bottom: 1px solid $color-gray-light;
+                border-bottom: none;
             }    
         }
 
@@ -202,31 +202,100 @@
         height: 1px;
         background-color: $color-gray-light;
         display: block;
-        margin: 10px 0px;
+        margin: 22px 0px;
     }
 
-    .bkt_resume{
-        @include flexbox(row, nowrap, flex-start, center, center);
+    .bkt_resume,
+    .bkt_coupon{
+        @include flexbox(row, wrap, flex-start, center, center);
         
         @include e('icon'){
-            max-width: 15px;
+            max-width: 20px;
             height: auto;
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         @include e('title'){
-            @include fonte($second-font, 400, 14px, $color-gray);
+            @include fonte($second-font, 600, 18px, $color-gray);
         }
 
         @include e('qtd'){
             @include fonte($second-font, 400, 14px, $color-gray);
             margin-left: 5px;
         }
-        
-        .bkt_total{
-            @include flexbox(row, wrap, space-between, center, center);
-        }
 
     }
+
+    .bkt_resume{
+        @include flex-align-itens(flex-end);
+    }
+
+    .bkt_coupon{
+        @include e('cont'){
+            @include flexbox(row, nowrap, flex-start, center, center);
+            width: 100%;
+        }
+        @include e('act'){
+            color:  $color-gray;
+            margin-left: auto;
+            margin-right: 5px;
+            font-size: 23px;
+        }
+
+        @include e('icon'){
+            max-width: 30px;
+        }
+
+        @include e('form'){
+            @include flexbox(row, wrap, space-between, center, center);
+            margin-top: 10px;  
+        }
+
+        @include e('msg'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            padding: 15px 5px;
+            width: 100%;
+        }
+
+        @include e('input'){
+            @include box-sizing;
+            width: 65%;
+            height: 40px;
+            border: 1px solid $color-gray-light;
+            padding: 10px;
+            margin: 0;
+        }
+        
+        @include e('bt'){
+            @include box-sizing;
+            @include radiustl(0);
+            @include radiusbl(0);
+            @extend %bt-default;
+            width: 35%;
+            height: 40px;
+            margin: 0;
+        }
+    }
+
+     
+    .bkt_total{
+        @include flexbox(row, wrap, space-between, center, center);
+        @include fonte($second-font, 600, 24px, $color-gray);
+    }
+
+    .bkt_totalpoints {
+        @include e('txt') {
+            @include flexbox(row, nowrap, flex-start, center, center);
+            @include fonte($second-font, 400, 13px, $color-green);
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
+            padding-left: 25px;
+            margin-right: 10px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+        }
+    }
+
 
 }

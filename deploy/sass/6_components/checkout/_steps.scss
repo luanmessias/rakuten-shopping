@@ -20,9 +20,9 @@
             }
             em {
                 @include flexbox(row, wrap, center, center, center);
-                @include fonte($second-font, 600, 18px, #059924);
+                @include fonte($second-font, 600, 18px, $color-gray);
                 @include border-radius(150px);
-                border: 1px solid #059924;
+                border: 1px solid $color-gray;
                 width: 45px;
                 height: 45px;
                 font-style: inherit;
@@ -37,7 +37,7 @@
                     display: block;
                     width: 8px;
                     height: 8px;
-                    background-color: #059924;
+                    background-color: $color-gray;
                     & + .circle:not(:last-of-type){
                         margin: 0px 5px;
                     }
@@ -47,11 +47,15 @@
 
             &.selected{
                 em{
+                    border: 1px solid #059924;
                     background-color: #059924;
                     color: #FFF;
                 }
                 & + .step-dots{
                     @include opacity(1);
+                    .circle{
+                        background-color: #059924;
+                    }
                 }
             }
 

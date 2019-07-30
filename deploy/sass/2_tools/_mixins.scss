@@ -183,6 +183,13 @@ $color) {
   justify-content: $value;
 }
 
+@mixin flex-align-itens($value){
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  -ms-align-items: $value;
+  -o-align-items: $value;
+}
+
 @mixin order($order) {
   -webkit-order: $order;
   -moz-order: $order;
