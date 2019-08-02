@@ -2,7 +2,7 @@
     background-color: $body_gray_bg;
 
     .wrapper{
-        @include flexbox(row, wrap, space-between, flex-start, center);
+        @include flexbox(row, wrap, space-between, inherit, center);
         overflow: hidden;
     }
 
@@ -30,14 +30,27 @@
 
     .check__aside{
         @include box-sizing;
-        padding-left: 15px;
+        padding-left: 30px;
+        position: relative;
+    }
+
+    .bkt_aside{
+        min-width: 260px;
+        &.fixed{
+            top: 60px;
+            position: fixed;
+        }
+        &.bottom{
+            position: absolute;
+            bottom: 30px;
+            top: auto;
+        }
     }
 
     .bkt_store{
         @include box-sizing;
         width: 100%;
         padding: 20px;
-        border: 1px solid $color-gray-light;
         background-color: #FFF;
         margin-bottom: 15px;
 
@@ -205,6 +218,14 @@
         margin: 22px 0px;
     }
 
+    .line_gray_dashed{
+        width: 100%;
+        height: 0px;
+        border-bottom: 1px dashed $color-gray-light;
+        display: block;
+        margin: 22px 0px;
+    }
+
     .bkt_resume,
     .bkt_coupon{
         @include flexbox(row, wrap, flex-start, center, center);
@@ -236,10 +257,24 @@
             width: 100%;
         }
         @include e('act'){
+            @include transition;
             color:  $color-gray;
             margin-left: auto;
             margin-right: 5px;
             font-size: 23px;
+            cursor: pointer;
+            &.active{
+                @include rotate(-180);
+            }
+        }
+
+        @include e('del'){
+            @include transition;
+            color:  $color-gray;
+            margin-left: auto;
+            margin-right: 5px;
+            font-size: 23px;
+            cursor: pointer;
         }
 
         @include e('icon'){
@@ -277,10 +312,44 @@
         }
     }
 
+    .bkt_ship{
+        @include flexbox(row, wrap, flex-start, center, center);
+
+        @include e('icon'){
+            max-width: 30px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        @include e('title'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+        }
+    }
+
      
     .bkt_total{
-        @include flexbox(row, wrap, space-between, center, center);
-        @include fonte($second-font, 600, 24px, $color-gray);
+        @include e('val') {
+            @include flexbox(row, wrap, space-between, center, center);
+            @include fonte($second-font, 600, 24px, $color-green);
+        }
+        @include e('discount') {
+            @include flexbox(row, wrap, flex-end, center, center);
+            @include fonte($second-font, 400, 13px, $color-green);
+            margin: 5px 0px;
+        }
+        @include e('info') {
+            @include flexbox(row, wrap, flex-end, center, center);
+            @include fonte($second-font, 400, 13px, $color-gray);
+        }
+        @include e('bt'){
+            @extend %bt-default;
+            width: 100%;
+            padding: 15px 0px;
+            background-color: $color-green;
+            &:hover{
+                background-color: $color-green-dark;
+            }
+        }
     }
 
     .bkt_totalpoints {
@@ -296,6 +365,186 @@
             background-position: left center;
         }
     }
+    
+    .bkt_action{
+        @include flexbox(row, wrap, space-between, center, center);
+        @include e('link'){
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            @include bgimage('icon_arrow_circle.png');
+            background-repeat: no-repeat;
+            background-position: center left;
+            padding-left: 38px;
+            height: 30px;
+        }
+    }
 
+
+
+    //Media specific for table responsive
+    @include res-max(800px) {
+        .bkt_prodlist{
+            @include box-sizing;
+            width: 100%;
+
+            tbody{
+                @include flexbox(row, wrap, flex-start, inherit, flex-start);
+            }
+
+            td {
+                padding: 10px;
+                width: 100%;
+                border: 0;
+            }
+
+            .bkt_prod{
+                @include flexbox(column, wrap, flex-start, center, center);
+                @include box-sizing;
+                background-color: #fafafa;
+                border: 1px solid $color-gray-light;
+                margin: 5px;
+
+                @include e('title'){
+                    font-size: 16px;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                @include e('info'){
+                    @include box-sizing;
+                    @include order(1);
+                    max-width: unset;
+                    @include e('name'){
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                }
+
+                @include e('photo'){
+                    @include order(2);
+                    text-align: center;
+                    @include e('img'){
+                        width: 100%;
+                        max-width: 300px;
+                        height: auto;
+                        margin: 0 auto;
+                    }
+                }
+
+                @include e('qtd'){
+                    @include order(3);
+                    input{
+                        font-size: 25px;
+                        width: 70px;
+                        font-weight: 400;
+                        margin: 0px 15px;
+                    }
+                    a:before{
+                        font-size: 25px;
+                    }
+                }
+
+                @include e('unit'){
+                    @include order(4);
+                }
+
+                @include e('val'){
+                    @include order(5);
+                    @include e('price'){
+                        text-align: center;
+                    }
+                }
+
+                @include e('remove'){
+                    @include order(6);
+                    background-color: #efefef;
+                    margin-top: auto;
+                }
+
+                @include e('del'){
+                    &:before{
+                        color: $color-gray-dark;
+                    }
+                }
+
+            }
+
+        }
+        .check__aside,
+        .check__wrap{
+            width: 100%;
+        }
+        .bkt_store{
+            @include e('header'){
+                border: 0px;
+            }
+        }
+    }
+
+    @include res-max(300px) {
+        .bkt_store{
+            @include e('points'){
+                margin: 5px 0px;
+            }
+        }
+        .bkt_prodlist{
+            .bkt_prod{
+                width: 100%;
+            }
+        }
+    }
+    @include res-between(301px, 400px) {
+        .bkt_store{
+            @include e('points'){
+                margin: 5px 0px;
+            }
+        }
+        .bkt_prodlist{
+            .bkt_prod{
+                width: 100%;
+            }
+        }
+    }
+    @include res-between(401px, 500px) {
+        .bkt_prodlist{
+            .bkt_prod{
+                width: 100%;
+            }
+        }
+    }
+    @include res-between(501px, 600px) {
+        .bkt_prodlist{
+            .bkt_prod{
+                width: calc(100% / 2 - 10px);
+            }
+        }
+    }
+    @include res-between(601px, 700px) {
+        .bkt_prodlist{
+            .bkt_prod{
+                width: calc(100% / 2 - 10px);
+            }
+        }
+    }
+    @include res-between(701px, 800px) {
+        .bkt_prodlist{
+            .bkt_prod{
+                width: calc(100% / 3 - 10px);
+            }
+        }
+    }
+    @include res-between(801px, 900px) {
+        .check__aside,
+        .check__wrap{
+            width: 100%;
+        }
+    }
+    @include res-between(901px, 1000px) {
+        .check__aside,
+        .check__wrap{
+            width: 100%;
+        }
+    }
+    @include res-min(1001px) {}
 
 }
