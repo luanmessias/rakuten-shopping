@@ -1,6 +1,6 @@
 #breadcrumbs {
     background-color: #FFF;
-
+    display: none;
     .wrapper{
         @include flexbox(row, nowrap, space-between, center, center);
     }
@@ -45,7 +45,8 @@
 
             }
 
-            &.selected{
+            &.selected,
+            &.disabled-prev{
                 em{
                     border: 1px solid #059924;
                     background-color: #059924;

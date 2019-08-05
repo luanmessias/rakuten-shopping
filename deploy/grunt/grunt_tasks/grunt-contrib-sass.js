@@ -115,6 +115,20 @@
             }]
         },
 
+        basket: {
+            options: {
+                style: 'compressed',
+                sourcemap: 'auto'
+            },
+            files: [{
+                expand: true,
+                cwd: '../sass/7_css/',
+                src: ["nrk_basket.scss"],
+                dest: '../../dist/css/',
+                ext: '.css'
+            }]
+        },
+
         checkout: {
             options: {
                 style: 'compressed',

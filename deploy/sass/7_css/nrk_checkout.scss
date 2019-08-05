@@ -1,8 +1,8 @@
 //-> Include 
+@import 'base';
 @import 'include';
 
 //-> checkout
-@import '../6_components/login/login';
 @import '../6_components/checkout/checkout';
-@import '../6_components/checkout/basket';
 @import '../6_components/checkout/steps';
+@import '../6_components/checkout/footer';

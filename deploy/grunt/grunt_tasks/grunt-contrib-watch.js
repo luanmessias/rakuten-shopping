@@ -79,6 +79,14 @@ module.exports = function(grunt) {
             tasks: ['sass:elements']
         },
 
+        basket: {
+            files: [ 
+                "../sass/6_components/basket/*.scss",
+                "../sass/7_css/nrk_basket.scss",
+            ],
+            tasks: ['sass:basket', 'copy:css_to_project_checkout']
+        },
+
         checkout: {
             files: [ 
                 "../sass/6_components/checkout/*.scss",

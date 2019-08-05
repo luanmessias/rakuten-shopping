@@ -1,6 +1,10 @@
 .nrk_basket{
     background-color: $body_gray_bg;
 
+    #breadcrumbs{
+        display: block;
+    }
+
     .wrapper{
         @include flexbox(row, wrap, space-between, inherit, center);
         overflow: hidden;
@@ -473,8 +477,16 @@
         .check__aside,
         .check__wrap{
             width: 100%;
+            margin: 10px 0px;
+            padding: 0;
         }
+
+        .check__aside{
+            padding: 10px;
+        }
+
         .bkt_store{
+            padding: 5px;
             @include e('header'){
                 border: 0px;
             }
