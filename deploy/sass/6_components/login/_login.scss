@@ -1,3 +1,9 @@
+body:not(.steps){
+    #breadcrumbs{
+        display: none;
+    }
+}
+
 .section-login{
     background-color: $body_gray_bg;
     padding-top: 10px;

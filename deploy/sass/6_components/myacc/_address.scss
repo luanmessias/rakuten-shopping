@@ -1,3 +1,9 @@
+body:not(.steps){
+    #breadcrumbs{
+        display: none;
+    }
+}
+
 
 .myacc_address{
 
@@ -147,6 +153,10 @@
         }
     }
 
+    .nrk_checkout__h1{
+        display: none;
+    }
+
     .address-hide{
         display: none;
         & + .my_address{
@@ -189,3 +199,33 @@
 }
 
 
+
+.steps .myacc.myacc_address{
+    .myacc__wrap {
+        @include order(1);
+
+        .use-address{
+            @extend %bt-default;
+            margin-left: 15px;
+        }
+    }
+    .myacc__aside{
+        @include order(2);
+        width: 25% !important;
+        .mymenu{
+            display: none;
+        }
+    }
+    .nrk_checkout__h1{
+        display: block;
+    }
+    .chat{
+        display: none;
+    }
+
+    #addressList{
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+
+}

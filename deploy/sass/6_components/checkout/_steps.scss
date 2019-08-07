@@ -46,7 +46,8 @@
             }
 
             &.selected,
-            &.disabled-prev{
+            &.disabled-prev,
+            &.disabled{
                 em{
                     border: 1px solid #059924;
                     background-color: #059924;
