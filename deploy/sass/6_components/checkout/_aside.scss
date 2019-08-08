@@ -27,7 +27,7 @@
         height: 0px;
         border-bottom: 1px dashed $color-gray-light;
         display: block;
-        margin: 22px 0px;
+        margin: 15px 0px;
     }
 
     @include e('resume') {
@@ -50,6 +50,7 @@
     }
 
     @include e('sp'){
+        @include flexbox(row, wrap, flex-end, center, center); 
         @include e('txt') {
             @include flexbox(row, nowrap, flex-start, center, center);
             @include fonte($second-font, 400, 13px, $color-green);
@@ -63,4 +64,47 @@
         }
     }
 
+    
+    
+    @include e('store'){
+        display: block;
+        width: 100%;
+
+        @include e('value'){
+            display: block;
+            width: 100%;
+            text-align: right;
+            a{
+                @include fonte($second-font, 400, 16px, $color-gray);
+            }
+        }
+
+        @include e('name'){
+            @include fonte($second-font, 400, 16px, $color-gray);
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+
+        @include e('subtotal'){
+            @include flexbox(row, wrap, flex-end, flex-end, center); 
+            width: 100%;
+            margin-bottom: 5px;
+
+            @include e('desc'){
+                @include fonte($second-font, 600, 16px, $color-green);
+                margin-right: 5px;
+            }
+
+            @include e('val'){
+                @include fonte($second-font, 600, 24px, $color-green);
+            }
+
+        }
+
+    }
+
+
+    
 }
