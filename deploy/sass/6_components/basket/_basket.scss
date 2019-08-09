@@ -556,6 +556,10 @@
             width: 100%;
         }
     }
-    @include res-min(1001px) {}
+    @include res-min(1001px) {
+        .bkt_aside{
+            max-width: 260px;
+        }
+    }
 
 }
