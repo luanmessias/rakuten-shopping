@@ -326,4 +326,319 @@ body:not(.steps){
         }
     }
 
+    .rk-scheduled-shipping{
+        @include flexbox(row, wrap, space-between, center, center);
+        @include box-sizing;
+        padding: 30px;
+        background-color: $color-gray-light;
+        margin-top: 10px;
+
+        .nrk_ship__calendar__title {
+            @include fonte($second-font, 400, 16px, $color-gray);
+            @include box-sizing;
+            display: block;
+            border-bottom: 1px solid $color-gray-light;
+            padding-bottom: 10px;
+            width: 100%;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $color-gray-light;
+            margin-bottom: 10px;
+
+            @include m('calendar') {
+                &:before {
+                    @include set-icon($fa-var-search, 22px, 900, $color-gray);
+                    content: "\f783";
+                    margin-right: 10px;
+                }
+            }
+
+            @include m('timer') {
+                &:before {
+                    @include set-icon($fa-var-search, 22px, 900, $color-gray);
+                    content: "\f017";
+                    margin-right: 10px;
+                }
+            }
+
+        }
+            
+    }
+
+    @include e('foot'){
+        @include flexbox(row, wrap,  space-between, center, center);
+        margin-top: 50px;
+        .rk-shipping-warning{
+            @include fonte($second-font, 400, 12px, $color-gray-dark);
+            width: 60%;
+        }
+
+        @include e('btns'){
+            @include flexbox(row, nowrap, flex-end, center, center);
+            position: relative;
+            width: 40%;
+            .rk-warning{
+                @include fonte($second-font, 400, 12px, $color-red-dark);
+                @include border-radius();
+                position: absolute;
+                border: 1px solid $color-red-dark;
+                right: 0;
+                bottom: 50px;
+                background-color: #FFF;
+                width: 100%;
+                max-width: 250px;
+                padding: 10px;
+                &:before{
+                    @include set-icon($fa-var-caret-down, 25px, 900, $color-red-dark);
+                    content: "\f0d7";
+                    position: absolute;
+                    bottom: -18px;
+                    left: calc(50% - 7.5px);
+                }
+            }
+        }
+
+        .rk-btn{
+            @extend %bt-default;
+            margin: 0px 10px;
+            &.rk-green{
+                background-color: $color-green;
+                &:hover{
+                    background-color: $color-green-dark;
+                }
+            }
+        }
+            
+
+    }
+
 }
+
+@include res-max(300px) {
+    .steps .myacc.myacc_address{
+        .myacc__aside{
+            width: 100% !important;
+        }
+        .mymenu__mob{
+            display: none;
+        }
+        .address_block{
+            margin: 10px 0px;
+            .use-address{
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+    .nrk_modal.active{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        .rk-fake-radio{
+            label{
+                width: 100%;
+            }
+            .value{
+                @include flex-wrap(wrap);
+                .nrk_ship__label{
+                    width: 100%;
+                    margin: 10px 0px;
+                }
+                .nrk_ship__info{
+                    width: 100%;
+                    padding: 10px;
+                    border-bottom: 1px solid #CCC;
+                }
+            }
+        }
+        .nrk_ship__foot{
+            width: 100%;
+            .rk-shipping-warning{
+                width: 100%;
+            }
+            .nrk_ship__foot__btns{
+                @include flex-wrap(wrap);
+                width: 100%;
+                >a{
+                    width: 100%;
+                    margin: 10px 0;
+                }
+                .rk-warning{
+                    width: 91%;
+                }
+            }
+        }
+    }
+}
+@include res-between(301px, 400px) {
+    .steps .myacc.myacc_address{
+        .myacc__aside{
+            width: 100% !important;
+        }
+        .mymenu__mob{
+            display: none;
+        }
+        .address_block{
+            margin: 10px 0px;
+            .use-address{
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+    .nrk_modal.active{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        .rk-fake-radio{
+            label{
+                width: 100%;
+            }
+            .value{
+                @include flex-wrap(wrap);
+                .nrk_ship__label{
+                    width: 100%;
+                    margin: 10px 0px;
+                }
+                .nrk_ship__info{
+                    width: 100%;
+                    padding: 10px;
+                    border-bottom: 1px solid #CCC;
+                }
+            }
+        }
+        .nrk_ship__foot{
+            width: 100%;
+            .rk-shipping-warning{
+                width: 100%;
+            }
+            .nrk_ship__foot__btns{
+                @include flex-wrap(wrap);
+                width: 100%;
+                >a{
+                    width: 100%;
+                    margin: 10px 0;
+                }
+                .rk-warning{
+                    width: 91%;
+                }
+            }
+        }
+    }
+}
+@include res-between(401px, 500px) {
+    .steps .myacc.myacc_address{
+        .myacc__aside{
+            width: 100% !important;
+        }
+        .mymenu__mob{
+            display: none;
+        }
+        .address_block{
+            margin: 10px 0px;
+            .use-address{
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+    .nrk_modal.active{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        .rk-fake-radio{
+            label{
+                width: 100%;
+            }
+            .value{
+                @include flex-wrap(wrap);
+                .nrk_ship__label{
+                    width: 100%;
+                    margin: 10px 0px;
+                }
+                .nrk_ship__info{
+                    width: 100%;
+                    padding: 10px;
+                    border-bottom: 1px solid #CCC;
+                }
+            }
+        }
+        .nrk_ship__foot{
+            width: 100%;
+            .rk-shipping-warning{
+                width: 100%;
+            }
+            .nrk_ship__foot__btns{
+                @include flex-wrap(wrap);
+                width: 100%;
+                >a{
+                    width: 100%;
+                    margin: 10px 0;
+                }
+                .rk-warning{
+                    width: 91%;
+                }
+            }
+        }
+    }
+}
+@include res-between(501px, 600px) {
+    .steps .myacc.myacc_address{
+        .myacc__aside{
+            width: 100% !important;
+        }
+        .mymenu__mob{
+            display: none;
+        }
+        .address_block{
+            margin: 10px 0px;
+            .use-address{
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+    .nrk_modal.active{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        .rk-fake-radio{
+            label{
+                width: 100%;
+            }
+            .value{
+                @include flex-wrap(wrap);
+                .nrk_ship__label{
+                    width: 100%;
+                    margin: 10px 0px;
+                }
+                .nrk_ship__info{
+                    width: 100%;
+                    padding: 10px;
+                    border-bottom: 1px solid #CCC;
+                }
+            }
+        }
+        .nrk_ship__foot{
+            width: 100%;
+            .rk-shipping-warning{
+                width: 100%;
+            }
+            .nrk_ship__foot__btns{
+                @include flex-wrap(wrap);
+                width: 100%;
+                >a{
+                    width: 100%;
+                    margin: 10px 0;
+                }
+                .rk-warning{
+                    width: 91%;
+                }
+            }
+        }
+    }
+}
+@include res-between(601px, 700px) {}
+@include res-between(701px, 800px) {}
+@include res-between(801px, 900px) {}
+@include res-between(901px, 1000px) {}
+@include res-min(1001px) {}

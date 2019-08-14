@@ -3,6 +3,12 @@
 
     #breadcrumbs{
         display: block;
+        .nrk_checkout__header__logo{
+            display: none;
+        }
+        ul{
+            width: 100%;
+        }
     }
 
     .wrapper{

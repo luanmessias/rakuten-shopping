@@ -1,0 +1,320 @@
+.nrk_pay{
+    @include e('title'){
+        @include fonte($second-font, 400, 18px, $color-gray);
+        width: 100%;
+        display: block;
+        margin-top: 25px;
+    }
+
+    @include e('box'){
+        @include box-sizing;
+        width: 100%;
+        padding: 30px;
+        background-color: #FFF;
+    }
+
+    @include e('sep'){
+        width: 1px;
+        height: 40px;
+        background-color: $color-gray-light;
+    }
+
+    @include e('address'){
+        @include flexbox(row, wrap, space-between, center, center);
+        padding-left: 100px;
+        background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc_address.png");
+        background-repeat: no-repeat;
+        background-position: 30px center;
+        background-size: 50px auto;
+
+        @include e('title'){
+            @include fonte($second-font, 600, 14px, $color-gray-dark);
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        @include e('text'){
+            @include fonte($second-font, 400, 14px, $color-gray-dark);
+        }
+
+        @include e('bt'){
+            @extend %bt-default;
+            background-color: $color-gray-extra-light;
+            color: $color-gray;
+            &:hover{
+                background-color: $color-gray-light;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @include e('points'){
+        padding: 0px;
+        @include e('row'){
+            @include box-sizing;
+            width: 100%;
+            padding: 15px 30px;
+            &:first-of-type{
+                @include flexbox(row, wrap, flex-start, center, center);
+                border-bottom: 1px solid $color-gray-light;
+                padding: 30px;
+            }
+        }
+
+        .nrk_pay__sep{
+            margin: 0px 30px; 
+        }
+
+        @include e('box'){
+            width: 100%;
+            max-width: 265px;
+            @include m('opt'){
+                @include flexbox(row, wrap, space-around, center, center);
+                width: 100%;
+                max-width: calc(100% - 335px);
+            }
+        }
+
+        @include e('label'){
+            @include flexbox(row, wrap, flex-start, center, center);
+            input{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            span{
+                @include fonte($second-font, 400, 14px, $color-gray);
+                text-transform: uppercase;
+            }
+        }
+
+
+        @include e('cont') {
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 50px auto;
+            padding: 5px 0px 5px 60px;
+        }
+
+        @include e('title') {
+            @include fonte($second-font, 400, 14px, $color-green);
+            display: block;
+            width: 100%;
+        }
+
+        @include e('val'){
+            @include fonte($second-font, 600, 27px, $color-green);
+        }
+
+        @include e('alt'){
+            @include fonte($second-font, 400, 16px, $color-green);
+        }
+
+        @include e('economy'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+        }
+        
+    }
+
+
+
+    @include res-max(300px) {
+        @include e('sep'){
+            width: 100%;
+            height: 1px;
+            margin: 10px 0px;
+        }
+        @include e('address'){
+            background-image: none;
+            padding: 10px;
+
+            @include e('box'){
+                width: 100%;
+            }
+        }
+        @include e('points'){
+            .nrk_pay__sep{
+                width: 100%;
+                margin: 10px 0px;
+            }
+            @include e('row'){
+                &:first-of-type{
+                    padding: 10px;
+                }
+                padding: 10px;
+            }
+            @include e('box'){
+                @include m('opt') {
+                    @include flex-justify(flex-start);
+                    width: 100%;
+                    max-width: inherit;
+                }
+            }
+            @include e('label'){
+                @include flex-wrap(nowrap);
+                margin: 5px 0px;
+            }
+        }
+    }
+    @include res-between(301px, 400px) {
+         @include e('sep'){
+            width: 100%;
+            height: 1px;
+            margin: 10px 0px;
+        }
+        @include e('address'){
+            background-image: none;
+            padding: 10px;
+
+            @include e('box'){
+                width: 100%;
+            }
+        }
+        @include e('points'){
+            .nrk_pay__sep{
+                width: 100%;
+                margin: 10px 0px;
+            }
+            @include e('row'){
+                &:first-of-type{
+                    padding: 10px;
+                }
+                padding: 10px;
+            }
+            @include e('box'){
+                @include m('opt') {
+                    @include flex-justify(flex-start);
+                    width: 100%;
+                    max-width: inherit;
+                }
+            }
+            @include e('label'){
+                @include flex-wrap(nowrap);
+                margin: 5px 0px;
+            }
+        }
+       
+    }
+    @include res-between(401px, 500px) {
+        @include e('sep'){
+            width: 100%;
+            height: 1px;
+            margin: 10px 0px;
+        }
+        @include e('address'){
+            background-image: none;
+            padding: 10px;
+
+            @include e('box'){
+                width: 100%;
+            }
+        }
+        @include e('points'){
+            .nrk_pay__sep{
+                width: 100%;
+                margin: 10px 0px;
+            }
+            @include e('row'){
+                &:first-of-type{
+                    padding: 10px;
+                }
+                padding: 10px;
+            }
+            @include e('box'){
+                @include m('opt') {
+                    @include flex-justify(flex-start);
+                    width: 100%;
+                    max-width: inherit;
+                }
+            }
+            @include e('label'){
+                @include flex-wrap(nowrap);
+                margin: 5px 0px;
+            }
+        }
+    }
+    @include res-between(501px, 600px) {
+        @include e('sep'){
+            width: 100%;
+            height: 1px;
+            margin: 10px 0px;
+        }
+
+        @include e('address'){
+            background-image: none;
+            padding: 10px;
+
+            @include e('box'){
+                width: 100%;
+            }
+        }
+       
+        @include e('points'){
+            .nrk_pay__sep{
+                width: 100%;
+                margin: 10px 0px;
+            }
+            @include e('row'){
+                &:first-of-type{
+                    padding: 10px;
+                }
+                padding: 10px;
+            }
+            @include e('box'){
+                @include m('opt') {
+                    @include flex-justify(flex-start);
+                    width: 100%;
+                    max-width: inherit;
+                }
+            }
+            @include e('label'){
+                @include flex-wrap(nowrap);
+                margin: 5px 0px;
+            }
+        }
+    }
+    @include res-between(601px, 700px) {
+        @include e('sep'){
+            width: 100%;
+            height: 1px;
+            margin: 10px 0px;
+        }
+        @include e('address'){
+            background-image: none;
+            padding: 10px;
+        }
+
+        @include e('points'){
+            .nrk_pay__sep{
+                width: 1px;
+                height: 40px;
+                margin: 0px 10px;
+            }
+            @include e('row'){
+                &:first-of-type{
+                    padding: 10px;
+                }
+                padding: 10px;
+            }
+            @include e('box'){
+                max-width: 215px;
+                @include m('opt') {
+                    @include flex-justify(flex-start);
+                    max-width: calc(100% - 240px);
+                }
+            }
+            @include e('label'){
+                @include flex-wrap(nowrap);
+                margin: 5px 0px;
+            }
+        }
+        
+    }
+    @include res-between(701px, 800px) {}
+    @include res-between(801px, 900px) {}
+    @include res-between(901px, 1000px) {}
+    @include res-min(1001px) {}
+
+}
