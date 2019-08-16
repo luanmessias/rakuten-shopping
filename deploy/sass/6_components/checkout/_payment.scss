@@ -118,6 +118,30 @@
         
     }
 
+    @include e('ship'){
+        @include e('desc'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        @include e('bt'){
+            @extend %bt-default;
+            background-color: $color-gray-extra-light;
+            color: $color-gray;
+            &:hover{
+                background-color: $color-gray-light;
+                text-decoration: none;
+            }
+        }
+        @include e('info'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            display: block;
+            width: 100%;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+    }
 
 
     @include res-max(300px) {

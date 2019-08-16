@@ -146,10 +146,14 @@
 
 
         @include e('qtd'){
+            text-align: center;
             > div{
                 @include flexbox(row, nowrap, center, center, center);
             }
 
+            @include e('txt'){
+                @include fonte($second-font, 400, 18px, $color-gray-dark);
+            }
             
             input{
                 @include fonte($second-font, 600, 13px, $color-gray-dark);
