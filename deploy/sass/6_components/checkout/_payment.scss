@@ -143,6 +143,256 @@
         }
     }
 
+    @include e('total'){
+        @include flexbox(row, wrap, space-between, center, center);
+        
+        @include e('sp'){
+            @include fonte($second-font, 400, 14px, $color-green);
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: contain;
+            padding: 5px 0px 5px 35px;
+        }
+
+        @include e('price'){
+            @include fonte($second-font, 600, 18px, $color-green);
+        }
+    }
+
+    .bkt_prod{
+        @include e('remove'){
+            display: none;
+        }
+    }
+
+    @include e('method'){
+        @include flexbox(row, wrap, flex-start, flex-start, center);
+        padding:0px;
+
+        @include e('opt'){
+            width: 100%;
+            max-width: 235px;
+            label{
+                @include flexbox(row, wrap, center, center, center);
+                @include box-sizing;
+                @include transition;
+                cursor: pointer;
+                width: 100%;
+                height: 235px;
+                background-color: #e6e6e6;
+                background-repeat: no-repeat;
+                background-position: center;
+                input{
+                    display: none;
+                }
+
+                span{
+                    @include fonte($second-font, 400, 16px, $color-gray);
+                    position: relative;
+                    top: 50px;
+                }
+
+                &.creditcard{
+                    background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_card.png");
+                }
+
+                &.bullet{
+                    background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_boleto.png");
+                }
+
+                &:hover{
+                    background-color: #c9c9c9;
+                }
+
+                &.selected{
+                    background-color: #FFFFFF;
+                    cursor: default;
+
+                    span{
+                        color: $color-green-light;
+                    }
+
+                    &.creditcard{
+                        background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_card_active.png");
+                    }
+    
+                    &.bullet{
+                        background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_boleto_active.png");
+                    }
+                }
+                
+            }
+        }
+
+        @include e('box'){
+            @include box-sizing;
+            padding: 20px;
+            width: 100%;
+            max-width: calc(100% - 235px);
+        }
+
+    }
+
+    @include e('billet'){
+        @include e('txt'){
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center left;
+            padding-left: 55px;
+            height: 55px;
+
+            @include m('print'){
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_print.png");
+            }
+
+            @include m('calendar'){
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_calendar.png");
+            }
+        }
+
+        @include e('sep'){
+            width: 100%;
+            height: 0px;
+            border-bottom: 1px dashed $color-gray-light;
+            margin: 15px 0px;
+        }
+
+        @include e('obs'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+        }
+        
+        .rk-box{
+            @include flexbox(row, wrap, flex-start, center, center);
+        }
+
+        .nrk_pay__total{
+            padding: 15px 0px;
+        }
+    }
+
+    @include e('bdisc'){
+        
+        @include e('store'){
+            @include box-sizing;
+            width: calc(50% - 20px);
+            margin: 10px;
+            background-color: #fafafa;
+            padding: 10px;
+        }
+
+        @include e('storename'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            display: block;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        @include e('discount'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            display: block;
+            width: 100%;
+        }
+    }
+
+    @include e('card'){
+        @include flexbox(row, nowrap, flex-start, center, center);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed $color-gray-light;
+        @include e('opt'){
+
+            @include e('active'){
+                @include flexbox(row, wrap, flex-start, center, center);
+                @include fonte($second-font, 400, 14px, $color-gray);
+                @include border-radius();
+                @include box-sizing;
+                position: relative;
+                padding: 5px;
+                border: 1px solid $color-gray-light;
+                width: 350px;
+                height: 40px;
+                background-color: $color-gray-extra-light;
+
+                &:after{
+                    @include set-icon($fa-var-caret-down, 18px, 900, $color-gray);
+                    content: "\f0d7";
+                    margin-left: auto;
+                }
+            }
+
+            .card {
+                @include bgimage('card-icons.png');
+                @include transition;
+                width: 68px;
+                height: 30px;
+                background-repeat: no-repeat;
+                margin-right: 10px;
+                font-size: 0;
+                display: block;
+
+                &.mastercard {
+                    background-position: left -4px;
+                }
+
+                &.visa {
+                    background-position: -81px -4px;
+                }
+
+                &.amex {
+                    background-position: -161px -4px;
+                }
+
+                &.diners {
+                    background-position: -243px -4px;
+                }
+
+                &.elo {
+                    background-position: -327px -4px;
+                }
+
+                &.hipercard {
+                    background-position: right -4px;
+                }
+            }
+
+
+            .list-drop{
+                @include box-shadow(0px, 5px, 5px, #d6d6d6);
+                @include animate(fadeOut, 0s);
+                @include box-sizing;
+                @include radiusbl();
+                @include radiusbr();
+                display: none;
+                position: absolute;
+                padding: 5px;
+                background-color: #fafafa;
+                width: 100%;
+                max-width: 350px;
+                margin-top: 0px;
+                list-style: none;
+                overflow: hidden;
+                &.active{
+                    @include animate(fadeIn, 0s);
+                    display: block;
+                }
+                > li{
+                    @include flexbox(row, wrap, flex-start, center, center);
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                    cursor: pointer;
+                    &:hover,
+                    &.active{
+                        background-color: $color-gray-light;
+                    }
+                }
+            }
+
+        }
+    }
 
     @include res-max(300px) {
         @include e('sep'){
@@ -179,6 +429,37 @@
             @include e('label'){
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
+            }
+        }
+        .bkt_prod{
+            .nrk_pay__ship__desc{
+                strong{
+                    display: block;
+                    width: 100%;
+                }
+                text-align: center;
+            }
+
+            @include m('last'){
+                @include box-sizing;
+                flex-direction: row !important;
+                td{
+                    @include box-sizing;
+                }
+                td:nth-child(1) {
+                    width: 100%;
+                }
+                td:nth-child(2),
+                td:nth-child(3) {
+                    width: 50%;
+                }
+            }
+        }
+        @include e('total'){
+            padding: 10px;
+            @include e('sp'){
+                background-size: 30px;
+                margin-bottom: 10px;
             }
         }
     }
@@ -219,6 +500,39 @@
                 margin: 5px 0px;
             }
         }
+
+        .bkt_prod{
+            .nrk_pay__ship__desc{
+                strong{
+                    display: block;
+                    width: 100%;
+                }
+                text-align: center;
+            }
+
+            @include m('last'){
+                @include box-sizing;
+                flex-direction: row !important;
+                td{
+                    @include box-sizing;
+                }
+                td:nth-child(1) {
+                    width: 100%;
+                }
+                td:nth-child(2),
+                td:nth-child(3) {
+                    width: 50%;
+                }
+            }
+        }
+
+        @include e('total'){
+            padding: 10px;
+            @include e('sp'){
+                background-size: 30px;
+                margin-bottom: 10px;
+            }
+        }
        
     }
     @include res-between(401px, 500px) {
@@ -256,6 +570,42 @@
             @include e('label'){
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
+            }
+        }
+        .bkt_prod{
+            .nrk_pay__ship__desc{
+                strong{
+                    display: block;
+                    width: 100%;
+                }
+                text-align: center;
+            }
+
+            @include m('last'){
+                @include box-sizing;
+                flex-direction: row !important;
+                td{
+                    @include box-sizing;
+                }
+                td:nth-child(1) {
+                    width: 100%;
+                }
+                td:nth-child(2),
+                td:nth-child(3) {
+                    width: 50%;
+                }
+            }
+        }
+        @include e('total'){
+            padding: 10px;
+            @include e('sp'){
+                padding: 5px 0px 5px 50px;
+                background-size: 25px;
+                margin-bottom: 10px;
+            }
+            @include e('price'){
+                width: 100%;
+                text-align: right;
             }
         }
     }
@@ -298,6 +648,43 @@
                 margin: 5px 0px;
             }
         }
+
+        .bkt_prod{
+            .nrk_pay__ship__desc{
+                strong{
+                    display: block;
+                    width: 100%;
+                }
+                text-align: center;
+            }
+
+            @include m('last'){
+                width: 100% !important;
+                @include box-sizing;
+                flex-direction: row !important;
+                td{
+                    @include box-sizing;
+                }
+                td:nth-child(1) {
+                    width: 100%;
+                }
+                td:nth-child(2),
+                td:nth-child(3) {
+                    width: 50%;
+                }
+            }
+        }
+
+        @include e('total'){
+            padding: 10px;
+            @include e('sp'){
+                margin-bottom: 10px;
+            }
+            @include e('price'){
+                width: 100%;
+                text-align: right;
+            }
+        }
     }
     @include res-between(601px, 700px) {
         @include e('sep'){
@@ -332,6 +719,48 @@
             @include e('label'){
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
+            }
+        }
+
+        .bkt_prod{
+            .nrk_pay__ship__desc{
+                strong{
+                    display: block;
+                    width: 100%;
+                }
+                text-align: center;
+            }
+
+            @include m('last'){
+                width: 100% !important;
+                @include box-sizing;
+                flex-direction: row !important;
+
+                .nrk_pay__ship__bt{
+                    margin: 0px auto;
+                }
+
+                td{
+                    @include box-sizing;
+                }
+                td:nth-child(1) {
+                    width: 100%;
+                }
+                td:nth-child(2),
+                td:nth-child(3) {
+                    width: 50%;
+                }
+            }
+        }
+
+        @include e('total'){
+            padding: 10px;
+            @include e('sp'){
+                margin-bottom: 10px;
+            }
+            @include e('price'){
+                width: 100%;
+                text-align: right;
             }
         }
         
