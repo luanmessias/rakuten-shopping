@@ -312,7 +312,7 @@
                 position: relative;
                 padding: 5px;
                 border: 1px solid $color-gray-light;
-                width: 350px;
+                width: 250px;
                 height: 40px;
                 background-color: $color-gray-extra-light;
 
@@ -358,7 +358,6 @@
                 }
             }
 
-
             .list-drop{
                 @include box-shadow(0px, 5px, 5px, #d6d6d6);
                 @include animate(fadeOut, 0s);
@@ -370,10 +369,11 @@
                 padding: 5px;
                 background-color: #fafafa;
                 width: 100%;
-                max-width: 350px;
+                max-width: 250px;
                 margin-top: 0px;
                 list-style: none;
                 overflow: hidden;
+                z-index: 10;
                 &.active{
                     @include animate(fadeIn, 0s);
                     display: block;
@@ -391,6 +391,200 @@
                 }
             }
 
+        }
+
+        @include e('date'){
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            @include border-radius();
+            @include box-sizing;
+            position: relative;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            width: 250px;
+            height: 40px;
+            background-color: transparent;
+            margin: 0px 15px;
+            @include e('title'){
+                @include fonte($second-font, 600, 16px, $color-gray);
+                margin-right: 5px;
+            }
+            @include e('text'){
+                @include fonte($second-font, 400, 16px, $color-gray);
+            }
+        }
+
+        @include e('cod'){
+            @include flexbox(row, nowrap, flex-start, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            position: relative;
+            width: 250px;
+            height: 40px;
+            @include e('title'){
+                @include fonte($second-font, 600, 16px, $color-gray);
+                margin-right: 5px;
+            }
+            @include e('field'){
+                @include flexbox(row, wrap, flex-start, center, center);
+                @include box-sizing;
+                @include border-radius();
+                padding: 5px 10px;
+                border: 1px solid $color-gray-light;
+                background-color: $color-gray-extra-light;
+                width: 85px;
+                height: 40px;
+            }
+            @include e('help'){
+                @include fonte($second-font, 600, 14px, #FFF);
+                @include flexbox(row, wrap, center, center, center);
+                @include radiustr();
+                @include radiusbr();
+                @include box-sizing;
+                width: 30px;
+                height: 40px;
+                position: absolute;
+                right: 45px;
+                background-color: $color-gray;
+                &:hover{
+                    text-decoration: none !important;
+                }
+            }
+        }
+    }
+
+    @include e('newcard'){
+        @include flexbox(row, wrap, flex-start, flex-start, center);
+        width: 100%;
+
+        input[type="text"]{
+            @include fonte($second-font, 400, 14px, $color-gray);
+            @include border-radius();
+            @include box-sizing;
+            position: relative;
+            padding: 5px 10px;
+            border: 1px solid $color-gray-light;
+            width: 250px;
+            height: 40px;
+            background-color: $color-gray-extra-light;
+        }
+
+        @include e('number'){
+            @include flexbox(row, wrap, space-between, center, center);
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        @include e('fields'){
+            @include flexbox(row, wrap, space-between, center, center);
+            width: 250px;
+            margin-right: 20px;
+            @include e('title'){
+                @include fonte($second-font, 400, 14px, $color-gray);
+                display: block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            .field{
+                margin-bottom: 10px;
+                position: relative;
+            }
+            input.month-year{
+                @include radiustr(0);
+                @include radiusbr(0);
+                width: 60px;
+                
+            }
+            .dat{
+                @include flexbox(row, nowrap, flex-start, center, center);
+                width: 100%;
+            }
+            .legend{
+                @include fonte($second-font, 400, 14px, $color-gray);
+                @include flexbox(row, wrap, center, center, center);
+                @include radiustr();
+                @include radiusbr();
+                @include box-sizing;
+                width: 60px;
+                height: 40px;
+                background-color: #d2d2d2;
+                margin-right: 10px;
+                &:hover{
+                    text-decoration: none !important;
+                }
+            }
+            .help{
+                @include fonte($second-font, 600, 14px, #FFF);
+                @include flexbox(row, wrap, center, center, center);
+                @include radiustr();
+                @include radiusbr();
+                @include radiustl(0);
+                @include radiusbl(0);
+                @include box-sizing;
+                width: 30px;
+                height: 40px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                background-color: $color-gray;
+                &:hover{
+                    text-decoration: none !important;
+                } 
+            }
+        }
+        
+        @include e('obs'){
+            @include fonte($second-font, 400, 16px, $color-gray);
+            width: calc(100% - 270px);
+        }
+
+        .flags {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: calc(100% - 260px);
+            input[type="radio"]{
+                display: none;
+            }
+            > label{
+                @include bgimage('card-icons.png');
+                @include transition;
+                @include grayscale(1);
+                @include opacity(.4);
+                width: 68px;
+                height: 40px;
+                background-repeat: no-repeat;
+                margin-right: 10px;
+                font-size: 0;
+                display: block;
+
+                &.selected{
+                    @include grayscale(0);
+                    @include opacity(1);
+                    @include box-shadow(0px, 0px, 5px, $color-gray-light);
+                }
+    
+                &.mastercard {
+                background-position: left 0px;
+                }
+    
+                &.visa {
+                background-position: -81px 0px;
+                }
+    
+                &.amex {
+                background-position: -161px 0px;
+                }
+    
+                &.diners {
+                background-position: -243px 0px;
+                }
+    
+                &.elo {
+                background-position: -327px 0px;
+                }
+    
+                &.hipercard {
+                background-position: right 0px;
+                }
+            }
         }
     }
 

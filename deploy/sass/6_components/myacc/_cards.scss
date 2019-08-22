@@ -254,11 +254,11 @@
                 @include e('icon'){
 
                     @include bgimage('card-icons.png');
-                        @include transition;
-                        width: 68px;
-                        height: 39px;
-                        background-repeat: no-repeat;
-                        margin-right: 10px;
+                    @include transition;
+                    width: 68px;
+                    height: 39px;
+                    background-repeat: no-repeat;
+                    margin-right: 10px;
 
                         @include m('mastercard'){
                             background-position: left 0px;
