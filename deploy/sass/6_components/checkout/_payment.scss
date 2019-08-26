@@ -179,7 +179,7 @@
                 @include transition;
                 cursor: pointer;
                 width: 100%;
-                height: 235px;
+                height: 278px;
                 background-color: #e6e6e6;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -440,6 +440,7 @@
                 @include radiustr();
                 @include radiusbr();
                 @include box-sizing;
+                cursor: pointer;
                 width: 30px;
                 height: 40px;
                 position: absolute;
@@ -512,7 +513,7 @@
                     text-decoration: none !important;
                 }
             }
-            .help{
+            .help__ccv{
                 @include fonte($second-font, 600, 14px, #FFF);
                 @include flexbox(row, wrap, center, center, center);
                 @include radiustr();
@@ -520,6 +521,7 @@
                 @include radiustl(0);
                 @include radiusbl(0);
                 @include box-sizing;
+                cursor: pointer;
                 width: 30px;
                 height: 40px;
                 position: absolute;
@@ -585,6 +587,101 @@
                 background-position: right 0px;
                 }
             }
+        }
+    }
+
+    .ccv {
+
+        @include e('overlay'){
+            @include flexbox(row, wrap, center, center, center);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: hsla(0, 0%, 0%, 0.377);
+            display: none;
+            &.active{
+                @include animate(fadeIn, 0s);
+                display: flex;
+            }
+        }
+
+        @include m('fancybox') {
+            position: inherit;
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            visibility: visible;
+            background-color: #FFF;
+            padding: 20px;
+            &.fancybox-content {
+                @include animate(fadeIn, 0s);
+            }
+        }
+
+        @include e('title') {
+            @include fonte($second-font, 600, 14px, $color-gray-dark);
+            @include box-sizing;
+            border-bottom: 1px solid $color-gray-light;
+            display: block;
+            width: 100%;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        @include e('content') {
+            @include flexbox(row, wrap, space-between, center, center);
+            margin-top: 20px;
+        }
+
+        @include e('txt') {
+            @include fonte($second-font, 400, 13px, $color-gray);
+            display: block;
+            width: calc(100% - 160px);
+        }
+
+    }
+
+    @include e('inst') {
+        @include e('store') {
+            
+            @include e('selected') {
+                @include flexbox(row, wrap, flex-start, center, center);
+                @include fonte($second-font, 400, 14px, $color-gray);
+                @include border-radius();
+                @include box-sizing;
+                position: relative;
+                padding: 5px;
+                border: 1px solid $color-gray-light;
+                width: 250px;
+                height: 40px;
+                background-color: $color-gray-extra-light;
+                cursor: pointer;
+
+                &:after {
+                    @include set-icon($fa-var-caret-down, 18px, 900, $color-gray);
+                    content: "\f0d7";
+                    margin-left: auto;
+                }
+            }
+
+            @include e('opt'){
+                display: none;
+                &.active{
+                    display: block;
+                }
+            }
+
+            @include e('name') {
+                @include fonte($second-font, 400, 14px, $color-gray);
+                display: block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            
+
         }
     }
 
@@ -656,7 +753,22 @@
                 margin-bottom: 10px;
             }
         }
+        @include e('method'){
+           @include e('opt'){
+               @include flexbox(row, nowrap, flex-start, flex-start, center);
+               width: 100%;
+               max-width: inherit;
+               label{
+                   width: 50%;
+                   max-height: 150px;
+                   span{
+                       font-size: 14px;
+                   }
+               }
+           } 
+        }
     }
+
     @include res-between(301px, 400px) {
          @include e('sep'){
             width: 100%;
@@ -729,6 +841,7 @@
         }
        
     }
+
     @include res-between(401px, 500px) {
         @include e('sep'){
             width: 100%;
@@ -803,6 +916,7 @@
             }
         }
     }
+
     @include res-between(501px, 600px) {
         @include e('sep'){
             width: 100%;
@@ -880,6 +994,7 @@
             }
         }
     }
+
     @include res-between(601px, 700px) {
         @include e('sep'){
             width: 100%;
@@ -959,6 +1074,7 @@
         }
         
     }
+    
     @include res-between(701px, 800px) {}
     @include res-between(801px, 900px) {}
     @include res-between(901px, 1000px) {}
