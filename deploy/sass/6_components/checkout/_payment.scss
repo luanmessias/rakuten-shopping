@@ -1,25 +1,25 @@
-.nrk_pay{
-    @include e('title'){
+.nrk_pay {
+    @include e('title') {
         @include fonte($second-font, 400, 18px, $color-gray);
         width: 100%;
         display: block;
         margin-top: 25px;
     }
 
-    @include e('box'){
+    @include e('box') {
         @include box-sizing;
         width: 100%;
         padding: 30px;
         background-color: #FFF;
     }
 
-    @include e('sep'){
+    @include e('sep') {
         width: 1px;
         height: 40px;
         background-color: $color-gray-light;
     }
 
-    @include e('address'){
+    @include e('address') {
         @include flexbox(row, wrap, space-between, center, center);
         padding-left: 100px;
         background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/myacc_address.png");
@@ -27,63 +27,69 @@
         background-position: 30px center;
         background-size: 50px auto;
 
-        @include e('title'){
+        @include e('title') {
             @include fonte($second-font, 600, 14px, $color-gray-dark);
             display: block;
             width: 100%;
             margin-bottom: 10px;
         }
 
-        @include e('text'){
+        @include e('text') {
             @include fonte($second-font, 400, 14px, $color-gray-dark);
         }
 
-        @include e('bt'){
+        @include e('bt') {
             @extend %bt-default;
             background-color: $color-gray-extra-light;
             color: $color-gray;
-            &:hover{
+
+            &:hover {
                 background-color: $color-gray-light;
                 text-decoration: none;
             }
         }
     }
 
-    @include e('points'){
+    @include e('points') {
         padding: 0px;
-        @include e('row'){
+
+        @include e('row') {
             @include box-sizing;
             width: 100%;
             padding: 15px 30px;
-            &:first-of-type{
+
+            &:first-of-type {
                 @include flexbox(row, wrap, flex-start, center, center);
                 border-bottom: 1px solid $color-gray-light;
                 padding: 30px;
             }
         }
 
-        .nrk_pay__sep{
-            margin: 0px 30px; 
+        .nrk_pay__sep {
+            margin: 0px 30px;
         }
 
-        @include e('box'){
+        @include e('box') {
             width: 100%;
             max-width: 265px;
-            @include m('opt'){
+
+            @include m('opt') {
                 @include flexbox(row, wrap, space-around, center, center);
                 width: 100%;
                 max-width: calc(100% - 335px);
             }
         }
 
-        @include e('label'){
+        @include e('label') {
             @include flexbox(row, wrap, flex-start, center, center);
-            input{
+
+            input {
                 width: 20px;
                 height: 20px;
                 margin-right: 10px;
             }
-            span{
+
+            span {
                 @include fonte($second-font, 400, 14px, $color-gray);
                 text-transform: uppercase;
             }
@@ -104,37 +110,40 @@
             width: 100%;
         }
 
-        @include e('val'){
+        @include e('val') {
             @include fonte($second-font, 600, 27px, $color-green);
         }
 
-        @include e('alt'){
+        @include e('alt') {
             @include fonte($second-font, 400, 16px, $color-green);
         }
 
-        @include e('economy'){
+        @include e('economy') {
             @include fonte($second-font, 400, 14px, $color-gray);
         }
-        
+
     }
 
-    @include e('ship'){
-        @include e('desc'){
+    @include e('ship') {
+        @include e('desc') {
             @include fonte($second-font, 400, 14px, $color-gray);
             display: block;
             width: 100%;
             margin-bottom: 10px;
         }
-        @include e('bt'){
+
+        @include e('bt') {
             @extend %bt-default;
             background-color: $color-gray-extra-light;
             color: $color-gray;
-            &:hover{
+
+            &:hover {
                 background-color: $color-gray-light;
                 text-decoration: none;
             }
         }
-        @include e('info'){
+
+        @include e('info') {
             @include fonte($second-font, 400, 14px, $color-gray);
             display: block;
             width: 100%;
@@ -143,10 +152,10 @@
         }
     }
 
-    @include e('total'){
+    @include e('total') {
         @include flexbox(row, wrap, space-between, center, center);
-        
-        @include e('sp'){
+
+        @include e('sp') {
             @include fonte($second-font, 400, 14px, $color-green);
             background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_header_points.png");
             background-repeat: no-repeat;
@@ -155,25 +164,26 @@
             padding: 5px 0px 5px 35px;
         }
 
-        @include e('price'){
+        @include e('price') {
             @include fonte($second-font, 600, 18px, $color-green);
         }
     }
 
-    .bkt_prod{
-        @include e('remove'){
+    .bkt_prod {
+        @include e('remove') {
             display: none;
         }
     }
 
-    @include e('method'){
+    @include e('method') {
         @include flexbox(row, wrap, flex-start, flex-start, center);
-        padding:0px;
+        padding: 0px;
 
-        @include e('opt'){
+        @include e('opt') {
             width: 100%;
             max-width: 235px;
-            label{
+
+            label {
                 @include flexbox(row, wrap, center, center, center);
                 @include box-sizing;
                 @include transition;
@@ -183,49 +193,50 @@
                 background-color: #e6e6e6;
                 background-repeat: no-repeat;
                 background-position: center;
-                input{
+
+                input {
                     display: none;
                 }
 
-                span{
+                span {
                     @include fonte($second-font, 400, 16px, $color-gray);
                     position: relative;
                     top: 50px;
                 }
 
-                &.creditcard{
+                &.creditcard {
                     background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_card.png");
                 }
 
-                &.bullet{
+                &.bullet {
                     background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_boleto.png");
                 }
 
-                &:hover{
+                &:hover {
                     background-color: #c9c9c9;
                 }
 
-                &.selected{
+                &.selected {
                     background-color: #FFFFFF;
                     cursor: default;
 
-                    span{
+                    span {
                         color: $color-green-light;
                     }
 
-                    &.creditcard{
+                    &.creditcard {
                         background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_card_active.png");
                     }
-    
-                    &.bullet{
+
+                    &.bullet {
                         background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_boleto_active.png");
                     }
                 }
-                
+
             }
         }
 
-        @include e('box'){
+        @include e('box') {
             @include box-sizing;
             padding: 20px;
             width: 100%;
@@ -234,48 +245,49 @@
 
     }
 
-    @include e('billet'){
-        @include e('txt'){
+    @include e('billet') {
+        @include e('txt') {
             @include flexbox(row, wrap, flex-start, center, center);
             @include fonte($second-font, 400, 14px, $color-gray);
+            @include box-sizing;
             width: 100%;
             background-repeat: no-repeat;
             background-position: center left;
             padding-left: 55px;
             height: 55px;
 
-            @include m('print'){
+            @include m('print') {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_print.png");
             }
 
-            @include m('calendar'){
+            @include m('calendar') {
                 background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_calendar.png");
             }
         }
 
-        @include e('sep'){
+        @include e('sep') {
             width: 100%;
             height: 0px;
             border-bottom: 1px dashed $color-gray-light;
             margin: 15px 0px;
         }
 
-        @include e('obs'){
+        @include e('obs') {
             @include fonte($second-font, 400, 14px, $color-gray);
         }
-        
-        .rk-box{
+
+        .rk-box {
             @include flexbox(row, wrap, flex-start, center, center);
         }
 
-        .nrk_pay__total{
+        .nrk_pay__total {
             padding: 15px 0px;
         }
     }
 
-    @include e('bdisc'){
-        
-        @include e('store'){
+    @include e('bdisc') {
+
+        @include e('store') {
             @include box-sizing;
             width: calc(50% - 20px);
             margin: 10px;
@@ -283,28 +295,30 @@
             padding: 10px;
         }
 
-        @include e('storename'){
+        @include e('storename') {
             @include fonte($second-font, 400, 14px, $color-gray);
             display: block;
             width: 100%;
             margin-bottom: 5px;
         }
 
-        @include e('discount'){
+        @include e('discount') {
             @include fonte($second-font, 400, 14px, $color-gray);
             display: block;
             width: 100%;
         }
     }
 
-    @include e('card'){
+    @include e('card') {
         @include flexbox(row, nowrap, flex-start, center, center);
         padding-bottom: 15px;
         margin-bottom: 15px;
         border-bottom: 1px dashed $color-gray-light;
-        @include e('opt'){
 
-            @include e('active'){
+        @include e('opt') {
+            @include box-sizing;
+
+            @include e('active') {
                 @include flexbox(row, wrap, flex-start, center, center);
                 @include fonte($second-font, 400, 14px, $color-gray);
                 @include border-radius();
@@ -316,7 +330,7 @@
                 height: 40px;
                 background-color: $color-gray-extra-light;
 
-                &:after{
+                &:after {
                     @include set-icon($fa-var-caret-down, 18px, 900, $color-gray);
                     content: "\f0d7";
                     margin-left: auto;
@@ -326,6 +340,7 @@
             .card {
                 @include bgimage('card-icons.png');
                 @include transition;
+                @include box-sizing;
                 width: 68px;
                 height: 30px;
                 background-repeat: no-repeat;
@@ -358,7 +373,7 @@
                 }
             }
 
-            .list-drop{
+            .list-drop {
                 @include box-shadow(0px, 5px, 5px, #d6d6d6);
                 @include animate(fadeOut, 0s);
                 @include box-sizing;
@@ -374,18 +389,21 @@
                 list-style: none;
                 overflow: hidden;
                 z-index: 10;
-                &.active{
+
+                &.active {
                     @include animate(fadeIn, 0s);
                     display: block;
                 }
-                > li{
+
+                >li {
                     @include flexbox(row, wrap, flex-start, center, center);
                     @include box-sizing;
                     width: 100%;
                     padding: 10px;
                     cursor: pointer;
+
                     &:hover,
-                    &.active{
+                    &.active {
                         background-color: $color-gray-light;
                     }
                 }
@@ -393,7 +411,7 @@
 
         }
 
-        @include e('date'){
+        @include e('date') {
             @include flexbox(row, wrap, flex-start, center, center);
             @include fonte($second-font, 400, 14px, $color-gray);
             @include border-radius();
@@ -405,26 +423,30 @@
             height: 40px;
             background-color: transparent;
             margin: 0px 15px;
-            @include e('title'){
+
+            @include e('title') {
                 @include fonte($second-font, 600, 16px, $color-gray);
                 margin-right: 5px;
             }
-            @include e('text'){
+
+            @include e('text') {
                 @include fonte($second-font, 400, 16px, $color-gray);
             }
         }
 
-        @include e('cod'){
+        @include e('cod') {
             @include flexbox(row, nowrap, flex-start, center, center);
             @include fonte($second-font, 400, 14px, $color-gray);
             position: relative;
             width: 250px;
             height: 40px;
-            @include e('title'){
+
+            @include e('title') {
                 @include fonte($second-font, 600, 16px, $color-gray);
                 margin-right: 5px;
             }
-            @include e('field'){
+
+            @include e('field') {
                 @include flexbox(row, wrap, flex-start, center, center);
                 @include box-sizing;
                 @include border-radius();
@@ -434,7 +456,8 @@
                 width: 85px;
                 height: 40px;
             }
-            @include e('help'){
+
+            @include e('help') {
                 @include fonte($second-font, 600, 14px, #FFF);
                 @include flexbox(row, wrap, center, center, center);
                 @include radiustr();
@@ -446,18 +469,20 @@
                 position: absolute;
                 right: 45px;
                 background-color: $color-gray;
-                &:hover{
+
+                &:hover {
                     text-decoration: none !important;
                 }
             }
         }
     }
 
-    @include e('newcard'){
+    @include e('newcard') {
         @include flexbox(row, wrap, flex-start, flex-start, center);
+        @include box-sizing;
         width: 100%;
 
-        input[type="text"]{
+        input[type="text"] {
             @include fonte($second-font, 400, 14px, $color-gray);
             @include border-radius();
             @include box-sizing;
@@ -469,37 +494,42 @@
             background-color: $color-gray-extra-light;
         }
 
-        @include e('number'){
+        @include e('number') {
             @include flexbox(row, wrap, space-between, center, center);
             width: 100%;
             margin-bottom: 20px;
         }
 
-        @include e('fields'){
+        @include e('fields') {
             @include flexbox(row, wrap, space-between, center, center);
             width: 250px;
             margin-right: 20px;
-            @include e('title'){
+
+            @include e('title') {
                 @include fonte($second-font, 400, 14px, $color-gray);
                 display: block;
                 width: 100%;
                 margin-bottom: 5px;
             }
-            .field{
+
+            .field {
                 margin-bottom: 10px;
                 position: relative;
             }
-            input.month-year{
+
+            input.month-year {
                 @include radiustr(0);
                 @include radiusbr(0);
                 width: 60px;
-                
+
             }
-            .dat{
+
+            .dat {
                 @include flexbox(row, nowrap, flex-start, center, center);
                 width: 100%;
             }
-            .legend{
+
+            .legend {
                 @include fonte($second-font, 400, 14px, $color-gray);
                 @include flexbox(row, wrap, center, center, center);
                 @include radiustr();
@@ -509,11 +539,13 @@
                 height: 40px;
                 background-color: #d2d2d2;
                 margin-right: 10px;
-                &:hover{
+
+                &:hover {
                     text-decoration: none !important;
                 }
             }
-            .help__ccv{
+
+            .help__ccv {
                 @include fonte($second-font, 600, 14px, #FFF);
                 @include flexbox(row, wrap, center, center, center);
                 @include radiustr();
@@ -528,13 +560,14 @@
                 right: 0;
                 bottom: 0;
                 background-color: $color-gray;
-                &:hover{
+
+                &:hover {
                     text-decoration: none !important;
-                } 
+                }
             }
         }
-        
-        @include e('obs'){
+
+        @include e('obs') {
             @include fonte($second-font, 400, 16px, $color-gray);
             width: calc(100% - 270px);
         }
@@ -542,10 +575,12 @@
         .flags {
             @include flexbox(row, wrap, flex-start, center, center);
             width: calc(100% - 260px);
-            input[type="radio"]{
+
+            input[type="radio"] {
                 display: none;
             }
-            > label{
+
+            >label {
                 @include bgimage('card-icons.png');
                 @include transition;
                 @include grayscale(1);
@@ -557,34 +592,34 @@
                 font-size: 0;
                 display: block;
 
-                &.selected{
+                &.selected {
                     @include grayscale(0);
                     @include opacity(1);
                     @include box-shadow(0px, 0px, 5px, $color-gray-light);
                 }
-    
+
                 &.mastercard {
-                background-position: left 0px;
+                    background-position: left 0px;
                 }
-    
+
                 &.visa {
-                background-position: -81px 0px;
+                    background-position: -81px 0px;
                 }
-    
+
                 &.amex {
-                background-position: -161px 0px;
+                    background-position: -161px 0px;
                 }
-    
+
                 &.diners {
-                background-position: -243px 0px;
+                    background-position: -243px 0px;
                 }
-    
+
                 &.elo {
-                background-position: -327px 0px;
+                    background-position: -327px 0px;
                 }
-    
+
                 &.hipercard {
-                background-position: right 0px;
+                    background-position: right 0px;
                 }
             }
         }
@@ -592,7 +627,7 @@
 
     .ccv {
 
-        @include e('overlay'){
+        @include e('overlay') {
             @include flexbox(row, wrap, center, center, center);
             position: fixed;
             top: 0;
@@ -601,7 +636,8 @@
             height: 100%;
             background-color: hsla(0, 0%, 0%, 0.377);
             display: none;
-            &.active{
+
+            &.active {
                 @include animate(fadeIn, 0s);
                 display: flex;
             }
@@ -615,6 +651,7 @@
             visibility: visible;
             background-color: #FFF;
             padding: 20px;
+
             &.fancybox-content {
                 @include animate(fadeIn, 0s);
             }
@@ -644,8 +681,24 @@
     }
 
     @include e('inst') {
+        @include e('stores') {
+            @include flexbox(row, wrap, flex-start, flex-end, center);
+            @include box-sizing;
+            width: 100%;
+            border-bottom: 1px dashed $color-gray-light;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        @include e('sep') {
+            width: 1px;
+            height: 40px;
+            background-color: $color-gray-light;
+            margin: 0px 20px;
+        }
+
         @include e('store') {
-            
+
             @include e('selected') {
                 @include flexbox(row, wrap, flex-start, center, center);
                 @include fonte($second-font, 400, 14px, $color-gray);
@@ -666,10 +719,51 @@
                 }
             }
 
-            @include e('opt'){
+            @include e('opt') {
+                @include box-shadow(0px, 5px, 5px, #d6d6d6);
+                @include animate(fadeOut, 0s);
+                @include box-sizing;
+                @include radiusbl();
+                @include radiusbr();
                 display: none;
-                &.active{
+                position: absolute;
+                padding: 5px;
+                background-color: #fafafa;
+                width: 100%;
+                max-width: 250px;
+                margin-top: 0px;
+                list-style: none;
+                overflow: hidden;
+                z-index: 10;
+
+                &.active {
+                    @include animate(fadeIn, 0s);
                     display: block;
+                }
+
+                >label {
+                    @include flexbox(row, wrap, flex-start, center, center);
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    &:hover,
+                    &.active {
+                        background-color: $color-gray-light;
+                    }
+
+                    input {
+                        display: none;
+                    }
+
+                    .rk-installment {
+                        @include fonte($second-font, 400, 16px, $color-gray);
+                    }
+
+                    .rk-installment-total {
+                        @include fonte($second-font, 600, 14px, $color-gray);
+                    }
                 }
             }
 
@@ -680,151 +774,275 @@
                 margin-bottom: 5px;
             }
 
-            
 
         }
     }
 
+    @include e('news') {
+        @include e('type') {
+            width: 100%;
+            border-bottom: 1px dashed $color-gray-light;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        @include e('cont') {
+            @include flexbox(row, wrap, flex-start, center, center);
+        }
+
+        label {
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            margin-right: 20px;
+            margin-bottom: 15px;
+
+            input {
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
     @include res-max(300px) {
-        @include e('sep'){
+        @include e('sep') {
             width: 100%;
             height: 1px;
             margin: 10px 0px;
         }
-        @include e('address'){
+
+        @include e('address') {
             background-image: none;
             padding: 10px;
 
-            @include e('box'){
+            @include e('box') {
                 width: 100%;
             }
         }
-        @include e('points'){
-            .nrk_pay__sep{
+
+        @include e('points') {
+            .nrk_pay__sep {
                 width: 100%;
                 margin: 10px 0px;
             }
-            @include e('row'){
-                &:first-of-type{
+
+            @include e('row') {
+                &:first-of-type {
                     padding: 10px;
                 }
+
                 padding: 10px;
             }
-            @include e('box'){
+
+            @include e('box') {
                 @include m('opt') {
                     @include flex-justify(flex-start);
                     width: 100%;
                     max-width: inherit;
                 }
             }
-            @include e('label'){
+
+            @include e('label') {
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
             }
         }
-        .bkt_prod{
-            .nrk_pay__ship__desc{
-                strong{
+
+        .bkt_prod {
+            .nrk_pay__ship__desc {
+                strong {
                     display: block;
                     width: 100%;
                 }
+
                 text-align: center;
             }
 
-            @include m('last'){
+            @include m('last') {
                 @include box-sizing;
                 flex-direction: row !important;
-                td{
+
+                td {
                     @include box-sizing;
                 }
+
                 td:nth-child(1) {
                     width: 100%;
                 }
+
                 td:nth-child(2),
                 td:nth-child(3) {
                     width: 50%;
                 }
             }
         }
-        @include e('total'){
+
+        @include e('total') {
             padding: 10px;
-            @include e('sp'){
+
+            @include e('sp') {
                 background-size: 30px;
                 margin-bottom: 10px;
             }
         }
-        @include e('method'){
-           @include e('opt'){
-               @include flexbox(row, nowrap, flex-start, flex-start, center);
-               width: 100%;
-               max-width: inherit;
-               label{
-                   width: 50%;
-                   max-height: 150px;
-                   span{
-                       font-size: 14px;
-                   }
-               }
-           } 
+
+        @include e('method') {
+            @include e('opt') {
+                @include flexbox(row, nowrap, flex-start, flex-start, center);
+                width: 100%;
+                max-width: inherit;
+
+                label {
+                    width: 50%;
+                    max-height: 150px;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            @include e('box') {
+                width: 100%;
+                max-width: inherit;
+                padding: 10px;
+            }
         }
+
+        @include e('billet') {
+            @include e('txt') {
+                height: auto;
+                margin-bottom: 15px;
+            }
+        }
+
+        @include e('bdisc') {
+            @include e('store') {
+                width: 100%;
+                margin: 0px;
+            }
+        }
+
+        @include e('card'){
+            @include flex-wrap(wrap);
+            @include e('opt'){
+                width: 100%;
+                margin-bottom: 10px;
+                @include e('active'){
+                    width: 100%;
+                } 
+            }
+            @include e('date'){
+                width: 100%;
+                margin: 0px;
+                padding: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @include e('newcard') {
+            .shell {
+                width: 100%;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+            .flags {
+                width: 100%;
+                margin: 10px 0px;
+            }
+
+            @include e('fields') {
+                margin: 0;
+                .field {
+                    width: 100%;
+                }
+            }
+
+            @include e('obs'){
+                width: 100%;
+            }
+        }
+
+
     }
 
     @include res-between(301px, 400px) {
-         @include e('sep'){
+        @include e('sep') {
             width: 100%;
             height: 1px;
             margin: 10px 0px;
         }
-        @include e('address'){
+
+        @include e('address') {
             background-image: none;
             padding: 10px;
 
-            @include e('box'){
+            @include e('box') {
                 width: 100%;
             }
         }
-        @include e('points'){
-            .nrk_pay__sep{
+
+        @include e('points') {
+            .nrk_pay__sep {
                 width: 100%;
                 margin: 10px 0px;
             }
-            @include e('row'){
-                &:first-of-type{
+
+            @include e('row') {
+                &:first-of-type {
                     padding: 10px;
                 }
+
                 padding: 10px;
             }
-            @include e('box'){
+
+            @include e('box') {
                 @include m('opt') {
                     @include flex-justify(flex-start);
                     width: 100%;
                     max-width: inherit;
                 }
             }
-            @include e('label'){
+
+            @include e('label') {
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
             }
         }
 
-        .bkt_prod{
-            .nrk_pay__ship__desc{
-                strong{
+        .bkt_prod {
+            .nrk_pay__ship__desc {
+                strong {
                     display: block;
                     width: 100%;
                 }
+
                 text-align: center;
             }
 
-            @include m('last'){
+            @include m('last') {
                 @include box-sizing;
                 flex-direction: row !important;
-                td{
+
+                td {
                     @include box-sizing;
                 }
+
                 td:nth-child(1) {
                     width: 100%;
                 }
+
                 td:nth-child(2),
                 td:nth-child(3) {
                     width: 50%;
@@ -832,150 +1050,249 @@
             }
         }
 
-        @include e('total'){
+        @include e('total') {
             padding: 10px;
-            @include e('sp'){
+
+            @include e('sp') {
                 background-size: 30px;
                 margin-bottom: 10px;
             }
         }
-       
+
+        @include e('method') {
+            @include e('opt') {
+                @include flexbox(row, nowrap, flex-start, flex-start, center);
+                width: 100%;
+                max-width: inherit;
+
+                label {
+                    width: 50%;
+                    max-height: 150px;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            @include e('box') {
+                width: 100%;
+                max-width: inherit;
+            }
+        }
+
+        @include e('billet') {
+            @include e('txt') {
+                background-position: left top;
+                height: auto;
+                margin-bottom: 15px;
+                min-height: 55px;
+            }
+        }
+
+        @include e('bdisc') {
+            @include e('store') {
+                width: 100%;
+                margin: 0px;
+            }
+        }
+
     }
 
     @include res-between(401px, 500px) {
-        @include e('sep'){
+        @include e('sep') {
             width: 100%;
             height: 1px;
             margin: 10px 0px;
         }
-        @include e('address'){
+
+        @include e('address') {
             background-image: none;
             padding: 10px;
 
-            @include e('box'){
+            @include e('box') {
                 width: 100%;
             }
         }
-        @include e('points'){
-            .nrk_pay__sep{
+
+        @include e('points') {
+            .nrk_pay__sep {
                 width: 100%;
                 margin: 10px 0px;
             }
-            @include e('row'){
-                &:first-of-type{
+
+            @include e('row') {
+                &:first-of-type {
                     padding: 10px;
                 }
+
                 padding: 10px;
             }
-            @include e('box'){
+
+            @include e('box') {
                 @include m('opt') {
                     @include flex-justify(flex-start);
                     width: 100%;
                     max-width: inherit;
                 }
             }
-            @include e('label'){
+
+            @include e('label') {
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
             }
         }
-        .bkt_prod{
-            .nrk_pay__ship__desc{
-                strong{
+
+        .bkt_prod {
+            .nrk_pay__ship__desc {
+                strong {
                     display: block;
                     width: 100%;
                 }
+
                 text-align: center;
             }
 
-            @include m('last'){
+            @include m('last') {
                 @include box-sizing;
                 flex-direction: row !important;
-                td{
+
+                td {
                     @include box-sizing;
                 }
+
                 td:nth-child(1) {
                     width: 100%;
                 }
+
                 td:nth-child(2),
                 td:nth-child(3) {
                     width: 50%;
                 }
             }
         }
-        @include e('total'){
+
+        @include e('total') {
             padding: 10px;
-            @include e('sp'){
+
+            @include e('sp') {
                 padding: 5px 0px 5px 50px;
                 background-size: 25px;
                 margin-bottom: 10px;
             }
-            @include e('price'){
+
+            @include e('price') {
                 width: 100%;
                 text-align: right;
+            }
+        }
+
+        @include e('method') {
+            @include e('opt') {
+                @include flexbox(row, nowrap, flex-start, flex-start, center);
+                width: 100%;
+                max-width: inherit;
+
+                label {
+                    width: 50%;
+                    max-height: 150px;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            @include e('box') {
+                width: 100%;
+                max-width: inherit;
+            }
+        }
+
+        @include e('billet') {
+            @include e('txt') {
+                background-position: left top;
+                height: auto;
+                margin-bottom: 15px;
+                min-height: 55px;
+            }
+        }
+
+        @include e('bdisc') {
+            @include e('store') {
+                width: 100%;
+                margin: 0px;
             }
         }
     }
 
     @include res-between(501px, 600px) {
-        @include e('sep'){
+        @include e('sep') {
             width: 100%;
             height: 1px;
             margin: 10px 0px;
         }
 
-        @include e('address'){
+        @include e('address') {
             background-image: none;
             padding: 10px;
 
-            @include e('box'){
+            @include e('box') {
                 width: 100%;
             }
         }
-       
-        @include e('points'){
-            .nrk_pay__sep{
+
+        @include e('points') {
+            .nrk_pay__sep {
                 width: 100%;
                 margin: 10px 0px;
             }
-            @include e('row'){
-                &:first-of-type{
+
+            @include e('row') {
+                &:first-of-type {
                     padding: 10px;
                 }
+
                 padding: 10px;
             }
-            @include e('box'){
+
+            @include e('box') {
                 @include m('opt') {
                     @include flex-justify(flex-start);
                     width: 100%;
                     max-width: inherit;
                 }
             }
-            @include e('label'){
+
+            @include e('label') {
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
             }
         }
 
-        .bkt_prod{
-            .nrk_pay__ship__desc{
-                strong{
+        .bkt_prod {
+            .nrk_pay__ship__desc {
+                strong {
                     display: block;
                     width: 100%;
                 }
+
                 text-align: center;
             }
 
-            @include m('last'){
+            @include m('last') {
                 width: 100% !important;
                 @include box-sizing;
                 flex-direction: row !important;
-                td{
+
+                td {
                     @include box-sizing;
                 }
+
                 td:nth-child(1) {
                     width: 100%;
                 }
+
                 td:nth-child(2),
                 td:nth-child(3) {
                     width: 50%;
@@ -983,78 +1300,127 @@
             }
         }
 
-        @include e('total'){
+        @include e('total') {
             padding: 10px;
-            @include e('sp'){
+
+            @include e('sp') {
                 margin-bottom: 10px;
             }
-            @include e('price'){
+
+            @include e('price') {
                 width: 100%;
                 text-align: right;
+            }
+        }
+
+        @include e('method') {
+            @include e('opt') {
+                @include flexbox(row, nowrap, flex-start, flex-start, center);
+                width: 100%;
+                max-width: inherit;
+
+                label {
+                    width: 50%;
+                    max-height: 150px;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            @include e('box') {
+                width: 100%;
+                max-width: inherit;
+            }
+        }
+
+        @include e('billet') {
+            @include e('txt') {
+                background-position: left top;
+                height: auto;
+                margin-bottom: 15px;
+                min-height: 55px;
+            }
+        }
+
+        @include e('bdisc') {
+            @include e('store') {
+                width: 100%;
+                margin: 0px;
             }
         }
     }
 
     @include res-between(601px, 700px) {
-        @include e('sep'){
+        @include e('sep') {
             width: 100%;
             height: 1px;
             margin: 10px 0px;
         }
-        @include e('address'){
+
+        @include e('address') {
             background-image: none;
             padding: 10px;
         }
 
-        @include e('points'){
-            .nrk_pay__sep{
+        @include e('points') {
+            .nrk_pay__sep {
                 width: 1px;
                 height: 40px;
                 margin: 0px 10px;
             }
-            @include e('row'){
-                &:first-of-type{
+
+            @include e('row') {
+                &:first-of-type {
                     padding: 10px;
                 }
+
                 padding: 10px;
             }
-            @include e('box'){
+
+            @include e('box') {
                 max-width: 215px;
+
                 @include m('opt') {
                     @include flex-justify(flex-start);
                     max-width: calc(100% - 240px);
                 }
             }
-            @include e('label'){
+
+            @include e('label') {
                 @include flex-wrap(nowrap);
                 margin: 5px 0px;
             }
         }
 
-        .bkt_prod{
-            .nrk_pay__ship__desc{
-                strong{
+        .bkt_prod {
+            .nrk_pay__ship__desc {
+                strong {
                     display: block;
                     width: 100%;
                 }
+
                 text-align: center;
             }
 
-            @include m('last'){
+            @include m('last') {
                 width: 100% !important;
                 @include box-sizing;
                 flex-direction: row !important;
 
-                .nrk_pay__ship__bt{
+                .nrk_pay__ship__bt {
                     margin: 0px auto;
                 }
 
-                td{
+                td {
                     @include box-sizing;
                 }
+
                 td:nth-child(1) {
                     width: 100%;
                 }
+
                 td:nth-child(2),
                 td:nth-child(3) {
                     width: 50%;
@@ -1062,22 +1428,65 @@
             }
         }
 
-        @include e('total'){
+        @include e('total') {
             padding: 10px;
-            @include e('sp'){
+
+            @include e('sp') {
                 margin-bottom: 10px;
             }
-            @include e('price'){
+
+            @include e('price') {
                 width: 100%;
                 text-align: right;
             }
         }
-        
+
+        @include e('method') {
+            @include e('opt') {
+                @include flexbox(row, nowrap, flex-start, flex-start, center);
+                width: 100%;
+                max-width: inherit;
+
+                label {
+                    width: 50%;
+                    max-height: 150px;
+
+                    span {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            @include e('box') {
+                width: 100%;
+                max-width: inherit;
+            }
+        }
+
+        @include e('billet') {
+            @include e('txt') {
+                background-position: left top;
+                height: auto;
+                margin-bottom: 15px;
+                min-height: 55px;
+            }
+        }
+
+        @include e('bdisc') {
+            @include e('store') {
+                width: 100%;
+                margin: 0px;
+            }
+        }
+
     }
-    
+
     @include res-between(701px, 800px) {}
+
     @include res-between(801px, 900px) {}
+
     @include res-between(901px, 1000px) {}
+
     @include res-min(1001px) {}
 
 }
