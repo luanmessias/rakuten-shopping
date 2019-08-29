@@ -11,7 +11,7 @@
     }
 
     ul {
-        @include flexbox(row, wrap, space-between, center, center);
+        @include flexbox(row, nowrap, space-between, center, center);
         @include order(2);
         width: calc(100% - 200px);
         margin: 10px 0px;
@@ -22,33 +22,17 @@
             padding: 0;
             span{
                 @include flexbox(column, nowrap, flex-start, center, center);
-                @include fonte($second-font, 400, 14px, $color-gray);
+                @include fonte($second-font, 400, 0, $color-gray);
             }
             em {
                 @include flexbox(row, wrap, center, center, center);
-                @include fonte($second-font, 600, 18px, $color-gray);
+                @include fonte($second-font, 600, 18px, #b6b6b6);
                 @include border-radius(150px);
-                border: 1px solid $color-gray;
+                border: 1px solid $color-gray-light;
+                background-color: $color-gray-light;
                 width: 45px;
                 height: 45px;
                 font-style: inherit;
-                background-color: #FFF;
-            }
-
-            &.step-dots{
-                @include flexbox(row, nowrap, center, center, center);
-                @include opacity(.2);
-                .circle{
-                    @include border-radius(10px);
-                    display: block;
-                    width: 8px;
-                    height: 8px;
-                    background-color: $color-gray;
-                    & + .circle:not(:last-of-type){
-                        margin: 0px 5px;
-                    }
-               }
-
             }
 
             &.selected,
@@ -58,103 +42,235 @@
                     border: 1px solid #059924;
                     background-color: #059924;
                     color: #FFF;
-                }
-                & + .step-dots{
-                    @include opacity(1);
-                    .circle{
-                        background-color: #059924;
+                    font-size: 0;
+                    &:before {
+                        @include set-icon($fa-var-search, 12px, 900, #FFFFFF);
+                        content: "\f00c";
                     }
                 }
+                & + .step-line{
+                    background-color: $color-green;
+                }
+            }
+
+            &.step-line{
+                height: 1px;
+                background-color: $color-gray-light;
+                display: block;
+                width: calc(100% / 3 - 59px);
             }
 
         }
     }
-
-
 
     @include res-max(300px) {
+        .wrapper{
+            @include flexbox(column, wrap, flex-start, center, center);
+        }
         .nrk_checkout__header__logo{
-            margin: 10px 0px;
+            margin: 10px 0;
         }
         ul{
+            @include flexbox(row, nowrap, space-between, center, center);
             width: 100%;
             li{
-                display: none;
-                &.step-dots{
-                    display: none;
+                span{
+                    em{
+                        background-color: $color-gray-light;
+                        border-color: $color-gray-light;
+                        width: 30px;
+                        height: 30px;
+                        color: #b6b6b6;
+                    }
+                    font-size: 0;
                 }
 
-                &.selected{
-                    display: block;
-                    + li + li,
-                    + li + li + li + li{
-                        display: block;
+                &.selected,
+                &.disabled,
+                &.disabled-prev{
+                    span{
+                        em{
+                            font-size: 0;
+                            &:before {
+                                @include set-icon($fa-var-search, 12px, 900, #FFFFFF);
+                                content: "\f00c";
+                            }
+                        }
                     }
+
+                    & + .step-line{
+                        background-color: $color-green;
+                    }
+
+                }
+
+                &.step-line{
+                    height: 1px;
+                    background-color: $color-gray-light;
+                    display: block;
+                    width: calc(100% - 150px / 4);
                 }
 
             }
         }
     }
+
     @include res-between(301px, 400px) {
+        .wrapper{
+            @include flexbox(column, wrap, flex-start, center, center);
+        }
         .nrk_checkout__header__logo{
-            margin: 10px 0px;
+            margin: 10px 0;
         }
         ul{
+            @include flexbox(row, nowrap, space-between, center, center);
             width: 100%;
             li{
-                display: none;
-                &.step-dots{
-                    display: none;
+                span{
+                    em{
+                        background-color: $color-gray-light;
+                        border-color: $color-gray-light;
+                        width: 30px;
+                        height: 30px;
+                        color: #b6b6b6;
+                    }
+                    font-size: 0;
                 }
 
-                &.selected{
-                    display: block;
-                    + li + li,
-                    + li + li + li + li{
-                        display: block;
+                &.selected,
+                &.disabled,
+                &.disabled-prev{
+                    span{
+                        em{
+                            font-size: 0;
+                            &:before {
+                                @include set-icon($fa-var-search, 12px, 900, #FFFFFF);
+                                content: "\f00c";
+                            }
+                        }
                     }
+
+                    & + .step-line{
+                        background-color: $color-green;
+                    }
+
+                }
+
+                &.step-line{
+                    height: 1px;
+                    background-color: $color-gray-light;
+                    display: block;
+                    width: calc(100% - 150px / 4);
                 }
 
             }
         }
     }
+
     @include res-between(401px, 500px) {
+        .wrapper{
+            @include flexbox(column, wrap, flex-start, center, center);
+        }
         .nrk_checkout__header__logo{
-            margin: 10px 0px;
+            margin: 10px 0;
         }
         ul{
+            @include flexbox(row, nowrap, space-between, center, center);
             width: 100%;
             li{
-                display: none;
-                &.step-dots{
-                    display: none;
-                }
-
-                &.selected{
-                    display: block;
-                    + li + li,
-                    + li + li + li + li,
-                    + li + li + li + li + li + li{
-                        display: block;
+                span{
+                    em{
+                        background-color: $color-gray-light;
+                        border-color: $color-gray-light;
+                        width: 30px;
+                        height: 30px;
+                        color: #b6b6b6;
                     }
+                    font-size: 0;
+                }
+
+                &.selected,
+                &.disabled,
+                &.disabled-prev{
+                    span{
+                        em{
+                            font-size: 0;
+                            &:before {
+                                @include set-icon($fa-var-search, 12px, 900, #FFFFFF);
+                                content: "\f00c";
+                            }
+                        }
+                    }
+
+                    & + .step-line{
+                        background-color: $color-green;
+                    }
+
+                }
+
+                &.step-line{
+                    height: 1px;
+                    background-color: $color-gray-light;
+                    display: block;
+                    width: calc(100% - 150px / 4);
                 }
 
             }
         }
     }
+
     @include res-between(501px, 600px) {
+        .wrapper{
+            @include flexbox(column, wrap, flex-start, center, center);
+        }
         .nrk_checkout__header__logo{
-            margin: 10px 0px;
+            margin: 10px 0;
         }
         ul{
+            @include flexbox(row, nowrap, space-between, center, center);
             width: 100%;
             li{
-                &.step-dots{
-                    display: none;
+                span{
+                    em{
+                        background-color: $color-gray-light;
+                        border-color: $color-gray-light;
+                        width: 30px;
+                        height: 30px;
+                        color: #b6b6b6;
+                    }
+                    font-size: 0;
                 }
+
+                &.selected,
+                &.disabled,
+                &.disabled-prev{
+                    span{
+                        em{
+                            font-size: 0;
+                            &:before {
+                                @include set-icon($fa-var-search, 12px, 900, #FFFFFF);
+                                content: "\f00c";
+                            }
+                        }
+                    }
+
+                    & + .step-line{
+                        background-color: $color-green;
+                    }
+
+                }
+
+                &.step-line{
+                    height: 1px;
+                    background-color: $color-gray-light;
+                    display: block;
+                    width: calc(100% - 150px / 4);
+                }
+
             }
         }
     }
+
     @include res-between(601px, 700px) {}
     @include res-between(701px, 800px) {}
     @include res-between(801px, 900px) {}

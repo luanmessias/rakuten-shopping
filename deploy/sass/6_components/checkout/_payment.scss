@@ -804,10 +804,97 @@
         }
     }
 
+    @include e('end') {
+        @include flexbox(row, wrap, space-between, center, center);
 
+        .nrk_pay__title {
+            margin-top: 0px;
+        }
 
+        #end-value {
+            @include fonte($second-font, 400, 24px, $color-green);
 
+            span {
+                @include fonte($second-font, 800, 24px, $color-green);
+            }
+        }
 
+        @include e('col') {
+            @include box-sizing;
+
+            @include m('security') {
+                background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_security.png");
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 45px auto;
+                padding-left: 60px;
+            }
+
+        }
+
+        @include e('txt') {
+            @include fonte($second-font, 400, 14px, $color-gray);
+        }
+
+        @include e('btn') {
+            @extend %bt-default;
+            width: 330px;
+            height: 60px;
+            background-color: $color-green-light;
+
+            &:hover {
+                background-color: $color-green;
+            }
+        }
+    }
+
+    @include e('desc'){
+        border-top: 1px solid $color-gray-light;
+
+        @include e('tab'){
+            border-bottom: 1px solid $color-gray-light;
+            margin-bottom: 10px;
+
+            &.active{
+                .nrk_pay__desc__cont{
+                    display: block;
+                }
+                .nrk_pay__desc__line{
+                    &:after{
+                        content: "\f106";
+                    }
+                }
+            }
+        }
+
+        @include e('line'){
+            @include flexbox(row, wrap, space-between, center, center);
+            @include transition;
+            width: 100%;
+            cursor: pointer;
+            &:after{
+                @include set-icon($fa-var-angle-down, 18px, 900, $color-gray);
+                content: "\f107";
+            }
+        }
+
+        @include e('title'){
+            @include fonte($second-font, 600, 16px, $color-gray-dark);
+        }
+
+        @include e('cont'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            padding: 10px 0px;
+            display: none;
+            a{
+                color: $color-gray-dark;
+                font-weight: bold;
+                word-break: break-all;
+            }
+        }
+
+        
+    }
 
 
 
@@ -931,16 +1018,19 @@
             }
         }
 
-        @include e('card'){
+        @include e('card') {
             @include flex-wrap(wrap);
-            @include e('opt'){
+
+            @include e('opt') {
                 width: 100%;
                 margin-bottom: 10px;
-                @include e('active'){
+
+                @include e('active') {
                     width: 100%;
-                } 
+                }
             }
-            @include e('date'){
+
+            @include e('date') {
                 width: 100%;
                 margin: 0px;
                 padding: 0;
@@ -951,6 +1041,12 @@
         @include e('newcard') {
             .shell {
                 width: 100%;
+            }
+
+            .dat {
+                .shell {
+                    width: auto;
+                }
             }
 
             input[type="text"] {
@@ -964,16 +1060,63 @@
 
             @include e('fields') {
                 margin: 0;
+
                 .field {
                     width: 100%;
                 }
             }
 
-            @include e('obs'){
+            @include e('obs') {
                 width: 100%;
             }
         }
 
+        @include e('inst') {
+            padding: 10px;
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                margin: 10px 0px;
+            }
+
+            @include e('store') {
+                width: 100%;
+
+                @include e('selected') {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include e('end') {
+            padding: 10px;
+
+            @include e('col') {
+                width: 100%;
+                margin: 10px 0px;
+
+                @include m('security') {
+                    background-position: left top;
+                    padding-top: 65px;
+                    padding-left: 0;
+                    margin-top: 0;
+                }
+            }
+
+            #end-value {
+                text-align: left;
+
+                span {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            @include e('btn') {
+                width: 100%;
+            }
+        }
 
     }
 
@@ -1094,6 +1237,100 @@
             @include e('store') {
                 width: 100%;
                 margin: 0px;
+            }
+        }
+
+        @include e('card') {
+            @include flex-wrap(wrap);
+
+            @include e('opt') {
+                width: 100%;
+                margin-bottom: 10px;
+
+                @include e('active') {
+                    width: 100%;
+                }
+            }
+
+            @include e('date') {
+                width: 100%;
+                margin: 0px;
+                padding: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @include e('newcard') {
+            .shell {
+                width: 100%;
+            }
+
+            .dat {
+                .shell {
+                    width: auto;
+                }
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+            .flags {
+                width: 100%;
+                margin: 10px 0px;
+            }
+
+            @include e('fields') {
+                margin: 0;
+
+                .field {
+                    width: 100%;
+                }
+            }
+
+            @include e('obs') {
+                width: 100%;
+            }
+        }
+
+        @include e('inst') {
+            padding: 10px;
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                margin: 10px 0px;
+            }
+
+            @include e('store') {
+                width: 100%;
+
+                @include e('selected') {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include e('end') {
+            padding: 10px;
+
+            @include e('col') {
+                background-position: left top;
+                width: 100%;
+                margin: 10px 0px;
+            }
+
+            #end-value {
+                text-align: center;
+
+                span {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            @include e('btn') {
+                width: 100%;
             }
         }
 
@@ -1224,6 +1461,96 @@
                 margin: 0px;
             }
         }
+
+        @include e('card') {
+            @include flex-wrap(wrap);
+
+            @include e('opt') {
+                width: 100%;
+                margin-bottom: 10px;
+
+                @include e('active') {
+                    width: 100%;
+                }
+            }
+
+            @include e('date') {
+                width: 100%;
+                margin: 0px;
+                padding: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @include e('newcard') {
+            .shell {
+                width: 100%;
+            }
+
+            .dat {
+                .shell {
+                    width: auto;
+                }
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+            .flags {
+                width: 100%;
+                margin: 10px 0px;
+            }
+
+            @include e('fields') {
+                margin: 0;
+
+                .field {
+                    width: 100%;
+                }
+            }
+
+            @include e('obs') {
+                width: 100%;
+            }
+        }
+
+        @include e('inst') {
+            padding: 10px;
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                margin: 10px 0px;
+            }
+
+            @include e('store') {
+                width: 100%;
+
+                @include e('selected') {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include e('end') {
+            padding: 10px;
+
+            @include e('col') {
+                background-position: left top;
+                width: 100%;
+                margin: 10px 0px;
+            }
+
+            #end-value {
+                @include flexbox(row, wrap, space-between, center, center);
+                text-align: center;
+            }
+
+            @include e('btn') {
+                width: 100%;
+            }
+        }
     }
 
     @include res-between(501px, 600px) {
@@ -1350,6 +1677,101 @@
                 margin: 0px;
             }
         }
+
+        @include e('card') {
+            @include flex-wrap(wrap);
+
+            @include e('opt') {
+                width: 100%;
+                margin-bottom: 10px;
+
+                @include e('active') {
+                    width: 100%;
+                }
+            }
+
+            @include e('date') {
+                width: 100%;
+                margin: 0px;
+                padding: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @include e('newcard') {
+            .shell {
+                width: 100%;
+            }
+
+            .dat {
+                .shell {
+                    width: auto;
+                }
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+            .flags {
+                width: 100%;
+                margin: 10px 0px;
+            }
+
+            @include e('fields') {
+                margin: 0;
+
+                .field {
+                    width: 100%;
+                }
+            }
+
+            @include e('obs') {
+                width: 100%;
+            }
+        }
+
+        @include e('inst') {
+            padding: 10px;
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                margin: 10px 0px;
+            }
+
+            @include e('store') {
+                width: 100%;
+
+                @include e('selected') {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include e('end') {
+            padding: 10px;
+
+            @include e('col') {
+                background-position: left top;
+                width: 100%;
+                margin: 10px 0px;
+            }
+
+            #end-value {
+                text-align: center;
+
+                span {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            @include e('btn') {
+                width: 100%;
+            }
+        }
+
     }
 
     @include res-between(601px, 700px) {
