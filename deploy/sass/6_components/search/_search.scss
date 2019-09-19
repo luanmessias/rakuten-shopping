@@ -1,0 +1,900 @@
+.nrk_search {
+    .breadcrumb {
+        width: 100%;
+        border-bottom: 1px solid $color-gray-light;
+        margin-bottom: 10px;
+
+        >div {
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include box-sizing;
+            padding: 10px;
+        }
+
+        .major-minor {
+            @include flexbox(row, nowrap, flex-start, center, center);
+
+            &:after {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 10px;
+                margin: 0px 10px;
+                background-color: $color-gray-light;
+            }
+
+            [itemprop="name"] {
+                @include fonte($second-font, 400, 12px, $color-gray);
+            }
+
+            &:last-of-type,
+            .major-minor {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .seo-content {
+        @include fonte($second-font, 400, 12px, $color-gray);
+        @include box-sizing;
+        padding: 10px;
+    }
+
+    .searchResult {
+        @include flexbox(row, wrap, space-between, flex-start, center);
+    }
+
+    .header {
+        @include flexbox(row, wrap, space-between, center, center);
+        @include border-radius();
+        @include box-sizing;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        background-color: #f7f7f7;
+
+        select,
+        input[type="text"] {
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            @include border-radius();
+            @include box-sizing;
+            position: relative;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            width: 230px;
+            height: 40px;
+            background-color: $color-gray-extra-light;
+            margin: 0px 15px;
+        }
+
+        #body_SearchFiltersControl_pnlSearchFilters {
+            @include flexbox(row, nowrap, flex-start, center, center);
+        }
+
+        .vs-mode {
+            display: none;
+        }
+
+        .show-results {
+            @include box-sizing;
+            width: 100%;
+
+
+            .results {
+                @include flexbox(row, wrap, flex-start, center, center);
+                @include fonte($second-font, 400, 14px, $color-gray);
+
+                span+span {
+                    font-weight: bold;
+                    margin-left: 5px;
+                }
+
+            }
+
+            .quantity {
+                @include fonte($second-font, 400, 14px, $color-gray);
+            }
+
+        }
+
+        .filters {
+            @include flexbox(row, nowrap, flex-start, center, center);
+
+            >ul {
+                display: none;
+            }
+        }
+
+        .priceSearch {
+            @include flexbox(row, nowrap, flex-start, center, center);
+
+            label {
+                @include flexbox(row, nowrap, flex-start, center, center);
+                margin: 0px 5px;
+
+                span {
+                    @include flexbox(row, wrap, center, center, center);
+                    @include fonte($second-font, 400, 12px, #000);
+                    @include radiustl();
+                    @include radiusbl();
+                    background-color: $color-gray-light;
+                    width: 25px;
+                    height: 40px;
+                }
+            }
+
+            input[type="text"] {
+                @include radiustl(0);
+                @include radiusbl(0);
+                max-width: 120px;
+                margin: 0px;
+            }
+        }
+
+        .bt-search {
+            @include flexbox(row, wrap, center, center, center);
+            @include border-radius();
+            background-color: $color-gray;
+            font-size: 0;
+            width: 40px;
+            height: 40px;
+
+            &:before {
+                @include set-icon($fa-var-search, 18px, 900, $color-gray-extra-light);
+                content: "\f002";
+            }
+        }
+
+    }
+
+    .aside {
+        @include box-sizing;
+        width: 100%;
+        max-width: 220px;
+
+        .nav {
+            @include box-sizing;
+            width: 100%;
+        }
+
+        .block {
+            @include box-sizing;
+
+            .title {
+                @include fonte($second-font, 600, 16px, $color-gray);
+                @include box-sizing;
+                width: 100%;
+                display: block;
+                padding: 10px;
+                background-color: $color-gray-extra-light;
+            }
+
+            ul {
+                @include box-sizing;
+                margin: 0;
+                padding: 0;
+                border: 1px solid $color-gray-extra-light;
+                margin-bottom: 10px;
+
+                li {
+                    @include transition;
+                    list-style: none;
+
+                    a {
+                        @include fonte($second-font, 400, 14px, $color-gray);
+                        @include box-sizing;
+                        padding: 3px 0px 3px 20px;
+                        display: block;
+                        width: 100%;
+
+                        &.child-1 {
+                            font-weight: bold;
+                            padding: 10px;
+                            margin-top: 10px;
+                            border-top: 1px solid $color-gray-extra-light;
+                        }
+
+                        &.child-2 {}
+                    }
+
+                    &:hover {
+                        background-color: $color-gray-extra-light;
+                    }
+                }
+            }
+        }
+    }
+
+    .catalog {
+        width: calc(100% - 250px);
+
+        h1 {
+            @include fonte($second-font, 400, 24px, $color-gray-dark);
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    #list-products {
+        .rk-item-box {
+            width: calc(100% / 3);
+
+            h2 {
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+
+            #pnlBuy {
+                display: none;
+            }
+
+            .price.sale {
+                @include fonte($second-font, 400, 14px, #9d9d9d);
+
+                span,
+                strong {
+                    @include fonte($second-font, 900, 24px, $color-red);
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .rk-superpoints {
+                b {
+                    display: none;
+                }
+
+                u {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .pagination {
+        @include flexbox(row, wrap, center, center, center);
+        @include box-sizing;
+        background-color: #FFF;
+        width: 100%;
+        padding: 15px;
+
+        ul {
+            @include flexbox(row, wrap, center, center, center);
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+
+            .first,
+            .last,
+            .prev,
+            .next {
+
+                a {
+                    font-size: 0px;
+
+                    &:before {
+                        font-family: $icon-font;
+                        font-size: 16px;
+                        font-weight: 900;
+                        color: #000;
+                    }
+
+                    &.selected {
+                        display: none;
+                    }
+
+                }
+            }
+
+            li {
+                padding: 5px;
+
+                a {
+                    @include fonte($second-font, 400, 13px, $color-gray);
+                    @include flexbox(row, wrap, center, center, center);
+                    @include border-radius(2px);
+                    @include transition;
+                    background-color: $color-gray-light;
+                    width: 25px;
+                    height: 25px;
+
+                    &:hover {
+                        background-color: $color-gray;
+                        color: $color-gray-extra-light;
+                    }
+
+                }
+
+                &:not(.prev):not(.next):not(.last):not(.first) {
+                    a {
+
+                        &:hover,
+                        &.selected {
+                            background-color: $color-gray;
+                            color: $color-gray-extra-light;
+                        }
+                    }
+                }
+            }
+
+            .first a:before {
+                content: "\f100";
+            }
+
+            .last a:before {
+                content: "\f101";
+            }
+
+            .prev a:before {
+                content: "\f104";
+            }
+
+            .next a:before {
+                content: "\f105";
+            }
+
+        }
+    }
+
+
+    @include res-max(300px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    margin: 5px 0px;
+                    width: 100%;
+                }
+
+                .filters {
+                    @include flex-wrap(wrap);
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch{
+                @include flex-wrap(wrap);
+                > strong{
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label{
+                    margin: 5px 0px;
+                    &:first-of-type{
+                        width: 100%;
+                    }
+                    & + label{
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .catalog{
+            @include order(2);
+            width: 100%;
+            #list-products {
+                .rk-item-box {
+                    width: 100%;
+                }
+            }
+        }
+        .aside{
+            @include order(3);
+            max-width: inherit;
+        }
+    }
+
+    @include res-between(301px, 400px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    margin: 5px 0px;
+                    width: 100%;
+                }
+
+                .filters {
+                    @include flex-wrap(wrap);
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch{
+                @include flex-wrap(wrap);
+                > strong{
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label{
+                    margin: 5px 0px;
+                    &:first-of-type{
+                        width: 100%;
+                    }
+                    & + label{
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .catalog{
+            @include order(2);
+            width: 100%;
+            #list-products {
+                .rk-item-box {
+                    width: 100%;
+                }
+            }
+        }
+        .aside{
+            @include order(3);
+            max-width: inherit;
+        }
+    }
+
+    @include res-between(401px, 500px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    margin: 5px 0px;
+                    width: 100%;
+                }
+
+                .filters {
+                    @include flex-wrap(wrap);
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch {
+
+                @include flexbox(row, wrap, space-between, center, center);
+
+                >strong {
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label{
+                    margin: 0;
+                }
+
+            }
+        }
+        .catalog{
+            @include order(2);
+            width: 100%;
+            #list-products {
+                .rk-item-box {
+                    width: calc(100% / 2);
+                }
+            }
+        }
+        .aside{
+            @include order(3);
+            max-width: inherit;
+        }
+    }
+
+    @include res-between(501px, 600px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    margin: 5px 0px;
+                    width: 100%;
+                }
+
+                .filters {
+                    @include flex-wrap(wrap);
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: 100%;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch {
+
+                @include flexbox(row, wrap, flex-start, center, center);
+
+                >strong {
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label{
+                    margin: 0;
+                    & + label{
+                        margin: 0px 10px;
+                    }
+                }
+
+            }
+        }
+        .catalog{
+            @include order(2);
+            width: 100%;
+            #list-products {
+                .rk-item-box {
+                    width: calc(100% / 2);
+                }
+            }
+        }
+        .aside{
+            @include order(3);
+            max-width: inherit;
+        }
+    }
+
+    @include res-between(601px, 700px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    width: 100%;
+                }
+
+                .sort{
+                    width: 100%;
+                }
+                .filters {
+                    width: 100%;
+
+                    .filter-order-by{
+                        select{
+                            margin: 0px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: calc(100% / 2 - 20px);
+                        margin: 10px 0px;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch {
+
+                @include flexbox(row, wrap, flex-start, center, center);
+
+                >strong {
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label{
+                    margin: 0;
+                    & + label{
+                        margin: 0px 10px;
+                    }
+                }
+
+            }
+        }
+        .catalog{
+            @include order(2);
+            width: 100%;
+            #list-products {
+                .rk-item-box {
+                    width: calc(100% / 3);
+                }
+            }
+        }
+        .aside{
+            @include order(3);
+            max-width: inherit;
+        }
+    }
+
+    @include res-between(701px, 800px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    width: 100%;
+                }
+
+                .sort {
+                    width: 100%;
+                }
+
+                .filters {
+                    width: 100%;
+
+                    .filter-order-by {
+                        select {
+                            margin: 0px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: calc(100% / 2 - 20px);
+                        margin: 10px 0px;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch {
+
+                @include flexbox(row, wrap, flex-start, center, center);
+
+                >strong {
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label {
+                    margin: 0;
+
+                    &+label {
+                        margin: 0px 10px;
+                    }
+                }
+
+            }
+        }
+        .catalog{
+            #list-products {
+                .rk-item-box {
+                    width: calc(100% / 2);
+                }
+            }
+        }
+        .aside{
+            max-width: 200px;
+        }
+    }
+
+    @include res-between(801px, 900px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    width: 100%;
+                }
+
+                .sort {
+                    width: 100%;
+                }
+
+                .filters {
+                    width: 100%;
+
+                    .filter-order-by {
+                        select {
+                            margin: 0px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: calc(100% / 2 - 20px);
+                        margin: 10px 0px;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch {
+
+                @include flexbox(row, wrap, flex-start, center, center);
+
+                >strong {
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label {
+                    margin: 0;
+
+                    &+label {
+                        margin: 0px 10px;
+                    }
+                }
+
+            }
+        }
+
+        .catalog{
+            #list-products {
+                .rk-item-box {
+                    width: calc(100% / 2);
+                }
+            }
+        }
+        .aside{
+            max-width: 200px;
+        }
+    }
+
+    @include res-between(901px, 1000px) {
+        .header {
+            @include flex-wrap(wrap);
+            @include order(1);
+
+            #body_SearchFiltersControl_pnlSearchFilters {
+                @include flex-wrap(wrap);
+                width: 100%;
+
+                #body_SearchFiltersControl_pnlSearchResults {
+                    margin-bottom: 5px;
+                }
+
+                #body_SearchFiltersControl_lblQuantity {
+                    margin-bottom: 5px;
+                }
+
+                select {
+                    width: 100%;
+                }
+
+                .sort {
+                    width: 100%;
+                }
+
+                .filters {
+                    width: 100%;
+
+                    .filter-order-by {
+                        select {
+                            margin: 0px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .filter-order-by,
+                    .filter-sort-by {
+                        width: calc(100% / 2 - 20px);
+                        margin: 10px 0px;
+                    }
+                }
+            }
+
+            #body_SearchNavigationPrices_pnlPriceSearch {
+
+                @include flexbox(row, wrap, flex-start, center, center);
+
+                >strong {
+                    display: block;
+                    margin-bottom: 5px;
+                    width: 100%;
+                }
+
+                label {
+                    margin: 0;
+
+                    &+label {
+                        margin: 0px 10px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @include res-min(1001px) {}
+
+}

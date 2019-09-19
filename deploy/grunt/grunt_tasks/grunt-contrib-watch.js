@@ -96,6 +96,14 @@ module.exports = function(grunt) {
         },
 
 
+        search: {
+            files: [ 
+                "../sass/6_components/search/*.scss",
+                "../sass/7_css/nrk_search.scss",
+            ],
+            tasks: ['sass:search', 'copy:css_to_project_products']
+        },
+
     });
   
     grunt.loadNpmTasks('grunt-contrib-watch');

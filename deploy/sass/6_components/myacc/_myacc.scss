@@ -3,6 +3,35 @@
     padding-top: 20px;
     min-height: 400px;
 
+    .noOrder{
+        @include flexbox(row, wrap, center, center, center);
+        @include box-sizing;
+        @include border-radius;
+        padding: 20px;
+        text-align: center;
+        background-color: #FFF;
+        min-height: 450px;
+        border: 1px solid $color-gray-light;
+        
+        span{
+            @include fonte($second-font, 400, 24px, $color-gray);
+            text-align: center;
+            display: block;
+            width: 100%;
+            &:before{
+                @include bgimage("icon-no-data.png", false);
+                content: "";
+                width: 65px;
+                height: 65px;
+                display: block;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 0px auto;
+            }
+        }
+
+    }
+
     > .wrapper{
         @include flexbox(row, wrap, space-between, inherit, flex-start);
         padding-bottom: 30px;

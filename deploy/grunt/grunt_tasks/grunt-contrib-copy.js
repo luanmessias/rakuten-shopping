@@ -8,11 +8,19 @@ module.exports = function (grunt) {
             src: ['nrk_basket.css', 'login.css', 'login.css.map', 'nrk_checkout.css', 'nrk_checkout.css.map'],
             dest: '<%=paths.checkout%>'
         },
+
         css_to_project_account: {
             expand: true,
             cwd: '../../dist/css/',
             src: ['myacc.css'],
             dest: '<%=paths.account%>'
+        },
+
+        css_to_project_products: {
+            expand: true,
+            cwd: '../../dist/css/',
+            src: ['nrk_search.css'],
+            dest: '<%=paths.product%>'
         },
         
     });
