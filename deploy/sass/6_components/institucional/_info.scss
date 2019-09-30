@@ -1,0 +1,217 @@
+.inst {
+
+    @include e('info') {
+        @include box-sizing;
+
+        @include res-max(300px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-between(301px, 400px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-between(401px, 500px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-between(501px, 600px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-between(601px, 700px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-between(701px, 800px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-between(801px, 900px) {
+            @include flexbox(row, nowrap, space-between, flex-start, center);
+            width: 100%;
+
+            .conteudo {
+                @include box-sizing;
+                width: calc(100% - 230px);
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-between(901px, 1000px) {
+            @include flexbox(row, nowrap, space-between, flex-start, center);
+            width: 100%;
+
+            .conteudo {
+                @include box-sizing;
+                width: calc(100% - 230px);
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+        @include res-min(1001px) {
+            @include flexbox(row, nowrap, space-between, flex-start, center);
+            width: 100%;
+
+            .conteudo {
+                @include box-sizing;
+                width: calc(100% - 230px);
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+    
+
+}

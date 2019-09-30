@@ -157,6 +157,20 @@
             }]
         },
 
+        institucional: {
+            options: {
+                style: 'compressed',
+                sourcemap: 'auto'
+            },
+            files: [{
+                expand: true,
+                cwd: '../sass/7_css/',
+                src: ["institucional.scss"],
+                dest: '../../dist/css/',
+                ext: '.css'
+            }]
+        },
+
      });
 
      grunt.loadNpmTasks('grunt-contrib-sass');

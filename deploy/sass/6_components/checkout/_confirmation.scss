@@ -1,0 +1,34 @@
+.nrk_confirm{
+    background-color: $body_gray_bg;
+
+    .wrapper{
+        overflow: hidden;
+    }
+    
+    @include e('h1') {
+        @include fonte($second-font, 400, 18px, $color-gray);
+        width: 100%;
+        display: block;
+        margin-top: 25px;
+    }
+
+    @include e('box') {
+        @include box-sizing;
+        width: 100%;
+        padding: 30px;
+        background-color: #FFF;
+    }
+
+    
+
+    @include res-max(300px) {}
+    @include res-between(301px, 400px) {}
+    @include res-between(401px, 500px) {}
+    @include res-between(501px, 600px) {}
+    @include res-between(601px, 700px) {}
+    @include res-between(701px, 800px) {}
+    @include res-between(801px, 900px) {}
+    @include res-between(901px, 1000px) {}
+    @include res-min(1001px) {}
+
+}

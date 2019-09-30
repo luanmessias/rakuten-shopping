@@ -838,6 +838,7 @@
 
         @include e('btn') {
             @extend %bt-default;
+            display: flex !important;
             width: 330px;
             height: 60px;
             background-color: $color-green-light;

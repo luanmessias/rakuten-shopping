@@ -1,0 +1,431 @@
+.inst {
+
+    @include e('arakuten') {
+        @include box-sizing;
+
+        @include res-max(300px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+
+                    .bloco-otimismo{
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+                        li{
+                            @include box-sizing;
+                            .bloco-text{
+                                @include box-sizing;
+                                width: 100%;
+                            }
+
+                            > img{
+                                @include box-sizing;
+                                width: 100%;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(301px, 400px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+
+                    .bloco-otimismo{
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+                        li{
+                            @include box-sizing;
+                            .bloco-text{
+                                @include box-sizing;
+                                width: 100%;
+                            }
+
+                            > img{
+                                @include box-sizing;
+                                width: 100%;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(401px, 500px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+
+                    .bloco-otimismo{
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+                        li{
+                            @include box-sizing;
+                            .bloco-text{
+                                @include box-sizing;
+                                width: 100%;
+                            }
+
+                            > img{
+                                @include box-sizing;
+                                width: 100%;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(501px, 600px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+                
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+
+                    .bloco-otimismo{
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+                        li{
+                            @include box-sizing;
+                            .bloco-text{
+                                @include box-sizing;
+                                width: 100%;
+                            }
+
+                            > img{
+                                @include box-sizing;
+                                width: 100%;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(601px, 700px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+                
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include box-sizing;
+                    width: 100%;
+
+                    .bloco-otimismo{
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+                        li{
+                            @include box-sizing;
+                            .bloco-text{
+                                @include box-sizing;
+                                width: 100%;
+                            }
+
+                            > img{
+                                @include box-sizing;
+                                width: 100%;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(701px, 800px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include flexbox(row, wrap, space-between, center, center);
+                    @include box-sizing;
+                    width: 100%;
+                
+                    .bloco-otimismo {
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+                        width: 100%;
+                        li {
+                            @include flexbox(row, nowrap, center, center, center);
+                            @include box-sizing;
+                            width: 100%;
+
+                            .bloco-text {
+                                @include box-sizing;
+                                height: 376px;
+
+                            }
+
+                            >img {
+                                @include box-sizing;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(801px, 900px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include flexbox(row, wrap, space-between, center, center);
+                    @include box-sizing;
+                    width: 100%;
+                
+                    .bloco-otimismo {
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+
+                        li {
+                            @include flexbox(row, nowrap, center, center, center);
+                            @include box-sizing;
+                            width: 100%;
+
+                            .bloco-text {
+                                @include box-sizing;
+                                height: 376px;
+                                
+                            }
+
+                            >img {
+                                @include box-sizing;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(901px, 1000px) {
+            @include flexbox(row, wrap, flex-start, center, center);
+            width: 100%;
+
+            .sidebar-nav {
+                @include order(2);
+                width: 100%;
+
+            }
+
+            .conteudo {
+                @include box-sizing;
+                @include order(1);
+                width: 100%;
+
+                .bloco-header {
+                    @include box-sizing;
+                    width: 100%;
+                }
+
+                .bloco-textos {
+                    @include flexbox(row, wrap, space-between, center, center);
+                    @include box-sizing;
+                    width: 100%;
+                
+                    .bloco-otimismo {
+                        height: auto;
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    ul {
+                        @include box-sizing;
+
+                        li {
+                            @include flexbox(row, nowrap, center, center, center);
+                            @include box-sizing;
+                            width: 100%;
+
+                            .bloco-text {
+                                @include box-sizing;
+                                height: 376px;
+                                
+                            }
+
+                            >img {
+                                @include box-sizing;
+                                height: auto;
+                                margin: 10px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-min(1001px) {}
+    }
+    
+
+}

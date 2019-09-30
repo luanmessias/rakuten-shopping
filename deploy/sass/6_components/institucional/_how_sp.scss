@@ -1,0 +1,933 @@
+.inst{
+    @include e('howsp'){
+
+        @include res-max(300px) {
+            .header-beginner-super-points{
+                height: 136px;
+                background-position: center;
+                background-size: 700px;
+                background-repeat: no-repeat;
+            }
+            #o-que-e,
+            #vantagens,
+            #como-funciona,
+            #veja-simples,
+            #acumular-rsp,
+            #ganhe-rsp,
+            #faq{
+                @include box-sizing;
+                width: 100%;
+                padding: 10px;
+                h2, h3{
+                    font-size: 24px;
+                    font-size: 24px;
+                    text-align: center;
+                    margin: 10px 0;
+                }
+
+                p, strong{
+                    font-size: 16px;
+                }
+            }
+
+            #como-funciona{
+                ul{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        @include box-sizing;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        width: 100%;
+                        strong{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+
+            #veja-simples{
+                ul{
+                    padding: 0;
+                    li{
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .steps-compra{
+                            height: 70px;
+                            .bullet-steps-compra{
+                                @include flexbox(row, wrap, center, center, center);
+                                padding: 0;
+                            }
+                            .content-steps-compra{
+                                    @include flexbox(row, wrap, center, center, center);
+                                    width: auto;
+                                    height: 70px;
+                                    margin-left: 10px;
+                                    line-height: inherit;
+                                    > span{
+                                        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+                                        strong{
+                                            width: 100%;
+                                            margin-top: 0;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+
+                .steps-texto{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                }
+
+            }
+
+            #acumular-rsp{
+                height: auto;
+                overflow: hidden;
+                p{
+                    @include box-sizing;
+                    width: 100%;
+                }
+                .comparator-promotional{
+                    @include box-sizing;
+                    background: none;
+                    width: 100%;
+                    .rsp{
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            color: #FFF;
+                            padding: 0px;
+                            width: 100%;
+                        }
+
+                        ul{
+                            margin-left: 10px !important;
+                        }
+                    }
+
+                    .resp-promo{
+                        @include box-sizing;
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            padding: 0px;
+                            width: 100%;
+                            color: #FFF;
+                        }
+                    }
+                }
+                
+            }
+
+            #ganhe-rsp{
+                width: 100%;
+                overflow: auto;
+                p{
+                    width: 100%;
+                }
+
+
+            }
+
+            #faq{
+                width: 100%;
+                text-align: left;
+                ul{
+                   padding-left: 0px; 
+                   width: 100%;
+                   li{
+                       text-align: left;
+                       h3{
+                           font-size: 16px;
+                           text-align: left;
+                           padding-right: 15px;
+                           height: auto;
+                       }
+                   }
+                }
+            }
+        }
+
+        @include res-between(301px, 400px) {
+            .header-beginner-super-points{
+                height: 136px;
+                background-position: center;
+                background-size: 700px;
+                background-repeat: no-repeat;
+            }
+            #o-que-e,
+            #vantagens,
+            #como-funciona,
+            #veja-simples,
+            #acumular-rsp,
+            #ganhe-rsp,
+            #faq{
+                @include box-sizing;
+                width: 100%;
+                padding: 10px;
+                h2, h3{
+                    font-size: 24px;
+                    font-size: 24px;
+                    text-align: center;
+                    margin: 10px 0;
+                }
+
+                p, strong{
+                    font-size: 16px;
+                }
+            }
+
+            #como-funciona{
+                ul{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        @include box-sizing;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        width: 100%;
+                        strong{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+
+            #veja-simples{
+                ul{
+                    padding: 0;
+                    li{
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .steps-compra{
+                            height: 70px;
+                            .bullet-steps-compra{
+                                @include flexbox(row, wrap, center, center, center);
+                                padding: 0;
+                            }
+                            .content-steps-compra{
+                                    @include flexbox(row, wrap, center, center, center);
+                                    width: auto;
+                                    height: 70px;
+                                    margin-left: 10px;
+                                    line-height: inherit;
+                                    > span{
+                                        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+                                        strong{
+                                            width: 100%;
+                                            margin-top: 0;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+
+                .steps-texto{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                }
+
+            }
+
+            #acumular-rsp{
+                height: auto;
+                overflow: hidden;
+                p{
+                    @include box-sizing;
+                    width: 100%;
+                }
+                .comparator-promotional{
+                    @include box-sizing;
+                    background: none;
+                    width: 100%;
+                    .rsp{
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            color: #FFF;
+                            padding: 0px;
+                            width: 100%;
+                        }
+
+                        ul{
+                            margin-left: 10px !important;
+                        }
+                    }
+
+                    .resp-promo{
+                        @include box-sizing;
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            padding: 0px;
+                            width: 100%;
+                            color: #FFF;
+                        }
+                    }
+                }
+                
+            }
+
+            #ganhe-rsp{
+                width: 100%;
+                overflow: auto;
+                p{
+                    width: 100%;
+                }
+
+
+            }
+
+            #faq{
+                width: 100%;
+                text-align: left;
+                ul{
+                   padding-left: 0px; 
+                   width: 100%;
+                   li{
+                       text-align: left;
+                       h3{
+                           font-size: 16px;
+                           text-align: left;
+                           padding-right: 15px;
+                           height: auto;
+                       }
+                   }
+                }
+            }
+        }
+
+        @include res-between(401px, 500px) {
+            .header-beginner-super-points{
+                height: 200px;
+                background-position: center;
+                background-size: 1044px;
+                background-repeat: no-repeat;
+            }
+            #o-que-e,
+            #vantagens,
+            #como-funciona,
+            #veja-simples,
+            #acumular-rsp,
+            #ganhe-rsp,
+            #faq{
+                @include box-sizing;
+                width: 100%;
+                padding: 10px;
+                h2, h3{
+                    font-size: 24px;
+                    font-size: 24px;
+                    text-align: center;
+                    margin: 10px 0;
+                }
+
+                p, strong{
+                    font-size: 16px;
+                }
+            }
+
+            #como-funciona{
+                ul{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        @include box-sizing;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        width: 100%;
+                        strong{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+
+            #veja-simples{
+                ul{
+                    padding: 0;
+                    li{
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .steps-compra{
+                            height: 70px;
+                            .bullet-steps-compra{
+                                @include flexbox(row, wrap, center, center, center);
+                                padding: 0;
+                            }
+                            .content-steps-compra{
+                                    @include flexbox(row, wrap, center, center, center);
+                                    width: auto;
+                                    height: 70px;
+                                    margin-left: 10px;
+                                    line-height: inherit;
+                                    > span{
+                                        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+                                        strong{
+                                            width: 100%;
+                                            margin-top: 0;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+
+                .steps-texto{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                }
+
+            }
+
+            #acumular-rsp{
+                height: auto;
+                overflow: hidden;
+                p{
+                    @include box-sizing;
+                    width: 100%;
+                }
+                .comparator-promotional{
+                    @include box-sizing;
+                    background: none;
+                    width: 100%;
+                    .rsp{
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            color: #FFF;
+                            padding: 0px;
+                            width: 100%;
+                        }
+
+                        ul{
+                            margin-left: 10px !important;
+                        }
+                    }
+
+                    .resp-promo{
+                        @include box-sizing;
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            padding: 0px;
+                            width: 100%;
+                            color: #FFF;
+                        }
+                    }
+                }
+                
+            }
+
+            #ganhe-rsp{
+                width: 100%;
+                overflow: auto;
+                p{
+                    width: 100%;
+                }
+
+
+            }
+
+            #faq{
+                width: 100%;
+                text-align: left;
+                ul{
+                   padding-left: 0px; 
+                   width: 100%;
+                   li{
+                       text-align: left;
+                       h3{
+                           font-size: 16px;
+                           text-align: left;
+                           padding-right: 15px;
+                           height: auto;
+                       }
+                   }
+                }
+            }
+        }
+
+        @include res-between(501px, 600px) {
+            .header-beginner-super-points{
+                height: 200px;
+                background-position: center;
+                background-size: 1044px;
+                background-repeat: no-repeat;
+            }
+            #o-que-e,
+            #vantagens,
+            #como-funciona,
+            #veja-simples,
+            #acumular-rsp,
+            #ganhe-rsp,
+            #faq{
+                @include box-sizing;
+                width: 100%;
+                padding: 10px;
+                h2, h3{
+                    font-size: 24px;
+                    font-size: 24px;
+                    text-align: center;
+                    margin: 10px 0;
+                }
+
+                p, strong{
+                    font-size: 16px;
+                }
+            }
+
+            #como-funciona{
+                ul{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        @include box-sizing;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        width: 100%;
+                        strong{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+
+            #veja-simples{
+                ul{
+                    padding: 0;
+                    li{
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .steps-compra{
+                            height: 70px;
+                            margin: 10px auto;
+                            .bullet-steps-compra{
+                                @include flexbox(row, wrap, center, center, center);
+                                padding: 0;
+                            }
+                            .content-steps-compra{
+                                    @include flexbox(row, wrap, center, center, center);
+                                    width: auto;
+                                    height: 70px;
+                                    margin-left: 10px;
+                                    line-height: inherit;
+                                    > span{
+                                        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+                                        strong{
+                                            width: 100%;
+                                            margin-top: 0;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+
+                .steps-texto{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                }
+
+            }
+
+            #acumular-rsp{
+                height: auto;
+                overflow: hidden;
+                p{
+                    @include box-sizing;
+                    width: 100%;
+                }
+                .comparator-promotional{
+                    @include box-sizing;
+                    background: none;
+                    width: 100%;
+                    .rsp{
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            color: #FFF;
+                            padding: 0px;
+                            width: 100%;
+                        }
+
+                        ul{
+                            margin-left: 10px !important;
+                        }
+                    }
+
+                    .resp-promo{
+                        @include box-sizing;
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            padding: 0px;
+                            width: 100%;
+                            color: #FFF;
+                        }
+                    }
+                }
+                
+            }
+
+            #ganhe-rsp{
+                width: 100%;
+                overflow: auto;
+                p{
+                    width: 100%;
+                }
+
+
+            }
+
+            #faq{
+                width: 100%;
+                text-align: left;
+                ul{
+                   padding-left: 0px; 
+                   width: 100%;
+                   li{
+                       text-align: left;
+                       h3{
+                           font-size: 16px;
+                           text-align: left;
+                           padding-right: 15px;
+                           height: auto;
+                       }
+                   }
+                }
+            }
+        }
+
+        @include res-between(601px, 700px) {
+            .header-beginner-super-points{
+                height: 200px;
+                background-position: center;
+                background-size: 1044px;
+                background-repeat: no-repeat;
+            }
+            #o-que-e,
+            #vantagens,
+            #como-funciona,
+            #veja-simples,
+            #acumular-rsp,
+            #ganhe-rsp,
+            #faq{
+                @include box-sizing;
+                width: 100%;
+                padding: 10px;
+                h2, h3{
+                    font-size: 24px;
+                    font-size: 24px;
+                    text-align: center;
+                    margin: 10px 0;
+                }
+
+                p, strong{
+                    font-size: 16px;
+                }
+            }
+
+            #como-funciona{
+                ul{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        @include box-sizing;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        width: 100%;
+                        strong{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+
+            #veja-simples{
+                ul{
+                    padding: 0;
+                    li{
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .steps-compra{
+                            height: 70px;
+                            margin: 10px auto;
+                            .bullet-steps-compra{
+                                @include flexbox(row, wrap, center, center, center);
+                                padding: 0;
+                            }
+                            .content-steps-compra{
+                                    @include flexbox(row, wrap, center, center, center);
+                                    width: auto;
+                                    height: 70px;
+                                    margin-left: 10px;
+                                    line-height: inherit;
+                                    > span{
+                                        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+                                        strong{
+                                            width: 100%;
+                                            margin-top: 0;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+
+                .steps-texto{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                }
+
+            }
+
+            #acumular-rsp{
+                height: auto;
+                overflow: hidden;
+                p{
+                    @include box-sizing;
+                    width: 100%;
+                }
+                .comparator-promotional{
+                    @include box-sizing;
+                    background: none;
+                    width: 100%;
+                    .rsp{
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            color: #FFF;
+                            padding: 0px;
+                            width: 100%;
+                        }
+
+                        ul{
+                            margin-left: 10px !important;
+                        }
+                    }
+
+                    .resp-promo{
+                        @include box-sizing;
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            padding: 0px;
+                            width: 100%;
+                            color: #FFF;
+                        }
+                    }
+                }
+                
+            }
+
+            #ganhe-rsp{
+                width: 100%;
+                overflow: auto;
+                p{
+                    width: 100%;
+                }
+
+
+            }
+
+            #faq{
+                width: 100%;
+                text-align: left;
+                ul{
+                   padding-left: 0px; 
+                   width: 100%;
+                   li{
+                       text-align: left;
+                       h3{
+                           font-size: 16px;
+                           text-align: left;
+                           padding-right: 15px;
+                           height: auto;
+                       }
+                   }
+                }
+            }
+        }
+
+
+        @include res-between(701px, 1000px) {
+            .header-beginner-super-points{
+                height: 200px;
+                background-position: center;
+                background-size: 1044px;
+                background-repeat: no-repeat;
+            }
+            #o-que-e,
+            #vantagens,
+            #como-funciona,
+            #veja-simples,
+            #acumular-rsp,
+            #ganhe-rsp,
+            #faq{
+                @include box-sizing;
+                width: 100%;
+                padding: 10px;
+                h2, h3{
+                    font-size: 24px;
+                    font-size: 24px;
+                    text-align: center;
+                    margin: 10px 0;
+                }
+
+                p, strong{
+                    font-size: 16px;
+                }
+            }
+
+            #como-funciona{
+                ul{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        @include box-sizing;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+                        width: 100%;
+                        strong{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+
+            #veja-simples{
+                ul{
+                    padding: 0;
+                    li{
+                        width: 100%;
+                        margin-bottom: 20px;
+                        .steps-compra{
+                            height: 70px;
+                            margin: 10px auto;
+                            .bullet-steps-compra{
+                                @include flexbox(row, wrap, center, center, center);
+                                padding: 0;
+                            }
+                            .content-steps-compra{
+                                    @include flexbox(row, wrap, center, center, center);
+                                    width: auto;
+                                    height: 70px;
+                                    margin-left: 10px;
+                                    line-height: inherit;
+                                    > span{
+                                        @include flexbox(row, wrap, flex-start, flex-start, flex-start);
+                                        strong{
+                                            width: 100%;
+                                            margin-top: 0;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+
+                .steps-texto{
+                    @include box-sizing;
+                    width: 100%;
+                    padding: 10px;
+                }
+
+            }
+
+            #acumular-rsp{
+                height: auto;
+                overflow: hidden;
+                p{
+                    @include box-sizing;
+                    width: 100%;
+                }
+                .comparator-promotional{
+                    @include box-sizing;
+                    background: none;
+                    width: 100%;
+                    .rsp{
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            color: #FFF;
+                            padding: 0px;
+                            width: 100%;
+                        }
+
+                        ul{
+                            margin-left: 10px !important;
+                        }
+                    }
+
+                    .resp-promo{
+                        @include box-sizing;
+                        width: 100%;
+                        h3{
+                            @include box-sizing;
+                            padding: 0px;
+                            width: 100%;
+                            color: #FFF;
+                        }
+                    }
+                }
+                
+            }
+
+            #ganhe-rsp{
+                width: 100%;
+                overflow: auto;
+                p{
+                    width: 100%;
+                }
+
+
+            }
+
+            #faq{
+                width: 100%;
+                text-align: left;
+                ul{
+                   padding-left: 0px; 
+                   width: 100%;
+                   li{
+                       text-align: left;
+                       h3{
+                           font-size: 16px;
+                           text-align: left;
+                           padding-right: 15px;
+                           height: auto;
+                       }
+                   }
+                }
+            }            
+        }
+        
+    }
+}

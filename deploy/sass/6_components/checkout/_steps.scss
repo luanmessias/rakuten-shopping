@@ -48,6 +48,11 @@
                         content: "\f00c";
                     }
                 }
+               
+            }
+
+            &.disabled,
+            &.disabled-prev{
                 & + .step-line{
                     background-color: $color-green;
                 }

@@ -104,6 +104,14 @@ module.exports = function(grunt) {
             tasks: ['sass:search', 'copy:css_to_project_products']
         },
 
+        institucional: {
+            files: [ 
+                "../sass/6_components/institucional/*.scss",
+                "../sass/7_css/institucional.scss",
+            ],
+            tasks: ['sass:institucional']
+        },
+
     });
   
     grunt.loadNpmTasks('grunt-contrib-watch');

@@ -1,0 +1,200 @@
+.bloco.inst {
+
+    @include e('work'){
+        
+        @include res-max(300px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img {
+                            display: none;
+                        }
+
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @include res-between(301px, 400px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img {
+                            display: none;
+                        }
+
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @include res-between(401px, 500px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img{
+                            margin: 10px;
+                        }
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                            position: relative;
+                            top: 20px;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @include res-between(501px, 600px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img{
+                            margin: 10px;
+                        }
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                            position: relative;
+                            top: 20px;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @include res-between(601px, 700px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img{
+                            margin: 10px;
+                        }
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                            position: relative;
+                            top: 20px;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @include res-between(701px, 800px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img{
+                            margin: 10px;
+                        }
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                            position: relative;
+                            top: 20px;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include res-between(801px, 900px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img{
+                            margin: 10px;
+                        }
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                            position: relative;
+                            top: 20px;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @include res-between(901px, 1000px) {
+            .conteudo {
+                .bloco-textos {
+                    .vaga {
+                        @include box-sizing;
+                        > img{
+                            margin: 10px;
+                        }
+                        h2{
+                            padding: 10px;
+                            font-weight: bold;
+                            position: relative;
+                            top: 20px;
+                        }
+
+                        p {
+                            @include box-sizing;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @include res-min(1001px) {}
+
+    }
+
+}
