@@ -1,0 +1,186 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/Global.Master" AutoEventWireup="true" CodeBehind="Confirmation.aspx.cs" Inherits="Rakuten.Shopping.Web.CheckOut.Confirmation" Async="true" %>
+
+<%@ Register Src="~/UserControls/CheckoutItem.ascx" TagName="CheckoutItem" TagPrefix="RKI" %>
+<%@ Register Src="~/UserControls/AddressList.ascx" TagName="AddressList" TagPrefix="RKI" %>
+<%@ Register Src="~/UserControls/Omniture.ascx" TagName="Omniture" TagPrefix="RKI" %>
+<%@ Register Src="~/UserControls/GoogleAnalytics.ascx" TagName="GoogleAnalytics" TagPrefix="RKI"%>
+<%@ Register Src="~/UserControls/CheckoutBasketRemake.ascx" TagName="CheckoutBasketRemake" TagPrefix="RKI"%>
+<%@ Register Src="~/UserControls/OwnDomainScripts.ascx" TagName="OwnDomainScripts" TagPrefix="RKI" %>
+<%@ Register src="~/UserControls/RAT.ascx" TagName="RAT" TagPrefix="RKI"%>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="<%=URLResources%>/Minify.ashx?basket.css|confirmation.css,order<%=Rakuten.Framework.Base.Functions.ScriptVersionCSS%>" />
+    <RKI:Omniture ID="Omniture" runat="server" Event="purchase,event6" PageName="Confirmation"/>
+    <RKI:GoogleAnalytics ID="GoogleAnalytics1" runat="server" EnableViewState="false" />
+    <RKI:GoogleAnalytics ID="GoogleAnalytics2" runat="server" EnableViewState="false" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">    
+    <div class="confirmation <%=PaymentCSSClass %>">
+        
+        <div class="error checkout-problem">
+            <div class="box">
+                <RKI:CheckoutBasketRemake ID="CheckoutBasketRemake" runat="server"></RKI:CheckoutBasketRemake>
+            </div>
+        </div>
+
+        <asp:PlaceHolder ID="phlOrderClosed" runat="server" Visible="false">
+        
+            <div class="box info">
+                <div class="intro">
+                    <span class="sucess">asdaadds Seu pedido está sendo processado.</span>
+
+                    <asp:PlaceHolder ID="phlParcele" runat="server" Visible="false">
+                        <p>
+                            Após aprovação, seu pedido será liberado para entrega, os boletos e o Contrato da Parcele serão enviados para o seu e-mail de cadastro<br />
+                            Em caso de dúvida: <strong>fale@parcele.com.br</strong><br />
+                        </p>
+
+                        <div class="box-parcele">
+	                        <div class="info">
+                                <p class="title">Resumo da Parcele</p>
+		                        <div class="values">
+			                        <label>
+				                        Primeira parcela para: <strong><asp:Label runat="server" ID="lblParceleInstallmentFirstDate" CssClass="results"></asp:Label></strong>
+			                        </label>
+			                        <label>
+				                        Valor da parcela: <strong><asp:Label runat="server" ID="lblParceleInstallmentAmount" CssClass="results"></asp:Label></strong>
+			                        </label>
+			                        <label>
+				                        Prazo: <strong><asp:Label runat="server" ID="lblParceleInstallmentQty" CssClass="results"></asp:Label> parcela(s)</strong>
+			                        </label>
+		                        </div>
+		                        <div class="fees">
+			                        <label>
+				                        Valor do contrato: <asp:Label runat="server" ID="lblParceleInstallmentTotal" CssClass="results"></asp:Label>
+			                        </label>
+			                        <label>
+				                        IOF: <asp:Label runat="server" ID="lblParceleInstallmentIOF" CssClass="results"></asp:Label>
+			                        </label>
+			                        <label>
+				                        CET: <asp:Label runat="server" ID="lblParceleInstallmentCET" CssClass="results"></asp:Label>
+			                        </label>
+			                        <label>
+				                        Taxa de juros: 
+                                            <asp:Label runat="server" ID="lblParceleInstallmentInterestPercent" CssClass="results"></asp:Label>
+                                            <asp:Label runat="server" ID="lblParceleInstallmentInterestPercentYear" CssClass="results"></asp:Label>
+			                        </label>
+		                        </div>
+	                        </div>
+                        </div>
+                    </asp:PlaceHolder>
+                    <p>
+                        A entrega de seu pedido seguirá a politica de cada loja abaixo. <br />
+                        A confirmação desse pedido foi enviada para o seu e-mail: <strong><asp:Literal ID="litCustomerEmailUp" runat="server"></asp:Literal></strong><br />
+                    </p>
+                </div>                
+                <p class="policy">
+                    <asp:PlaceHolder ID="phlBilletMessage" runat="server" Visible="false">
+                        Agora, gere seu boleto<br />
+                        e efetue o pagamento.
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder ID="phlDebitMessage" runat="server" Visible="false">
+                        Agora, efetue<br />
+                        o pagamento.
+                    </asp:PlaceHolder>
+                </p>
+            </div>
+
+            <div class="delivery-summary rk-box rk-section">
+                <RKI:AddressList ID="AddressList" runat="server"></RKI:AddressList>
+            </div>
+
+            <asp:Repeater ID="rptCheckout" runat="server" OnItemDataBound="rptCheckout_ItemDataBound">
+                <HeaderTemplate>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <asp:Panel ID="pnlSummary" runat="server" ClientIDMode="Static" CssClass="box summary">
+                        <div id="completion_cart">
+                            <h2>Resumo do pedido</h2>
+                            <table>
+                                <tr>
+                                    <td class="store">
+                                        <span class="logo">
+                                            <asp:Image ID="imgStoreLogo" runat="server" Width="140" />
+                                        </span>
+                                    </td>
+                                    <td class="description" colspan="2">
+                                        <span class="store-order">                                        
+                                            <span class="number">Número do seu pedido: <strong><asp:Literal ID="litOrderCode" runat="server"></asp:Literal></strong></span>
+                                        </span>
+                                        <span class="contact">
+                                            <asp:PlaceHolder ID="phlStoreEmail" runat="server" Visible="false">
+                                                <strong>Entre em contato:</strong>
+                                                <asp:Literal ID="litStoreEmail" runat="server"></asp:Literal>
+                                            </asp:PlaceHolder>
+                                            <asp:PlaceHolder ID="phlStorePhone" runat="server" Visible="false">
+                                               ou <asp:Literal ID="litStorePhone" runat="server"></asp:Literal>
+                                            </asp:PlaceHolder>
+                                             <br />
+                                            <strong>Serviço de Entrega: </strong><asp:Literal ID="litShippingService" runat="server"></asp:Literal> 
+                                            <br />
+                                            <strong>Prazo de Entrega: </strong><asp:Literal ID="litShippingTime" runat="server"></asp:Literal>
+                                            <asp:Panel ID="pnlDelivery" runat="server" Visible="false">
+                                                <strong><asp:Literal ID="litDeliveryDate" runat="server"></asp:Literal></strong>
+                                                <strong><asp:Literal ID="litperiod" runat="server"></asp:Literal></strong>
+                                            </asp:Panel> | <asp:HyperLink ID="hylScheduledDelivery" runat="server" CssClass="scheduled-delivery" Text="Entrega agendada"></asp:HyperLink>
+                                        </span>
+                                    </td>
+                                    <td class="total">
+                                        <asp:PlaceHolder ID="phlCreditCard" runat="server" Visible="false">
+                                            <div class="credit-card footer">
+                                                <p>Estamos aguardando autorização da administradora do cartão para a liberação do produto.</p>
+                                            </div>
+                                        </asp:PlaceHolder>
+                                        <asp:Panel ID="pnlBillet" runat="server" CssClass="billet footer" Visible="false">    
+                                            <asp:HyperLink href="javascript:;" ID="hypSendBillet" runat="server" CssClass="btn billet rk-get-billet" data-folder="/Orders/" Text="Gerar Boleto" />                                            
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <RKI:CheckoutItem ID="CheckoutItem" runat="server" />
+                    </asp:Panel>
+                </ItemTemplate>
+            </asp:Repeater>
+
+            <div class="footer">
+                <span class="total">
+                    Valor total: <strong><asp:Literal ID="litOrderValueTotalBilled" runat="server"></asp:Literal></strong>
+                </span>
+                <span class="order">
+                    Pedido realizado em <strong><asp:Literal ID="litDateOrder" runat="server"></asp:Literal></strong>
+                </span>
+                <asp:PlaceHolder ID="phlSuperPointsEarned" runat="server">
+                    <span class="superpoints ico">
+                        Nesta compra você ganhou!
+                        <strong>+<asp:Literal ID="litSuperPointsEarned" runat="server"></asp:Literal> <span>Super Points</span></strong>
+                    </span>
+                </asp:PlaceHolder>
+            </div>
+            
+            <div class="continuebtn">
+                <asp:HyperLink ID="hypKeepShopping" runat="server" CssClass="btn btn-keep-shopping">Continue Comprando</asp:HyperLink>
+            </div>
+        </asp:PlaceHolder>
+
+        <asp:HiddenField ID="hidRemoveBasketCookies" ClientIDMode="Static" runat="server" Value="" />
+        <asp:HiddenField ID="hidCurrentDomain" ClientIDMode="Static" runat="server" />
+        <asp:HiddenField ID="hidNamePage" ClientIDMode="Static" runat="server" Value="Confirmation.aspx" />    
+    </div>
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="scripts" ID="cntScripts">
+        
+    <RKI:RAT ID="RAT" runat="server" EnableViewState="false" />
+    
+    <script type="text/javascript" src="<%=URLResources%>/Minify.ashx?
+        controller.js,storefront
+        |basket.js,controller-owndomain
+        |billet.js,controller-checkout
+        |confirmation.js,controller-checkout
+        <%= Rakuten.Framework.Base.Functions.ScriptVersionJS%>">
+    </script>
+
+    <RKI:OwnDomainScripts ID="OwnDomainScripts" runat="server"></RKI:OwnDomainScripts>
+</asp:Content>

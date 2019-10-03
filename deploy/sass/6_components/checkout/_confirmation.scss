@@ -12,23 +12,465 @@
         margin-top: 25px;
     }
 
+    @include e('boxes'){
+        @include flexbox(row, wrap, space-between, inherit, center);
+        @include box-sizing;
+        margin-bottom: 20px;
+        @include e('box'){
+            width: calc(100% / 2 - 10px);
+            overflow: hidden;
+            .nrk_confirm__box {
+                @include box-sizing;
+                height: calc(100% - 20px);
+            }
+        }
+    }
+
     @include e('box') {
         @include box-sizing;
         width: 100%;
         padding: 30px;
         background-color: #FFF;
+        @include e('txt'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            margin-bottom: 0;
+        }
     }
 
+    @include e('info'){
+        @include flexbox(row, wrap, space-between, center, center);
+        .sucess{
+            @include fonte($second-font, bold, 14px, $color-gray);
+            width: 100%;
+            display: block;
+        }
+
+        .policy{
+            @include flexbox(row, wrap, flex-start, center, center);
+            @include fonte($second-font, 400, 14px, $color-gray);
+            background-image: url("//resources.rakuten.com.br/SD/sd/rk2019/img/ico_boleto.png");
+            padding-left: 88px;
+            height: 60px;
+            background-repeat: no-repeat;
+        }
+
+    }
+
+    @include e('address'){
+        .adress-name{
+            @include fonte($second-font, bold, 14px, $color-gray);
+            margin-top: 0px;
+        }
+        .adress-single {
+            @include fonte($second-font, 400, 14px, $color-gray);
+        }
+    }
+
+    @include e('resume'){
+        @include flexbox(row, nowrap, space-between, center, center);
+        @include box-sizing;
+        padding: 0px 30px;
+        overflow: hidden;
+        border-bottom: 1px solid $color-gray-light;
+
+        > div:not(.nrk_confirm__resume__sep){
+            @include box-sizing;
+            padding: 30px 0px;
+        }
+
+        @include e('sep'){
+            display: block;
+            width: 1px;
+            height: 100px;
+            background-color: $color-gray-light;
+            padding: 0;
+        }
+
+        @include e('order'){
+            @include flexbox(column, wrap, flex-start, flex-start, flex-start);
+           
+
+            @include e('title'){
+                @include fonte($second-font, bold, 14px, $color-gray);
+            }
+            @include e('num'){
+                @include fonte($second-font, bold, 28px, $color-green);
+            }
+            @include e('by'){
+                margin-top: 5px;
+                @include fonte($second-font, 400, 14px, $color-gray);
+                strong{
+                    @include fonte($second-font, bold, 14px, $color-gray);
+                }
+            }
+        }
+        @include e('contact'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            strong{
+                @include fonte($second-font, bold, 14px, $color-gray);
+                @include box-sizing;
+                display: block;
+                width: 100%;
+            }
+
+            @include e('mail'){
+                @include flexbox(row, wrap, flex-start, center, center);
+                &:before{
+                    @include set-icon($fa-var-envelope, 18px, 900, $color-gray);
+                    content: "\f0e0";
+                    margin-right: 8px;
+                }
+            }
+
+            @include e('phone'){
+                @include flexbox(row, wrap, flex-start, center, center);
+                &:before{
+                    @include set-icon($fa-var-phone, 18px, 900, $color-gray);
+                    content: "\f095";
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        @include e('shipment'){
+            @include fonte($second-font, 400, 14px, $color-gray);
+            strong{
+                @include fonte($second-font, bold, 14px, $color-gray);
+                @include box-sizing;
+                display: block;
+                width: 100%;
+            }
+            a{
+                @include fonte($second-font, 400, 14px, $color-gray);
+                text-decoration: underline;
+            }
+        }
+
+        @include e('pay'){
+            a{
+                @extend %bt-default;
+                display: flex !important;
+                padding: 15px 25px;
+                background-color: $color-green-light;
+
+                &:hover {
+                    background-color: $color-green;
+                }
+            }
+        }
+    }
+
+    .nrk_basket{
+
+        .bkt_store{
+            margin-bottom: 0px;
+        }
+
+        .bkt_prod{
+            td{
+                vertical-align: top;
+            }
+        }
+
+        .values{
+            table{
+                @include fonte($second-font, 400, 14px, $color-gray);
+                strong{
+                    @include fonte($second-font, bold, 14px, $color-gray);
+                }
+            }
+        }
+    }
+
+    .footer{
+        @include flexbox(row, wrap, space-between, center, center);
+        @include fonte($second-font, 400, 14px, $color-gray);
+        strong{
+            @include fonte($second-font, bold, 20px, $color-green);
+            width: 100%;
+            display: block;
+        }
+
+        @include e('sep'){
+            width: 1px;
+            height: 45px;
+            background-color: $color-gray-light;
+        }
+    }
+
+    .continuebtn{
+        @include flexbox(row, wrap, flex-end, center, center);
+        margin: 30px 0px;
+        a {
+            @extend %bt-default;
+            display: flex !important;
+            padding: 15px 25px;
+            background-color: $color-green-light;
+
+            &:hover {
+                background-color: $color-green;
+            }
+        }
+    }
     
 
-    @include res-max(300px) {}
-    @include res-between(301px, 400px) {}
-    @include res-between(401px, 500px) {}
-    @include res-between(501px, 600px) {}
-    @include res-between(601px, 700px) {}
-    @include res-between(701px, 800px) {}
-    @include res-between(801px, 900px) {}
-    @include res-between(901px, 1000px) {}
+    @include res-max(300px) {
+        @include e('boxes'){
+            @include e('box'){
+                width: 100%;
+            }
+        }
+        @include e('resume'){
+            @include flex-wrap(wrap);
+            
+            > div{
+                width: 100%;
+            }
+
+            @include e('sep'){
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+            
+        }
+        .nrk_basket{
+            thead{
+                display: none;
+            }
+        }
+        .footer{
+            @include e('sep'){
+                display: none;
+            }
+        }
+    }
+    @include res-between(301px, 400px) {
+        @include e('boxes') {
+            @include e('box') {
+                width: 100%;
+            }
+        }
+
+        @include e('resume') {
+            @include flex-wrap(wrap);
+
+            >div {
+                width: 100%;
+            }
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+
+        }
+
+        .nrk_basket {
+            thead {
+                display: none;
+            }
+        }
+
+        .footer {
+            @include e('sep') {
+                display: none;
+            }
+        }
+    }
+    @include res-between(401px, 500px) {
+        @include e('boxes') {
+            @include e('box') {
+                width: 100%;
+            }
+        }
+
+        @include e('resume') {
+            @include flex-wrap(wrap);
+
+            >div {
+                width: 100%;
+            }
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+
+        }
+
+        .nrk_basket {
+            thead {
+                display: none;
+            }
+
+            .values{
+                table{
+                    tr{
+                        display: block;
+                        width: 100%;
+                    }
+                    td{
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            @include e('sep') {
+                display: none;
+            }
+            > span{
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    @include res-between(501px, 600px) {
+        @include e('boxes') {
+            @include e('box') {
+                width: 100%;
+            }
+        }
+
+        @include e('resume') {
+            @include flex-wrap(wrap);
+
+            >div {
+                width: 100%;
+            }
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+
+        }
+
+        .nrk_basket {
+            thead {
+                display: none;
+            }
+
+            .values{
+                table{
+                    tr{
+                        display: block;
+                        width: 100%;
+                    }
+                    td{
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            @include e('sep') {
+                display: none;
+            }
+            > span{
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    @include res-between(601px, 700px) {
+        @include e('resume') {
+            @include flex-wrap(wrap);
+
+            >div {
+                width: 100%;
+            }
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+
+        }
+
+        .nrk_basket {
+            thead {
+                display: none;
+            }
+
+            .values{
+                table{
+                    tr{
+                        display: block;
+                        width: 100%;
+                    }
+                    td{
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+    @include res-between(701px, 800px) {
+        @include e('resume') {
+            @include flex-wrap(wrap);
+
+            >div {
+                width: 100%;
+            }
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+
+        }
+    }
+    @include res-between(801px, 900px) {
+        @include e('resume') {
+            @include flex-wrap(wrap);
+
+            >div {
+                width: 100%;
+            }
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+
+        }
+    }
+    @include res-between(901px, 1000px) {
+        @include e('resume') {
+            @include flex-wrap(wrap);
+
+            >div {
+                width: 100%;
+            }
+
+            @include e('sep') {
+                width: 100%;
+                height: 1px;
+                padding: 0;
+                margin: 5px 0px;
+            }
+
+        }
+    }
     @include res-min(1001px) {}
 
 }
